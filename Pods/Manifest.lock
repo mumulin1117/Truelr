@@ -1,0 +1,30 @@
+PODS:
+  - IQKeyboardManager (6.5.19)
+  - MJRefresh (3.7.9)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
+  - SwiftyStoreKit (0.16.1)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - MJRefresh
+  - SVProgressHUD
+  - SwiftyStoreKit
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManager
+    - MJRefresh
+    - SVProgressHUD
+    - SwiftyStoreKit
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
+
+PODFILE CHECKSUM: cf09d10e2ebdd3fcb7d9f27e88097ed62ddd86a0
+
+COCOAPODS: 1.16.2

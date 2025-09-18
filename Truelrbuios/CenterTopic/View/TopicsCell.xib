@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TopicsCell" customModule="Truelrbuios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="193" height="264"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="193" height="264"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UoS-bL-VXE">
+                        <rect key="frame" x="0.0" y="0.0" width="193" height="264"/>
+                        <color key="backgroundColor" white="1" alpha="0.59958147319999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProAlert3=1" translatesAutoresizingMaskIntoConstraints="NO" id="DzM-Kj-n4D">
+                        <rect key="frame" x="49" y="213" width="90" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="5gE-5t-wzF"/>
+                            <constraint firstAttribute="height" constant="32" id="EP7-32-4mu"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bannerHall0" translatesAutoresizingMaskIntoConstraints="NO" id="sOl-uw-hF9">
+                        <rect key="frame" x="143" y="214" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="DvR-kw-JLg"/>
+                            <constraint firstAttribute="height" constant="30" id="zqO-fn-SxU"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sOl-uw-hF9" secondAttribute="bottom" constant="20" id="0jP-Qz-6Gt"/>
+                <constraint firstItem="DzM-Kj-n4D" firstAttribute="centerY" secondItem="sOl-uw-hF9" secondAttribute="centerY" id="c8N-lr-jhA"/>
+                <constraint firstItem="sOl-uw-hF9" firstAttribute="leading" secondItem="DzM-Kj-n4D" secondAttribute="trailing" constant="4" id="kct-zJ-lvE"/>
+                <constraint firstItem="UoS-bL-VXE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mpM-qe-mf3"/>
+                <constraint firstAttribute="trailing" secondItem="UoS-bL-VXE" secondAttribute="trailing" id="o9f-2E-dqs"/>
+                <constraint firstAttribute="trailing" secondItem="sOl-uw-hF9" secondAttribute="trailing" constant="20" id="ucK-Xe-ne9"/>
+                <constraint firstItem="UoS-bL-VXE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xFf-FO-5cG"/>
+                <constraint firstAttribute="bottom" secondItem="UoS-bL-VXE" secondAttribute="bottom" id="xZz-bH-EvN"/>
+            </constraints>
+            <size key="customSize" width="193" height="264"/>
+            <connections>
+                <outlet property="figureCraft" destination="DzM-Kj-n4D" id="H1S-9W-B37"/>
+                <outlet property="modelSculpt" destination="UoS-bL-VXE" id="FHw-gC-USs"/>
+                <outlet property="puppetStage" destination="sOl-uw-hF9" id="GgJ-tD-ml7"/>
+            </connections>
+            <point key="canvasLocation" x="248.09160305343511" y="95.774647887323951"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ProAlert3=1" width="143" height="40"/>
+        <image name="bannerHall0" width="30.333333969116211" height="30.333333969116211"/>
+    </resources>
+</document>
