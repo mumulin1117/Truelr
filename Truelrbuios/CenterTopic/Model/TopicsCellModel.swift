@@ -2,7 +2,7 @@
 //  TopicsCellModel.swift
 //  Truelrbuios
 //
-//  Created by mumu on 2025/9/18.
+//  Created by  on 2025/9/18.
 //
 
 import UIKit
@@ -27,7 +27,7 @@ class TopicsCellModel: NSObject {
     var questBoard:Array<Dictionary<String,Any>>?// "commentVoList",
 
     init(setinginit dic:Dictionary<String,Any>) {
-        questBoard = dic["dic"] as? Array<Dictionary<String,Any>>
+        questBoard = dic["questBoard"] as? Array<Dictionary<String,Any>>
         duelArena = dic["dic"] as? Array<String>
         battleScene  = dic["battleScene"] as? Array<String>
         sceneDirector = dic["sceneDirector"] as? Int

@@ -1,4 +1,5 @@
 PODS:
+  - FSPagerView (0.8.3)
   - IQKeyboardManager (6.5.19)
   - MJRefresh (3.7.9)
   - SVProgressHUD (2.3.1):
@@ -7,6 +8,7 @@ PODS:
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
+  - FSPagerView
   - IQKeyboardManager
   - MJRefresh
   - SVProgressHUD
@@ -14,17 +16,19 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - FSPagerView
     - IQKeyboardManager
     - MJRefresh
     - SVProgressHUD
     - SwiftyStoreKit
 
 SPEC CHECKSUMS:
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: cf09d10e2ebdd3fcb7d9f27e88097ed62ddd86a0
+PODFILE CHECKSUM: 76cf0c1470af7a5fe6fed67a8339dccfb0da0127
 
 COCOAPODS: 1.16.2

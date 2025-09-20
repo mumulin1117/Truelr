@@ -10,4 +10,6 @@ pod "IQKeyboardManager"
 pod "MJRefresh"
 pod "SVProgressHUD"
 pod "SwiftyStoreKit"
+pod 'FSPagerView'
+
 end
