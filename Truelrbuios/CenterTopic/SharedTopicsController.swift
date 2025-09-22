@@ -11,7 +11,7 @@ import MJRefresh
 class SharedTopicsController: UIViewController {
     private var topics:Array<TopicsCellModel> = Array<TopicsCellModel>()
     
-  
+    static var getingallUser:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
     
     @IBOutlet weak var topcsView: UICollectionView!
     
@@ -34,7 +34,7 @@ class SharedTopicsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         visionBoard()
-        
+        masqueradeHall()
         self.topcsView.mj_header?.beginRefreshing()
     }
     
@@ -77,6 +77,37 @@ class SharedTopicsController: UIViewController {
             
         }
     }
+    
+    
+    
+    @objc private func masqueradeHall()  {
+     
+        CosRequestManager.sendStyledRequest(endpoint: "/dlzeplzdlmstdz/sxsiciehbldjf", outfitPayload: ["animeStudio":"67994137"]) { cosplayunityhub in
+            
+            switch cosplayunityhub{
+            case .success(let cosplayunityhub):
+                
+                guard let response = cosplayunityhub as? Dictionary<String,Any> ,
+                      
+                        let user = response["data"] as? Array<Dictionary<String,Any>>
+                        
+                else {
+                 
+                    
+                    return
+                }
+                SharedTopicsController.getingallUser = user
+               
+               
+               
+            case .failure(let error):
+               break
+            }
+            
+            
+        }
+    }
+
 }
 
 extension SharedTopicsController:UICollectionViewDataSource{

@@ -16,6 +16,17 @@ class ViewController: UIViewController {
             UserDefaults.standard.set(newValue, forKey: "dungeonGuide")
         }
     }
+    
+    
+    static var CurrentCoinggUserOwne:Int{//blance
+        get{
+            UserDefaults.standard.object(forKey: "CoinggUserOwne") as? Int  ?? 0
+        }set{
+            UserDefaults.standard.set(newValue, forKey: "CoinggUserOwne")
+        }
+    }
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         

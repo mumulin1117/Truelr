@@ -34,7 +34,7 @@ class TopicsCellModel: NSObject {
         arenaStage = dic["arenaStage"] as? Int
         danceRoutine = dic["danceRoutine"] as? Int
         tournamentBracket = dic["tournamentBracket"] as? Int
-        gestureGuide = dic["gestureGuide"] as? Int
+        gestureGuide = 0//dic["gestureGuide"] as? Int
         poseTrainer = dic["poseTrainer"] as? Int
         
         dialogueFlow = dic["dialogueFlow"] as? String

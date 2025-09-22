@@ -14,7 +14,7 @@ class EnterInTopicController: UIViewController {
     @IBOutlet weak var figureCraft: UIImageView!
     
     @IBOutlet weak var puppetStage: UIButton!
-    
+   
   
     @IBOutlet weak var illusionLab: UILabel!
     

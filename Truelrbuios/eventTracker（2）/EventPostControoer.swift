@@ -1,20 +1,28 @@
 //
-//  QuestSeekerControlle.swift
+//  EventPostControoer.swift
 //  Truelrbuios
 //
-//  Created by mumu on 2025/9/20.
+//  Created by mumu on 2025/9/22.
 //
 
 import UIKit
 import SVProgressHUD
 import PhotosUI
-class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
+class EventPostControoer:  UIViewController ,UITextViewDelegate{
+    
+    
+    @IBOutlet weak var peopleconstne: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var morepeopleconstent: NSLayoutConstraint!
+    
     private var selectedMedia: URL?   // 本地选中的图片或视频
       
     private var postText: String = ""
    
     private let videoCost: Int = 20   // 发布视频所需金币
     
+    @IBOutlet weak var nnneding: UIImageView!
     
     private  var pickingShing:Int = 0
     
@@ -23,14 +31,19 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
        
         return view
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Seriuh.layer.cornerRadius = 15
+        Seriuh.layer.masksToBounds = true
+    }
+    
+    
     @IBAction func posstingDym(_ sender: UIButton) {
-       
-        if sender.tag - 340 ==  self.pickingShing {
-            return
-        }
-        postText = ""
-        dreamscapeHub.text = nil
-        Seriuh.setBackgroundImage(UIImage.init(named: "heroArchive0"), for: .normal)
+        
+    
+        
         let retuio = self.view.viewWithTag(340) as? UIButton
         let retuio1 = self.view.viewWithTag(341) as? UIButton
         retuio1?.isSelected = false
@@ -39,77 +52,93 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
         sender.isSelected = true
         self.pickingShing = sender.tag - 340
         if self.pickingShing == 1 {
-            self.indicaterNned.isHidden = false
+            nnneding.isHidden = false
+            peopleconstne.constant = 73
+            morepeopleconstent.constant = 25
         }else{
-            self.indicaterNned.isHidden = true
+            nnneding.isHidden = true
+            peopleconstne.constant = 25
+            morepeopleconstent.constant = 73
         }
         
     }
     
-    @IBOutlet weak var indicaterNned: UIImageView!
-    
     
     @IBOutlet weak var Seriuh: UIButton!
     
-    @IBOutlet weak var dreamscapeHub: UITextView!
+    @IBOutlet weak var themcapeHub: UITextField!
+    
+    @IBOutlet weak var locationpeHub: UITextField!
+    
+    @IBOutlet weak var timestart: UITextField!
+    
+    @IBOutlet weak var timeend: UITextField!
     
     @IBAction func planetariumView(_ sender: UIButton) {
         
         var config = PHPickerConfiguration(photoLibrary: .shared())
-        
-        if pickingShing == 0 {
-            config.filter = .any(of: [.images])
-        }else{
-            config.filter = .any(of: [ .videos])
-        }
-                
+        config.filter = .any(of: [.images])
+       
                
         config.selectionLimit = 1
         let picker = PHPickerViewController(configuration: config)
         picker.delegate = self
         present(picker, animated: true)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        dreamscapeHub.delegate = self
-        Seriuh.layer.cornerRadius = 15
-        Seriuh.layer.masksToBounds = true
-    }
     
-    @IBAction func dreamscapeHub(_ sender: UIButton) {
-        postText = dreamscapeHub.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard postText.count > 0,postText != "  Text something..."
+    
+    @IBAction func themcapeHub(_ sender: UIButton) {
+        let them = themcapeHub.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        guard them.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: "Before post , please enter something.")
+           SVProgressHUD.showInfo(withStatus: "please enter your them!")
+                   
+           return
+               
+       }
+        
+        
+        let enentlocation = locationpeHub.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        guard enentlocation.count > 0
+                 else {
+           SVProgressHUD.showInfo(withStatus: "please enter your Event Location!")
+                   
+           return
+               
+       }
+        
+        
+        let enentstart = timestart.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        guard enentstart.count > 0
+                 else {
+           SVProgressHUD.showInfo(withStatus: "please enter your Event start time!")
+                   
+           return
+               
+       }
+        
+        let endtime = timeend.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        guard endtime.count > 0
+                 else {
+           SVProgressHUD.showInfo(withStatus: "please enter your Event end time!")
                    
            return
                
        }
         
         guard let mediaURL = selectedMedia else {
-            SVProgressHUD.showInfo(withStatus: "Please add an image or video before posting.")
+            SVProgressHUD.showInfo(withStatus: "Please add an image  for event.")
                     return
-                }
+               
+        }
         
-        //是否添加了图片或者视频
-        
-        
-        //是否添加了文字
-        
-        
-        
-        
-        
-        
-        
-        
-        //post 是视频
+      
         if pickingShing == 1 {
             chasloogVIew.show(in: self.view, cost: 20)
             chasloogVIew.onPostConfirmed = {
                 
                 if ViewController.CurrentCoinggUserOwne < self.videoCost {
-                    //如果金币不足，谈出金币页面
+                   
                     let prensebla = RibbonVaulControoer.init()
                     self.navigationController?.pushViewController(prensebla, animated: true)
                            
@@ -134,10 +163,10 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
            
-            SVProgressHUD.showSuccess(withStatus: "Send successful,your post will be displayed after approval")
+            SVProgressHUD.showSuccess(withStatus: "Release Event successful,your post will be displayed after approval")
             
-            self.dreamscapeHub.text = nil
-            self.dreamscapeHub.resignFirstResponder()
+            self.themcapeHub.text = nil
+            self.themcapeHub.resignFirstResponder()
             self.navigationController?.popViewController(animated: true)
         }))
        
@@ -148,7 +177,7 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     }
 
 }
-extension QuestSeekerControlle: PHPickerViewControllerDelegate {
+extension EventPostControoer: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         dismiss(animated: true)
         
@@ -161,16 +190,6 @@ extension QuestSeekerControlle: PHPickerViewControllerDelegate {
                         self?.Seriuh.setBackgroundImage(img, for: .normal)
                         self?.selectedMedia = URL(fileURLWithPath: "tempImage.jpg") // 占位符
                     }
-                }
-            }
-        } else if provider.hasItemConformingToTypeIdentifier(UTType.movie.identifier) {
-            provider.loadFileRepresentation(forTypeIdentifier: UTType.movie.identifier) { [weak self] url, _ in
-                guard let strongSelf = self, let url = url else { return }
-                let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent(url.lastPathComponent)
-                try? FileManager.default.copyItem(at: url, to: tempURL)
-                DispatchQueue.main.async {
-                    strongSelf.selectedMedia = tempURL
-                    strongSelf.Seriuh.setBackgroundImage(UIImage(systemName: "video.fill") , for: .normal)
                 }
             }
         }
