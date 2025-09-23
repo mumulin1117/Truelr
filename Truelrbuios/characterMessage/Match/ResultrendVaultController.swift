@@ -14,6 +14,13 @@ class ResultrendVaultController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    
+    @IBOutlet weak var mimicArt: UIImageView!
+    
+    @IBOutlet weak var myinger: UIImageView!
+    
+    
+    @IBOutlet weak var beatheij: UIImageView!
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -23,19 +30,19 @@ class ResultrendVaultController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        beatheij.startHeartbeatAnimation()
+        mimicArt.displayCharacterPortrait(from:  nisertgeing["villainProfile"] as? String)
+        myinger.displayCharacterPortrait(from: ViewController.ExestedLogUserPhotp)
+        
+        mimicArt.transform = CGAffineTransform(rotationAngle: CGFloat(-8 * Double.pi / 180))
+        beatheij.transform = CGAffineTransform(rotationAngle: CGFloat(8 * Double.pi / 180))
+        
+        mimicArt.maskedlabeVobor(enter: 20)
+        myinger.maskedlabeVobor(enter: 20)
+        
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

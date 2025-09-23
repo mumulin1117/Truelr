@@ -74,6 +74,7 @@ class SplaystorytellerController: UIViewController {
                     return
                 }
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                ViewController.ExestedLogUserPhotp = user["secretPassage"] as? String
                 ViewController.ExestedLogUserID = user["dungeonGuide"] as? Int
                 let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
                 UserDefaults.standard.set( user["valorStory"], forKey: "valorStory")//token

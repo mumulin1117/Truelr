@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultrendVaultController" customModule="Truelrbuios" customModuleProvider="target">
             <connections>
+                <outlet property="beatheij" destination="lqm-7u-KIv" id="zy8-qi-vny"/>
+                <outlet property="mimicArt" destination="Ayp-yo-bdL" id="fco-Oa-egP"/>
+                <outlet property="myinger" destination="G0J-Sv-eeJ" id="G8h-Th-OAe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -60,6 +63,7 @@
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G0J-Sv-eeJ">
                     <rect key="frame" x="195" y="107" width="178" height="244"/>
+                    <color key="backgroundColor" red="0.97647058963775635" green="0.37254902720451355" blue="0.54901963472366333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="178" id="SJM-bX-Aiv"/>
                         <constraint firstAttribute="height" constant="244" id="xg3-8G-tf5"/>

@@ -76,7 +76,7 @@ class CarnivalParadeController: UIViewController {
         
         if isFlameActive == true {
             let reser = ResultrendVaultController.init(nisertgeing: nisertgeing)
-            
+            flameTicker?.invalidate()
             self.navigationController?.pushViewController(reser, animated: true)
         }else{
             SVProgressHUD.showInfo(withStatus: "Matching failed, the other party has left")
@@ -103,13 +103,13 @@ class CarnivalParadeController: UIViewController {
             flameTicker = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
                 guard let self = self else { return }
                 self.remainEchoSeconds -= 1
-                self.timecutdown.setTitle("\(self.remainEchoSeconds)", for: .normal)
+                self.timecutdown.setTitle("\(self.remainEchoSeconds)s", for: .normal)
                 
                 if self.remainEchoSeconds <= 0 {
                     self.flameTicker?.invalidate()
                     self.flameTicker = nil
                     SVProgressHUD.showInfo(withStatus: "Sorry, it's time")
-                    self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
             }
         }
@@ -118,5 +118,6 @@ class CarnivalParadeController: UIViewController {
     deinit {
         flameTicker?.invalidate()
     }
+    
     
 }

@@ -26,7 +26,13 @@ class ViewController: UIViewController {
         }
     }
     
-  
+    static var ExestedLogUserPhotp:String?{
+        get{
+            UserDefaults.standard.object(forKey: "secretPassage") as? String
+        }set{
+            UserDefaults.standard.set(newValue, forKey: "secretPassage")
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
