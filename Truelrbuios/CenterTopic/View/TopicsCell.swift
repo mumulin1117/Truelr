@@ -27,7 +27,7 @@ class TopicsCell: UICollectionViewCell {
         let imgnamegkey = CosRequestManager.topssPic.filter { ele in
             ele.value == itlr
         }.first
-        print(itlr,imgnamegkey)
+        
         figureCraft.image = UIImage(named: (imgnamegkey?.key ?? "ProAlert1") + "=1")
         
         puppetStage.image = UIImage(named: o.tournamentBracket == 1 ? "bannerHall" : "bannerHall0")

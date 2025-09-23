@@ -72,7 +72,11 @@ class ComuiniHUbController: UIViewController {
            masqueradeHall()
           
            self.mangaPanel.mj_header?.beginRefreshing()
+           NotificationCenter.default.addObserver(self, selector: #selector(masqueradeHall), name: NSNotification.Name.init("Blockuseraction"), object: nil)
+    
        }
+       
+  
        
        private func visionBoard() {
            mangaPanel.collectionViewLayout = gridLayout
@@ -140,33 +144,7 @@ class ComuiniHUbController: UIViewController {
     @objc private func masqueradeHall()  {
         self.activeUserpics = SharedTopicsController.getingallUser.suffix(4)
         self.AnimeStudioCell.reloadData()
-//        CosRequestManager.sendStyledRequest(endpoint: "/dlzeplzdlmstdz/sxsiciehbldjf", outfitPayload: ["animeStudio":"67994137"]) { cosplayunityhub in
-//            
-//            switch cosplayunityhub{
-//            case .success(let cosplayunityhub):
-//                
-//                guard let response = cosplayunityhub as? Dictionary<String,Any> ,
-//                      
-//                        let user = response["data"] as? Array<Dictionary<String,Any>>
-//                        
-//                else {
-//                    
-//                    SVProgressHUD.showInfo(withStatus: "No active user data nowing!")
-//                    
-//                    return
-//                }
-//                if SharedTopicsController.getingallUser.count == 0 {
-//                    ComuiniHUbController.getingallUser = user
-//                }
-//               
-//
-//               
-//            case .failure(let error):
-//               break
-//            }
-//            
-//            
-//        }
+
     }
    }
 

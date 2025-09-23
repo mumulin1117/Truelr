@@ -10,6 +10,7 @@ import UIKit
 class eventTrackerControoer: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     
+    @IBOutlet weak var enenuLani: UIImageView!
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,6 +48,16 @@ class eventTrackerControoer: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var mangaPanel: UICollectionView!
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        enenuLani.startHeartbeatAnimation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        enenuLani.stopHeartbeatAnimation()
+    }
     let enentInfo:Array<Dictionary<String,String>> = [
         ["them":"CosWave Runway Bash",
                          "starttime":"2025-10-12 14:00:00",

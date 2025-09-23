@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultrendVaultController" customModule="Truelrbuios" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transformation" translatesAutoresizingMaskIntoConstraints="NO" id="OnH-wx-Vh4">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1X-mK-KeV">
+                    <rect key="frame" x="41" y="643" width="311" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="311" id="Enz-k4-mkL"/>
+                        <constraint firstAttribute="height" constant="60" id="VWz-S2-M4D"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="tobaulede"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaj-uh-eEv">
+                    <rect key="frame" x="41" y="715" width="311" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="eKY-ge-1UK"/>
+                        <constraint firstAttribute="width" constant="311" id="ur1-RT-maQ"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="skioploj"/>
+                    <connections>
+                        <action selector="marketStall:" destination="-1" eventType="touchUpInside" id="DeD-al-CuS"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CONGRATS! 🎉🥳" translatesAutoresizingMaskIntoConstraints="NO" id="lXE-Yi-aY0">
+                    <rect key="frame" x="0.0" y="59" width="393" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="L7q-U0-cKw"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhangyuge" translatesAutoresizingMaskIntoConstraints="NO" id="Bsk-8a-b4o">
+                    <rect key="frame" x="0.0" y="159" width="393" height="212"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="212" id="JAC-ak-QMK"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ayp-yo-bdL">
+                    <rect key="frame" x="20" y="229" width="178" height="244"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G0J-Sv-eeJ">
+                    <rect key="frame" x="195" y="107" width="178" height="244"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="178" id="SJM-bX-Aiv"/>
+                        <constraint firstAttribute="height" constant="244" id="xg3-8G-tf5"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matchRecordf" translatesAutoresizingMaskIntoConstraints="NO" id="lqm-7u-KIv">
+                    <rect key="frame" x="128" y="295" width="137" height="112"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="112" id="R6v-uI-wgV"/>
+                        <constraint firstAttribute="width" constant="137" id="cCH-GX-bZl"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="T1X-mK-KeV" firstAttribute="centerX" secondItem="oaj-uh-eEv" secondAttribute="centerX" id="6fQ-Cj-qDw"/>
+                <constraint firstItem="G0J-Sv-eeJ" firstAttribute="top" secondItem="lXE-Yi-aY0" secondAttribute="bottom" constant="21" id="6qM-al-mbO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G0J-Sv-eeJ" secondAttribute="trailing" constant="20" id="8Wb-Tx-Iet"/>
+                <constraint firstItem="OnH-wx-Vh4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="C6t-Tg-pVt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oaj-uh-eEv" secondAttribute="bottom" constant="43" id="DYn-uT-Xs4"/>
+                <constraint firstAttribute="bottom" secondItem="OnH-wx-Vh4" secondAttribute="bottom" id="E4M-GP-tYT"/>
+                <constraint firstItem="lXE-Yi-aY0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="K1J-pH-hb4"/>
+                <constraint firstItem="Ayp-yo-bdL" firstAttribute="centerY" secondItem="G0J-Sv-eeJ" secondAttribute="bottom" id="Oe8-Kg-6kp"/>
+                <constraint firstItem="lqm-7u-KIv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TMp-vb-61G"/>
+                <constraint firstItem="Bsk-8a-b4o" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VRf-E0-kj8"/>
+                <constraint firstItem="Bsk-8a-b4o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Woa-rc-00T"/>
+                <constraint firstItem="lXE-Yi-aY0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XAh-8R-q0n"/>
+                <constraint firstItem="OnH-wx-Vh4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YI2-5I-rHW"/>
+                <constraint firstItem="lXE-Yi-aY0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ZfT-0M-YdJ"/>
+                <constraint firstItem="Bsk-8a-b4o" firstAttribute="top" secondItem="lXE-Yi-aY0" secondAttribute="bottom" constant="73" id="gl9-dI-Del"/>
+                <constraint firstItem="Ayp-yo-bdL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="hVP-NV-3Ay"/>
+                <constraint firstItem="Ayp-yo-bdL" firstAttribute="height" secondItem="G0J-Sv-eeJ" secondAttribute="height" id="idG-17-GQl"/>
+                <constraint firstItem="oaj-uh-eEv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="khN-cN-h8k"/>
+                <constraint firstItem="oaj-uh-eEv" firstAttribute="top" secondItem="T1X-mK-KeV" secondAttribute="bottom" constant="12" id="niL-gy-6qh"/>
+                <constraint firstItem="lqm-7u-KIv" firstAttribute="centerY" secondItem="Ayp-yo-bdL" secondAttribute="centerY" id="uZs-Qm-esz"/>
+                <constraint firstItem="OnH-wx-Vh4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="x5i-Th-NnL"/>
+                <constraint firstItem="Ayp-yo-bdL" firstAttribute="width" secondItem="G0J-Sv-eeJ" secondAttribute="width" id="zlj-Fq-tZo"/>
+            </constraints>
+            <point key="canvasLocation" x="14.503816793893129" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="CONGRATS! 🎉🥳" width="207.33332824707031" height="24.333333969116211"/>
+        <image name="matchRecordf" width="80" height="80.333335876464844"/>
+        <image name="skioploj" width="311" height="60"/>
+        <image name="tobaulede" width="311" height="60"/>
+        <image name="transformation" width="375" height="812"/>
+        <image name="zhangyuge" width="375" height="214.66667175292969"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

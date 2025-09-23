@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MainshMaCell" customModule="Truelrbuios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="257" height="332"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="257" height="332"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E6k-n9-VSC">
+                        <rect key="frame" x="15" y="15" width="227" height="292"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProAlert15=4" translatesAutoresizingMaskIntoConstraints="NO" id="yA2-W1-oKx">
+                        <rect key="frame" x="36" y="267" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="AMw-wK-YFh"/>
+                            <constraint firstAttribute="height" constant="30" id="hiL-GL-8Qj"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJ8-VC-Lhv">
+                        <rect key="frame" x="203" y="24" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="HbX-NA-Kea"/>
+                            <constraint firstAttribute="width" constant="30" id="XmC-tH-pi1"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="laonging"/>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1vninu" translatesAutoresizingMaskIntoConstraints="NO" id="7XQ-60-lQc">
+                        <rect key="frame" x="103" y="279" width="51" height="53"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="51" id="5C0-xp-cQV"/>
+                            <constraint firstAttribute="height" constant="53" id="hsx-nj-kFb"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="E6k-n9-VSC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="4Lm-Q8-rrB"/>
+                <constraint firstAttribute="bottom" secondItem="7XQ-60-lQc" secondAttribute="bottom" id="9Io-2v-ntl"/>
+                <constraint firstItem="yA2-W1-oKx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="36" id="BeP-GY-eak"/>
+                <constraint firstAttribute="bottom" secondItem="E6k-n9-VSC" secondAttribute="bottom" constant="25" id="MRy-vc-OJD"/>
+                <constraint firstItem="oJ8-VC-Lhv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="QqY-q2-nf2"/>
+                <constraint firstAttribute="trailing" secondItem="oJ8-VC-Lhv" secondAttribute="trailing" constant="24" id="e50-UY-5Vc"/>
+                <constraint firstItem="7XQ-60-lQc" firstAttribute="centerX" secondItem="E6k-n9-VSC" secondAttribute="centerX" id="f0x-w2-42h"/>
+                <constraint firstAttribute="trailing" secondItem="E6k-n9-VSC" secondAttribute="trailing" constant="15" id="f3R-LF-AAQ"/>
+                <constraint firstItem="E6k-n9-VSC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="hgt-Fx-OBL"/>
+                <constraint firstAttribute="bottom" secondItem="yA2-W1-oKx" secondAttribute="bottom" constant="35" id="ukk-TK-hg3"/>
+            </constraints>
+            <size key="customSize" width="257" height="332"/>
+            <connections>
+                <outlet property="familiarGuide" destination="E6k-n9-VSC" id="pdb-cp-jwm"/>
+                <outlet property="guildBadge" destination="yA2-W1-oKx" id="5NJ-aH-GRD"/>
+                <outlet property="petTrainer" destination="oJ8-VC-Lhv" id="yc7-bt-5BM"/>
+                <outlet property="planetariumView" destination="7XQ-60-lQc" id="WZi-8W-EaF"/>
+            </connections>
+            <point key="canvasLocation" x="188.54961832061068" y="119.71830985915494"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="1vninu" width="53" height="53"/>
+        <image name="ProAlert15=4" width="32" height="32"/>
+        <image name="laonging" width="22" height="22"/>
+    </resources>
+</document>

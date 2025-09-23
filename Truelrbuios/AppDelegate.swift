@@ -16,9 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftyStoreKit.completeTransactions(atomically: true) { _ in
             
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateingNotnoeUser), name: NSNotification.Name.init("Blockuseraction"), object: nil)
         return true
     }
-
+    
+    //更新user  移除黑名单数据
+   @objc func updateingNotnoeUser()  {
+       SharedTopicsController.getingallUser = SharedTopicsController.getingallUser.filter {
+           return !MonkDisciplineController.bloackuserID.contains($0["mangaPanel"] as? Int ?? 0)
+       }
+  
+   }
 
 }
 

@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -200,7 +199,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x5G-KW-Zvc">
                                         <rect key="frame" x="15" y="88" width="345" height="343"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <mutableString key="text">This End User License Agreement (“Agreement”) governs your use of the Truelr mobile application (“App”), developed for fans and enthusiasts of cosplay and related creative communities. By downloading, installing, or using Truelr, you agree to be bound by the terms of this Agreement.
+                                        <string key="text">This End User License Agreement (“Agreement”) governs your use of the Truelr mobile application (“App”), developed for fans and enthusiasts of cosplay and related creative communities. By downloading, installing, or using Truelr, you agree to be bound by the terms of this Agreement.
 Truelr grants you a limited, non-transferable, non-exclusive license to use the App solely for personal, non-commercial purposes. You may not copy, modify, reverse engineer, or distribute any portion of the App without prior written consent. All intellectual property, including but not limited to designs, logos, and features, remains the property of Truelr.
 User Conduct Restrictions
 You agree not to use the App to:
@@ -212,7 +211,7 @@ Termination
 Truelr reserves the right to suspend or permanently terminate accounts that violate this Agreement or disrupt the community experience. Termination may occur without prior notice if behavior is found to be abusive, unlawful, or damaging to the integrity of the platform.
 By continuing to use Truelr, you acknowledge and accept these terms.
 Last Updated: 2025-09-20
-Contact: Truelr1234@gmail.com</mutableString>
+Contact: Truelr1234@gmail.com</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -804,6 +803,7 @@ Contact: Truelr1234@gmail.com</mutableString>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="beiwkei1" selectedImage="beiwkeiZER1" id="7CC-iy-xEC"/>
                     <connections>
+                        <outlet property="enenuLani" destination="Fzb-FR-0Zr" id="cEP-MH-zPS"/>
                         <outlet property="mangaPanel" destination="1gP-5Q-uog" id="WYh-eP-nB5"/>
                         <outlet property="planetariumView" destination="1gP-5Q-uog" id="aia-6K-X0f"/>
                     </connections>
@@ -864,6 +864,9 @@ Contact: Truelr1234@gmail.com</mutableString>
                                 <state key="normal" title="  0" backgroundImage="villainProfile">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="actingCoach:" destination="WEL-ei-HTz" eventType="touchUpInside" id="3zb-Di-Jhl"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mythRealm" translatesAutoresizingMaskIntoConstraints="NO" id="dL9-XS-H5w">
                                 <rect key="frame" x="40" y="89" width="295" height="59"/>
@@ -880,40 +883,7 @@ Contact: Truelr1234@gmail.com</mutableString>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dNw-M8-3El">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UF7-Jx-gfZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RVf-YN-8Bv">
-                                        <rect key="frame" x="215" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4v7-89-TIN">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ubH-Tz-u1O">
-                                        <rect key="frame" x="0.0" y="138" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tpX-Nz-i6T">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IvX-bI-oA5">
-                                        <rect key="frame" x="215" y="138" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BQj-LT-R0p">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3b-wX-GRI">
                                 <rect key="frame" x="143.5" y="367.5" width="88" height="88"/>
@@ -923,6 +893,9 @@ Contact: Truelr1234@gmail.com</mutableString>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" backgroundImage="loreLibrary"/>
+                                <connections>
+                                    <action selector="harmonyHall:" destination="WEL-ei-HTz" eventType="touchUpInside" id="CE4-pb-kZX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="esr-ue-Xu6"/>
@@ -953,6 +926,10 @@ Contact: Truelr1234@gmail.com</mutableString>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LjP-MF-GPD"/>
+                    <connections>
+                        <outlet property="fantasyAtlas" destination="ART-K6-cBj" id="xKd-Ff-zZ9"/>
+                        <outlet property="planetariumView" destination="y1O-6A-nUv" id="uhf-9W-MgQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7k-T2-pRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ZWW-3f-UCr" userLabel="Exit" sceneMemberID="exit"/>
@@ -1261,7 +1238,7 @@ Contact: Truelr1234@gmail.com</mutableString>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="fanart"/>
                                 <connections>
-                                    <segue destination="vzT-Fh-y21" kind="unwind" unwindAction="unwindToLike:" id="vvs-KX-voJ"/>
+                                    <segue destination="vzT-Fh-y21" kind="unwind" unwindAction="unwindToMessage:" id="JUf-e3-W9z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4w-9g-02V">
@@ -1744,16 +1721,33 @@ Contact: Truelr1234@gmail.com</mutableString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1c-fs-PLw">
-                                <rect key="frame" x="16.5" y="507" width="342" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="12" y="507" width="169.5" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="bz2-gO-gHk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Sure" backgroundImage="heroArchive5"/>
+                                <state key="normal" title="Report">
+                                    <color key="titleColor" red="0.97647058963775635" green="0.37254902720451355" blue="0.54901963472366333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="druidCircle:" destination="v8b-cl-Mmd" eventType="touchUpInside" id="2cH-nw-Yoo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtM-av-z2t">
+                                <rect key="frame" x="193.5" y="507" width="169.5" height="60"/>
+                                <color key="backgroundColor" red="0.97647058959999999" green="0.37254902719999999" blue="0.54901963470000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ILL-1o-H3N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Report&amp;Block"/>
+                                <connections>
+                                    <action selector="labyrinthPath:" destination="G5r-Ba-471" eventType="touchUpInside" id="gTy-go-Fef"/>
+                                    <action selector="legendHall:" destination="v8b-cl-Mmd" eventType="touchUpInside" id="VPX-8B-5jK"/>
+                                    <action selector="scriptRoom:" destination="8qE-Ye-wsO" eventType="touchUpInside" id="L8y-hN-tWq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1765,6 +1759,7 @@ Contact: Truelr1234@gmail.com</mutableString>
                             <constraint firstItem="gUS-Xp-4tH" firstAttribute="leading" secondItem="ST2-Z5-8gl" secondAttribute="leading" id="9I5-yf-mXP"/>
                             <constraint firstItem="oPU-0E-YQD" firstAttribute="centerX" secondItem="it4-64-rbY" secondAttribute="centerX" id="9kl-q5-XCn"/>
                             <constraint firstItem="a2d-4G-vSI" firstAttribute="leading" secondItem="cHh-WA-cuD" secondAttribute="trailing" constant="20" id="Bct-L8-oHy"/>
+                            <constraint firstItem="F1c-fs-PLw" firstAttribute="leading" secondItem="222-6Q-5N1" secondAttribute="leading" constant="12" id="BsK-8i-ekU"/>
                             <constraint firstItem="86P-R7-R1S" firstAttribute="top" secondItem="ST2-Z5-8gl" secondAttribute="top" id="CIE-3O-he4"/>
                             <constraint firstItem="ST2-Z5-8gl" firstAttribute="leading" secondItem="cHh-WA-cuD" secondAttribute="leading" id="F2p-OB-nIY"/>
                             <constraint firstItem="cHh-WA-cuD" firstAttribute="top" secondItem="xN2-rp-w6i" secondAttribute="bottom" constant="37" id="Ff9-0v-DK7"/>
@@ -1776,24 +1771,29 @@ Contact: Truelr1234@gmail.com</mutableString>
                             <constraint firstItem="N5B-bg-Mau" firstAttribute="leading" secondItem="gUS-Xp-4tH" secondAttribute="leading" id="Vu5-oq-AVD"/>
                             <constraint firstItem="xN2-rp-w6i" firstAttribute="leading" secondItem="222-6Q-5N1" secondAttribute="leading" constant="16" id="Y3b-Hz-dmh"/>
                             <constraint firstAttribute="trailing" secondItem="Ube-YJ-d2X" secondAttribute="trailing" id="Zyr-es-jJU"/>
+                            <constraint firstItem="FtM-av-z2t" firstAttribute="width" secondItem="F1c-fs-PLw" secondAttribute="width" id="alq-DG-LKp"/>
                             <constraint firstItem="222-6Q-5N1" firstAttribute="bottom" secondItem="F1c-fs-PLw" secondAttribute="bottom" constant="80" id="bfJ-Uv-XXj"/>
                             <constraint firstItem="MNA-z2-O5D" firstAttribute="top" secondItem="gUS-Xp-4tH" secondAttribute="top" id="dB7-gx-Wel"/>
-                            <constraint firstItem="F1c-fs-PLw" firstAttribute="centerX" secondItem="it4-64-rbY" secondAttribute="centerX" id="dGW-YI-8GK"/>
                             <constraint firstAttribute="bottom" secondItem="Ube-YJ-d2X" secondAttribute="bottom" id="eyW-Nj-pOR"/>
                             <constraint firstItem="ST2-Z5-8gl" firstAttribute="top" secondItem="cHh-WA-cuD" secondAttribute="bottom" constant="29" id="gb8-m6-waR"/>
                             <constraint firstItem="cHh-WA-cuD" firstAttribute="leading" secondItem="222-6Q-5N1" secondAttribute="leading" constant="20" id="jWN-Ia-als"/>
                             <constraint firstItem="222-6Q-5N1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="86P-R7-R1S" secondAttribute="trailing" symbolic="YES" id="krF-4v-687"/>
                             <constraint firstItem="222-6Q-5N1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3nR-PY-Tyj" secondAttribute="trailing" symbolic="YES" id="l5T-rT-7CG"/>
+                            <constraint firstItem="FtM-av-z2t" firstAttribute="leading" secondItem="F1c-fs-PLw" secondAttribute="trailing" constant="12" id="l6j-R1-B7s"/>
+                            <constraint firstItem="FtM-av-z2t" firstAttribute="centerY" secondItem="F1c-fs-PLw" secondAttribute="centerY" id="lIG-Fd-Y3e"/>
                             <constraint firstItem="a2d-4G-vSI" firstAttribute="top" secondItem="cHh-WA-cuD" secondAttribute="top" id="mdz-85-Z33"/>
                             <constraint firstItem="xN2-rp-w6i" firstAttribute="top" secondItem="222-6Q-5N1" secondAttribute="top" constant="3" id="oP6-2W-JLc"/>
                             <constraint firstItem="86P-R7-R1S" firstAttribute="leading" secondItem="ST2-Z5-8gl" secondAttribute="trailing" constant="20" id="onF-UT-yXx"/>
                             <constraint firstItem="MNA-z2-O5D" firstAttribute="leading" secondItem="gUS-Xp-4tH" secondAttribute="trailing" constant="20" id="pxQ-Im-dw7"/>
                             <constraint firstItem="3nR-PY-Tyj" firstAttribute="leading" secondItem="N5B-bg-Mau" secondAttribute="trailing" constant="20" id="qGl-Et-dHo"/>
+                            <constraint firstItem="222-6Q-5N1" firstAttribute="trailing" secondItem="FtM-av-z2t" secondAttribute="trailing" constant="12" id="sFq-2a-Aya"/>
                             <constraint firstItem="xN2-rp-w6i" firstAttribute="centerY" secondItem="oPU-0E-YQD" secondAttribute="centerY" id="vLZ-qX-fws"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ddo-DT-YJB"/>
                     <connections>
+                        <outlet property="blaockinh" destination="FtM-av-z2t" id="JQn-0q-eOc"/>
+                        <outlet property="onluying" destination="F1c-fs-PLw" id="c92-K5-i8y"/>
                         <outlet property="sageTeachings" destination="cHh-WA-cuD" id="vDA-7h-wCj"/>
                         <outlet property="sageTeachings1" destination="ST2-Z5-8gl" id="YI9-ff-XBx"/>
                         <outlet property="sageTeachings2" destination="gUS-Xp-4tH" id="osK-v4-Tlb"/>
@@ -1802,7 +1802,7 @@ Contact: Truelr1234@gmail.com</mutableString>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yc-qp-Bsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2298.4732824427479" y="2348.5915492957747"/>
+            <point key="canvasLocation" x="2298.4000000000001" y="2348.2758620689656"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s6O-19-cG4">
@@ -2049,10 +2049,10 @@ Contact: Truelr1234@gmail.com</mutableString>
             </objects>
             <point key="canvasLocation" x="-354.39999999999998" y="3388.1559220389809"/>
         </scene>
-        <!--View Controller-->
+        <!--Chara Meaas Controller-->
         <scene sceneID="FpJ-G1-oqu">
             <objects>
-                <viewController id="Evi-kc-mH0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CharaMeaasController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Evi-kc-mH0" customClass="CharaMeaasController" customModule="Truelrbuios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oag-9s-PH8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2060,6 +2060,17 @@ Contact: Truelr1234@gmail.com</mutableString>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transformation" translatesAutoresizingMaskIntoConstraints="NO" id="ejz-zc-8Xm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="goA-Al-nb2">
+                                <rect key="frame" x="0.0" y="188" width="375" height="479"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="no message yet  ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ntg-Zh-Oy5">
+                                <rect key="frame" x="94" y="311" width="164" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.18823529780000001" green="0.18823529780000001" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ras-aN-4yy">
                                 <rect key="frame" x="16" y="32" width="168.5" height="33.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
@@ -2069,69 +2080,67 @@ Contact: Truelr1234@gmail.com</mutableString>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4YR-2W-JQ6">
                                 <rect key="frame" x="16" y="81.5" width="343" height="84"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdg-Eg-AAB">
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdg-Eg-AAB">
                                         <rect key="frame" x="0.0" y="0.0" width="109" height="84"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="chatinginh_h"/>
                                         <state key="selected" image="chatinginh"/>
+                                        <connections>
+                                            <action selector="clanCircle:" destination="Evi-kc-mH0" eventType="touchUpInside" id="MUC-zF-XBP"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRQ-Np-JnH">
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRQ-Np-JnH">
                                         <rect key="frame" x="117" y="0.0" width="109" height="84"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="miuelingjrk"/>
                                         <state key="selected" image="miuelingjrkYeur"/>
+                                        <connections>
+                                            <action selector="clanCircle:" destination="Evi-kc-mH0" eventType="touchUpInside" id="JzL-D9-Fwv"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug3-re-kzn">
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug3-re-kzn">
                                         <rect key="frame" x="234" y="0.0" width="109" height="84"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="interintertLink"/>
                                         <state key="selected" image="nitertlink"/>
+                                        <connections>
+                                            <action selector="clanCircle:" destination="Evi-kc-mH0" eventType="touchUpInside" id="ET2-UM-Ow8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="UIK-jv-DIy"/>
                                 </constraints>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dXR-yD-FMt">
-                                <rect key="frame" x="16" y="187.5" width="343" height="479.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yU2-kq-bfI">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xMh-WH-G21">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="40x-JJ-uMr">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rIx-SD-Jwi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4YR-2W-JQ6" firstAttribute="top" secondItem="Ras-aN-4yy" secondAttribute="bottom" constant="16" id="0HV-pr-aZP"/>
-                            <constraint firstAttribute="bottom" secondItem="dXR-yD-FMt" secondAttribute="bottom" id="3Cl-l5-6Bg"/>
+                            <constraint firstItem="goA-Al-nb2" firstAttribute="leading" secondItem="oag-9s-PH8" secondAttribute="leading" id="5nS-KR-0qZ"/>
                             <constraint firstItem="ejz-zc-8Xm" firstAttribute="leading" secondItem="rIx-SD-Jwi" secondAttribute="leading" id="7aU-sm-uoP"/>
                             <constraint firstItem="Ras-aN-4yy" firstAttribute="top" secondItem="rIx-SD-Jwi" secondAttribute="top" constant="12" id="GkZ-cF-EMk"/>
+                            <constraint firstItem="goA-Al-nb2" firstAttribute="top" secondItem="Ntg-Zh-Oy5" secondAttribute="bottom" constant="-166" id="HWY-85-IZb"/>
+                            <constraint firstItem="Ntg-Zh-Oy5" firstAttribute="centerX" secondItem="4YR-2W-JQ6" secondAttribute="centerX" id="InE-Lr-MJf"/>
+                            <constraint firstAttribute="bottom" secondItem="goA-Al-nb2" secondAttribute="bottom" id="MXg-4b-Jx2"/>
                             <constraint firstItem="ejz-zc-8Xm" firstAttribute="trailing" secondItem="rIx-SD-Jwi" secondAttribute="trailing" id="Ppx-Hi-L7N"/>
-                            <constraint firstItem="rIx-SD-Jwi" firstAttribute="trailing" secondItem="dXR-yD-FMt" secondAttribute="trailing" constant="16" id="RCR-2b-1F3"/>
+                            <constraint firstItem="goA-Al-nb2" firstAttribute="top" secondItem="4YR-2W-JQ6" secondAttribute="bottom" constant="22.5" id="a3N-XH-wR4"/>
                             <constraint firstItem="Ras-aN-4yy" firstAttribute="leading" secondItem="rIx-SD-Jwi" secondAttribute="leading" constant="16" id="axy-gX-Rvf"/>
                             <constraint firstItem="4YR-2W-JQ6" firstAttribute="leading" secondItem="rIx-SD-Jwi" secondAttribute="leading" constant="16" id="bCD-Tp-krU"/>
                             <constraint firstItem="ejz-zc-8Xm" firstAttribute="top" secondItem="oag-9s-PH8" secondAttribute="top" id="cn9-NM-Wbm"/>
                             <constraint firstAttribute="bottom" secondItem="ejz-zc-8Xm" secondAttribute="bottom" id="hXc-rv-gmH"/>
-                            <constraint firstItem="dXR-yD-FMt" firstAttribute="leading" secondItem="rIx-SD-Jwi" secondAttribute="leading" constant="16" id="llg-ne-hkc"/>
-                            <constraint firstItem="dXR-yD-FMt" firstAttribute="top" secondItem="4YR-2W-JQ6" secondAttribute="bottom" constant="22" id="mzh-jn-cIr"/>
+                            <constraint firstItem="goA-Al-nb2" firstAttribute="trailing" secondItem="rIx-SD-Jwi" secondAttribute="trailing" id="tVE-6t-1vG"/>
                             <constraint firstItem="rIx-SD-Jwi" firstAttribute="trailing" secondItem="4YR-2W-JQ6" secondAttribute="trailing" constant="16" id="yAL-8A-UPL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="beiwkei3" selectedImage="beiwkeiZER3" id="WDa-u5-2xP"/>
+                    <connections>
+                        <outlet property="enchantmentLab" destination="qdg-Eg-AAB" id="2kB-RH-1Wp"/>
+                        <outlet property="enchantmentLab1" destination="IRQ-Np-JnH" id="3qc-0M-DxK"/>
+                        <outlet property="enchantmentLab2" destination="Ug3-re-kzn" id="J7n-lb-Znm"/>
+                        <outlet property="improvStage" destination="goA-Al-nb2" id="SLq-N7-Ddk"/>
+                        <outlet property="noconemr" destination="Ntg-Zh-Oy5" id="IPP-j4-wvI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pg-Sl-3Xd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
