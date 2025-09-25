@@ -44,6 +44,7 @@ class EventEcentController: UIViewController {
     @IBAction func minstrelTune(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
+            mainViewController.userINfoID = nil
             self.present(mainViewController, animated: true)
            
         }

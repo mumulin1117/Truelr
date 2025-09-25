@@ -10,6 +10,12 @@ import FSPagerView
 import SVProgressHUD
 class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate  {
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.PlayingView.sparkOff()
+        self.centerpaling.isSelected = false
+    }
+    
     @IBOutlet weak var bagjint: UIView!
     @IBOutlet weak var actingCoachBack: UIImageView!
     
@@ -55,14 +61,17 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
     func maskTheatre()  {
         if dymTyoe == 1 {//video
             zodiacSignTitleLabel.text = "Short video"
-            actingCoachBack.displayCharacterPortrait(from: cellModelFot.guildBadge)
+//            actingCoachBack.displayCharacterPortrait(from: cellModelFot.guildBadge)
             centerpaling.isHidden = false
+            
+            self.actingCoachBack.insertSubview(self.PlayingView, at: 0)
         }else{//轮播图
             centerpaling.isHidden = true
             setupPager()
             zodiacSignTitleLabel.text = "Dynamic Details"
         }
-
+        NotificationCenter.default.addObserver(self, selector: #selector(suteiback), name: NSNotification.Name.init("Blockuseraction"), object: nil)
+ 
         
         spellBook.displayCharacterPortrait(from: cellModelFot.improvStage)
         
@@ -101,6 +110,19 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
         
     }
     
+    private lazy var PlayingView: AuroraReelBox = {
+        let videoView = AuroraReelBox(frame: self.view.bounds)
+        if let page = cellModelFot.battleScene?.first {
+            videoView.igniteStream(resource:page )
+        }
+        
+        return videoView
+    }()
+    
+    
+    
+    
+   
        private func setupPager() {
            // 创建 PagerView
            pagerView = FSPagerView(frame:UIScreen.main.bounds)
@@ -162,6 +184,18 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
         }
     }
     
+    @IBAction func inspirationWall(_ sender: UIButton) {
+        if let userfislr = SharedTopicsController.getingallUser.filter({ fdr in
+            fdr["mangaPanel"] as? Int == cellModelFot.storyboardPanel
+        }).first{
+           let innner =   ArenaStageController.init(cellModelFot: cellModelFot,dymTyoe: dymTyoe,nisertgeing: userfislr)
+              
+              self.navigationController?.pushViewController(innner, animated: true)
+           
+       }
+        
+     
+    }
     
     
     @IBOutlet weak var centerpaling: UIButton!
@@ -179,11 +213,34 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
     @IBAction func rpeouingtety(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
+            mainViewController.userINfoID = nil
             self.present(mainViewController, animated: true)
            
         }
         
     }
     
+    @IBAction func puzzleCorner(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            self.PlayingView.sparkOn()
+        }else{
+            self.PlayingView.sparkOff()
+        }
+        
+    }
     
+    @IBAction func sayHi(_ sender: Any) {
+        if let userfislr = SharedTopicsController.getingallUser.filter({ fdr in
+            fdr["mangaPanel"] as? Int == cellModelFot.storyboardPanel
+        }).first{
+           let innner =   DanceRoutineController.init( nisertgeing: userfislr)
+              
+              self.navigationController?.pushViewController(innner, animated: true)
+           
+       }
+        
+        
+    }
 }

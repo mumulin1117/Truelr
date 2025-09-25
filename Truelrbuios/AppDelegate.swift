@@ -23,10 +23,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //更新user  移除黑名单数据
    @objc func updateingNotnoeUser()  {
-       SharedTopicsController.getingallUser = SharedTopicsController.getingallUser.filter {
-           return !MonkDisciplineController.bloackuserID.contains($0["mangaPanel"] as? Int ?? 0)
+       SharedTopicsController.getingallUser = SharedTopicsController.getingallUser.filter { reijut in//contains(where: $0["mangaPanel"] as? Int )
+           return !MonkDisciplineController.bloackuserID.contains { resufi in
+               resufi["mangaPanel"] as? Int == reijut["mangaPanel"] as? Int
+           }
        }
   
+       
+       
+       CharaMeaasController.likelist = CharaMeaasController.likelist.filter { reijut in//contains(where: $0["mangaPanel"] as? Int )
+           return !MonkDisciplineController.bloackuserID.contains { resufi in
+               resufi["mangaPanel"] as? Int == reijut["mangaPanel"] as? Int
+           }
+       }
    }
 
 }

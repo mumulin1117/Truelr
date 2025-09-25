@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArenaStageController" customModule="Truelrbuios" customModuleProvider="target">
+            <connections>
+                <outlet property="mangaPanel" destination="vVK-aM-jxA" id="xPf-he-lsf"/>
+                <outlet property="questBoard" destination="wxD-eA-arf" id="lSv-NK-7md"/>
+                <outlet property="view" destination="WoM-4i-3wB" id="hb6-MQ-EDT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="WoM-4i-3wB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transformation" translatesAutoresizingMaskIntoConstraints="NO" id="blR-yI-q6N">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vVK-aM-jxA">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GKb-rH-lEw">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0x-OA-Wjn">
+                    <rect key="frame" x="16" y="26" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="TIJ-xW-3Eh"/>
+                        <constraint firstAttribute="height" constant="28" id="jwk-jg-cHQ"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="chevron.backward" catalog="system"/>
+                    <connections>
+                        <action selector="suteiback:" destination="-1" eventType="touchUpInside" id="C7X-97-kG4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlC-h3-NGx">
+                    <rect key="frame" x="331" y="26" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="01l-XM-zna"/>
+                        <constraint firstAttribute="height" constant="28" id="7JX-UI-nLN"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="moantr"/>
+                    <connections>
+                        <action selector="enchantmentLab:" destination="-1" eventType="touchUpInside" id="mRQ-da-jBS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxD-eA-arf">
+                    <rect key="frame" x="242" y="28" width="74" height="24"/>
+                    <color key="backgroundColor" red="0.99215686321258545" green="0.81568628549575806" blue="0.86666667461395264" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="jpI-Qs-HOh"/>
+                        <constraint firstAttribute="width" constant="74" id="mGz-2C-8il"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="ehutio"/>
+                    <state key="selected" backgroundImage="ehutioed"/>
+                    <connections>
+                        <action selector="maingkINsatario:" destination="-1" eventType="touchUpInside" id="692-hb-Ltj"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="LmR-V8-8EM"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="wxD-eA-arf" firstAttribute="centerY" secondItem="OlC-h3-NGx" secondAttribute="centerY" id="0gh-6X-krP"/>
+                <constraint firstItem="blR-yI-q6N" firstAttribute="leading" secondItem="LmR-V8-8EM" secondAttribute="leading" id="30t-l1-YXY"/>
+                <constraint firstItem="vVK-aM-jxA" firstAttribute="trailing" secondItem="LmR-V8-8EM" secondAttribute="trailing" id="848-q4-KEA"/>
+                <constraint firstItem="LmR-V8-8EM" firstAttribute="trailing" secondItem="OlC-h3-NGx" secondAttribute="trailing" constant="16" id="CAS-3e-DGw"/>
+                <constraint firstItem="i0x-OA-Wjn" firstAttribute="leading" secondItem="LmR-V8-8EM" secondAttribute="leading" constant="16" id="NTS-C9-QKi"/>
+                <constraint firstAttribute="bottom" secondItem="blR-yI-q6N" secondAttribute="bottom" id="OAS-h5-coW"/>
+                <constraint firstItem="vVK-aM-jxA" firstAttribute="leading" secondItem="LmR-V8-8EM" secondAttribute="leading" id="U6D-2i-4vQ"/>
+                <constraint firstItem="i0x-OA-Wjn" firstAttribute="top" secondItem="LmR-V8-8EM" secondAttribute="top" constant="6" id="UwF-og-21p"/>
+                <constraint firstItem="OlC-h3-NGx" firstAttribute="centerY" secondItem="i0x-OA-Wjn" secondAttribute="centerY" id="X3F-sa-FqF"/>
+                <constraint firstItem="blR-yI-q6N" firstAttribute="trailing" secondItem="LmR-V8-8EM" secondAttribute="trailing" id="ger-Dj-7Og"/>
+                <constraint firstItem="vVK-aM-jxA" firstAttribute="top" secondItem="WoM-4i-3wB" secondAttribute="top" id="hmS-OH-Nkj"/>
+                <constraint firstItem="blR-yI-q6N" firstAttribute="top" secondItem="WoM-4i-3wB" secondAttribute="top" id="kEm-mb-U1O"/>
+                <constraint firstItem="vVK-aM-jxA" firstAttribute="bottom" secondItem="LmR-V8-8EM" secondAttribute="bottom" id="mG5-cR-UZ1"/>
+                <constraint firstItem="OlC-h3-NGx" firstAttribute="leading" secondItem="wxD-eA-arf" secondAttribute="trailing" constant="15" id="vu7-Xy-VJg"/>
+            </constraints>
+            <point key="canvasLocation" x="66.400000000000006" y="20.239880059970016"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="ehutio" width="63.5" height="25.5"/>
+        <image name="ehutioed" width="75.5" height="25.5"/>
+        <image name="moantr" width="28" height="28"/>
+        <image name="transformation" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

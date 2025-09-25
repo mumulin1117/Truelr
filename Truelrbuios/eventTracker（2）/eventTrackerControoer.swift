@@ -14,7 +14,10 @@ class eventTrackerControoer: UIViewController, UICollectionViewDataSource, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        if SharedTopicsController.getingallUser.count >= 4 {
+            return 4
+        }
+        return SharedTopicsController.getingallUser.count
     }
     
     
@@ -38,6 +41,7 @@ class eventTrackerControoer: UIViewController, UICollectionViewDataSource, UICol
    @objc func rpeouingtety(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
+            mainViewController.userINfoID = nil
             self.present(mainViewController, animated: true)
            
         }

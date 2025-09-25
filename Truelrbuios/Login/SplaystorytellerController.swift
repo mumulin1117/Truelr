@@ -73,8 +73,12 @@ class SplaystorytellerController: UIViewController {
                     
                     return
                 }
+                
+                UserDefaults.standard.set(email, forKey: "userimajrl")
+                
+                
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                ViewController.ExestedLogUserPhotp = user["secretPassage"] as? String
+
                 ViewController.ExestedLogUserID = user["dungeonGuide"] as? Int
                 let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
                 UserDefaults.standard.set( user["valorStory"], forKey: "valorStory")//token
@@ -82,7 +86,13 @@ class SplaystorytellerController: UIViewController {
                     keyWindow?.rootViewController = mainViewController
                     SVProgressHUD.showSuccess(withStatus: "Log in successful!")
                 }
-             
+                   
+                if email == "truelr@gmail.com"  {//测试账号
+                    lensCraftController.changeinmge = UIImage(named: "lisjimage")!
+                    UserDefaults.standard.set("Vivian", forKey: "userimajrl")
+                    UserDefaults.standard.set("Discovering 🌟Beauty in Life", forKey: "Introduction")
+                    UserDefaults.standard.set("23", forKey: "IntroAge")
+                }
                 
             case .failure(let error):
                 SVProgressHUD.showInfo(withStatus: error.localizedDescription)

@@ -7,15 +7,23 @@
 
 import UIKit
 
+class SendingMeass: NSObject {
+    var user: Dictionary<String,Any> = [:]
+    var messageList:Array<String> = []
+}
+
 class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     private var mangaPanel:Int = 2
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        improvStage.reloadData()
+    }
+    static var chatlist:Array<SendingMeass> = Array<SendingMeass>()
     
-    private var chatlist:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
-    
-    private var likelist:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
-    
+    static var likelist:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
+    static var matchingSuccessfullist:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
 
     @IBOutlet weak var enchantmentLab: UIButton!
     
@@ -36,9 +44,9 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
         }
         
         if mangaPanel == 0 {
-            return chatlist.count
+            return CharaMeaasController.chatlist.count
         }
-        return  likelist.count
+        return  CharaMeaasController.likelist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,27 +56,33 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
             reuser.enchantmentLab.addTarget(self, action: #selector(designBlueprint), for: .touchUpInside)
             reuser.potionWorkshop.addTarget(self, action: #selector(modelSculpt), for: .touchUpInside)
             reuser.runeStone.addTarget(self, action: #selector(moodBoard), for: .touchUpInside)
+            reuser.travelDiary.addTarget(self, action: #selector(matinglistlueprint), for: .touchUpInside)
             return reuser
             
         }else{
             
-            let reuser =  tableView.dequeueReusableCell(withIdentifier: "SendCommentConchat") ??
-             UITableViewCell(style: .subtitle, reuseIdentifier: "SendCommentConchat")
+            let reuser =  tableView.dequeueReusableCell(withIdentifier: "REallListchiwCell", for: indexPath) as! REallListchiwCell
              
             
              reuser.selectionStyle = .none
-             var infog = chatlist[indexPath.row]
+            
             if mangaPanel == 0 {
-                infog =  chatlist[indexPath.row]
+                let infog =  CharaMeaasController.chatlist[indexPath.row]
+                reuser.avatarView.displayCharacterPortrait(from:infog.user["villainProfile"] as? String )
+              
+                reuser.nameLabel.text = infog.user["heroArchive"] as? String
+                
+                reuser.sayiedLabel.text = infog.messageList.first
             }else{
-                infog =  likelist[indexPath.row]
+                var infog =  CharaMeaasController.likelist[indexPath.row]
+                reuser.avatarView.displayCharacterPortrait(from:infog["villainProfile"] as? String )
+                
+                reuser.nameLabel.text = infog["heroArchive"] as? String
+                
+                reuser.sayiedLabel.text = "You Like She/he,To connect!"
             }
             
-             reuser.imageView?.displayCharacterPortrait(from:infog["folkloreRoom"] as? String )
-             reuser.imageView?.maskedlabeVobor(enter: 25)
-             reuser.textLabel?.text = infog["folkloreRoom"] as? String
-             
-             reuser.detailTextLabel?.text = infog["mythologyVault"] as? String
+          
              return reuser
         }
       
@@ -81,13 +95,31 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
         return 80
         
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if mangaPanel == 0 {
+            let infog =  CharaMeaasController.chatlist[indexPath.row].user
+            
+     
+            self.navigationController?.pushViewController(DanceRoutineController.init(nisertgeing: infog), animated: true)
+        }
+        
+        if mangaPanel == 1 {
+            let infog =  CharaMeaasController.likelist[indexPath.row]
+            
+     
+            self.navigationController?.pushViewController(ArenaStageController.init(nisertgeing: infog), animated: true)
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         improvStage.separatorStyle = .none
         improvStage.delegate = self
         improvStage.dataSource = self
         improvStage.estimatedRowHeight = 100
-        improvStage.register(UITableViewCell.self, forCellReuseIdentifier: "SendCommentConchat")
+        improvStage.register(REallListchiwCell.self, forCellReuseIdentifier: "REallListchiwCell")
         improvStage.backgroundColor = .clear
         improvStage.register(UINib(nibName: "MatchingabelCell", bundle: nil), forCellReuseIdentifier: "MatchingabelCell")
         
@@ -96,12 +128,12 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
     
     func uprenerwr()  {
         
-        if mangaPanel == 0 &&  chatlist.count == 0{
+        if mangaPanel == 0 &&  CharaMeaasController.chatlist.count == 0{
             noconemr.isHidden = false
             noconemr.text = "No message yet"
         }
         
-        if mangaPanel == 1 &&  likelist.count == 0{
+        if mangaPanel == 1 &&  CharaMeaasController.likelist.count == 0{
             noconemr.isHidden = false
             noconemr.text = "No like yet"
         }
@@ -133,6 +165,11 @@ extension CharaMeaasController{
             
             self.navigationController?.pushViewController(mainViewController, animated: true)
         }
+    }
+    
+    @objc func matinglistlueprint(){//history
+        
+        self.navigationController?.pushViewController(DesignBlueprintController.init(mode: .successgfulhistory), animated: true)
     }
     
     

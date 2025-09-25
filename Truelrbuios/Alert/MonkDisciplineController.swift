@@ -10,16 +10,9 @@ import SVProgressHUD
 //举报
 class MonkDisciplineController: UIViewController {
     
-    static var bloackuserID:Array<Int> = Array<Int>()
+    static var bloackuserID:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
     
-    var userINfoID:Int?{
-        didSet{
-            if userINfoID == nil {
-                blaockinh.isHidden = true
-                onluying.center.x = self.view.center.x
-            }
-        }
-    }
+    var userINfoID:Dictionary<String,Any>?
     
     
     
@@ -52,7 +45,7 @@ class MonkDisciplineController: UIViewController {
         
         blaockinh.maskedlabeVobor(enter: 30)
         onluying.maskedlabeVobor(enter: 30)
-        
+        shanfert.maskedlabeVobor(enter: 30)
         
     }
     
@@ -70,8 +63,20 @@ class MonkDisciplineController: UIViewController {
         ifChiocedReason = true
         
     }
+    @IBOutlet weak var shanfert: UIButton!
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if userINfoID == nil {
+            blaockinh.isHidden = true
+            onluying.isHidden = true
+            shanfert.isHidden = false
+        }else{
+            blaockinh.isHidden = false
+            onluying.isHidden = false
+            shanfert.isHidden = true
+        }
+    }
     
     
     @IBAction func suteiback(_ sender: Any) {
@@ -100,6 +105,9 @@ class MonkDisciplineController: UIViewController {
     
     
     @IBAction func legendHall(_ sender: UIButton) {//拉黑并举报
+        if userINfoID == nil {
+            return
+        }
         guard ifChiocedReason else{
            SVProgressHUD.showInfo(withStatus: "Please check one reason for your report!")
                    
@@ -117,7 +125,7 @@ class MonkDisciplineController: UIViewController {
         let confirm = UIAlertAction(title: "Block", style: .destructive) { _ in
             self.navigationController?.popViewController(animated: true)
             self.dismiss(animated: true)
-            MonkDisciplineController.bloackuserID.append(self.userINfoID ?? 0)
+            MonkDisciplineController.bloackuserID.append(self.userINfoID ?? [:])
             NotificationCenter.default.post(name: NSNotification.Name.init("Blockuseraction"), object: nil)
         }
         

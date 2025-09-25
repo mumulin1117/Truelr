@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpicVerseController" customModule="Truelrbuios" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transformation" translatesAutoresizingMaskIntoConstraints="NO" id="tpF-Ag-FEX">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxa-Q3-Xbk">
+                    <rect key="frame" x="16" y="65" width="52" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="52" id="bOe-f8-V2V"/>
+                        <constraint firstAttribute="height" constant="52" id="sIf-Ar-Klj"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="fanart"/>
+                    <connections>
+                        <action selector="yuqihang:" destination="-1" eventType="touchUpInside" id="hBP-F8-5kr"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8n-Nv-i4v">
+                    <rect key="frame" x="168.66666666666666" y="79" width="56" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="tpF-Ag-FEX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="09f-xX-eqn"/>
+                <constraint firstItem="tpF-Ag-FEX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ct3-UN-vQn"/>
+                <constraint firstItem="tpF-Ag-FEX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="M01-PZ-ciQ"/>
+                <constraint firstItem="nxa-Q3-Xbk" firstAttribute="centerY" secondItem="j8n-Nv-i4v" secondAttribute="centerY" id="OJQ-Ai-N0h"/>
+                <constraint firstItem="nxa-Q3-Xbk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="f5q-2M-6rX"/>
+                <constraint firstItem="nxa-Q3-Xbk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mAf-yI-cJN"/>
+                <constraint firstItem="j8n-Nv-i4v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pUb-Mr-pTA"/>
+                <constraint firstAttribute="bottom" secondItem="tpF-Ag-FEX" secondAttribute="bottom" id="yKJ-Id-Mwh"/>
+            </constraints>
+            <point key="canvasLocation" x="67.938931297709928" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fanart" width="52" height="52"/>
+        <image name="transformation" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

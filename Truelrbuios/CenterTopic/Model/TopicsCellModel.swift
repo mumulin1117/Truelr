@@ -25,7 +25,7 @@ class TopicsCellModel: NSObject {
    
     var scriptRoom:String? //dynamicTitle",
     var questBoard:Array<Dictionary<String,Any>>?// "commentVoList",
-
+    var storyboardPanel:Int?
     init(setinginit dic:Dictionary<String,Any>) {
         questBoard = dic["questBoard"] as? Array<Dictionary<String,Any>>
         duelArena = dic["dic"] as? Array<String>
@@ -43,6 +43,8 @@ class TopicsCellModel: NSObject {
         improvStage = dic["improvStage"] as? String
         guildBadge = dic["guildBadge"] as? String
         scriptRoom = dic["scriptRoom"] as? String
+        
+        storyboardPanel = Int(dic["storyboardPanel"] as? String ?? "0")
     }
 
 }

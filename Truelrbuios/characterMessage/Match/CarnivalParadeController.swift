@@ -94,7 +94,7 @@ class CarnivalParadeController: UIViewController {
             
             let user = nisertgeing["mangaPanel"] as? Int
             
-            mainViewController.userINfoID = user
+            mainViewController.userINfoID = nisertgeing
         }
     }
     

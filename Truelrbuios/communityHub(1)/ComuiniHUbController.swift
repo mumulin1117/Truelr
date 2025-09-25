@@ -118,16 +118,25 @@ class ComuiniHUbController: UIViewController {
                        
                        return
                    }
-                   let alltopiv = user.toCharacterCards()
+                   var alltopiv = user.toCharacterCards()
+                   alltopiv = alltopiv.filter { reijut in//contains(where: $0["mangaPanel"] as? Int )
+                       return !MonkDisciplineController.bloackuserID.contains { resufi in
+                           resufi["mangaPanel"] as? Int == reijut.storyboardPanel
+                       }
+                   }
+              
+                   
                   if (self.pickingShing == 1) {
                       self.topics  = alltopiv.filter({ TopicsCellModel in
                           TopicsCellModel.guildBadge != nil
                       })
+
                   }else{
                       
                       self.topics  = alltopiv.filter({ TopicsCellModel in
                           TopicsCellModel.guildBadge == nil
                       })
+                       
                   }
                    self.mangaPanel.reloadData()
                    self.mangaPanel.mj_header?.endRefreshing()
@@ -142,6 +151,16 @@ class ComuiniHUbController: UIViewController {
     
     
     @objc private func masqueradeHall()  {
+        for (i,j)   in self.topics.enumerated(){
+            if MonkDisciplineController.bloackuserID.contains(where: { fid in
+                fid["mangaPanel"] as? Int == j.storyboardPanel
+            
+            }){
+                
+                self.topics.remove(at: i)
+            }
+       }
+        mangaPanel.reloadData()
         self.activeUserpics = SharedTopicsController.getingallUser.suffix(4)
         self.AnimeStudioCell.reloadData()
 
@@ -187,17 +206,28 @@ class ComuiniHUbController: UIViewController {
            }
            let conceptMap = collectionView.dequeueReusableCell(withReuseIdentifier: "labyrinthPathCell", for: indexPath) as! labyrinthPathCell
            conceptMap.maskTheatre(topics[indexPath.row], dymTyoe: pickingShing)
+           conceptMap.ninjaScroll.addTarget(self, action: #selector(rpeouingtety), for: .touchUpInside)
            return conceptMap
            
        }
        
-       
+      @objc func rpeouingtety(_ sender: UIButton) {
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
+               mainViewController.userINfoID = nil
+               self.present(mainViewController, animated: true)
+              
+           }
+           
+       }
        
    }
 
    extension ComuiniHUbController:UICollectionViewDelegate{
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
            if collectionView == AnimeStudioCell {
+               let usermol = activeUserpics[indexPath.row]
+               self.navigationController?.pushViewController(ArenaStageController.init(nisertgeing: usermol), animated: true)
                return
            }
            let moakil = self.topics[indexPath.row]

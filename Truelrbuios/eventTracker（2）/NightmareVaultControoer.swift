@@ -28,16 +28,14 @@ class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UIColle
         return laiu
         
     }
-    
+
    
    @objc func rpeouingtety(sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
             self.present(mainViewController, animated: true)
             
-            let user = nisertgeing[sender.tag]["mangaPanel"] as? Int
-            
-            mainViewController.userINfoID = user
+            mainViewController.userINfoID = nisertgeing[sender.tag]
         }
         
     }
@@ -63,9 +61,12 @@ class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UIColle
     
     //更新user  移除黑名单数据
    @objc func updateingNotnoeUser()  {
-       nisertgeing =  nisertgeing.filter {
-           return !MonkDisciplineController.bloackuserID.contains($0["mangaPanel"] as? Int ?? 0)
+       nisertgeing =  nisertgeing.filter { reijut in//contains(where: $0["mangaPanel"] as? Int )
+           return !MonkDisciplineController.bloackuserID.contains { resufi in
+               resufi["mangaPanel"] as? Int == reijut["mangaPanel"] as? Int
+           }
        }
+  
        self.planetariumView.reloadData()
    }
     private let gridLayout: UICollectionViewFlowLayout = {
@@ -94,10 +95,9 @@ class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let eventr = nisertgeing[indexPath.row]
-         let user = SharedTopicsController.getingallUser[indexPath.row]
-       
-//        let mush = EventEcentController.init(enventringo: eventr, uinit: user)
-//        self.navigationController?.pushViewController(mush, animated: true)
+        
+ 
+        self.navigationController?.pushViewController(ArenaStageController.init(nisertgeing: eventr), animated: true)
     }
     
     @IBAction func actingCoach(_ sender: UIButton) {
