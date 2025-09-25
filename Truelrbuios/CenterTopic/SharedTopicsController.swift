@@ -96,9 +96,17 @@ class SharedTopicsController: UIViewController {
                     
                     return
                 }
+                
+               
                 SharedTopicsController.getingallUser = user
-               
-               
+               //MARK: - 如果是测试账号
+                if ViewController.ExestedLogUserID == 721087186763845 ,let firtt = user.first,CharaMeaasController.likelist.count == 0,CharaMeaasController.chatlist.count == 0{
+                    let demof = SendingMeass.init()
+                    demof.messageList = ["Hello"]
+                    demof.user = firtt
+                    CharaMeaasController.likelist.append(firtt)
+                    CharaMeaasController.chatlist.append(demof)
+                }
                
             case .failure(let error):
                break

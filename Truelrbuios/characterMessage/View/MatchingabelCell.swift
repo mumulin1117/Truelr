@@ -2,7 +2,7 @@
 //  MatchingabelCell.swift
 //  Truelrbuios
 //
-//  Created by mumu on 2025/9/23.
+//  Created by  on 2025/9/23.
 //
 
 import UIKit
@@ -19,9 +19,7 @@ class MatchingabelCell: UITableViewCell {
     @IBOutlet weak var travelDiary: UIButton!
     
     
-    @IBOutlet weak var expeditionNotes: UIButton!
-    
-    
+  
     
     
     override func awakeFromNib() {
@@ -29,7 +27,6 @@ class MatchingabelCell: UITableViewCell {
         self.backgroundColor = .clear
         self.selectionStyle = .none
         travelDiary.maskedlabeVobor(enter: 34)
-        expeditionNotes.maskedlabeVobor(enter: 34)
         
         
         potionWorkshop.setTitle(" \(ViewController.CurrentCoinggUserOwne)", for: .normal)

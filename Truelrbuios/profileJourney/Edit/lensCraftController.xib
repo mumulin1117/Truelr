@@ -80,7 +80,7 @@
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="plus.circle.fill" catalog="system" backgroundImage="Hildojd"/>
+                    <state key="normal" image="galaxyArchive2" backgroundImage="Hildojd"/>
                     <connections>
                         <action selector="planetariumView:" destination="-1" eventType="touchUpInside" id="ZRU-RC-g3i"/>
                     </connections>
@@ -156,8 +156,8 @@
         <image name="Hildojd" width="120.33333587646484" height="120"/>
         <image name="charmEffectnick" width="375" height="19"/>
         <image name="fanart" width="52" height="52"/>
+        <image name="galaxyArchive2" width="52" height="52"/>
         <image name="heroArchive5" width="342" height="60"/>
-        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="posinNtro" width="375" height="25"/>
         <image name="transformation" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">

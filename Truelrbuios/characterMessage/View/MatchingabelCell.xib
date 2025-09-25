@@ -66,34 +66,18 @@
                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGZ-ut-XyJ">
-                        <rect key="frame" x="16" y="544" width="377" height="68"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="68" id="qLU-Dh-JPB"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="     Matching failed    -&gt;" image="bereakhrie">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </state>
-                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="RGZ-ut-XyJ" firstAttribute="leading" secondItem="1hf-1f-Tk1" secondAttribute="leading" id="1gJ-PC-9iQ"/>
                     <constraint firstItem="ogy-Kc-lsg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="5pQ-De-MSt"/>
                     <constraint firstItem="Xy9-pI-TWE" firstAttribute="centerY" secondItem="aIq-ce-RpR" secondAttribute="centerY" id="JxL-ha-JbB"/>
                     <constraint firstAttribute="trailing" secondItem="faU-oT-iBC" secondAttribute="trailing" id="LiX-yC-v6o"/>
                     <constraint firstItem="1hf-1f-Tk1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Lia-4K-fv1"/>
                     <constraint firstItem="faU-oT-iBC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NNa-p5-Hxx"/>
                     <constraint firstItem="1hf-1f-Tk1" firstAttribute="top" secondItem="faU-oT-iBC" secondAttribute="bottom" constant="26" id="Nbv-7j-I35"/>
-                    <constraint firstItem="RGZ-ut-XyJ" firstAttribute="trailing" secondItem="1hf-1f-Tk1" secondAttribute="trailing" id="R0q-ER-XMC"/>
                     <constraint firstItem="aIq-ce-RpR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="SOr-7W-uQF"/>
                     <constraint firstAttribute="trailing" secondItem="1hf-1f-Tk1" secondAttribute="trailing" constant="16" id="ZN9-oU-B5M"/>
                     <constraint firstItem="ogy-Kc-lsg" firstAttribute="top" secondItem="aIq-ce-RpR" secondAttribute="bottom" constant="26" id="aNN-Xa-Xt3"/>
                     <constraint firstItem="aIq-ce-RpR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jRY-N4-KYm"/>
-                    <constraint firstItem="RGZ-ut-XyJ" firstAttribute="top" secondItem="1hf-1f-Tk1" secondAttribute="bottom" constant="19.670000000000002" id="qcy-dJ-Zcb"/>
                     <constraint firstItem="faU-oT-iBC" firstAttribute="top" secondItem="ogy-Kc-lsg" secondAttribute="bottom" constant="24" id="qhu-TI-nxV"/>
                     <constraint firstAttribute="trailing" secondItem="Xy9-pI-TWE" secondAttribute="trailing" constant="16" id="tQq-lc-qS7"/>
                 </constraints>
@@ -102,7 +86,6 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="enchantmentLab" destination="aIq-ce-RpR" id="Pae-12-GW9"/>
-                <outlet property="expeditionNotes" destination="RGZ-ut-XyJ" id="VCH-fa-Yeb"/>
                 <outlet property="potionWorkshop" destination="Xy9-pI-TWE" id="ksV-Zr-e9w"/>
                 <outlet property="runeStone" destination="ogy-Kc-lsg" id="FMR-Wx-QMH"/>
                 <outlet property="travelDiary" destination="1hf-1f-Tk1" id="pd5-Ye-dqh"/>
@@ -111,7 +94,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bereakhrie" width="80" height="80.333335876464844"/>
         <image name="essence" width="40" height="40"/>
         <image name="matchRecordf" width="80" height="80.333335876464844"/>
         <image name="scriptRoom" width="375" height="24.333333969116211"/>

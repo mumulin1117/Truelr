@@ -152,7 +152,7 @@
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2A-Ds-ji2">
-                    <rect key="frame" x="170.66666666666666" y="402.33333333333331" width="52" height="47.666666666666686"/>
+                    <rect key="frame" x="170.66666666666666" y="400" width="52" height="52"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="52" id="g39-mE-u2e"/>
@@ -160,7 +160,7 @@
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" backgroundImage="play" catalog="system"/>
+                    <state key="normal" backgroundImage="PlayerINokiay"/>
                     <state key="selected" backgroundImage="Playeringkr"/>
                     <connections>
                         <action selector="puzzleCorner:" destination="-1" eventType="touchUpInside" id="pFE-Gm-5t6"/>
@@ -213,6 +213,7 @@
     </objects>
     <resources>
         <image name="Heart Animation" width="44" height="44"/>
+        <image name="PlayerINokiay" width="50" height="50"/>
         <image name="Playeringkr" width="50" height="50"/>
         <image name="Share／More" width="44" height="44"/>
         <image name="ehutio" width="63.333332061767578" height="25.333333969116211"/>
@@ -222,7 +223,6 @@
         <image name="ninjaScroll" width="44" height="44"/>
         <image name="ninjaScrollAnik" width="44" height="44"/>
         <image name="ninjaScrollhi" width="44" height="44"/>
-        <image name="play" catalog="system" width="120" height="128"/>
         <image name="transformation" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

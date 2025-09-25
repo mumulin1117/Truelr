@@ -2,7 +2,7 @@
 //  ArenaStageController.swift
 //  Truelrbuios
 //
-//  Created by mumu on 2025/9/24.
+//  Created by  on 2025/9/24.
 //
 
 import UIKit
@@ -75,7 +75,7 @@ class ArenaStageController: UIViewController, painghur {
     override func viewDidLoad() {
         super.viewDidLoad()
         visionBoard()
-        self.questBoard.maskedlabeVobor(enter: 15)
+        
     }
 
     @objc func lisenmeassage(_ sender: Any) {//message
