@@ -98,6 +98,27 @@ class DanceRoutineController: UIViewController ,UITableViewDelegate,UITableViewD
 
 
     @IBAction func dreamscapeHub(_ sender: UIButton) {
+        
+        
+        if cellModelFot.count >= 1 {
+        
+            let alert = UIAlertController(
+                title: "Greeting Limit Reached",
+                message: "You can only send one greeting message \n unless you become mutual followers.",
+                preferredStyle: .alert
+            )
+            
+
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            
+            alert.addAction(cancelAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         guard let inputexontern = shadowRealm.text?.trimmingCharacters(in: .whitespacesAndNewlines),inputexontern.count > 0
                  else {
            SVProgressHUD.showInfo(withStatus: "Before Send , please enter something.")

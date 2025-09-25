@@ -79,9 +79,9 @@ class ArenaStageController: UIViewController, painghur {
     }
 
     @objc func lisenmeassage(_ sender: Any) {//message
-        let shipo = DanceRoutineController.init( nisertgeing: nisertgeing)
-       
-        self.navigationController?.pushViewController(shipo, animated: true)
+        
+        self.showGreetingLimitAlert(in: self, username: nisertgeing["heroArchive"] as? String ?? "")
+        
         
     }
     
@@ -118,6 +118,8 @@ class ArenaStageController: UIViewController, painghur {
             }
         }
     }
+    
+    
     
     
     
@@ -178,4 +180,29 @@ extension ArenaStageController:UICollectionViewDelegate{
         
     }
     
+}
+
+
+extension ArenaStageController{
+    
+    private func showGreetingLimitAlert(in viewController: UIViewController, username: String) {
+        let alert = UIAlertController(
+            title: "Greeting Limit Reached",
+            message: "You can only send one greeting message to \(username) unless you become mutual followers.",
+            preferredStyle: .alert
+        )
+        
+        let followAction = UIAlertAction(title: "Say Hi", style: .default) { _ in
+            let shipo = DanceRoutineController.init( nisertgeing: self.nisertgeing)
+           
+            self.navigationController?.pushViewController(shipo, animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        
+        alert.addAction(followAction)
+        alert.addAction(cancelAction)
+        
+        viewController.present(alert, animated: true, completion: nil)
+    }
 }

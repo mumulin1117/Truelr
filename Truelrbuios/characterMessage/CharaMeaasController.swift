@@ -16,7 +16,7 @@ class SendingMeass: NSObject {
 class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     private let usageManager = CoinUsageManager()
     private var mangaPanel:Int = 2
-    
+    private var matchingTask: DispatchWorkItem?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         improvStage.reloadData()
@@ -67,7 +67,7 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
             reuser.runeStone.startHeartbeatAnimation()
             reuser.enchantmentLab.addTarget(self, action: #selector(designBlueprint), for: .touchUpInside)
             reuser.potionWorkshop.addTarget(self, action: #selector(modelSculpt), for: .touchUpInside)
-            reuser.runeStone.addTarget(self, action: #selector(moodBoard), for: .touchUpInside)
+            reuser.runeStone.addTarget(self, action: #selector(moodBoard(button:)), for: .touchUpInside)
             reuser.travelDiary.addTarget(self, action: #selector(matinglistlueprint), for: .touchUpInside)
             return reuser
             
@@ -191,16 +191,47 @@ extension CharaMeaasController{
        
         
     }
+   
     
     
-    @objc func moodBoard(){//start 匹配
+    @objc func moodBoard(button:UIButton){//start 匹配
+        
+        
         usageManager.onStartMatching = {
-            if  let user =  SharedTopicsController.getingallUser.randomElement(){
-    
-                let picvc =  CarnivalParadeController.init(nisertgeing: user)
-    
-                self.navigationController?.pushViewController(picvc, animated: true)
+            
+            button.isSelected = !button.isSelected
+            if button.isSelected == true{///开始匹配
+                
+                let timeinterverNeed = TimeInterval(Int.random(in: 2...6)) // 等待
+                
+                
+                self.matchingTask  = DispatchWorkItem { [weak self] in
+                    guard let self = self else { return }
+                    if  let user =  SharedTopicsController.getingallUser.randomElement(){
+            
+                        let picvc =  CarnivalParadeController.init(nisertgeing: user)
+            
+                        self.navigationController?.pushViewController(picvc, animated: true)
+                        
+                        button.isSelected = false
+                        self.matchingTask?.cancel()
+                        self.matchingTask = nil
+                    }
+                    
+                }
+                 
+                DispatchQueue.main.asyncAfter(deadline: .now() + timeinterverNeed, execute: self.matchingTask!)
+            }else{
+                //取消匹配
+                //取消任务
+                self.matchingTask?.cancel()
+                self.matchingTask = nil
             }
+            
+            
+            
+            
+           
         }
         
         usageManager.onNavigateToCoinStore = {

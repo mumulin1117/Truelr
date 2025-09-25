@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import AVFoundation
 
 class TreasuretController: UIViewController {
     private var vanishTask: DispatchWorkItem?
@@ -48,6 +49,34 @@ class TreasuretController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AVCaptureDevice.requestAccess(for: .video) { [weak self] videoOK in
+                   
+            AVAudioSession.sharedInstance().requestRecordPermission { audioOK in
+                
+                DispatchQueue.main.async {
+                    
+                    if videoOK && audioOK {
+                        
+                        
+                    } else {
+                        
+                        let alert = UIAlertController(title: "Permission required", message: "Please turn on the camera and microphone", preferredStyle: .alert)
+                        
+                        
+                        alert.addAction(UIAlertAction(title: "Sure", style: .default))
+                        
+                        self?.present(alert, animated: true)
+                        
+                    }
+                    
+                }
+                
+            }
+               
+        }
+        
+        
         melodyVault.image = lensCraftController.changeinmge
         druidCircle.text = nisertgeing["heroArchive"] as? String
         rhythmStudio.displayCharacterPortrait(from:nisertgeing["villainProfile"] as? String )
@@ -64,7 +93,7 @@ class TreasuretController: UIViewController {
                }
                
                vanishTask = spectralTask
-               DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: spectralTask)
+               DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: spectralTask)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

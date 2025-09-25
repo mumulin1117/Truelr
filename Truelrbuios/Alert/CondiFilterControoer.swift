@@ -89,5 +89,6 @@ class CondiFilterControoer: UIViewController {
         CondiFilterControoer.pickingAge.0 = Int(self.nightmareVault.minimumValue)
         CondiFilterControoer.pickingAge.1 = Int(self.nightmareVault.value)
         SVProgressHUD.showSuccess(withStatus: "Save successful!")
+        self.navigationController?.popViewController(animated: true)
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class CoinUsageManager {
     private let matchCost = 20
-    private let maxFreeMatches = 3
+    private let maxFreeMatches = 2
     private let usedMatchesKey = "usedMatchesCount"
     var onStartMatching: (() -> Void)?
        
