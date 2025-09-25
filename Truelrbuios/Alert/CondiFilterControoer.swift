@@ -7,13 +7,17 @@
 
 import UIKit
 import SVProgressHUD
+
+var ifpickedCondition:Bool = false
+
 class CondiFilterControoer: UIViewController {
 
     @IBOutlet weak var nightmareVault: UISlider!
     
      var casheCondictuin:Array<Int> = []
     
-    static var pickingCondictuin:Array<Int> = [13,14,14,15,16,17]
+    
+    static var pickingCondictuin:Array<Int> = [16,17]
     
     static var pickingAge:(Int,Int) = (18,60)
     @IBOutlet weak var fantasyForge: UIButton!

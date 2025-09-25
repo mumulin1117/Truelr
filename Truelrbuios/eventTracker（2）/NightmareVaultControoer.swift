@@ -9,6 +9,9 @@ import UIKit
 import SVProgressHUD
 //1vn
 class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    private let usageManager = CoinUsageManager()
+    
+    
     private var nisertgeing:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -108,8 +111,25 @@ class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UIColle
     }
     
     @IBAction func harmonyHall(_ sender: UIButton) {
-        mangaPanel()
-        self.planetariumView.reloadData()
+        
+        usageManager.onStartMatching = {
+            self.mangaPanel()
+            self.planetariumView.reloadData()
+        }
+        
+        usageManager.onNavigateToCoinStore = {
+            
+            self.navigationController?.pushViewController(RibbonVaulControoer(), animated: true)
+        }
+        if usageManager.canAffordMatch() {
+                    // 显示提示但允许继续
+            usageManager.showMatchConfirmation(in: self)
+        } else {
+            // 显示收费确认
+            usageManager.showInsufficientBalanceAlert(in: self)
+        }
+        
+       
     }
     
     

@@ -12,13 +12,25 @@ class SendingMeass: NSObject {
     var messageList:Array<String> = []
 }
 
+
 class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
+    private let usageManager = CoinUsageManager()
     private var mangaPanel:Int = 2
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         improvStage.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if ifpickedCondition == false {
+            if let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CondiFilterControoer") as? CondiFilterControoer{
+                self.navigationController?.pushViewController(mainViewController, animated: true)
+                ifpickedCondition = true
+            }
+           
+        }
     }
     static var chatlist:Array<SendingMeass> = Array<SendingMeass>()
     
@@ -182,12 +194,29 @@ extension CharaMeaasController{
     
     
     @objc func moodBoard(){//start 匹配
-        if  let user =  SharedTopicsController.getingallUser.randomElement(){
-          
-            let picvc =  CarnivalParadeController.init(nisertgeing: user)
-            
-            self.navigationController?.pushViewController(picvc, animated: true)
+        usageManager.onStartMatching = {
+            if  let user =  SharedTopicsController.getingallUser.randomElement(){
+    
+                let picvc =  CarnivalParadeController.init(nisertgeing: user)
+    
+                self.navigationController?.pushViewController(picvc, animated: true)
+            }
         }
+        
+        usageManager.onNavigateToCoinStore = {
+            
+            self.navigationController?.pushViewController(RibbonVaulControoer(), animated: true)
+        }
+        if usageManager.canAffordMatch() {
+                    // 显示提示但允许继续
+            usageManager.showMatchConfirmation(in: self)
+        } else {
+            // 显示收费确认
+            usageManager.showInsufficientBalanceAlert(in: self)
+        }
+        
+        
+
         
     }
     
