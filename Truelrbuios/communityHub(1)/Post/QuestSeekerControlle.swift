@@ -130,16 +130,14 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     }
     
     func villageSquare()  {
-        SVProgressHUD.show()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+        ChronoEngine.executeAfterTemporalShift(1) {
            
             SVProgressHUD.showSuccess(withStatus: "Send successful,your post will be displayed after approval")
             
             self.dreamscapeHub.text = nil
             self.dreamscapeHub.resignFirstResponder()
             self.navigationController?.popViewController(animated: true)
-        }))
+        }
        
     }
     

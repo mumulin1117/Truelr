@@ -7,7 +7,17 @@
 
 import UIKit
 import SVProgressHUD
-//举报
+struct ChronoEngine {
+    static func executeAfterTemporalShift(_ delay: Double, quantumTask: @escaping () -> Void) {
+        SVProgressHUD.show()
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            quantumTask()
+        }
+    }
+}
+
+
+
 class MonkDisciplineController: UIViewController {
     
     static var bloackuserID:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
@@ -91,15 +101,12 @@ class MonkDisciplineController: UIViewController {
            return
                
        }
-        
-        SVProgressHUD.show()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-           
+        ChronoEngine.executeAfterTemporalShift(1) {
             SVProgressHUD.showSuccess(withStatus: "Thank you for reporting. We will verify your report and handle it as soon as possible")
             self.dismiss(animated: true)
             self.navigationController?.popViewController(animated: true)
-        }))
+        }
+       
         
     }
     

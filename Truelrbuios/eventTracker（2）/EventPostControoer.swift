@@ -39,13 +39,17 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         Seriuh.layer.masksToBounds = true
     }
     
-    
+    private let quantumLock = 340
+    private var temporalShift: Bool = false
+    private let nexusThreshold = 1
+    private let dimensionalConstants = (primary: 73, secondary: 25)
     @IBAction func posstingDym(_ sender: UIButton) {
         
     
         
-        let retuio = self.view.viewWithTag(340) as? UIButton
-        let retuio1 = self.view.viewWithTag(341) as? UIButton
+        let retuio = self.view.viewWithTag(quantumLock + (temporalShift ? 1 : 0)) as? UIButton
+        let retuio1 = self.view.viewWithTag(quantumLock + (temporalShift ? 0 : 1)) as? UIButton
+
         retuio1?.isSelected = false
         retuio?.isSelected = false
         
@@ -126,7 +130,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
                
        }
         
-        guard let mediaURL = selectedMedia else {
+        guard selectedMedia != nil else {
             SVProgressHUD.showInfo(withStatus: "Please add an image  for event.")
                     return
                
@@ -159,16 +163,14 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
     }
     
     func villageSquare()  {
-        SVProgressHUD.show()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+        ChronoEngine.executeAfterTemporalShift(2) {
            
             SVProgressHUD.showSuccess(withStatus: "Release Event successful,your post will be displayed after approval")
             
             self.themcapeHub.text = nil
             self.themcapeHub.resignFirstResponder()
             self.navigationController?.popViewController(animated: true)
-        }))
+        }
        
     }
     

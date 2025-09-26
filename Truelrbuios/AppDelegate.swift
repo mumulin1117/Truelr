@@ -37,6 +37,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            }
        }
    }
+    static func cosmicShift(to storyboardName: String = "Main", controllerIdentifier: String, bundle: Bundle? = nil, completion: ((UIViewController?) -> Void)? = nil) {
+            let astralPath = UIStoryboard(name: storyboardName, bundle: bundle)
+            
+        var temporalWindow: UIWindow?
+            
+            if #available(iOS 15.0, *) {
+                temporalWindow = UIApplication.shared.connectedScenes
+                    .compactMap { $0 as? UIWindowScene }
+                    .flatMap { $0.windows }
+                    .first(where: { $0.isKeyWindow })
+            } else {
+                temporalWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+            }
+            
+            if temporalWindow == nil {
+                temporalWindow = UIApplication.shared.windows.first
+            }
+            
+            
+            let temporalController = astralPath.instantiateViewController(withIdentifier: controllerIdentifier)
+            temporalWindow?.rootViewController = temporalController
+            completion?(temporalController)
+        }
 
 }
 
@@ -73,14 +96,14 @@ class CosRequestManager {
                                         userInfo: [NSLocalizedDescriptionKey: "Invalid request URL: \(urlString)"])))
             return
         }
-        
+        let valorStory = UserDefaults.standard.object(forKey: "valorStory") as? String ?? ""
         var styledRequest = URLRequest(url: finalURL)
         styledRequest.httpMethod = "POST"
         styledRequest.allHTTPHeaderFields = [
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "key": "67994137",  // 替代通用的 key
-            "token": ""// 替代 token
+            "key": "67994137", 
+            "token": valorStory
         ]
         styledRequest.httpBody = try? JSONSerialization.data(withJSONObject: outfitPayload)
         

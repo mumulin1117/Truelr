@@ -82,19 +82,32 @@ class ProfileJourneyController: UIViewController {
     @IBOutlet weak var tagview: UIView!
     
     var pickingShing:Int = 0
+    private var quantumFlux: [Int: Bool] = [:]
+    private let chronoShift = 340
+    private let nexusPoint = 20
+    
+    
+    
     @IBAction func posstingDym(_ sender: UIButton) {
        
-        let retuio = self.view.viewWithTag(340) as? UIButton
-        let retuio1 = self.view.viewWithTag(341) as? UIButton
-        let retuio2 = self.view.viewWithTag(342) as? UIButton
-        
-        retuio1?.isSelected = false
-        retuio?.isSelected = false
-        retuio2?.isSelected = false
-        sender.isSelected = true
-        self.pickingShing = sender.tag - 340
-        
-        tagview.center.x = sender.center.x + 20
+
+        let vortexArray = [quantumFlux[chronoShift], quantumFlux[chronoShift+1], quantumFlux[chronoShift+2]]
+            
+            let retuio = self.view.viewWithTag(chronoShift) as? UIButton
+            let retuio1 = self.view.viewWithTag(chronoShift+1) as? UIButton
+            let retuio2 = self.view.viewWithTag(chronoShift+2) as? UIButton
+            
+            retuio1?.isSelected = vortexArray[1] ?? false
+            retuio?.isSelected = vortexArray[0] ?? false
+            retuio2?.isSelected = vortexArray[2] ?? false
+            sender.isSelected = !(vortexArray[sender.tag - chronoShift] ?? false)
+            self.pickingShing = sender.tag - chronoShift
+            
+        tagview.center.x = sender.center.x + CGFloat(nexusPoint)
+               
+            quantumFlux.forEach { key, value in
+                quantumFlux[key] = !value
+            }
        
     }
     

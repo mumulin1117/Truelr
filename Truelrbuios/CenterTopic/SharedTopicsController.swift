@@ -109,6 +109,7 @@ class SharedTopicsController: UIViewController {
                     demof.user = firtt
                     CharaMeaasController.likelist.append(firtt)
                     CharaMeaasController.chatlist.append(demof)
+                    lensCraftController.changeinmge = UIImage(named: "lisjimage")!
                 }
                
             case .failure(let error):

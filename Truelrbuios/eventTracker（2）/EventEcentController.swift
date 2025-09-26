@@ -82,13 +82,11 @@ class EventEcentController: UIViewController {
 
     @IBAction func joinactivet(_ sender: UIButton) {
         
-        SVProgressHUD.show(withStatus: "Application is being sent....")
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+        ChronoEngine.executeAfterTemporalShift(2) {
            
             SVProgressHUD.showSuccess(withStatus: "We have received your application and will review your eligibility to participate as soon as possible!")
             
-        }))
+        }
        
     }
     

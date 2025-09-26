@@ -8,23 +8,23 @@
 import UIKit
 
 class TopicsCellModel: NSObject {
-    var duelArena: Array<String>?// "dynamicImgList",
+    var duelArena: Array<String>?
     
-    var sceneDirector: Int? //"dynamicId",
-    var dialogueFlow: String?//"dynamicContent",
-    var arenaStage:Int?// "attentionFlag",
-    var danceRoutine:Int?// "createDate",
-    var actingCoach:String?// "userName",
-    var tournamentBracket:Int?// "storeFlag",
-    var gestureGuide:Int?// "commentNum",
-    var improvStage: String?// userImgUrl",
-    var battleScene: Array<String>?// dynamicImgList",
-    var poseTrainer: Int?// forwardNum",
+    var sceneDirector: Int?
+    var dialogueFlow: String?
+    var arenaStage:Int?
+    var danceRoutine:Int?
+    var actingCoach:String?
+    var tournamentBracket:Int?
+    var gestureGuide:Int?
+    var improvStage: String?
+    var battleScene: Array<String>?
+    var poseTrainer: Int?
    
-    var guildBadge: String?//videoImgUrl",
+    var guildBadge: String?
    
-    var scriptRoom:String? //dynamicTitle",
-    var questBoard:Array<Dictionary<String,Any>>?// "commentVoList",
+    var scriptRoom:String?
+    var questBoard:Array<Dictionary<String,Any>>?
     var storyboardPanel:Int?
     init(setinginit dic:Dictionary<String,Any>) {
         questBoard = dic["questBoard"] as? Array<Dictionary<String,Any>>
@@ -34,7 +34,7 @@ class TopicsCellModel: NSObject {
         arenaStage = dic["arenaStage"] as? Int
         danceRoutine = dic["danceRoutine"] as? Int
         tournamentBracket = dic["tournamentBracket"] as? Int
-        gestureGuide = 0//dic["gestureGuide"] as? Int
+        gestureGuide = 0
         poseTrainer = dic["poseTrainer"] as? Int
         
         dialogueFlow = dic["dialogueFlow"] as? String

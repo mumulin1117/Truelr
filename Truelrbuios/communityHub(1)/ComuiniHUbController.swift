@@ -10,10 +10,9 @@ import MJRefresh
 import SVProgressHUD
 
 class ComuiniHUbController: UIViewController {
-//user
+
     @IBOutlet weak var AnimeStudioCell: UICollectionView!
-    
-    //dym
+   
     @IBOutlet weak var mangaPanel: UICollectionView!
     
     private var topics:Array<TopicsCellModel> = Array<TopicsCellModel>()
@@ -44,18 +43,25 @@ class ComuiniHUbController: UIViewController {
             
             return layout
         }()
-    
+    private let astralGate = 340
+    private var celestialBuffer = false
     var pickingShing:Int = 0
     @IBAction func posstingDym(_ sender: UIButton) {
-       
-        let retuio = self.view.viewWithTag(340) as? UIButton
-        let retuio1 = self.view.viewWithTag(341) as? UIButton
-        retuio1?.isSelected = false
-        retuio?.isSelected = false
-        
-        sender.isSelected = true
-        self.pickingShing = sender.tag - 340
-        self.mangaPanel.mj_header?.beginRefreshing()
+
+        let vortexSphere = celestialBuffer ? 341 : astralGate
+            let prismaticShift = celestialBuffer ? astralGate : 341
+            
+            let retuio = self.view.viewWithTag(vortexSphere) as? UIButton
+            let retuio1 = self.view.viewWithTag(prismaticShift) as? UIButton
+            
+            retuio1?.isSelected = celestialBuffer
+            retuio?.isSelected = !celestialBuffer
+            
+            sender.isSelected = !celestialBuffer
+            self.pickingShing = sender.tag - astralGate
+            self.mangaPanel.mj_header?.beginRefreshing()
+            
+            celestialBuffer.toggle()
     }
     
     

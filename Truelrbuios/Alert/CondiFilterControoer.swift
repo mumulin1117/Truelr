@@ -11,7 +11,9 @@ import SVProgressHUD
 var ifpickedCondition:Bool = false
 
 class CondiFilterControoer: UIViewController {
-
+    @IBAction func bahingop(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBOutlet weak var nightmareVault: UISlider!
     
      var casheCondictuin:Array<Int> = []

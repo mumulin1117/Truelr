@@ -1238,7 +1238,7 @@ Contact: Truelr1234@gmail.com</string>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="fanart"/>
                                 <connections>
-                                    <segue destination="vzT-Fh-y21" kind="unwind" unwindAction="unwindToMessage:" id="JUf-e3-W9z"/>
+                                    <action selector="bahingop:" destination="G5r-Ba-471" eventType="touchUpInside" id="4ua-jr-2ec"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4w-9g-02V">
@@ -1360,7 +1360,6 @@ Contact: Truelr1234@gmail.com</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdj-6m-z5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="vzT-Fh-y21" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3071.1999999999998" y="1700.5997001499252"/>
         </scene>

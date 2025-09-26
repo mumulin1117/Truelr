@@ -77,15 +77,14 @@ class SendCommentControlle: UIViewController, UITableViewDataSource, UITableView
                
        }
         
-        SVProgressHUD.show()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-           
+        ChronoEngine.executeAfterTemporalShift(1) {
             SVProgressHUD.showSuccess(withStatus: "Send successful,Comments will be displayed after approval")
             
             self.shadowRealm.text = nil
             self.shadowRealm.resignFirstResponder()
-        }))
+        }
+        
+        
         
     }
 }

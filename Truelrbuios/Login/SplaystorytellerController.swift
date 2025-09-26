@@ -74,18 +74,22 @@ class SplaystorytellerController: UIViewController {
                     return
                 }
                 
-                UserDefaults.standard.set(email, forKey: "userimajrl")
+                UserDefaults.standard.set(user["valorStory"] as? String, forKey: "valorStory")
                 
                 
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
                 ViewController.ExestedLogUserID = user["dungeonGuide"] as? Int
-                let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+//                let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
                 UserDefaults.standard.set( user["valorStory"], forKey: "valorStory")//token
-                if let mainViewController = storyboard.instantiateViewController(withIdentifier: "tabarnavi") as? UINavigationController{
-                    keyWindow?.rootViewController = mainViewController
+                
+                AppDelegate.cosmicShift( controllerIdentifier: "tabarnavi"){_ in 
                     SVProgressHUD.showSuccess(withStatus: "Log in successful!")
                 }
+//                if let mainViewController = storyboard.instantiateViewController(withIdentifier: "tabarnavi") as? UINavigationController{
+//                    keyWindow?.rootViewController = mainViewController
+//                    SVProgressHUD.showSuccess(withStatus: "Log in successful!")
+//                }
                    
                 if email == "truelr@gmail.com"  {//测试账号
                     lensCraftController.changeinmge = UIImage(named: "lisjimage")!

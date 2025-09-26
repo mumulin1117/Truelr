@@ -91,10 +91,9 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
                 mainViewController.ryeuiingContetn = .prio
             }
         case 2:
-            SVProgressHUD.show()
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+            ChronoEngine.executeAfterTemporalShift(2) {
                 SVProgressHUD.showSuccess(withStatus: "Clear completed!")
-            }))
+            }
         case 3:
             let alert = UIAlertController(
                         title: "Deactivate Account",
@@ -111,19 +110,18 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
                 ViewController.ExestedLogUserID = nil
                 lensCraftController.changeinmge = UIImage.init(named: "Hildojd")!
                 ViewController.CurrentCoinggUserOwne = 0
+                UserDefaults.standard.set(nil, forKey: "valorStory")
                 
-                SVProgressHUD.showSuccess(withStatus: "Delete successful!")
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
-                
-               
-                    if let mainViewController = storyboard.instantiateViewController(withIdentifier: "loginNavi") as? UINavigationController{
-                        keyWindow?.rootViewController = mainViewController
-                       
-                    }
-               
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                
+//                let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+//                
+//               
+//                    if let mainViewController = storyboard.instantiateViewController(withIdentifier: "loginNavi") as? UINavigationController{
+//                        keyWindow?.rootViewController = mainViewController
+//                       
+//                    }
+                AppDelegate.cosmicShift( controllerIdentifier: "loginNavi")
             }
             
             alert.addAction(cancel)
@@ -131,15 +129,28 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
             
             present(alert, animated: true)
         case 4:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+            UserDefaults.standard.set(nil, forKey: "userimajrl")
+            UserDefaults.standard.set(nil, forKey: "Introduction")
+            UserDefaults.standard.set(nil, forKey: "IntroAge")
+            ViewController.ExestedLogUserID = nil
+            lensCraftController.changeinmge = UIImage.init(named: "Hildojd")!
+            ViewController.CurrentCoinggUserOwne = 0
+            UserDefaults.standard.set(nil, forKey: "valorStory")
             
-           
-                if let mainViewController = storyboard.instantiateViewController(withIdentifier: "loginNavi") as? UINavigationController{
-                    keyWindow?.rootViewController = mainViewController
-                   
-                }
+            AppDelegate.cosmicShift( controllerIdentifier: "loginNavi")
+            
+            
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            
+//            let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+//            
+//           
+//                
+//            if let mainViewController = storyboard.instantiateViewController(withIdentifier: "loginNavi") as? UINavigationController{
+//                keyWindow?.rootViewController = mainViewController
+//               
+//            }
         default:
             break
         }
