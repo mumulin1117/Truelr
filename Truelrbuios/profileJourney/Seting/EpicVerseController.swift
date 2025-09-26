@@ -16,13 +16,13 @@ class EpicVerseController: UIViewController {
     private let cosmicTable = UITableView(frame: .zero, style: .insetGrouped)
     
     private let stardustOptions: [(icon: String, title: String, tint: UIColor?)] = [
-        ("quangiyi", "User Agreement", nil),
-        ("sdzkjixhf", "Privacy service", nil),
-        ("doqunfckieu", "Clear the cache", nil),
+        ("quangiyi", UIImageView.ambienceVaultDeu("")"User Agreement", nil),
+        ("sdzkjixhf", UIImageView.ambienceVaultDeu("")"Privacy service", nil),
+        ("doqunfckieu", UIImageView.ambienceVaultDeu("")"Clear the cache", nil),
         
        
-        ("claseaccount", "Delete Account", nil),
-        ("power", "Log out", .systemRed)
+        ("claseaccount", UIImageView.ambienceVaultDeu("")"Delete Account", nil),
+        ("power", UIImageView.ambienceVaultDeu("")"Log out", .systemRed)
     ]
     
     override func viewDidLoad() {
@@ -78,14 +78,14 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
             if let mainViewController = storyboard.instantiateViewController(withIdentifier: "RTelicArchiveController") as? RTelicArchiveController{
                 self.present(mainViewController, animated: true)
                 mainViewController.ryeuiingContetn = .tertt
             }
             
         case 1:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
             if let mainViewController = storyboard.instantiateViewController(withIdentifier: "RTelicArchiveController") as? RTelicArchiveController{
                 self.present(mainViewController, animated: true)
                 mainViewController.ryeuiingContetn = .prio
@@ -96,14 +96,14 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
             }
         case 3:
             let alert = UIAlertController(
-                        title: "Deactivate Account",
-                        message: "Are you sure you want to permanently deactivate your account? This action cannot be undone.",
+                        title: UIImageView.ambienceVaultDeu("")"Delete Account",
+                        message: UIImageView.ambienceVaultDeu("")"Are you sure you want to permanently deactivate your account? This action cannot be undone.",
                         preferredStyle: .alert
                     )
                     
                    
-            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            let confirm = UIAlertAction(title: "Yes, Deactivate", style: .destructive) { _ in
+            let cancel = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Cancel", style: .cancel, handler: nil)
+            let confirm = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Yes, Delete", style: .destructive) { _ in
                 UserDefaults.standard.set(nil, forKey: "userimajrl")
                 UserDefaults.standard.set(nil, forKey: "Introduction")
                 UserDefaults.standard.set(nil, forKey: "IntroAge")
@@ -112,15 +112,7 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
                 ViewController.CurrentCoinggUserOwne = 0
                 UserDefaults.standard.set(nil, forKey: "valorStory")
                 
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                
-//                let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
-//                
-//               
-//                    if let mainViewController = storyboard.instantiateViewController(withIdentifier: "loginNavi") as? UINavigationController{
-//                        keyWindow?.rootViewController = mainViewController
-//                       
-//                    }
+
                 AppDelegate.cosmicShift( controllerIdentifier: "loginNavi")
             }
             
@@ -140,17 +132,7 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
             
             AppDelegate.cosmicShift( controllerIdentifier: "loginNavi")
             
-            
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            
-//            let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
-//            
-//           
-//                
-//            if let mainViewController = storyboard.instantiateViewController(withIdentifier: "loginNavi") as? UINavigationController{
-//                keyWindow?.rootViewController = mainViewController
-//               
-//            }
+
         default:
             break
         }

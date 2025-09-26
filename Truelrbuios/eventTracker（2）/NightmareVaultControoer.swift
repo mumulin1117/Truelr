@@ -34,7 +34,7 @@ class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UIColle
 
    
    @objc func rpeouingtety(sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
             self.present(mainViewController, animated: true)
             

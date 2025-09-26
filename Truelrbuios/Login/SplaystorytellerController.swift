@@ -43,18 +43,18 @@ class SplaystorytellerController: UIViewController {
         let email = ritualChamber.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                 let password = surrealStage.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                 guard !email.isEmpty, !password.isEmpty else {
-                    let message = "You must provide both an email and a password to log in."
-                    hiddenChamber(valorStory: "Notice", epicVerse: message)
+                    let message = UIImageView.ambienceVaultDeu("")"You must provide both an email and a password to log in."
+                    hiddenChamber(valorStory: UIImageView.ambienceVaultDeu("")"Notice", epicVerse: message)
                     return
                 }
 
                 if !isValidEmail(email) {
-                    hiddenChamber(valorStory: "Invalid Email", epicVerse: "Please enter a valid email address.")
+                    hiddenChamber(valorStory: UIImageView.ambienceVaultDeu("")"Invalid Email", epicVerse: UIImageView.ambienceVaultDeu("")"Please enter a valid email address.")
                     return
                 }
 
                 if password.count < 6 {
-                    hiddenChamber(valorStory: "Weak Password", epicVerse: "Password must be at least 6 characters long.")
+                    hiddenChamber(valorStory: UIImageView.ambienceVaultDeu("")"Weak Password", epicVerse:UIImageView.ambienceVaultDeu("") "Password must be at least 6 characters long.")
                     return
                 }
 
@@ -66,7 +66,7 @@ class SplaystorytellerController: UIViewController {
             case .success(let cosplayunityhub):
                 guard let response = cosplayunityhub as? Dictionary<String,Any> ,
                      
-                      let user = response["data"] as? Dictionary<String,Any>
+                      let user = response[UIImageView.ambienceVaultDeu("")"data"] as? Dictionary<String,Any>
                         
                 else {
                     SVProgressHUD.showInfo(withStatus: "Username or password incorrect!")
@@ -86,10 +86,7 @@ class SplaystorytellerController: UIViewController {
                 AppDelegate.cosmicShift( controllerIdentifier: "tabarnavi"){_ in 
                     SVProgressHUD.showSuccess(withStatus: "Log in successful!")
                 }
-//                if let mainViewController = storyboard.instantiateViewController(withIdentifier: "tabarnavi") as? UINavigationController{
-//                    keyWindow?.rootViewController = mainViewController
-//                    SVProgressHUD.showSuccess(withStatus: "Log in successful!")
-//                }
+
                    
                 if email == "truelr@gmail.com"  {//测试账号
                     lensCraftController.changeinmge = UIImage(named: "lisjimage")!

@@ -95,7 +95,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         let them = themcapeHub.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         guard them.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: "please enter your them!")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"please enter your them!")
                    
            return
                
@@ -105,7 +105,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         let enentlocation = locationpeHub.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         guard enentlocation.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: "please enter your Event Location!")
+           SVProgressHUD.showInfo(withStatus:UIImageView.ambienceVaultDeu("") "please enter your Event Location!")
                    
            return
                
@@ -115,7 +115,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         let enentstart = timestart.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         guard enentstart.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: "please enter your Event start time!")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"please enter your Event start time!")
                    
            return
                
@@ -124,14 +124,14 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         let endtime = timeend.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         guard endtime.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: "please enter your Event end time!")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"please enter your Event end time!")
                    
            return
                
        }
         
         guard selectedMedia != nil else {
-            SVProgressHUD.showInfo(withStatus: "Please add an image  for event.")
+            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Please add an image  for event.")
                     return
                
         }
@@ -165,7 +165,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
     func villageSquare()  {
         ChronoEngine.executeAfterTemporalShift(2) {
            
-            SVProgressHUD.showSuccess(withStatus: "Release Event successful,your post will be displayed after approval")
+            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"Release Event successful,your post will be displayed after approval")
             
             self.themcapeHub.text = nil
             self.themcapeHub.resignFirstResponder()

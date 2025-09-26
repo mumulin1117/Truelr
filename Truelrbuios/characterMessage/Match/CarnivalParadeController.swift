@@ -79,7 +79,7 @@ class CarnivalParadeController: UIViewController {
             flameTicker?.invalidate()
             self.navigationController?.pushViewController(reser, animated: true)
         }else{
-            SVProgressHUD.showInfo(withStatus: "Matching failed, the other party has left")
+            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Matching failed, the other party has left")
             self.navigationController?.popViewController(animated: true)
         }
         
@@ -88,7 +88,7 @@ class CarnivalParadeController: UIViewController {
     
     
     @IBAction func labyrinthPath(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
             self.present(mainViewController, animated: true)
             
@@ -108,7 +108,7 @@ class CarnivalParadeController: UIViewController {
                 if self.remainEchoSeconds <= 0 {
                     self.flameTicker?.invalidate()
                     self.flameTicker = nil
-                    SVProgressHUD.showInfo(withStatus: "Sorry, it's time")
+                    SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Sorry, it's time")
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             }

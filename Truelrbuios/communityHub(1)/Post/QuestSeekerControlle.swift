@@ -78,16 +78,16 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     
     @IBAction func dreamscapeHub(_ sender: UIButton) {
         postText = dreamscapeHub.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard postText.count > 0,postText != "  Text something..."
+        guard postText.count > 0,postText != UIImageView.ambienceVaultDeu("")"  Text something..."
                  else {
-           SVProgressHUD.showInfo(withStatus: "Before post , please enter something.")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Before post , please enter something.")
                    
            return
                
        }
         
         guard let mediaURL = selectedMedia else {
-            SVProgressHUD.showInfo(withStatus: "Please add an image or video before posting.")
+            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Please add an image or video before posting.")
                     return
                 }
         
@@ -132,7 +132,7 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     func villageSquare()  {
         ChronoEngine.executeAfterTemporalShift(1) {
            
-            SVProgressHUD.showSuccess(withStatus: "Send successful,your post will be displayed after approval")
+            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"Send successful,your post will be displayed after approval")
             
             self.dreamscapeHub.text = nil
             self.dreamscapeHub.resignFirstResponder()

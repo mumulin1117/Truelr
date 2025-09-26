@@ -61,10 +61,10 @@ class TreasuretController: UIViewController {
                         
                     } else {
                         
-                        let alert = UIAlertController(title: "Permission required", message: "Please turn on the camera and microphone", preferredStyle: .alert)
+                        let alert = UIAlertController(title:UIImageView.ambienceVaultDeu("") "Permission required", message: UIImageView.ambienceVaultDeu("")"Please turn on the camera and microphone", preferredStyle: .alert)
                         
                         
-                        alert.addAction(UIAlertAction(title: "Sure", style: .default))
+                        alert.addAction(UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Sure", style: .default))
                         
                         self?.present(alert, animated: true)
                         
@@ -86,7 +86,7 @@ class TreasuretController: UIViewController {
         let spectralTask = DispatchWorkItem { [weak self] in
                    guard let self = self else { return }
                    self.dismiss(animated: true)
-                   SVProgressHUD.showInfo(withStatus: "Connect failed, the other party has left")
+                   SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Connect failed, the other party has left")
                    if self.isfromamatching {
                        self.vloavkDismiss?(true)
                    }
@@ -106,7 +106,7 @@ class TreasuretController: UIViewController {
     }
     
     @IBAction func enchantmentLab(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
             self.present(mainViewController, animated: true)
             

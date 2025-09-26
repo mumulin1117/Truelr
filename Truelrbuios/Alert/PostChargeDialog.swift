@@ -29,7 +29,7 @@ class PostChargeDialog: UIView {
     
     private let usageNoticeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Reminder"
+        label.text = UIImageView.ambienceVaultDeu("")"Reminder"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +38,7 @@ class PostChargeDialog: UIView {
     
     private let costDetailLabel: UILabel = {
         let label = UILabel()
-        label.text = "It will cost 10 coins."
+        label.text = UIImageView.ambienceVaultDeu("")"It will cost 10 coins."
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .darkGray
         label.textAlignment = .center
@@ -48,7 +48,7 @@ class PostChargeDialog: UIView {
     
     private let dismissPostButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Cancel", for: .normal)
+        button.setTitle(UIImageView.ambienceVaultDeu("")"Cancel", for: .normal)
         button.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
         button.layer.cornerRadius = 20
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +57,7 @@ class PostChargeDialog: UIView {
     
     private let confirmPostButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Confirm", for: .normal)
+        button.setTitle(UIImageView.ambienceVaultDeu("")"Confirm", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(red: 1, green: 0.35, blue: 0.47, alpha: 1)
         button.layer.cornerRadius = 24

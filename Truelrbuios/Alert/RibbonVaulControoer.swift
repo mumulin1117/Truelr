@@ -27,13 +27,13 @@ class RibbonVaulControoer: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     private let charmBundles: [CharmBundle] = [
-        CharmBundle(hearts: 300, giftExtra: 100, unlockValue: "0.99", hasPromo: true, CpriductID: "ufnclhqnidqznfch"),
-        CharmBundle(hearts: 700, giftExtra: 100, unlockValue: "1.99", hasPromo: true, CpriductID: "adzmxihoombungys"),
-        CharmBundle(hearts: 2350, giftExtra: 100, unlockValue: "4.99", hasPromo: true, CpriductID: "oqlygwmfchwdxvqh"),
-        CharmBundle(hearts: 5050, giftExtra: 100, unlockValue: "9.99", hasPromo: true, CpriductID: "gwquedscjjdjkrvc"),
-        CharmBundle(hearts: 10800, giftExtra: 100, unlockValue: "19.99", hasPromo: true, CpriductID: "nmhqgblmkgeeqpug"),
-        CharmBundle(hearts: 29400, giftExtra: 100, unlockValue: "49.99", hasPromo: true, CpriductID: "ntjdhcdigmotmnao"),
-        CharmBundle(hearts: 63700, giftExtra: 100, unlockValue: "99.99", hasPromo: true, CpriductID: "jhydnytpzboswmfl"),
+        CharmBundle(hearts: 300, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"0.99", hasPromo: true, CpriductID: "ufnclhqnidqznfch"),
+        CharmBundle(hearts: 700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"1.99", hasPromo: true, CpriductID: "adzmxihoombungys"),
+        CharmBundle(hearts: 2350, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"4.99", hasPromo: true, CpriductID: "oqlygwmfchwdxvqh"),
+        CharmBundle(hearts: 5050, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"9.99", hasPromo: true, CpriductID: "gwquedscjjdjkrvc"),
+        CharmBundle(hearts: 10800, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"19.99", hasPromo: true, CpriductID: "nmhqgblmkgeeqpug"),
+        CharmBundle(hearts: 29400, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"49.99", hasPromo: true, CpriductID: "ntjdhcdigmotmnao"),
+        CharmBundle(hearts: 63700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"99.99", hasPromo: true, CpriductID: "jhydnytpzboswmfl"),
        ]
        
        override func viewDidLoad() {
@@ -80,7 +80,7 @@ class RibbonVaulControoer: UIViewController {
            let bundle = charmBundles[indexPath.item]
          
            view.isUserInteractionEnabled = false
-           SVProgressHUD.show(withStatus: "Paying...")
+           SVProgressHUD.show(withStatus: UIImageView.ambienceVaultDeu("")"Paying...")
          
            SwiftyStoreKit.purchaseProduct(bundle.CpriductID, atomically: true) { psResult in
                
@@ -100,7 +100,7 @@ class RibbonVaulControoer: UIViewController {
                    let allcount =  ViewController.CurrentCoinggUserOwne + bundle.hearts + bundle.giftExtra
                    
                    ViewController.CurrentCoinggUserOwne = allcount
-                   SVProgressHUD.showSuccess(withStatus: "Pay Successful")
+                   SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"Pay Successful")
                    
                    self.travelDiary.text = "My Blance:\(ViewController.CurrentCoinggUserOwne)"
              

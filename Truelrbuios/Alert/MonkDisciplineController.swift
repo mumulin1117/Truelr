@@ -96,13 +96,13 @@ class MonkDisciplineController: UIViewController {
 
     @IBAction func druidCircle(_ sender: Any) {
         guard ifChiocedReason else{
-           SVProgressHUD.showInfo(withStatus: "Please check one reason for your report!")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Please check one reason for your report!")
                    
            return
                
        }
         ChronoEngine.executeAfterTemporalShift(1) {
-            SVProgressHUD.showSuccess(withStatus: "Thank you for reporting. We will verify your report and handle it as soon as possible")
+            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"Thank you for reporting. We will verify your report and handle it as soon as possible")
             self.dismiss(animated: true)
             self.navigationController?.popViewController(animated: true)
         }
@@ -116,20 +116,20 @@ class MonkDisciplineController: UIViewController {
             return
         }
         guard ifChiocedReason else{
-           SVProgressHUD.showInfo(withStatus: "Please check one reason for your report!")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Please check one reason for your report!")
                    
            return
                
        }
         let alert = UIAlertController(
-                   title: "Block this user?",
-                   message: "Once blocked, you will no longer see this user’s content or receive interactions from them. You can unblock anytime in your settings.",
+                   title: UIImageView.ambienceVaultDeu("")"Block this user?",
+                   message: UIImageView.ambienceVaultDeu("")"Once blocked, you will no longer see this user’s content or receive interactions from them. You can unblock anytime in your settings.",
                    preferredStyle: .alert
                )
                
               
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let confirm = UIAlertAction(title: "Block", style: .destructive) { _ in
+        let cancel = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Cancel", style: .cancel, handler: nil)
+        let confirm = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Block", style: .destructive) { _ in
             self.navigationController?.popViewController(animated: true)
             self.dismiss(animated: true)
             MonkDisciplineController.bloackuserID.append(self.userINfoID ?? [:])

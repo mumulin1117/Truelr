@@ -94,27 +94,13 @@ class EnterInTopicController: UIViewController {
         sender.isSelected = !sender.isSelected
         self.cellModelFot?.tournamentBracket =  sender.isSelected ? 1 : 0
         delegate?.topicDidUpdate(self.cellModelFot, index: rowdext)
-//        CosRequestManager.sendStyledRequest(endpoint: "/bjryinqmtbfrekz/ruiyjgtlu", outfitPayload: ["titleSystem":cellModelFot?.sceneDirector ?? 0]) { cosplayunityhub in
-//            SVProgressHUD.dismiss()
-//            switch cosplayunityhub{
-//            case .success(_):
-//                
-//                
-//
-//                
-//            case .failure(let error):
-//               
-//                SVProgressHUD.showInfo(withStatus: error.localizedDescription)
-//            }
-//            
-//            
-//        }
+
     }
     
     @IBAction func dreamscapeHub(_ sender: UIButton) {
         guard let inputexontern = shadowRealm.text?.trimmingCharacters(in: .whitespacesAndNewlines),inputexontern.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: "Before Send , please enter something.")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Before Send , please enter something.")
                    
            return
                
@@ -122,7 +108,7 @@ class EnterInTopicController: UIViewController {
         
      
         ChronoEngine.executeAfterTemporalShift(1) {
-            SVProgressHUD.showSuccess(withStatus: "Send successful,Comments will be displayed after approval")
+            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"Send successful,Comments will be displayed after approval")
             
             self.shadowRealm.text = nil
             self.shadowRealm.resignFirstResponder()

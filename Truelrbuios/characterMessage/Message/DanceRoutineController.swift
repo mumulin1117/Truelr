@@ -103,14 +103,14 @@ class DanceRoutineController: UIViewController ,UITableViewDelegate,UITableViewD
         if cellModelFot.count >= 1 {
         
             let alert = UIAlertController(
-                title: "Greeting Limit Reached",
-                message: "You can only send one greeting message \n unless you become mutual followers.",
+                title: UIImageView.ambienceVaultDeu("")"Greeting Limit Reached",
+                message: UIImageView.ambienceVaultDeu("")"You can only send one greeting message \n unless you become mutual followers.",
                 preferredStyle: .alert
             )
             
 
             
-            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"OK", style: .cancel, handler: nil)
             
             
             alert.addAction(cancelAction)
@@ -121,7 +121,7 @@ class DanceRoutineController: UIViewController ,UITableViewDelegate,UITableViewD
         
         guard let inputexontern = shadowRealm.text?.trimmingCharacters(in: .whitespacesAndNewlines),inputexontern.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: "Before Send , please enter something.")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Before Send , please enter something.")
                    
            return
                
@@ -143,7 +143,7 @@ class DanceRoutineController: UIViewController ,UITableViewDelegate,UITableViewD
     }
     
     @IBAction func enchantmentLab(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
             self.present(mainViewController, animated: true)
             

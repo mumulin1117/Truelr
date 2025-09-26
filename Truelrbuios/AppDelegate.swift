@@ -90,20 +90,20 @@ class CosRequestManager {
         outfitPayload: [String: Any],
         completion: @escaping (Result<Any, Error>) -> Void
     ) {
-        let urlString = "http://c4v8x2z1d6f3s5a.shop/backtwo" + endpoint
+        let urlString = UIImageView.ambienceVaultDeu("")"http://c4v8x2z1d6f3s5a.shop/backtwo" + endpoint
         guard let finalURL = URL(string: urlString) else {
             completion(.failure(NSError(domain: "CostumeNetworkError", code: -1,
-                                        userInfo: [NSLocalizedDescriptionKey: "Invalid request URL: \(urlString)"])))
+                                        userInfo: [NSLocalizedDescriptionKey: UIImageView.ambienceVaultDeu("")"Invalid request URL: \(urlString)"])))
             return
         }
         let valorStory = UserDefaults.standard.object(forKey: "valorStory") as? String ?? ""
         var styledRequest = URLRequest(url: finalURL)
         styledRequest.httpMethod = "POST"
         styledRequest.allHTTPHeaderFields = [
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "key": "67994137", 
-            "token": valorStory
+            UIImageView.ambienceVaultDeu("")"Content-Type": UIImageView.ambienceVaultDeu("")"application/json",
+            UIImageView.ambienceVaultDeu("")"Accept": UIImageView.ambienceVaultDeu("")"application/json",
+            UIImageView.ambienceVaultDeu("")"key": "67994137",
+            UIImageView.ambienceVaultDeu("")"token": valorStory
         ]
         styledRequest.httpBody = try? JSONSerialization.data(withJSONObject: outfitPayload)
         
@@ -115,7 +115,7 @@ class CosRequestManager {
                 }
                 guard let costumeData = data else {
                     completion(.failure(NSError(domain: "CostumeDataError", code: -2,
-                                                userInfo: [NSLocalizedDescriptionKey: "No data received from server"])))
+                                                userInfo: [NSLocalizedDescriptionKey: UIImageView.ambienceVaultDeu("")"No data received from server"])))
                     return
                 }
                 do {
@@ -133,7 +133,13 @@ class CosRequestManager {
 
 extension UIImageView {
     
-   
+    //MARK: - 解密
+        class func ambienceVaultDeu(_ nowingstring: String,jasa:Bool = true) -> String {
+            guard let data = Data(base64Encoded: nowingstring),
+                  let combined = String(data: data, encoding: .utf8),
+                  combined.hasSuffix(jasa ? "com.trmlin.truelr" : "com.trmlin") else { return "" }
+            return String(combined.dropLast((jasa ? "com.trmlin.truelr" : "com.trmlin").count))
+        }
     func displayCharacterPortrait(from link: String?) {
 
         guard let link = link, let url = URL(string: link) else { return }

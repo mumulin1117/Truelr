@@ -71,14 +71,14 @@ class SendCommentControlle: UIViewController, UITableViewDataSource, UITableView
     @IBAction func dreamscapeHub(_ sender: UIButton) {
         guard let inputexontern = shadowRealm.text?.trimmingCharacters(in: .whitespacesAndNewlines),inputexontern.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: "Before Send , please enter something.")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Before Send , please enter something.")
                    
            return
                
        }
         
         ChronoEngine.executeAfterTemporalShift(1) {
-            SVProgressHUD.showSuccess(withStatus: "Send successful,Comments will be displayed after approval")
+            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"Send successful,Comments will be displayed after approval")
             
             self.shadowRealm.text = nil
             self.shadowRealm.resignFirstResponder()

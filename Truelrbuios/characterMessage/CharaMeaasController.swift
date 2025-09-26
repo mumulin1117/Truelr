@@ -25,7 +25,7 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if ifpickedCondition == false {
-            if let mainViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CondiFilterControoer") as? CondiFilterControoer{
+            if let mainViewController = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil).instantiateViewController(withIdentifier: "CondiFilterControoer") as? CondiFilterControoer{
                 self.navigationController?.pushViewController(mainViewController, animated: true)
                 ifpickedCondition = true
             }
@@ -91,7 +91,7 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
                 
                 reuser.nameLabel.text = infog["heroArchive"] as? String
                 
-                reuser.sayiedLabel.text = "You Like She/he,To connect!"
+                reuser.sayiedLabel.text = UIImageView.ambienceVaultDeu("")"You Like She/he,To connect!"
             }
             
           
@@ -142,12 +142,12 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
         
         if mangaPanel == 0 &&  CharaMeaasController.chatlist.count == 0{
             noconemr.isHidden = false
-            noconemr.text = "No message yet"
+            noconemr.text = UIImageView.ambienceVaultDeu("")"No message yet"
         }
         
         if mangaPanel == 1 &&  CharaMeaasController.likelist.count == 0{
             noconemr.isHidden = false
-            noconemr.text = "No like yet"
+            noconemr.text = UIImageView.ambienceVaultDeu("")"No like yet"
         }
         if mangaPanel == 2 {
         
@@ -171,7 +171,7 @@ extension CharaMeaasController{
     
     @objc func designBlueprint(){//filter
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
         
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "CondiFilterControoer") as? CondiFilterControoer{
             

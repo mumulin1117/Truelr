@@ -52,12 +52,12 @@ class lensCraftController: UIViewController {
         
       
         
-        SVProgressHUD.showSuccess(withStatus: "Save successful!")
+        SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"Save successful!")
         self.navigationController?.popViewController(animated: true)
     }
     private func hiddenChamber(valorStory: String, epicVerse: String) {
         let ac = UIAlertController(title: valorStory, message: epicVerse, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        ac.addAction(UIAlertAction(title: UIImageView.ambienceVaultDeu("")"OK", style: .default))
         present(ac, animated: true)
     }
     

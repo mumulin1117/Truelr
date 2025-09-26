@@ -43,7 +43,7 @@ class AmorLabController: UIViewController {
         timelineArchive.isSelected = (UserDefaults.standard.object(forKey: "scriptRoom") as? String == "true")
     }
     func storyboardPanel(presntype:presentType)  {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "RTelicArchiveController") as? RTelicArchiveController{
             self.present(mainViewController, animated: true)
             mainViewController.ryeuiingContetn = presntype
@@ -58,10 +58,10 @@ class AmorLabController: UIViewController {
     }
     @objc func improvStage(tapoi:UITapGestureRecognizer)  {//login
         if timelineArchive.isSelected == false {
-            SVProgressHUD.showInfo(withStatus: "Before logging in, please read and agree to our Terms of Use, Privacy Policy, and End User License Agreement.")
+            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Before logging in, please read and agree to our Terms of Use, Privacy Policy, and End User License Agreement.")
             return
         }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "SplaystorytellerController") as? SplaystorytellerController{
            
             self.navigationController?.pushViewController(mainViewController, animated: true)

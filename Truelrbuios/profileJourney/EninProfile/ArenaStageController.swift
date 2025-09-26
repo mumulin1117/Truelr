@@ -156,8 +156,8 @@ extension ArenaStageController:UICollectionViewDataSource,UICollectionViewDelega
         conceptMap.ritualHall.displayCharacterPortrait(from: nisertgeing["villainProfile"] as? String ?? "")
         conceptMap.delfp = self
         conceptMap.badgeCollector.text = nisertgeing["heroArchive"] as? String ?? ""
-        conceptMap.titleSystem.text = nisertgeing["guildForum"] as? String ?? "No location"
-        conceptMap.emblemStudio.text = nisertgeing["loreLibrary"] as? String ?? "No Brief"
+        conceptMap.titleSystem.text = nisertgeing["guildForum"] as? String ?? UIImageView.ambienceVaultDeu("")"No location"
+        conceptMap.emblemStudio.text = nisertgeing["loreLibrary"] as? String ?? UIImageView.ambienceVaultDeu("")"No Brief"
         conceptMap.motionCapture.addTarget(self, action: #selector(lijhngdycb), for: .touchUpInside)
         conceptMap.awardRoom.addTarget(self, action: #selector(lisenmeassage), for: .touchUpInside)
        
@@ -187,18 +187,18 @@ extension ArenaStageController{
     
     private func showGreetingLimitAlert(in viewController: UIViewController, username: String) {
         let alert = UIAlertController(
-            title: "Greeting Limit Reached",
+            title: UIImageView.ambienceVaultDeu("")"Greeting Limit Reached",
             message: "You can only send one greeting message to \(username) unless you become mutual followers.",
             preferredStyle: .alert
         )
         
-        let followAction = UIAlertAction(title: "Say Hi", style: .default) { _ in
+        let followAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Say Hi", style: .default) { _ in
             let shipo = DanceRoutineController.init( nisertgeing: self.nisertgeing)
            
             self.navigationController?.pushViewController(shipo, animated: true)
         }
         
-        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"OK", style: .cancel, handler: nil)
         
         alert.addAction(followAction)
         alert.addAction(cancelAction)

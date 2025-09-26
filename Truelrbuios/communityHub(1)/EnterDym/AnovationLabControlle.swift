@@ -60,7 +60,7 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
     @IBOutlet weak var questBoard: UILabel!
     func maskTheatre()  {
         if dymTyoe == 1 {//video
-            zodiacSignTitleLabel.text = "Short video"
+            zodiacSignTitleLabel.text = UIImageView.ambienceVaultDeu("")"Short video"
 //            actingCoachBack.displayCharacterPortrait(from: cellModelFot.guildBadge)
             centerpaling.isHidden = false
             
@@ -68,7 +68,7 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
         }else{//轮播图
             centerpaling.isHidden = true
             setupPager()
-            zodiacSignTitleLabel.text = "Dynamic Details"
+            zodiacSignTitleLabel.text = UIImageView.ambienceVaultDeu("")"Dynamic Details"
         }
         NotificationCenter.default.addObserver(self, selector: #selector(suteiback), name: NSNotification.Name.init("Blockuseraction"), object: nil)
  

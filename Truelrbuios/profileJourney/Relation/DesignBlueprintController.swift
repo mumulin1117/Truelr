@@ -34,15 +34,15 @@ class DesignBlueprintController: UIViewController {
         switch orbitMode {
         case .blacklist: 
             users = MonkDisciplineController.bloackuserID
-            noiebrrTitle.text = "Blacklist"
-        case .followers: noiebrrTitle.text = "Fans"
+            noiebrrTitle.text = UIImageView.ambienceVaultDeu("")"Blacklist"
+        case .followers: noiebrrTitle.text = UIImageView.ambienceVaultDeu("")"Fans"
             users = []
         case .friends:
             users = []
-            noiebrrTitle.text = "Friends"
+            noiebrrTitle.text = UIImageView.ambienceVaultDeu("")"Friends"
         case .successgfulhistory:
             users = CharaMeaasController.matchingSuccessfullist
-            noiebrrTitle.text = "Matching success"
+            noiebrrTitle.text = UIImageView.ambienceVaultDeu("")"Matching success"
         }
         orbitTable.rowHeight = 100
         orbitTable.delegate = self
@@ -78,9 +78,9 @@ extension DesignBlueprintController: UITableViewDelegate, UITableViewDataSource 
         // 按模式设置按钮
         var actionTitle = ""
         switch orbitMode {
-        case .blacklist: actionTitle = "Unblock"
-        case .followers: actionTitle = "Follow back"
-        case .friends: actionTitle = "Unfollow"
+        case .blacklist: actionTitle = UIImageView.ambienceVaultDeu("")"Unblock"
+        case .followers: actionTitle = UIImageView.ambienceVaultDeu("")"Follow back"
+        case .friends: actionTitle = UIImageView.ambienceVaultDeu("")"Unfollow"
         case .successgfulhistory:
             actionTitle = ">"
         }
