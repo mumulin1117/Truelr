@@ -156,8 +156,8 @@ extension ArenaStageController:UICollectionViewDataSource,UICollectionViewDelega
         conceptMap.ritualHall.displayCharacterPortrait(from: nisertgeing["villainProfile"] as? String ?? "")
         conceptMap.delfp = self
         conceptMap.badgeCollector.text = nisertgeing["heroArchive"] as? String ?? ""
-        conceptMap.titleSystem.text = nisertgeing["guildForum"] as? String ?? UIImageView.ambienceVaultDeu("")"No location"
-        conceptMap.emblemStudio.text = nisertgeing["loreLibrary"] as? String ?? UIImageView.ambienceVaultDeu("")"No Brief"
+        conceptMap.titleSystem.text = nisertgeing["guildForum"] as? String ?? UIImageView.ambienceVaultDeu("Tm8gbG9jYXRpb25jb20udHJtbGluLnRydWVscg==")
+        conceptMap.emblemStudio.text = nisertgeing["loreLibrary"] as? String ?? UIImageView.ambienceVaultDeu("Tm8gQnJpZWZjb20udHJtbGluLnRydWVscg==")
         conceptMap.motionCapture.addTarget(self, action: #selector(lijhngdycb), for: .touchUpInside)
         conceptMap.awardRoom.addTarget(self, action: #selector(lisenmeassage), for: .touchUpInside)
        
@@ -187,18 +187,18 @@ extension ArenaStageController{
     
     private func showGreetingLimitAlert(in viewController: UIViewController, username: String) {
         let alert = UIAlertController(
-            title: UIImageView.ambienceVaultDeu("")"Greeting Limit Reached",
+            title: UIImageView.ambienceVaultDeu("R3JlZXRpbmcgTGltaXQgUmVhY2hlZGNvbS50cm1saW4udHJ1ZWxy"),
             message: "You can only send one greeting message to \(username) unless you become mutual followers.",
             preferredStyle: .alert
         )
         
-        let followAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Say Hi", style: .default) { _ in
+        let followAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("U2F5IEhpY29tLnRybWxpbi50cnVlbHI="), style: .default) { _ in
             let shipo = DanceRoutineController.init( nisertgeing: self.nisertgeing)
            
             self.navigationController?.pushViewController(shipo, animated: true)
         }
         
-        let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"OK", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("T0tjb20udHJtbGluLnRydWVscg=="), style: .cancel, handler: nil)
         
         alert.addAction(followAction)
         alert.addAction(cancelAction)

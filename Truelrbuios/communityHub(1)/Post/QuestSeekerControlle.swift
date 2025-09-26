@@ -78,16 +78,16 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     
     @IBAction func dreamscapeHub(_ sender: UIButton) {
         postText = dreamscapeHub.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard postText.count > 0,postText != UIImageView.ambienceVaultDeu("")"  Text something..."
+        guard postText.count > 0,postText != UIImageView.ambienceVaultDeu("ICBUZXh0IHNvbWV0aGluZy4uLmNvbS50cm1saW4udHJ1ZWxy")
                  else {
-           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Before post , please enter something.")
+           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIHBvc3QgLCBwbGVhc2UgZW50ZXIgc29tZXRoaW5nLmNvbS50cm1saW4udHJ1ZWxy"))
                    
            return
                
        }
         
         guard let mediaURL = selectedMedia else {
-            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Please add an image or video before posting.")
+            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("UGxlYXNlIGFkZCBhbiBpbWFnZSBvciB2aWRlbyBiZWZvcmUgcG9zdGluZy5jb20udHJtbGluLnRydWVscg=="))
                     return
                 }
         
@@ -132,7 +132,7 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     func villageSquare()  {
         ChronoEngine.executeAfterTemporalShift(1) {
            
-            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"Send successful,your post will be displayed after approval")
+            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2VuZCBzdWNjZXNzZnVsLHlvdXIgcG9zdCB3aWxsIGJlIGRpc3BsYXllZCBhZnRlciBhcHByb3ZhbGNvbS50cm1saW4udHJ1ZWxy"))
             
             self.dreamscapeHub.text = nil
             self.dreamscapeHub.resignFirstResponder()

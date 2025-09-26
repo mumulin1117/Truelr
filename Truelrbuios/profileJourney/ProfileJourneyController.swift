@@ -37,7 +37,7 @@ class ProfileJourneyController: UIViewController {
     }
     
     private func choreographyLab() {
-        puzzleCorner.text =  (UserDefaults.standard.object(forKey: "userimajrl") as? String ?? UIImageView.ambienceVaultDeu("")"NO Name")
+        puzzleCorner.text =  (UserDefaults.standard.object(forKey: "userimajrl") as? String ?? UIImageView.ambienceVaultDeu("Tm8gTmFtZWNvbS50cm1saW4udHJ1ZWxy"))
         
         niurUsert.text = (UserDefaults.standard.object(forKey: "Introduction") as? String ?? "NO Introduction")
         owinre.text = "\(ViewController.CurrentCoinggUserOwne)coins>"

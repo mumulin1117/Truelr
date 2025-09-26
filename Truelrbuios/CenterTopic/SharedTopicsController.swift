@@ -58,11 +58,11 @@ class SharedTopicsController: UIViewController {
                 
                 guard let response = cosplayunityhub as? Dictionary<String,Any> ,
                       
-                        let user = response[UIImageView.ambienceVaultDeu("")"data"] as? Array<Dictionary<String,Any>>
+                        let user = response[UIImageView.ambienceVaultDeu("ZGF0YWNvbS50cm1saW4udHJ1ZWxy")] as? Array<Dictionary<String,Any>>
                         
                 else {
                     
-                    SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"No topic data nowing!")
+                    SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("Tm8gdG9waWMgZGF0YSBub3dpbmchY29tLnRybWxpbi50cnVlbHI="))
                     
                     return
                 }
@@ -73,7 +73,7 @@ class SharedTopicsController: UIViewController {
                 self.topcsView.mj_header?.endRefreshing()
                 SVProgressHUD.showInfo(withStatus: error.localizedDescription)
                 
-                SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"You can pull down refresh retry!")
+                SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("WW91IGNhbiBwdWxsIGRvd24gcmVmcmVzaCByZXRyeSFjb20udHJtbGluLnRydWVscg=="))
                
             }
             

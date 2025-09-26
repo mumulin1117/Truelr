@@ -42,7 +42,7 @@ class EventEcentController: UIViewController {
      @IBOutlet weak var ninjaScroll: UILabel!
      
     @IBAction func minstrelTune(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("TWFpbmNvbS50cm1saW4udHJ1ZWxy"), bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
             mainViewController.userINfoID = nil
             self.present(mainViewController, animated: true)
@@ -84,7 +84,7 @@ class EventEcentController: UIViewController {
         
         ChronoEngine.executeAfterTemporalShift(2) {
            
-            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"We have received your application and will review your eligibility to participate as soon as possible!")
+            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("V2UgaGF2ZSByZWNlaXZlZCB5b3VyIGFwcGxpY2F0aW9uIGFuZCB3aWxsIHJldmlldyB5b3VyIGVsaWdpYmlsaXR5IHRvIHBhcnRpY2lwYXRlIGFzIHNvb24gYXMgcG9zc2libGUhY29tLnRybWxpbi50cnVlbHI="))
             
         }
        

@@ -16,13 +16,13 @@ class EpicVerseController: UIViewController {
     private let cosmicTable = UITableView(frame: .zero, style: .insetGrouped)
     
     private let stardustOptions: [(icon: String, title: String, tint: UIColor?)] = [
-        ("quangiyi", UIImageView.ambienceVaultDeu("")"User Agreement", nil),
-        ("sdzkjixhf", UIImageView.ambienceVaultDeu("")"Privacy service", nil),
-        ("doqunfckieu", UIImageView.ambienceVaultDeu("")"Clear the cache", nil),
+        ("quangiyi", UIImageView.ambienceVaultDeu("VXNlciBBZ3JlZW1lbnRjb20udHJtbGluLnRydWVscg=="), nil),
+        ("sdzkjixhf", UIImageView.ambienceVaultDeu("UHJpdmFjeSBzZXJ2aWNlY29tLnRybWxpbi50cnVlbHI="), nil),
+        ("doqunfckieu", UIImageView.ambienceVaultDeu("Q2xlYXIgdGhlIGNhY2hlY29tLnRybWxpbi50cnVlbHI="), nil),
         
        
-        ("claseaccount", UIImageView.ambienceVaultDeu("")"Delete Account", nil),
-        ("power", UIImageView.ambienceVaultDeu("")"Log out", .systemRed)
+        ("claseaccount", UIImageView.ambienceVaultDeu("RGVsZXRlIEFjY291bnRjb20udHJtbGluLnRydWVscg=="), nil),
+        ("power", UIImageView.ambienceVaultDeu("TG9nIG91dGNvbS50cm1saW4udHJ1ZWxy"), .systemRed)
     ]
     
     override func viewDidLoad() {
@@ -78,32 +78,32 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
+            let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("TWFpbmNvbS50cm1saW4udHJ1ZWxy"), bundle: nil)
             if let mainViewController = storyboard.instantiateViewController(withIdentifier: "RTelicArchiveController") as? RTelicArchiveController{
                 self.present(mainViewController, animated: true)
                 mainViewController.ryeuiingContetn = .tertt
             }
             
         case 1:
-            let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
+            let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("TWFpbmNvbS50cm1saW4udHJ1ZWxy"), bundle: nil)
             if let mainViewController = storyboard.instantiateViewController(withIdentifier: "RTelicArchiveController") as? RTelicArchiveController{
                 self.present(mainViewController, animated: true)
                 mainViewController.ryeuiingContetn = .prio
             }
         case 2:
             ChronoEngine.executeAfterTemporalShift(2) {
-                SVProgressHUD.showSuccess(withStatus: "Clear completed!")
+                SVProgressHUD.showSuccess(withStatus:UIImageView.ambienceVaultDeu("Q2xlYXIgY29tcGxldGVkIWNvbS50cm1saW4udHJ1ZWxy") )
             }
         case 3:
             let alert = UIAlertController(
-                        title: UIImageView.ambienceVaultDeu("")"Delete Account",
-                        message: UIImageView.ambienceVaultDeu("")"Are you sure you want to permanently deactivate your account? This action cannot be undone.",
+                        title: UIImageView.ambienceVaultDeu("RGVsZXRlIEFjY291bnRjb20udHJtbGluLnRydWVscg=="),
+                        message: UIImageView.ambienceVaultDeu("QXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIHBlcm1hbmVudGx5IGRlYWN0aXZhdGUgeW91ciBhY2NvdW50PyBUaGlzIGFjdGlvbiBjYW5ub3QgYmUgdW5kb25lLmNvbS50cm1saW4udHJ1ZWxy"),
                         preferredStyle: .alert
                     )
                     
                    
-            let cancel = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Cancel", style: .cancel, handler: nil)
-            let confirm = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Yes, Delete", style: .destructive) { _ in
+            let cancel = UIAlertAction(title: UIImageView.ambienceVaultDeu("Q2FuY2VsY29tLnRybWxpbi50cnVlbHI="), style: .cancel, handler: nil)
+            let confirm = UIAlertAction(title: UIImageView.ambienceVaultDeu("WWVzLCBEZWxldGVjb20udHJtbGluLnRydWVscg=="), style: .destructive) { _ in
                 UserDefaults.standard.set(nil, forKey: "userimajrl")
                 UserDefaults.standard.set(nil, forKey: "Introduction")
                 UserDefaults.standard.set(nil, forKey: "IntroAge")

@@ -25,7 +25,7 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if ifpickedCondition == false {
-            if let mainViewController = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil).instantiateViewController(withIdentifier: "CondiFilterControoer") as? CondiFilterControoer{
+            if let mainViewController = UIStoryboard(name: UIImageView.ambienceVaultDeu("TWFpbmNvbS50cm1saW4udHJ1ZWxy"), bundle: nil).instantiateViewController(withIdentifier: "CondiFilterControoer") as? CondiFilterControoer{
                 self.navigationController?.pushViewController(mainViewController, animated: true)
                 ifpickedCondition = true
             }
@@ -91,7 +91,7 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
                 
                 reuser.nameLabel.text = infog["heroArchive"] as? String
                 
-                reuser.sayiedLabel.text = UIImageView.ambienceVaultDeu("")"You Like She/he,To connect!"
+                reuser.sayiedLabel.text = UIImageView.ambienceVaultDeu("WW91IExpa2UgU2hlL2hlLFRvIGNvbm5lY3QhY29tLnRybWxpbi50cnVlbHI=")
             }
             
           
@@ -142,12 +142,12 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
         
         if mangaPanel == 0 &&  CharaMeaasController.chatlist.count == 0{
             noconemr.isHidden = false
-            noconemr.text = UIImageView.ambienceVaultDeu("")"No message yet"
+            noconemr.text = UIImageView.ambienceVaultDeu("Tm8gbWVzc2FnZSB5ZXRjb20udHJtbGluLnRydWVscg==")
         }
         
         if mangaPanel == 1 &&  CharaMeaasController.likelist.count == 0{
             noconemr.isHidden = false
-            noconemr.text = UIImageView.ambienceVaultDeu("")"No like yet"
+            noconemr.text = UIImageView.ambienceVaultDeu("Tm8gbGlrZSB5ZXRjb20udHJtbGluLnRydWVscg==")
         }
         if mangaPanel == 2 {
         
@@ -171,7 +171,7 @@ extension CharaMeaasController{
     
     @objc func designBlueprint(){//filter
         
-        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("TWFpbmNvbS50cm1saW4udHJ1ZWxy"), bundle: nil)
         
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "CondiFilterControoer") as? CondiFilterControoer{
             

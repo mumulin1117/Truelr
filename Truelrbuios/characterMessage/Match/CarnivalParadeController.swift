@@ -79,7 +79,7 @@ class CarnivalParadeController: UIViewController {
             flameTicker?.invalidate()
             self.navigationController?.pushViewController(reser, animated: true)
         }else{
-            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Matching failed, the other party has left")
+            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("TWF0Y2hpbmcgZmFpbGVkLCB0aGUgb3RoZXIgcGFydHkgaGFzIGxlZnRjb20udHJtbGluLnRydWVscg=="))
             self.navigationController?.popViewController(animated: true)
         }
         
@@ -88,7 +88,7 @@ class CarnivalParadeController: UIViewController {
     
     
     @IBAction func labyrinthPath(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("TWFpbmNvbS50cm1saW4udHJ1ZWxy"), bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
             self.present(mainViewController, animated: true)
             
@@ -108,7 +108,7 @@ class CarnivalParadeController: UIViewController {
                 if self.remainEchoSeconds <= 0 {
                     self.flameTicker?.invalidate()
                     self.flameTicker = nil
-                    SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Sorry, it's time")
+                    SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("U29ycnksIGl0J3MgdGltZWNvbS50cm1saW4udHJ1ZWxy"))
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             }

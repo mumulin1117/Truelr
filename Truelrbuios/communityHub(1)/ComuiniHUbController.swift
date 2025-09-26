@@ -116,11 +116,11 @@ class ComuiniHUbController: UIViewController {
                    
                    guard let response = cosplayunityhub as? Dictionary<String,Any> ,
                          
-                           let user = response[UIImageView.ambienceVaultDeu("")"data"] as? Array<Dictionary<String,Any>>
+                           let user = response[UIImageView.ambienceVaultDeu("ZGF0YWNvbS50cm1saW4udHJ1ZWxy")] as? Array<Dictionary<String,Any>>
                            
                    else {
                        
-                       SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"No topic data nowing!")
+                       SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("Tm8gdG9waWMgZGF0YSBub3dpbmchY29tLnRybWxpbi50cnVlbHI="))
                        
                        return
                    }
@@ -218,7 +218,7 @@ class ComuiniHUbController: UIViewController {
        }
        
       @objc func rpeouingtety(_ sender: UIButton) {
-           let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
+           let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("TWFpbmNvbS50cm1saW4udHJ1ZWxy"), bundle: nil)
            if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
                mainViewController.userINfoID = nil
                self.present(mainViewController, animated: true)

@@ -43,18 +43,18 @@ class SplaystorytellerController: UIViewController {
         let email = ritualChamber.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                 let password = surrealStage.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                 guard !email.isEmpty, !password.isEmpty else {
-                    let message = UIImageView.ambienceVaultDeu("")"You must provide both an email and a password to log in."
-                    hiddenChamber(valorStory: UIImageView.ambienceVaultDeu("")"Notice", epicVerse: message)
+                    let message = UIImageView.ambienceVaultDeu("WW91IG11c3QgcHJvdmlkZSBib3RoIGFuIGVtYWlsIGFuZCBhIHBhc3N3b3JkIHRvIGxvZyBpbi5jb20udHJtbGluLnRydWVscg==")
+                    hiddenChamber(valorStory: UIImageView.ambienceVaultDeu("Tm90aWNlY29tLnRybWxpbi50cnVlbHI="), epicVerse: message)
                     return
                 }
 
                 if !isValidEmail(email) {
-                    hiddenChamber(valorStory: UIImageView.ambienceVaultDeu("")"Invalid Email", epicVerse: UIImageView.ambienceVaultDeu("")"Please enter a valid email address.")
+                    hiddenChamber(valorStory: UIImageView.ambienceVaultDeu("SW52YWxpZCBFbWFpbGNvbS50cm1saW4udHJ1ZWxy"), epicVerse: UIImageView.ambienceVaultDeu("UGxlYXNlIGVudGVyIGEgdmFsaWQgZW1haWwgYWRkcmVzcy5jb20udHJtbGluLnRydWVscg=="))
                     return
                 }
 
                 if password.count < 6 {
-                    hiddenChamber(valorStory: UIImageView.ambienceVaultDeu("")"Weak Password", epicVerse:UIImageView.ambienceVaultDeu("") "Password must be at least 6 characters long.")
+                    hiddenChamber(valorStory: UIImageView.ambienceVaultDeu("V2VhayBQYXNzd29yZGNvbS50cm1saW4udHJ1ZWxy"), epicVerse:UIImageView.ambienceVaultDeu("UGFzc3dvcmQgbXVzdCBiZSBhdCBsZWFzdCA2IGNoYXJhY3RlcnMgbG9uZy5jb20udHJtbGluLnRydWVscg==") )
                     return
                 }
 
@@ -66,25 +66,22 @@ class SplaystorytellerController: UIViewController {
             case .success(let cosplayunityhub):
                 guard let response = cosplayunityhub as? Dictionary<String,Any> ,
                      
-                      let user = response[UIImageView.ambienceVaultDeu("")"data"] as? Dictionary<String,Any>
+                      let user = response[UIImageView.ambienceVaultDeu("ZGF0YWNvbS50cm1saW4udHJ1ZWxy")] as? Dictionary<String,Any>
                         
                 else {
-                    SVProgressHUD.showInfo(withStatus: "Username or password incorrect!")
+                    SVProgressHUD.showInfo(withStatus:UIImageView.ambienceVaultDeu("VXNlcm5hbWUgb3IgcGFzc3dvcmQgaW5jb3JyZWN0IWNvbS50cm1saW4udHJ1ZWxy"))
                     
                     return
                 }
                 
                 UserDefaults.standard.set(user["valorStory"] as? String, forKey: "valorStory")
-                
-                
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
+   
                 ViewController.ExestedLogUserID = user["dungeonGuide"] as? Int
-//                let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
-                UserDefaults.standard.set( user["valorStory"], forKey: "valorStory")//token
+
+                UserDefaults.standard.set( user["valorStory"], forKey: "valorStory")
                 
                 AppDelegate.cosmicShift( controllerIdentifier: "tabarnavi"){_ in 
-                    SVProgressHUD.showSuccess(withStatus: "Log in successful!")
+                    SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("TG9nIGluIHN1Y2Nlc3NmdWwhY29tLnRybWxpbi50cnVlbHI="))
                 }
 
                    
@@ -108,7 +105,7 @@ class SplaystorytellerController: UIViewController {
    
         private func hiddenChamber(valorStory: String, epicVerse: String) {
             let ac = UIAlertController(title: valorStory, message: epicVerse, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            ac.addAction(UIAlertAction(title: UIImageView.ambienceVaultDeu("T0tjb20udHJtbGluLnRydWVscg=="), style: .default))
             present(ac, animated: true)
         }
 

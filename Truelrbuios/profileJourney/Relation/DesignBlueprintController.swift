@@ -34,15 +34,15 @@ class DesignBlueprintController: UIViewController {
         switch orbitMode {
         case .blacklist: 
             users = MonkDisciplineController.bloackuserID
-            noiebrrTitle.text = UIImageView.ambienceVaultDeu("")"Blacklist"
-        case .followers: noiebrrTitle.text = UIImageView.ambienceVaultDeu("")"Fans"
+            noiebrrTitle.text = UIImageView.ambienceVaultDeu("QmxhY2tsaXN0Y29tLnRybWxpbi50cnVlbHI=")
+        case .followers: noiebrrTitle.text = UIImageView.ambienceVaultDeu("RmFuc2NvbS50cm1saW4udHJ1ZWxy")
             users = []
         case .friends:
             users = []
-            noiebrrTitle.text = UIImageView.ambienceVaultDeu("")"Friends"
+            noiebrrTitle.text = UIImageView.ambienceVaultDeu("RnJpZW5kc2NvbS50cm1saW4udHJ1ZWxy")
         case .successgfulhistory:
             users = CharaMeaasController.matchingSuccessfullist
-            noiebrrTitle.text = UIImageView.ambienceVaultDeu("")"Matching success"
+            noiebrrTitle.text = UIImageView.ambienceVaultDeu("TWF0Y2hpbmcgc3VjY2Vzc2NvbS50cm1saW4udHJ1ZWxy")
         }
         orbitTable.rowHeight = 100
         orbitTable.delegate = self
@@ -78,9 +78,9 @@ extension DesignBlueprintController: UITableViewDelegate, UITableViewDataSource 
         // 按模式设置按钮
         var actionTitle = ""
         switch orbitMode {
-        case .blacklist: actionTitle = UIImageView.ambienceVaultDeu("")"Unblock"
-        case .followers: actionTitle = UIImageView.ambienceVaultDeu("")"Follow back"
-        case .friends: actionTitle = UIImageView.ambienceVaultDeu("")"Unfollow"
+        case .blacklist: actionTitle = UIImageView.ambienceVaultDeu("VW5ibG9ja2NvbS50cm1saW4udHJ1ZWxy")
+        case .followers: actionTitle = UIImageView.ambienceVaultDeu("Rm9sbG93IGJhY2tjb20udHJtbGluLnRydWVscg==")
+        case .friends: actionTitle = UIImageView.ambienceVaultDeu("VW5mb2xsb3djb20udHJtbGluLnRydWVscg==")
         case .successgfulhistory:
             actionTitle = ">"
         }

@@ -2,14 +2,14 @@
 //  UsageManager.swift
 //  Truelrbuios
 //
-//  Created by mumu on 2025/9/25.
+//  Created by  on 2025/9/25.
 //
 
 import UIKit
 
 class CoinUsageManager {
     private let matchCost = 20
-    private let maxFreeMatches = 2
+    private let maxFreeMatches = 3
     private let usedMatchesKey = "usedMatchesCount"
     var onStartMatching: (() -> Void)?
        
@@ -52,17 +52,17 @@ class CoinUsageManager {
     
     private func showFreeMatchAlert(in viewController: UIViewController) {
         let alert = UIAlertController(
-            title: UIImageView.ambienceVaultDeu("")"Free Match Available",
+            title: UIImageView.ambienceVaultDeu("RnJlZSBNYXRjaCBBdmFpbGFibGVjb20udHJtbGluLnRydWVscg=="),
             message: "You have \(remainingFreeMatches) free matches remaining. Each match costs 20 coins after free matches are used.",
             preferredStyle: .alert
         )
         
-        let matchAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Start Matching", style: .default) { _ in
+        let matchAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("U3RhcnQgTWF0Y2hpbmdjb20udHJtbGluLnRydWVscg=="), style: .default) { _ in
             self.deductMatchCost()
             self.startMatching()
         }
         
-        let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("Q2FuY2VsY29tLnRybWxpbi50cnVlbHI="), style: .cancel, handler: nil)
         
         alert.addAction(matchAction)
         alert.addAction(cancelAction)
@@ -72,17 +72,17 @@ class CoinUsageManager {
     
     private func showPaidMatchAlert(in viewController: UIViewController) {
         let alert = UIAlertController(
-            title: UIImageView.ambienceVaultDeu("")"Confirm Match",
+            title: UIImageView.ambienceVaultDeu("Q29uZmlybSBNYXRjaGNvbS50cm1saW4udHJ1ZWxy"),
             message: "This match will cost 20 coins. Your current balance: \(ViewController.CurrentCoinggUserOwne) coins.",
             preferredStyle: .alert
         )
         
-        let matchAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Confirm (20 coins)", style: .default) { _ in
+        let matchAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("Q29uZmlybSAoMjAgY29pbnMpY29tLnRybWxpbi50cnVlbHI="), style: .default) { _ in
             self.deductMatchCost()
             self.startMatching()
         }
         
-        let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("Q2FuY2VsY29tLnRybWxpbi50cnVlbHI="), style: .cancel, handler: nil)
         
         alert.addAction(matchAction)
         alert.addAction(cancelAction)
@@ -92,16 +92,16 @@ class CoinUsageManager {
     
     func showInsufficientBalanceAlert(in viewController: UIViewController) {
         let alert = UIAlertController(
-            title: UIImageView.ambienceVaultDeu("")"Insufficient Balance",
+            title: UIImageView.ambienceVaultDeu("SW5zdWZmaWNpZW50IEJhbGFuY2Vjb20udHJtbGluLnRydWVscg=="),
             message: "You need 20 coins to start a match. Your current balance: \(ViewController.CurrentCoinggUserOwne) coins.",
             preferredStyle: .alert
         )
         
-        let purchaseAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Purchase Coins", style: .default) { _ in
+        let purchaseAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("UHVyY2hhc2UgQ29pbnNjb20udHJtbGluLnRydWVscg=="), style: .default) { _ in
             self.navigateToCoinStore()
         }
         
-        let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: UIImageView.ambienceVaultDeu("Q2FuY2VsY29tLnRybWxpbi50cnVlbHI="), style: .cancel, handler: nil)
         
         alert.addAction(purchaseAction)
         alert.addAction(cancelAction)
@@ -110,20 +110,14 @@ class CoinUsageManager {
     }
     
     private func startMatching() {
-        // Start your matching logic here
-        print("Starting match process...")
+    
         onStartMatching?()
     }
     
     private func navigateToCoinStore() {
-        // Navigate to coin purchase screen
-        print("Navigating to coin store...")
+   
         onNavigateToCoinStore?()
     }
     
-//    // Method to add coins (for testing or purchases)
-//    func addCoins(_ amount: Int) {
-//        let newBalance = ViewController.CurrentCoinggUserOwne + amount
-//        UserDefaults.standard.set(newBalance, forKey: coinBalanceKey)
-//    }
+
 }

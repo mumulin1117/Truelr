@@ -61,10 +61,10 @@ class TreasuretController: UIViewController {
                         
                     } else {
                         
-                        let alert = UIAlertController(title:UIImageView.ambienceVaultDeu("") "Permission required", message: UIImageView.ambienceVaultDeu("")"Please turn on the camera and microphone", preferredStyle: .alert)
+                        let alert = UIAlertController(title:UIImageView.ambienceVaultDeu("UGVybWlzc2lvbiByZXF1aXJlZGNvbS50cm1saW4udHJ1ZWxy") , message: UIImageView.ambienceVaultDeu("UGxlYXNlIHR1cm4gb24gdGhlIGNhbWVyYSBhbmQgbWljcm9waG9uZWNvbS50cm1saW4udHJ1ZWxy"), preferredStyle: .alert)
                         
                         
-                        alert.addAction(UIAlertAction(title: UIImageView.ambienceVaultDeu("")"Sure", style: .default))
+                        alert.addAction(UIAlertAction(title: UIImageView.ambienceVaultDeu("U3VyZWNvbS50cm1saW4udHJ1ZWxy"), style: .default))
                         
                         self?.present(alert, animated: true)
                         
@@ -86,7 +86,7 @@ class TreasuretController: UIViewController {
         let spectralTask = DispatchWorkItem { [weak self] in
                    guard let self = self else { return }
                    self.dismiss(animated: true)
-                   SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("")"Connect failed, the other party has left")
+                   SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("Q29ubmVjdCBmYWlsZWQsIHRoZSBvdGhlciBwYXJ0eSBoYXMgbGVmdGNvbS50cm1saW4udHJ1ZWxy"))
                    if self.isfromamatching {
                        self.vloavkDismiss?(true)
                    }
@@ -106,7 +106,7 @@ class TreasuretController: UIViewController {
     }
     
     @IBAction func enchantmentLab(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("")"Main", bundle: nil)
+        let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("TWFpbmNvbS50cm1saW4udHJ1ZWxy"), bundle: nil)
         if let mainViewController = storyboard.instantiateViewController(withIdentifier: "MonkDisciplineController") as? MonkDisciplineController{
             self.present(mainViewController, animated: true)
             

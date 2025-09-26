@@ -27,20 +27,20 @@ class RibbonVaulControoer: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     private let charmBundles: [CharmBundle] = [
-        CharmBundle(hearts: 300, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"0.99", hasPromo: true, CpriductID: "ufnclhqnidqznfch"),
-        CharmBundle(hearts: 700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"1.99", hasPromo: true, CpriductID: "adzmxihoombungys"),
-        CharmBundle(hearts: 2350, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"4.99", hasPromo: true, CpriductID: "oqlygwmfchwdxvqh"),
-        CharmBundle(hearts: 5050, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"9.99", hasPromo: true, CpriductID: "gwquedscjjdjkrvc"),
-        CharmBundle(hearts: 10800, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"19.99", hasPromo: true, CpriductID: "nmhqgblmkgeeqpug"),
-        CharmBundle(hearts: 29400, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"49.99", hasPromo: true, CpriductID: "ntjdhcdigmotmnao"),
-        CharmBundle(hearts: 63700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("")"99.99", hasPromo: true, CpriductID: "jhydnytpzboswmfl"),
+        CharmBundle(hearts: 300, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("MC45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "ufnclhqnidqznfch"),
+        CharmBundle(hearts: 700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("MS45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "adzmxihoombungys"),
+        CharmBundle(hearts: 2350, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("NC45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "oqlygwmfchwdxvqh"),
+        CharmBundle(hearts: 5050, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("OS45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "gwquedscjjdjkrvc"),
+        CharmBundle(hearts: 10800, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("MTkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "nmhqgblmkgeeqpug"),
+        CharmBundle(hearts: 29400, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("NDkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "ntjdhcdigmotmnao"),
+        CharmBundle(hearts: 63700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("OTkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "jhydnytpzboswmfl"),
        ]
        
        override func viewDidLoad() {
            super.viewDidLoad()
           
            textureLibrary()
-           travelDiary.text = "My Blance:\(ViewController.CurrentCoinggUserOwne)"
+           travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(ViewController.CurrentCoinggUserOwne)"
        }
        
        private func textureLibrary() {
@@ -80,7 +80,7 @@ class RibbonVaulControoer: UIViewController {
            let bundle = charmBundles[indexPath.item]
          
            view.isUserInteractionEnabled = false
-           SVProgressHUD.show(withStatus: UIImageView.ambienceVaultDeu("")"Paying...")
+           SVProgressHUD.show(withStatus: UIImageView.ambienceVaultDeu("UGF5aW5nLi4uY29tLnRybWxpbi50cnVlbHI="))
          
            SwiftyStoreKit.purchaseProduct(bundle.CpriductID, atomically: true) { psResult in
                
@@ -100,9 +100,9 @@ class RibbonVaulControoer: UIViewController {
                    let allcount =  ViewController.CurrentCoinggUserOwne + bundle.hearts + bundle.giftExtra
                    
                    ViewController.CurrentCoinggUserOwne = allcount
-                   SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("")"Pay Successful")
+                   SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("UGF5IFN1Y2Nlc3NmdWxjb20udHJtbGluLnRydWVscg=="))
                    
-                   self.travelDiary.text = "My Blance:\(ViewController.CurrentCoinggUserOwne)"
+                   self.travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(ViewController.CurrentCoinggUserOwne)"
              
                }else if case .error(let error) = psResult {
                    self.view.isUserInteractionEnabled = true
