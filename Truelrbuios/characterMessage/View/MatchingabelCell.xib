@@ -32,7 +32,7 @@
                             <constraint firstAttribute="height" constant="30" id="UIf-GD-mnI"/>
                             <constraint firstAttribute="width" constant="74" id="tAB-xS-I4d"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="  0" backgroundImage="villainProfile">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,7 +46,7 @@
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="sgiuting"/>
-                        <state key="selected" image="1vnibaiu"/>
+                        <state key="selected" image="babycare"/>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scriptRoom" translatesAutoresizingMaskIntoConstraints="NO" id="faU-oT-iBC">
                         <rect key="frame" x="0.0" y="406" width="409" height="24.333333333333314"/>
@@ -95,7 +95,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="1vnibaiu" width="54.333332061767578" height="54.333332061767578"/>
+        <image name="babycare" width="331.66665649414062" height="339"/>
         <image name="essence" width="40" height="40"/>
         <image name="matchRecordf" width="80" height="80.333335876464844"/>
         <image name="scriptRoom" width="375" height="24.333333969116211"/>

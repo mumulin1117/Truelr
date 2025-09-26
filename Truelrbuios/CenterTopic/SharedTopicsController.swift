@@ -72,6 +72,9 @@ class SharedTopicsController: UIViewController {
             case .failure(let error):
                 self.topcsView.mj_header?.endRefreshing()
                 SVProgressHUD.showInfo(withStatus: error.localizedDescription)
+                
+                SVProgressHUD.showInfo(withStatus: "You can pull down refresh retry!")
+               
             }
             
             
@@ -134,16 +137,24 @@ extension SharedTopicsController:UICollectionViewDataSource{
     
 }
 
-extension SharedTopicsController:UICollectionViewDelegate{
+extension SharedTopicsController:UICollectionViewDelegate,TopicUpdateDelegate{
+    func topicDidUpdate(_ topic: TopicsCellModel?, index: Int) {
+        guard let topissc = topic else {
+            return
+        }
+        self.topics[index] = topissc
+        self.topcsView.reloadItems(at: [IndexPath.init(row: index, section: 0)])
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let moakil = self.topics[indexPath.row]
         
         if let enterController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EnterInTopicController") as? EnterInTopicController{
-           
+            enterController.delegate = self
             self.navigationController?.pushViewController(enterController, animated: true)
            
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-                enterController.maskTheatre(moakil)
+                enterController.maskTheatre(moakil, indexpathro: indexPath.row)
             }))
             
         }

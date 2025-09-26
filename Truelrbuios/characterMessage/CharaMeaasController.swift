@@ -195,7 +195,12 @@ extension CharaMeaasController{
     
     
     @objc func moodBoard(button:UIButton){//start 匹配
-        
+        if button.isSelected == true{
+            button.isSelected = false
+            self.matchingTask?.cancel()
+            self.matchingTask = nil
+            return
+        }
         
         usageManager.onStartMatching = {
             

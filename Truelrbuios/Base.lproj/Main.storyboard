@@ -859,7 +859,7 @@ Contact: Truelr1234@gmail.com</string>
                                     <constraint firstAttribute="height" constant="30" id="XIX-Wp-409"/>
                                     <constraint firstAttribute="width" constant="74" id="aAU-vD-w8G"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="  0" backgroundImage="villainProfile">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1478,28 +1478,46 @@ Contact: Truelr1234@gmail.com</string>
                                                     <constraint firstAttribute="width" constant="112" id="tLw-VH-t91"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No comment yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRj-A0-bH4">
-                                                <rect key="frame" x="118" y="573" width="107" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRj-A0-bH4">
+                                                <rect key="frame" x="64" y="575" width="267" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.47058826684951782" green="0.4627450704574585" blue="0.4627450704574585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p6D-qb-oaB">
+                                                <rect key="frame" x="16" y="569" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="9Ma-bg-6wn"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Be6-go-4cp"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-mQ-ggb">
+                                                <rect key="frame" x="64" y="569" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="fRj-A0-bH4" firstAttribute="top" secondItem="uAr-iD-TbO" secondAttribute="bottom" constant="46" id="5aP-4Q-fM7"/>
+                                            <constraint firstItem="p6D-qb-oaB" firstAttribute="leading" secondItem="MKY-ui-Fxc" secondAttribute="leading" constant="16" id="87D-oa-Xjv"/>
                                             <constraint firstItem="OPc-iE-JHn" firstAttribute="leading" secondItem="MKY-ui-Fxc" secondAttribute="leading" id="AJP-0P-p8h"/>
                                             <constraint firstItem="chf-a6-gCZ" firstAttribute="leading" secondItem="MKY-ui-Fxc" secondAttribute="leading" id="Dg1-vI-uHq"/>
+                                            <constraint firstItem="Xg5-mQ-ggb" firstAttribute="leading" secondItem="p6D-qb-oaB" secondAttribute="trailing" constant="8" symbolic="YES" id="E7G-Y9-6k4"/>
                                             <constraint firstItem="uAr-iD-TbO" firstAttribute="top" secondItem="OPc-iE-JHn" secondAttribute="bottom" constant="32" id="EkN-l4-dU9"/>
+                                            <constraint firstAttribute="trailing" secondItem="fRj-A0-bH4" secondAttribute="trailing" constant="12" id="MxH-Jg-ljU"/>
                                             <constraint firstItem="OPc-iE-JHn" firstAttribute="top" secondItem="chf-a6-gCZ" secondAttribute="bottom" constant="16" id="PcP-7T-l8B"/>
-                                            <constraint firstItem="fRj-A0-bH4" firstAttribute="centerX" secondItem="MKY-ui-Fxc" secondAttribute="centerX" id="RXN-uk-E3g"/>
                                             <constraint firstItem="8oB-Zd-OLz" firstAttribute="top" secondItem="MKY-ui-Fxc" secondAttribute="top" constant="12" id="Rsw-Tl-T7q"/>
                                             <constraint firstAttribute="trailing" secondItem="OPc-iE-JHn" secondAttribute="trailing" id="U71-ZB-frC"/>
                                             <constraint firstItem="uAr-iD-TbO" firstAttribute="leading" secondItem="OPc-iE-JHn" secondAttribute="leading" id="VdW-p4-naa"/>
+                                            <constraint firstItem="Xg5-mQ-ggb" firstAttribute="top" secondItem="p6D-qb-oaB" secondAttribute="top" id="Z0F-Py-o6B"/>
                                             <constraint firstItem="8oB-Zd-OLz" firstAttribute="leading" secondItem="MKY-ui-Fxc" secondAttribute="leading" constant="12" id="ZqG-8y-ThF"/>
+                                            <constraint firstItem="fRj-A0-bH4" firstAttribute="top" secondItem="Xg5-mQ-ggb" secondAttribute="bottom" constant="6" id="adk-F3-nfT"/>
                                             <constraint firstAttribute="height" constant="1300" id="bJG-CB-00n"/>
+                                            <constraint firstItem="fRj-A0-bH4" firstAttribute="leading" secondItem="Xg5-mQ-ggb" secondAttribute="leading" id="gMN-M4-soK"/>
                                             <constraint firstAttribute="trailing" secondItem="chf-a6-gCZ" secondAttribute="trailing" id="l3F-KD-0V5"/>
                                             <constraint firstItem="chf-a6-gCZ" firstAttribute="top" secondItem="MKY-ui-Fxc" secondAttribute="top" id="uXv-TS-HXG"/>
+                                            <constraint firstItem="p6D-qb-oaB" firstAttribute="top" secondItem="uAr-iD-TbO" secondAttribute="bottom" constant="42" id="umc-bD-5mN"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhI-9P-iqK">
@@ -1599,17 +1617,21 @@ Contact: Truelr1234@gmail.com</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commentnamealbel" destination="Xg5-mQ-ggb" id="NCZ-ty-jD3"/>
+                        <outlet property="commentuseravatoer" destination="p6D-qb-oaB" id="SMt-Di-Wg6"/>
+                        <outlet property="commnetcontent" destination="fRj-A0-bH4" id="JQc-G8-Rv9"/>
                         <outlet property="figureCraft" destination="8oB-Zd-OLz" id="AhI-yh-v93"/>
                         <outlet property="illusionLab" destination="OPc-iE-JHn" id="ZVa-tN-BMh"/>
                         <outlet property="modelSculpt" destination="chf-a6-gCZ" id="4BL-j6-D0M"/>
                         <outlet property="puppetStage" destination="vhI-9P-iqK" id="jMH-ws-5tN"/>
                         <outlet property="screContenvie" destination="MKY-ui-Fxc" id="yvi-R6-Oif"/>
                         <outlet property="shadowRealm" destination="EPb-C7-SKG" id="iqF-Fe-0eY"/>
+                        <outlet property="shanretopicNam" destination="O1h-pj-gHd" id="A1K-xh-aSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QKP-gT-X0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1574.8091603053435" y="2362.6760563380285"/>
+            <point key="canvasLocation" x="1573.5999999999999" y="2362.6686656671668"/>
         </scene>
         <!--Monk Discipline Controller-->
         <scene sceneID="NkO-3j-iRH">
