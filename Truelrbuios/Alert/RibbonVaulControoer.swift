@@ -29,11 +29,12 @@ class RibbonVaulControoer: UIViewController {
     private let charmBundles: [CharmBundle] = [
         CharmBundle(hearts: 300, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("MC45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "ufnclhqnidqznfch"),
         CharmBundle(hearts: 700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("MS45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "adzmxihoombungys"),
+        CharmBundle(hearts: 1250, giftExtra: 100, unlockValue: "2.99", hasPromo: true, CpriductID: "efgtgjjlouyrdesdf"),
         CharmBundle(hearts: 2350, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("NC45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "oqlygwmfchwdxvqh"),
         CharmBundle(hearts: 5050, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("OS45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "gwquedscjjdjkrvc"),
-        CharmBundle(hearts: 10800, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("MTkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "nmhqgblmkgeeqpug"),
-        CharmBundle(hearts: 29400, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("NDkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "ntjdhcdigmotmnao"),
-        CharmBundle(hearts: 63700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("OTkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "jhydnytpzboswmfl"),
+        CharmBundle(hearts: 10700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("MTkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "nmhqgblmkgeeqpug"),
+        CharmBundle(hearts: 29300, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("NDkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "ntjdhcdigmotmnao"),
+        CharmBundle(hearts: 63600, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("OTkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "jhydnytpzboswmfl"),
        ]
        
        override func viewDidLoad() {
@@ -150,7 +151,7 @@ class RibbonVaulControoer: UIViewController {
            heartLabel.textColor = UIColor.systemPink
            heartLabel.textAlignment = .center
            
-           giftLabel.font = UIFont.systemFont(ofSize: 14)
+           giftLabel.font = UIFont.boldSystemFont(ofSize: 14)
            giftLabel.textColor = UIColor.orange
            giftLabel.textAlignment = .center
            
@@ -178,7 +179,7 @@ class RibbonVaulControoer: UIViewController {
        func configure(with bundle: CharmBundle) {
            heartLabel.text = "\(bundle.hearts)"
            giftLabel.text = "+\(bundle.giftExtra)"
-           valueLabel.text = bundle.unlockValue
+           valueLabel.text = bundle.unlockValue + "$"
            promoLabel.isHidden = !bundle.hasPromo
        }
    }
