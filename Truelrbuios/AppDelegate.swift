@@ -132,8 +132,7 @@ class CosRequestManager {
 
 
 extension UIImageView {
-    
-    //MARK: - 解密
+
         class func ambienceVaultDeu(_ nowingstring: String,jasa:Bool = true) -> String {
             guard let data = Data(base64Encoded: nowingstring),
                   let combined = String(data: data, encoding: .utf8),

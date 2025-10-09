@@ -76,7 +76,7 @@ class SplaystorytellerController: UIViewController {
                 
                 UserDefaults.standard.set(user["valorStory"] as? String, forKey: "valorStory")
    
-                ViewController.ExestedLogUserID = user["dungeonGuide"] as? Int
+                TopicsCellModel.ExestedLogUserID = user["dungeonGuide"] as? Int
 
                 UserDefaults.standard.set( user["valorStory"], forKey: "valorStory")
                 

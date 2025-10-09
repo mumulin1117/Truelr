@@ -107,7 +107,7 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
                 UserDefaults.standard.set(nil, forKey: "userimajrl")
                 UserDefaults.standard.set(nil, forKey: "Introduction")
                 UserDefaults.standard.set(nil, forKey: "IntroAge")
-                ViewController.ExestedLogUserID = nil
+                TopicsCellModel.ExestedLogUserID = nil
                 lensCraftController.changeinmge = UIImage.init(named: "Hildojd")!
                 ViewController.CurrentCoinggUserOwne = 0
                 UserDefaults.standard.set(nil, forKey: "valorStory")
@@ -125,7 +125,7 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
             UserDefaults.standard.set(nil, forKey: "userimajrl")
             UserDefaults.standard.set(nil, forKey: "Introduction")
             UserDefaults.standard.set(nil, forKey: "IntroAge")
-            ViewController.ExestedLogUserID = nil
+            TopicsCellModel.ExestedLogUserID = nil
             lensCraftController.changeinmge = UIImage.init(named: "Hildojd")!
             ViewController.CurrentCoinggUserOwne = 0
             UserDefaults.standard.set(nil, forKey: "valorStory")

@@ -21,7 +21,7 @@ class PostChargeDialog: UIView {
     }()
     
     private let postTokenIcon: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "post_token")) // 用你项目的金币图标
+        let imageView = UIImageView(image: UIImage(named: "post_token")) 
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView

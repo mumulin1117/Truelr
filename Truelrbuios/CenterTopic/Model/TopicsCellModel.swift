@@ -26,6 +26,19 @@ class TopicsCellModel: NSObject {
     var scriptRoom:String?
     var questBoard:Array<Dictionary<String,Any>>?
     var storyboardPanel:Int?
+    
+    
+    static var ExestedLogUserID:Int?{
+        
+        get{
+            let k = "dungeonGuide"
+           return UserDefaults.standard.object(forKey: "dungeonGuide") as? Int
+        }set{
+            let k = "dungeonGuide"
+            UserDefaults.standard.set(newValue, forKey: k)
+        }
+    }
+    
     init(setinginit dic:Dictionary<String,Any>) {
         questBoard = dic["questBoard"] as? Array<Dictionary<String,Any>>
         duelArena = dic["dic"] as? Array<String>

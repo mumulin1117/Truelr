@@ -9,31 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    static var ExestedLogUserID:Int?{
-        get{
-            UserDefaults.standard.object(forKey: "dungeonGuide") as? Int
-        }set{
-            UserDefaults.standard.set(newValue, forKey: "dungeonGuide")
-        }
-    }
-    
+
     
     static var CurrentCoinggUserOwne:Int{
+        
         get{
-            UserDefaults.standard.object(forKey: "CoinggUserOwne") as? Int  ?? 0
+            let k = "CoinggUserOwne"
+           return UserDefaults.standard.object(forKey: k) as? Int  ?? 0
         }set{
-            UserDefaults.standard.set(newValue, forKey: "CoinggUserOwne")
+            let k = "CoinggUserOwne"
+            UserDefaults.standard.set(newValue, forKey: k)
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        AppDelegate.cosmicShift( controllerIdentifier: (ViewController.ExestedLogUserID != nil) ? "tabarnavi" : "loginNavi")
+        AppDelegate.cosmicShift( controllerIdentifier: (TopicsCellModel.ExestedLogUserID != nil) ? "tabarnavi" : "loginNavi")
 
     }
 

@@ -9,9 +9,9 @@ import UIKit
 import SVProgressHUD
 import SwiftyStoreKit
 struct CharmBundle {
-    let hearts: Int       // 基础数量
-    let giftExtra: Int    // 赠送
-    let unlockValue: String // 美金价格
+    let hearts: Int
+    let giftExtra: Int
+    let unlockValue: String 
     let hasPromo: Bool
     let CpriductID:String
     
