@@ -59,8 +59,8 @@ class ComuiniHUbController: UIViewController {
             
             sender.isSelected = !celestialBuffer
             self.pickingShing = sender.tag - astralGate
-            self.mangaPanel.mj_header?.beginRefreshing()
-            
+//            self.mangaPanel.mj_header?.beginRefreshing()
+        designBlueprint()
             celestialBuffer.toggle()
     }
     

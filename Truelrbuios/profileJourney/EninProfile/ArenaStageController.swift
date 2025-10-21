@@ -7,7 +7,7 @@
 
 import UIKit
 
-import MJRefresh
+
 
 class ArenaStageController: UIViewController, painghur {
     var sun:Bool = true

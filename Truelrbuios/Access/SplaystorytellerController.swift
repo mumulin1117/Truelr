@@ -30,7 +30,9 @@ class SplaystorytellerController: UIViewController {
         spellBook()
     }
     
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     private func spellBook()  {
         fantasyForge.maskedlabeVobor(enter: 27)
@@ -80,9 +82,12 @@ class SplaystorytellerController: UIViewController {
 
                 UserDefaults.standard.set( user["valorStory"], forKey: "valorStory")
                 
-                AppDelegate.cosmicShift( controllerIdentifier: "tabarnavi"){_ in 
-                    HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("TG9nIGluIHN1Y2Nlc3NmdWwhY29tLnRybWxpbi50cnVlbHI="))
-                }
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+                    AppDelegate.cosmicShift( controllerIdentifier: "tabarnavi"){_ in
+                        HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("TG9nIGluIHN1Y2Nlc3NmdWwhY29tLnRybWxpbi50cnVlbHI="))
+                    }
+                }))
+               
 
                    
                 if email == "truelr@gmail.com"  {//测试账号

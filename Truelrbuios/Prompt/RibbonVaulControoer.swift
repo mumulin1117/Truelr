@@ -81,8 +81,9 @@ class RibbonVaulControoer: UIViewController {
            let bundle = charmBundles[indexPath.item]
          
            view.isUserInteractionEnabled = false
-           HaloPulseIndicator.showInfo(withStatus:  UIImageView.ambienceVaultDeu("UGF5aW5nLi4uY29tLnRybWxpbi50cnVlbHI="))
+           HaloPulseIndicator.show(info: "Paying...")
            LumiGiftChamber.shared.igniteGiftFlux(itemCode: "com.yourapp.token100") { result in
+//               HaloPulseIndicator.dismiss()
                switch result {
                case .success:
                    self.view.isUserInteractionEnabled = true
@@ -95,7 +96,7 @@ class RibbonVaulControoer: UIViewController {
                    self.travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(ViewController.CurrentCoinggUserOwne)"
                case .failure(let error):
                    self.view.isUserInteractionEnabled = true
-                   HaloPulseIndicator.dismiss()
+                   
                    HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
                }
            }

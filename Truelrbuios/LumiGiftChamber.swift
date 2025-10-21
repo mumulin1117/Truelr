@@ -70,40 +70,56 @@ extension LumiGiftChamber {
 // MARK: - 商品请求
 extension LumiGiftChamber: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        guard let first = response.products.first else {
-            completionVault?(.failure(NSError(domain: "LumiGiftChamber", code: -3,
-                                              userInfo: [NSLocalizedDescriptionKey: "No valid product found."])))
-            return
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            guard let first = response.products.first else {
+                completionVault?(.failure(NSError(domain: "LumiGiftChamber", code: -3,
+                                                  userInfo: [NSLocalizedDescriptionKey: "No valid product found."])))
+                return
+            }
+            let orb = SKPayment(product: first)
+            SKPaymentQueue.default().add(orb)
         }
-        let orb = SKPayment(product: first)
-        SKPaymentQueue.default().add(orb)
+       
     }
 
     func request(_ request: SKRequest, didFailWithError error: Error) {
-        completionVault?(.failure(error))
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            completionVault?(.failure(error))
+        }
+       
     }
 }
 
 // MARK: - 支付事务监听
 extension LumiGiftChamber: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for t in transactions {
-            switch t.transactionState {
-            case .purchased:
-                finalize(transaction: t, success: true)
-            case .failed:
-                if let err = t.error as? SKError, err.code == .paymentCancelled {
-                    finalize(transaction: t, success: false,
-                             err: NSError(domain: "LumiGiftChamber", code: -999,
-                                          userInfo: [NSLocalizedDescriptionKey: "User cancelled payment."]))
-                } else {
-                    finalize(transaction: t, success: false, err: t.error)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            for t in transactions {
+                switch t.transactionState {
+                case .purchased:
+                    finalize(transaction: t, success: true)
+                case .failed:
+                    if let err = t.error as? SKError, err.code == .paymentCancelled {
+                        finalize(transaction: t, success: false,
+                                 err: NSError(domain: "LumiGiftChamber", code: -999,
+                                              userInfo: [NSLocalizedDescriptionKey: "User cancelled payment."]))
+                    } else {
+                        finalize(transaction: t, success: false, err: t.error)
+                    }
+                case .restored:
+                    SKPaymentQueue.default().finishTransaction(t)
+                default:
+                    break
                 }
-            case .restored:
-                SKPaymentQueue.default().finishTransaction(t)
-            default:
-                break
             }
+            
         }
+        
+        
+       
     }
 }

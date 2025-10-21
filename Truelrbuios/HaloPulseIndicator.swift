@@ -10,94 +10,136 @@ import UIKit
 class HaloPulseIndicator {
     
     static let shared = HaloPulseIndicator()
-    private var pulseWindow: UIWindow?
-    private var pulseView: UIView?
-    private var statusLabel: UILabel?
-    private var iconView: UIImageView?
-    
+    private var overlayWindow: UIWindow?
+        private var containerView: UIView?
+        private var indicator: UIActivityIndicatorView?
+        private var messageLabel: UILabel?
+        private var iconView: UIImageView?
     // MARK: - Show Loading
     class func show(info:String) {
-        shared.presentPulse(message: info, icon: nil)
+        shared.present(message: info, icon: nil, isLoading: true)
     }
     
     // MARK: - Show Info
     class func showInfo(withStatus message: String) {
-        shared.presentPulse(message: message, icon: UIImage(systemName: "info.circle"))
+        shared.present(message: message, icon: UIImage(systemName: "info.circle"), isLoading: false)
     }
     
     // MARK: - Show Success
     class func showSuccess(withStatus message: String) {
-        shared.presentPulse(message: message, icon: UIImage(systemName: "checkmark.seal.fill"))
+        shared.present(message: message, icon: UIImage(systemName: "checkmark.circle.fill"), isLoading: false)
     }
     
     // MARK: - Dismiss
     class func dismiss() {
-        shared.removePulse()
+        shared.dismissIndicator()
     }
     
     // MARK: - Core View
-    private func presentPulse(message: String, icon: UIImage?) {
-        removePulse() // 移除旧提示
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.windowLevel = .alert + 1
-        
-        let container = UIView(frame: CGRect(x: 0, y: 0, width: 160, height: 140))
-        container.backgroundColor = UIColor.black.withAlphaComponent(0.85)
-        container.layer.cornerRadius = 16
-        container.center = window.center
-        
-        let iconImageView = UIImageView(image: icon)
-        iconImageView.tintColor = .white
-        iconImageView.contentMode = .scaleAspectFit
-        iconImageView.frame = CGRect(x: 0, y: 20, width: 50, height: 50)
-        iconImageView.center.x = container.frame.width / 2
-        
-        let label = UILabel(frame: CGRect(x: 10, y: 85, width: 140, height: 40))
-        label.text = message
-        label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        
-        container.addSubview(iconImageView)
-        container.addSubview(label)
-        
-        window.addSubview(container)
-        window.makeKeyAndVisible()
-        
-        pulseWindow = window
-        pulseView = container
-        statusLabel = label
-        iconView = iconImageView
-        
-        // 添加轻微缩放动画（类似心跳感）
-        container.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        UIView.animate(withDuration: 0.25,
-                       delay: 0,
-                       usingSpringWithDamping: 0.6,
-                       initialSpringVelocity: 0.8,
-                       options: .curveEaseOut,
-                       animations: {
-            container.transform = .identity
-        })
-        
-        // 自动隐藏（仅 info/success）
-        if icon != nil {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
-                self?.removePulse()
+    private func present(message: String, icon: UIImage?, isLoading: Bool) {
+            dismissIndicator()
+            
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.windowLevel = .alert + 1
+            window.backgroundColor = .clear
+            
+            let container = UIView()
+            container.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+            container.layer.cornerRadius = 14
+            container.translatesAutoresizingMaskIntoConstraints = false
+            
+            let stack = UIStackView()
+            stack.axis = .vertical
+            stack.alignment = .center
+            stack.spacing = 12
+            stack.translatesAutoresizingMaskIntoConstraints = false
+            
+            let indicatorView = UIActivityIndicatorView(style: .large)
+            indicatorView.color = .white
+        indicatorView.stopAnimating()
+            let imageView = UIImageView(image: icon)
+            imageView.tintColor = .white
+            imageView.contentMode = .scaleAspectFit
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.widthAnchor.constraint(equalToConstant: 36).isActive = true
+            imageView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+            
+            let label = UILabel()
+            label.text = message
+            label.textColor = .white
+            label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+            label.numberOfLines = 2
+            label.textAlignment = .center
+            
+            if isLoading {
+                stack.addArrangedSubview(indicatorView)
+                indicatorView.startAnimating()
+            } else if let icon = icon {
+                stack.addArrangedSubview(imageView)
             }
+            stack.addArrangedSubview(label)
+            
+            container.addSubview(stack)
+            window.addSubview(container)
+            
+            NSLayoutConstraint.activate([
+                container.centerXAnchor.constraint(equalTo: window.centerXAnchor),
+                container.centerYAnchor.constraint(equalTo: window.centerYAnchor),
+                container.widthAnchor.constraint(lessThanOrEqualToConstant: 200),
+                
+                stack.topAnchor.constraint(equalTo: container.topAnchor, constant: 20),
+                stack.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -20),
+                stack.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16),
+                stack.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16),
+            ])
+            
+            window.makeKeyAndVisible()
+            
+            overlayWindow = window
+            containerView = container
+            indicator = indicatorView
+            messageLabel = label
+            iconView = imageView
+            
+            // 轻微缩放动画
+            container.alpha = 0
+            container.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            UIView.animate(withDuration: 0.25,
+                           delay: 0,
+                           usingSpringWithDamping: 0.7,
+                           initialSpringVelocity: 0.8,
+                           options: .curveEaseOut,
+                           animations: {
+                container.alpha = 1
+                container.transform = .identity
+            })
+            
+            // 自动隐藏非 loading 的提示
+            if !isLoading {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.dismissIndicator()
+                }
+            }
+        }
+        
+        private func dismissIndicator() {
+            self.overlayWindow?.isHidden = true
+            self.overlayWindow = nil
+            self.containerView = nil
+            self.indicator?.stopAnimating()
+            self.indicator = nil
+            self.messageLabel = nil
         }
     }
     
-    private func removePulse() {
-        guard let pulseView = pulseView else { return }
-        UIView.animate(withDuration: 0.25, animations: {
-            pulseView.alpha = 0
-        }) { _ in
-            self.pulseWindow?.isHidden = true
-            self.pulseWindow = nil
-            self.pulseView = nil
-        }
-    }
-}
+//    private func removePulse() {
+//        guard let pulseView = pulseView else { return }
+//        UIView.animate(withDuration: 0.25, animations: {
+//            pulseView.alpha = 0
+//        }) { _ in
+//            self.pulseWindow?.isHidden = true
+//            self.pulseWindow = nil
+//            self.pulseView = nil
+//        }
+//    }
+//}
