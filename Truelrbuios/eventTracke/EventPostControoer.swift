@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 import PhotosUI
 class EventPostControoer:  UIViewController ,UITextViewDelegate{
     
@@ -95,7 +95,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         let them = themcapeHub.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         guard them.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("cGxlYXNlIGVudGVyIHlvdXIgdGhlbSFjb20udHJtbGluLnRydWVscg=="))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("cGxlYXNlIGVudGVyIHlvdXIgdGhlbSFjb20udHJtbGluLnRydWVscg=="))
                    
            return
                
@@ -105,7 +105,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         let enentlocation = locationpeHub.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         guard enentlocation.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus:UIImageView.ambienceVaultDeu("cGxlYXNlIGVudGVyIHlvdXIgRXZlbnQgTG9jYXRpb24hY29tLnRybWxpbi50cnVlbHI=") )
+            HaloPulseIndicator.showInfo(withStatus:UIImageView.ambienceVaultDeu("cGxlYXNlIGVudGVyIHlvdXIgRXZlbnQgTG9jYXRpb24hY29tLnRybWxpbi50cnVlbHI=") )
                    
            return
                
@@ -115,7 +115,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         let enentstart = timestart.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         guard enentstart.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("cGxlYXNlIGVudGVyIHlvdXIgRXZlbnQgc3RhcnQgdGltZSFjb20udHJtbGluLnRydWVscg=="))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("cGxlYXNlIGVudGVyIHlvdXIgRXZlbnQgc3RhcnQgdGltZSFjb20udHJtbGluLnRydWVscg=="))
                    
            return
                
@@ -124,14 +124,14 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         let endtime = timeend.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         guard endtime.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("cGxlYXNlIGVudGVyIHlvdXIgRXZlbnQgZW5kIHRpbWUhY29tLnRybWxpbi50cnVlbHI="))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("cGxlYXNlIGVudGVyIHlvdXIgRXZlbnQgZW5kIHRpbWUhY29tLnRybWxpbi50cnVlbHI="))
                    
            return
                
        }
         
         guard selectedMedia != nil else {
-            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("UGxlYXNlIGFkZCBhbiBpbWFnZSAgZm9yIGV2ZW50LmNvbS50cm1saW4udHJ1ZWxy"))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("UGxlYXNlIGFkZCBhbiBpbWFnZSAgZm9yIGV2ZW50LmNvbS50cm1saW4udHJ1ZWxy"))
                     return
                
         }
@@ -165,7 +165,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
     func villageSquare()  {
         ChronoEngine.executeAfterTemporalShift(2) {
            
-            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("UmVsZWFzZSBFdmVudCBzdWNjZXNzZnVsLHlvdXIgcG9zdCB3aWxsIGJlIGRpc3BsYXllZCBhZnRlciBhcHByb3ZhbGNvbS50cm1saW4udHJ1ZWxy"))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("UmVsZWFzZSBFdmVudCBzdWNjZXNzZnVsLHlvdXIgcG9zdCB3aWxsIGJlIGRpc3BsYXllZCBhZnRlciBhcHByb3ZhbGNvbS50cm1saW4udHJ1ZWxy"))
             
             self.themcapeHub.text = nil
             self.themcapeHub.resignFirstResponder()

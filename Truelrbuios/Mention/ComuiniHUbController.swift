@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import MJRefresh
-import SVProgressHUD
+//import MJRefresh
+
 
 class ComuiniHUbController: UIViewController {
 
@@ -76,8 +76,8 @@ class ComuiniHUbController: UIViewController {
            visionBoard()
            
            masqueradeHall()
-          
-           self.mangaPanel.mj_header?.beginRefreshing()
+           designBlueprint()
+//           self.mangaPanel.mj_header?.beginRefreshing()
            NotificationCenter.default.addObserver(self, selector: #selector(masqueradeHall), name: NSNotification.Name.init("Blockuseraction"), object: nil)
     
        }
@@ -90,7 +90,7 @@ class ComuiniHUbController: UIViewController {
            mangaPanel.showsVerticalScrollIndicator = false
            mangaPanel.delegate = self
            mangaPanel.dataSource = self
-           mangaPanel.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction:#selector(designBlueprint) )
+//           mangaPanel.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction:#selector(designBlueprint) )
            mangaPanel.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "usermanhCell")
            mangaPanel.register(UINib.init(nibName: "labyrinthPathCell", bundle: nil), forCellWithReuseIdentifier: "labyrinthPathCell")
            
@@ -108,9 +108,9 @@ class ComuiniHUbController: UIViewController {
 
        
        @objc private func designBlueprint()  {
-        
+           HaloPulseIndicator.show(info: "")
            CosRequestManager.sendStyledRequest(endpoint: "/koczejjgz/nxpav", outfitPayload: ["sigilMaker":20,"insigniaBoard":1,"emblemStudio":"67994137"]) { cosplayunityhub in
-               
+               HaloPulseIndicator.dismiss()
                switch cosplayunityhub{
                case .success(let cosplayunityhub):
                    
@@ -120,7 +120,7 @@ class ComuiniHUbController: UIViewController {
                            
                    else {
                        
-                       SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("Tm8gdG9waWMgZGF0YSBub3dpbmchY29tLnRybWxpbi50cnVlbHI="))
+                       HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("Tm8gdG9waWMgZGF0YSBub3dpbmchY29tLnRybWxpbi50cnVlbHI="))
                        
                        return
                    }
@@ -145,10 +145,10 @@ class ComuiniHUbController: UIViewController {
                        
                   }
                    self.mangaPanel.reloadData()
-                   self.mangaPanel.mj_header?.endRefreshing()
+//                   self.mangaPanel.mj_header?.endRefreshing()
                case .failure(let error):
-                   self.mangaPanel.mj_header?.endRefreshing()
-                   SVProgressHUD.showInfo(withStatus: error.localizedDescription)
+//                   self.mangaPanel.mj_header?.endRefreshing()
+                   HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
                }
                
                

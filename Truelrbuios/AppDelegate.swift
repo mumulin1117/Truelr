@@ -6,16 +6,14 @@
 //
 
 import UIKit
-import SwiftyStoreKit
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        SwiftyStoreKit.completeTransactions(atomically: true) { _ in
-            
-        }
+       
         UserDefaults.standard.set(5, forKey: "userFreemTime")
         NotificationCenter.default.addObserver(self, selector: #selector(updateingNotnoeUser), name: NSNotification.Name.init("Blockuseraction"), object: nil)
         return true

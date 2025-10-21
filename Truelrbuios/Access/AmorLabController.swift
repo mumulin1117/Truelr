@@ -4,7 +4,7 @@
 //
 //  Created by  on 2025/9/18.
 //
-import SVProgressHUD
+
 import UIKit
 enum presentType {
 
@@ -58,7 +58,8 @@ class AmorLabController: UIViewController {
     }
     @objc func improvStage(tapoi:UITapGestureRecognizer)  {//login
         if timelineArchive.isSelected == false {
-            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIGxvZ2dpbmcgaW4sIHBsZWFzZSByZWFkIGFuZCBhZ3JlZSB0byBvdXIgVGVybXMgb2YgVXNlLCBQcml2YWN5IFBvbGljeSwgYW5kIEVuZCBVc2VyIExpY2Vuc2UgQWdyZWVtZW50LmNvbS50cm1saW4udHJ1ZWxy"))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIGxvZ2dpbmcgaW4sIHBsZWFzZSByZWFkIGFuZCBhZ3JlZSB0byBvdXIgVGVybXMgb2YgVXNlLCBQcml2YWN5IFBvbGljeSwgYW5kIEVuZCBVc2VyIExpY2Vuc2UgQWdyZWVtZW50LmNvbS50cm1saW4udHJ1ZWxy"))
+           
             return
         }
         let storyboard = UIStoryboard(name: UIImageView.ambienceVaultDeu("TWFpbmNvbS50cm1saW4udHJ1ZWxy"), bundle: nil)

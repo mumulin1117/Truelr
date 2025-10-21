@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class EpicVerseController: UIViewController {
     @IBAction func yuqihang(_ sender: Any) {
@@ -92,7 +92,7 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
             }
         case 2:
             ChronoEngine.executeAfterTemporalShift(2) {
-                SVProgressHUD.showSuccess(withStatus:UIImageView.ambienceVaultDeu("Q2xlYXIgY29tcGxldGVkIWNvbS50cm1saW4udHJ1ZWxy") )
+                HaloPulseIndicator.showSuccess(withStatus:UIImageView.ambienceVaultDeu("Q2xlYXIgY29tcGxldGVkIWNvbS50cm1saW4udHJ1ZWxy") )
             }
         case 3:
             let alert = UIAlertController(

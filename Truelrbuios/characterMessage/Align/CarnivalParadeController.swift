@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class CarnivalParadeController: UIViewController {
     private var flameTicker: Timer?
@@ -79,7 +79,7 @@ class CarnivalParadeController: UIViewController {
             flameTicker?.invalidate()
             self.navigationController?.pushViewController(reser, animated: true)
         }else{
-            SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("TWF0Y2hpbmcgZmFpbGVkLCB0aGUgb3RoZXIgcGFydHkgaGFzIGxlZnRjb20udHJtbGluLnRydWVscg=="))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("TWF0Y2hpbmcgZmFpbGVkLCB0aGUgb3RoZXIgcGFydHkgaGFzIGxlZnRjb20udHJtbGluLnRydWVscg=="))
             self.navigationController?.popViewController(animated: true)
         }
         
@@ -108,7 +108,7 @@ class CarnivalParadeController: UIViewController {
                 if self.remainEchoSeconds <= 0 {
                     self.flameTicker?.invalidate()
                     self.flameTicker = nil
-                    SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("U29ycnksIGl0J3MgdGltZWNvbS50cm1saW4udHJ1ZWxy"))
+                    HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("U29ycnksIGl0J3MgdGltZWNvbS50cm1saW4udHJ1ZWxy"))
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             }

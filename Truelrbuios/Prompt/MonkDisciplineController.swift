@@ -6,10 +6,11 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 struct ChronoEngine {
     static func executeAfterTemporalShift(_ delay: Double, quantumTask: @escaping () -> Void) {
-        SVProgressHUD.show()
+        HaloPulseIndicator.show(info: "")
+       
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             quantumTask()
         }
@@ -96,13 +97,14 @@ class MonkDisciplineController: UIViewController {
 
     @IBAction func druidCircle(_ sender: Any) {
         guard ifChiocedReason else{
-           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("UGxlYXNlIGNoZWNrIG9uZSByZWFzb24gZm9yIHlvdXIgcmVwb3J0IWNvbS50cm1saW4udHJ1ZWxy"))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("UGxlYXNlIGNoZWNrIG9uZSByZWFzb24gZm9yIHlvdXIgcmVwb3J0IWNvbS50cm1saW4udHJ1ZWxy"))
                    
            return
                
        }
         ChronoEngine.executeAfterTemporalShift(1) {
-            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("VGhhbmsgeW91IGZvciByZXBvcnRpbmcuIFdlIHdpbGwgdmVyaWZ5IHlvdXIgcmVwb3J0IGFuZCBoYW5kbGUgaXQgYXMgc29vbiBhcyBwb3NzaWJsZWNvbS50cm1saW4udHJ1ZWxy"))
+            
+            HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("VGhhbmsgeW91IGZvciByZXBvcnRpbmcuIFdlIHdpbGwgdmVyaWZ5IHlvdXIgcmVwb3J0IGFuZCBoYW5kbGUgaXQgYXMgc29vbiBhcyBwb3NzaWJsZWNvbS50cm1saW4udHJ1ZWxy"))
             self.dismiss(animated: true)
             self.navigationController?.popViewController(animated: true)
         }
@@ -116,7 +118,7 @@ class MonkDisciplineController: UIViewController {
             return
         }
         guard ifChiocedReason else{
-           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("UGxlYXNlIGNoZWNrIG9uZSByZWFzb24gZm9yIHlvdXIgcmVwb3J0IWNvbS50cm1saW4udHJ1ZWxy"))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("UGxlYXNlIGNoZWNrIG9uZSByZWFzb24gZm9yIHlvdXIgcmVwb3J0IWNvbS50cm1saW4udHJ1ZWxy"))
                    
            return
                

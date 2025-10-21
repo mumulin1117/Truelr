@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class SendCommentControlle: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,14 +71,14 @@ class SendCommentControlle: UIViewController, UITableViewDataSource, UITableView
     @IBAction func dreamscapeHub(_ sender: UIButton) {
         guard let inputexontern = shadowRealm.text?.trimmingCharacters(in: .whitespacesAndNewlines),inputexontern.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIFNlbmQgLCBwbGVhc2UgZW50ZXIgc29tZXRoaW5nLmNvbS50cm1saW4udHJ1ZWxy"))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIFNlbmQgLCBwbGVhc2UgZW50ZXIgc29tZXRoaW5nLmNvbS50cm1saW4udHJ1ZWxy"))
                    
            return
                
        }
         
         ChronoEngine.executeAfterTemporalShift(1) {
-            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2VuZCBzdWNjZXNzZnVsLENvbW1lbnRzIHdpbGwgYmUgZGlzcGxheWVkIGFmdGVyIGFwcHJvdmFsY29tLnRybWxpbi50cnVlbHI="))
+            HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2VuZCBzdWNjZXNzZnVsLENvbW1lbnRzIHdpbGwgYmUgZGlzcGxheWVkIGFmdGVyIGFwcHJvdmFsY29tLnRybWxpbi50cnVlbHI="))
             
             self.shadowRealm.text = nil
             self.shadowRealm.resignFirstResponder()

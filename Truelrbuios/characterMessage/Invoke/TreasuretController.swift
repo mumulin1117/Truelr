@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 import AVFoundation
 
 class TreasuretController: UIViewController {
@@ -86,7 +86,7 @@ class TreasuretController: UIViewController {
         let spectralTask = DispatchWorkItem { [weak self] in
                    guard let self = self else { return }
                    self.dismiss(animated: true)
-                   SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("Q29ubmVjdCBmYWlsZWQsIHRoZSBvdGhlciBwYXJ0eSBoYXMgbGVmdGNvbS50cm1saW4udHJ1ZWxy"))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("Q29ubmVjdCBmYWlsZWQsIHRoZSBvdGhlciBwYXJ0eSBoYXMgbGVmdGNvbS50cm1saW4udHJ1ZWxy"))
                    if self.isfromamatching {
                        self.vloavkDismiss?(true)
                    }

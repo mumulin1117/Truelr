@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 //活动详情
 
 class EventEcentController: UIViewController {
@@ -84,7 +84,7 @@ class EventEcentController: UIViewController {
         
         ChronoEngine.executeAfterTemporalShift(2) {
            
-            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("V2UgaGF2ZSByZWNlaXZlZCB5b3VyIGFwcGxpY2F0aW9uIGFuZCB3aWxsIHJldmlldyB5b3VyIGVsaWdpYmlsaXR5IHRvIHBhcnRpY2lwYXRlIGFzIHNvb24gYXMgcG9zc2libGUhY29tLnRybWxpbi50cnVlbHI="))
+            HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("V2UgaGF2ZSByZWNlaXZlZCB5b3VyIGFwcGxpY2F0aW9uIGFuZCB3aWxsIHJldmlldyB5b3VyIGVsaWdpYmlsaXR5IHRvIHBhcnRpY2lwYXRlIGFzIHNvb24gYXMgcG9zc2libGUhY29tLnRybWxpbi50cnVlbHI="))
             
         }
        

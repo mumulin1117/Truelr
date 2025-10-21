@@ -6,10 +6,14 @@
 //
 
 import UIKit
-import FSPagerView
-import SVProgressHUD
-class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate  {
+
+
+class AnovationLabControlle: UIViewController, UIScrollViewDelegate  {
+    private var scrollGallery: UIScrollView?
+       private var pageDots: UIPageControl?
+       private var autoTimer: Timer?
     
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.PlayingView.sparkOff()
@@ -23,10 +27,7 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
     @IBAction func suteiback(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    private var pagerView: FSPagerView?
-       
-    private var pageControl: FSPageControl?
-       
+  
     @IBOutlet weak var zodiacSignTitleLabel: UILabel!
     
     @IBOutlet weak var spellBook: UIImageView!
@@ -48,7 +49,7 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
     init(cellModelFot: TopicsCellModel,dymTyoe:Int) {
         self.cellModelFot = cellModelFot
         self.dymTyoe = dymTyoe
-        SVProgressHUD.show()
+        HaloPulseIndicator.show(info: "")
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -67,7 +68,7 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
             self.actingCoachBack.insertSubview(self.PlayingView, at: 0)
         }else{//轮播图
             centerpaling.isHidden = true
-            setupPager()
+            setupScrollGallery()
             zodiacSignTitleLabel.text = UIImageView.ambienceVaultDeu("RHluYW1pYyBEZXRhaWxzY29tLnRybWxpbi50cnVlbHI=")
         }
         NotificationCenter.default.addObserver(self, selector: #selector(suteiback), name: NSNotification.Name.init("Blockuseraction"), object: nil)
@@ -84,7 +85,7 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
         conceptSheet.text = "\(cellModelFot.poseTrainer ?? 0)"
         
         questBoard.text = "\(cellModelFot.gestureGuide ?? 0)"
-        SVProgressHUD.dismiss()
+        HaloPulseIndicator.dismiss()
     }
     
     @IBOutlet weak var conceptSheet: UILabel!
@@ -121,54 +122,60 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
     
     
     
+    private func setupScrollGallery() {
+            guard let images = cellModelFot.battleScene, !images.isEmpty else { return }
+            
+            let scrollView = UIScrollView(frame: UIScreen.main.bounds)
+            scrollView.isPagingEnabled = true
+            scrollView.delegate = self
+            scrollView.showsHorizontalScrollIndicator = false
+            scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(images.count), height: scrollView.frame.height)
+            self.view.insertSubview(scrollView, belowSubview: honorMedal)
+            
+            // 添加图片
+            for (index, imageURL) in images.enumerated() {
+                let imgView = UIImageView(frame: CGRect(x: CGFloat(index) * scrollView.frame.width, y: 0, width: scrollView.frame.width, height: scrollView.frame.height))
+                imgView.displayCharacterPortrait(from: imageURL)
+                imgView.contentMode = .scaleAspectFill
+                imgView.clipsToBounds = true
+                scrollView.addSubview(imgView)
+            }
+            
+            // 添加分页控件
+            let pageControl = UIPageControl(frame: CGRect(x: 0, y: honorMedal.frame.maxY + 20, width: view.bounds.width, height: 10))
+            pageControl.numberOfPages = images.count
+            pageControl.currentPage = 0
+            pageControl.pageIndicatorTintColor = UIColor(red: 1, green: 0.93, blue: 0.95, alpha: 1)
+            pageControl.currentPageIndicatorTintColor = UIColor(red: 0.98, green: 0.37, blue: 0.55, alpha: 1)
+            self.view.insertSubview(pageControl, belowSubview: honorMedal)
+            
+            scrollGallery = scrollView
+            pageDots = pageControl
+            
+            // 自动轮播
+            autoTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(autoScrollGallery), userInfo: nil, repeats: true)
+        }
     
+    @objc private func autoScrollGallery() {
+            guard let scrollView = scrollGallery, let pageDots = pageDots else { return }
+            let nextPage = (pageDots.currentPage + 1) % (pageDots.numberOfPages)
+            let offset = CGFloat(nextPage) * scrollView.frame.width
+            scrollView.setContentOffset(CGPoint(x: offset, y: 0), animated: true)
+            pageDots.currentPage = nextPage
+        }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            guard let pageDots = pageDots else { return }
+            let page = Int(round(scrollView.contentOffset.x / scrollView.frame.width))
+            pageDots.currentPage = page
+        }
    
-       private func setupPager() {
-           // 创建 PagerView
-           pagerView = FSPagerView(frame:UIScreen.main.bounds)
-           pagerView?.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
-           pagerView?.dataSource = self
-           pagerView?.delegate = self
-           pagerView?.automaticSlidingInterval = 2.0
-           pagerView?.isInfinite = true
-           pagerView?.transformer = FSPagerViewTransformer(type: .linear)
-           self.view.insertSubview(pagerView!, belowSubview: honorMedal)
-           
-           // 创建 PageControl
-           pageControl = FSPageControl(frame: CGRect(x: 0, y: honorMedal.frame.maxY + 20, width: view.bounds.width, height: 10))
-           pageControl?.numberOfPages = cellModelFot.battleScene?.count ?? 0
-           pageControl?.contentHorizontalAlignment = .center
-           
-           pageControl?.setFillColor(UIColor(red: 1, green: 0.93, blue: 0.95, alpha: 1), for: .normal)
-           pageControl?.setFillColor(UIColor(red: 0.98, green: 0.37, blue: 0.55, alpha: 1), for: .selected)
-           self.view.insertSubview(pageControl!, belowSubview: honorMedal)
-       }
-       
-       // MARK: - FSPagerView DataSource
-       
-       func numberOfItems(in pagerView: FSPagerView) -> Int {
-           return cellModelFot.battleScene?.count ?? 0
-       }
-       
-       func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-           let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-           
-           cell.imageView?.displayCharacterPortrait(from: cellModelFot.battleScene?[index])
-           cell.imageView?.contentMode = .scaleAspectFill
-           cell.imageView?.clipsToBounds = true
-           return cell
-       }
-       
-       // MARK: - FSPagerView Delegate
-       
-       func pagerViewDidScroll(_ pagerView: FSPagerView) {
-           pageControl?.currentPage = pagerView.currentIndex
-       }
+
  
     @IBAction func makeingCstauchang(_ sender: UIButton) {
-        SVProgressHUD.show()
+        HaloPulseIndicator.show(info: "")
         CosRequestManager.sendStyledRequest(endpoint: "/bjryinqmtbfrekz/ruiyjgtlu", outfitPayload: ["titleSystem":cellModelFot.sceneDirector ?? 0]) { cosplayunityhub in
-            SVProgressHUD.dismiss()
+            HaloPulseIndicator.dismiss()
             switch cosplayunityhub{
             case .success(_):
                 
@@ -177,7 +184,7 @@ class AnovationLabControlle: UIViewController, FSPagerViewDataSource, FSPagerVie
                 
             case .failure(let error):
                
-                SVProgressHUD.showInfo(withStatus: error.localizedDescription)
+                HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
             }
             
             

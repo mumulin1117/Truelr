@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 import PhotosUI
 
 class lensCraftController: UIViewController {
@@ -52,7 +52,7 @@ class lensCraftController: UIViewController {
         
       
         
-        SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2F2ZSBzdWNjZXNzZnVsIWNvbS50cm1saW4udHJ1ZWxy"))
+        HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2F2ZSBzdWNjZXNzZnVsIWNvbS50cm1saW4udHJ1ZWxy"))
         self.navigationController?.popViewController(animated: true)
     }
     private func hiddenChamber(valorStory: String, epicVerse: String) {

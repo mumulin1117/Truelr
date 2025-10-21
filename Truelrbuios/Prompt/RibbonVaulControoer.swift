@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import SVProgressHUD
-import SwiftyStoreKit
+
+
 struct CharmBundle {
     let hearts: Int
     let giftExtra: Int
@@ -81,41 +81,26 @@ class RibbonVaulControoer: UIViewController {
            let bundle = charmBundles[indexPath.item]
          
            view.isUserInteractionEnabled = false
-           SVProgressHUD.show(withStatus: UIImageView.ambienceVaultDeu("UGF5aW5nLi4uY29tLnRybWxpbi50cnVlbHI="))
-         
-           SwiftyStoreKit.purchaseProduct(bundle.CpriductID, atomically: true) { psResult in
-               
-               if case .success(let psPurch) = psResult {
-                   let psdownloads = psPurch.transaction.downloads
-                   
-                   if !psdownloads.isEmpty {
-                       SwiftyStoreKit.start(psdownloads)
-                   }
-                   
-                   if psPurch.needsFinishTransaction {
-                       SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                   }
-                   
+           HaloPulseIndicator.showInfo(withStatus:  UIImageView.ambienceVaultDeu("UGF5aW5nLi4uY29tLnRybWxpbi50cnVlbHI="))
+           LumiGiftChamber.shared.igniteGiftFlux(itemCode: "com.yourapp.token100") { result in
+               switch result {
+               case .success:
                    self.view.isUserInteractionEnabled = true
                   
                    let allcount =  ViewController.CurrentCoinggUserOwne + bundle.hearts + bundle.giftExtra
                    
                    ViewController.CurrentCoinggUserOwne = allcount
-                   SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("UGF5IFN1Y2Nlc3NmdWxjb20udHJtbGluLnRydWVscg=="))
+                   HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("UGF5IFN1Y2Nlc3NmdWxjb20udHJtbGluLnRydWVscg=="))
                    
                    self.travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(ViewController.CurrentCoinggUserOwne)"
-             
-               }else if case .error(let error) = psResult {
+               case .failure(let error):
                    self.view.isUserInteractionEnabled = true
-                   
-                   if error.code != .paymentCancelled {
-                       SVProgressHUD.showError(withStatus: error.localizedDescription)
-                       return
-                   }
-                   
-                   SVProgressHUD.dismiss()
+                   HaloPulseIndicator.dismiss()
+                   HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
                }
            }
+
+          
            
        }
        

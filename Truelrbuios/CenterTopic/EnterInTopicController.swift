@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 protocol TopicUpdateDelegate: AnyObject {
     func topicDidUpdate(_ topic: TopicsCellModel?,index:Int)
 }
@@ -78,12 +78,12 @@ class EnterInTopicController: UIViewController {
         
         
         
-        SVProgressHUD.dismiss()
+        HaloPulseIndicator.dismiss()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.show()
+        HaloPulseIndicator.show(info: "")
         modelSculpt.maskedlabeVobor(enter: 16)
         commentuseravatoer.maskedlabeVobor(enter: 20)
         screContenvie.frame.size = CGSize(width: UIScreen.main.bounds.width - 32, height: 1300)
@@ -100,7 +100,7 @@ class EnterInTopicController: UIViewController {
     @IBAction func dreamscapeHub(_ sender: UIButton) {
         guard let inputexontern = shadowRealm.text?.trimmingCharacters(in: .whitespacesAndNewlines),inputexontern.count > 0
                  else {
-           SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIFNlbmQgLCBwbGVhc2UgZW50ZXIgc29tZXRoaW5nLmNvbS50cm1saW4udHJ1ZWxy"))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIFNlbmQgLCBwbGVhc2UgZW50ZXIgc29tZXRoaW5nLmNvbS50cm1saW4udHJ1ZWxy"))
                    
            return
                
@@ -108,7 +108,7 @@ class EnterInTopicController: UIViewController {
         
      
         ChronoEngine.executeAfterTemporalShift(1) {
-            SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2VuZCBzdWNjZXNzZnVsLENvbW1lbnRzIHdpbGwgYmUgZGlzcGxheWVkIGFmdGVyIGFwcHJvdmFsY29tLnRybWxpbi50cnVlbHI="))
+            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("U2VuZCBzdWNjZXNzZnVsLENvbW1lbnRzIHdpbGwgYmUgZGlzcGxheWVkIGFmdGVyIGFwcHJvdmFsY29tLnRybWxpbi50cnVlbHI="))
             
             self.shadowRealm.text = nil
             self.shadowRealm.resignFirstResponder()

@@ -6,10 +6,10 @@ target 'Truelrbuios' do
   use_frameworks!
 
   # Pods for Truelrbuios
-pod "IQKeyboardManager"
-pod "MJRefresh"
-pod "SVProgressHUD"
-pod "SwiftyStoreKit"
-pod 'FSPagerView'
+#pod "IQKeyboardManager"
+#pod "MJRefresh"
+#pod "SVProgressHUD"
+#pod "SwiftyStoreKit"
+#pod 'FSPagerView'
 
 end

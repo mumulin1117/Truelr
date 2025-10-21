@@ -4,7 +4,7 @@
 //
 //  Created by  on 2025/9/18.
 //
-import SVProgressHUD
+
 import UIKit
 //log in
 class SplaystorytellerController: UIViewController {
@@ -59,7 +59,7 @@ class SplaystorytellerController: UIViewController {
                 }
 
        
-        SVProgressHUD.show()
+        HaloPulseIndicator.show(info: "")
         CosRequestManager.sendStyledRequest(endpoint: "/wivvjrkaypz/xcnrrwuivs", outfitPayload: ["samuraiCode":email,"ninjaScroll":password,"warriorPath":"67994137"]) { cosplayunityhub in
             
             switch cosplayunityhub{
@@ -69,7 +69,7 @@ class SplaystorytellerController: UIViewController {
                       let user = response[UIImageView.ambienceVaultDeu("ZGF0YWNvbS50cm1saW4udHJ1ZWxy")] as? Dictionary<String,Any>
                         
                 else {
-                    SVProgressHUD.showInfo(withStatus:UIImageView.ambienceVaultDeu("VXNlcm5hbWUgb3IgcGFzc3dvcmQgaW5jb3JyZWN0IWNvbS50cm1saW4udHJ1ZWxy"))
+                    HaloPulseIndicator.showInfo(withStatus:UIImageView.ambienceVaultDeu("VXNlcm5hbWUgb3IgcGFzc3dvcmQgaW5jb3JyZWN0IWNvbS50cm1saW4udHJ1ZWxy"))
                     
                     return
                 }
@@ -81,7 +81,7 @@ class SplaystorytellerController: UIViewController {
                 UserDefaults.standard.set( user["valorStory"], forKey: "valorStory")
                 
                 AppDelegate.cosmicShift( controllerIdentifier: "tabarnavi"){_ in 
-                    SVProgressHUD.showSuccess(withStatus: UIImageView.ambienceVaultDeu("TG9nIGluIHN1Y2Nlc3NmdWwhY29tLnRybWxpbi50cnVlbHI="))
+                    HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("TG9nIGluIHN1Y2Nlc3NmdWwhY29tLnRybWxpbi50cnVlbHI="))
                 }
 
                    
@@ -93,7 +93,8 @@ class SplaystorytellerController: UIViewController {
                 }
                 
             case .failure(let error):
-                SVProgressHUD.showInfo(withStatus: error.localizedDescription)
+                HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
+                
             }
             
         }

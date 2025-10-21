@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 //1vn
 class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     private let usageManager = CoinUsageManager()
@@ -134,13 +134,13 @@ class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UIColle
     
     
     private func mangaPanel()  {
-        SVProgressHUD.show()
+        HaloPulseIndicator.show(info: "")
         let safeCount = Swift.min(4, SharedTopicsController.getingallUser.count)   // 防止越界
                 
         self.nisertgeing = Array(SharedTopicsController.getingallUser.shuffled().prefix(safeCount))
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: DispatchWorkItem(block: {
-            SVProgressHUD.dismiss()
+            HaloPulseIndicator.dismiss()
             
         }))
         

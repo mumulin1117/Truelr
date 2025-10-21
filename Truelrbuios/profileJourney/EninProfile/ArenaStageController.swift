@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 import MJRefresh
 
 class ArenaStageController: UIViewController, painghur {

@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import SVProgressHUD
-import MJRefresh
+
+//import MJRefresh
 class SharedTopicsController: UIViewController {
     private var topics:Array<TopicsCellModel> = Array<TopicsCellModel>()
     
@@ -35,7 +35,8 @@ class SharedTopicsController: UIViewController {
         super.viewDidLoad()
         visionBoard()
         masqueradeHall()
-        self.topcsView.mj_header?.beginRefreshing()
+        designBlueprint()
+//        self.topcsView.mj_header?.beginRefreshing()
     }
     
     private func visionBoard() {
@@ -44,15 +45,15 @@ class SharedTopicsController: UIViewController {
         topcsView.showsVerticalScrollIndicator = false
         topcsView.delegate = self
         topcsView.dataSource = self
-        topcsView.mj_header =  MJRefreshNormalHeader(refreshingTarget: self, refreshingAction:#selector(designBlueprint) ) 
+//        topcsView.mj_header =  MJRefreshNormalHeader(refreshingTarget: self, refreshingAction:#selector(designBlueprint) ) 
         topcsView.register(UINib.init(nibName: "TopicsCell", bundle: nil), forCellWithReuseIdentifier: "TopicsCell")
     }
 
     
     @objc private func designBlueprint()  {
-     
+        HaloPulseIndicator.show(info: "")
         CosRequestManager.sendStyledRequest(endpoint: "/koczejjgz/nxpav", outfitPayload: ["sigilMaker":20,"insigniaBoard":5,"stageLight":2,"emblemStudio":"67994137"]) { cosplayunityhub in
-            
+            HaloPulseIndicator.dismiss()
             switch cosplayunityhub{
             case .success(let cosplayunityhub):
                 
@@ -62,19 +63,18 @@ class SharedTopicsController: UIViewController {
                         
                 else {
                     
-                    SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("Tm8gdG9waWMgZGF0YSBub3dpbmchY29tLnRybWxpbi50cnVlbHI="))
+                    HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("Tm8gdG9waWMgZGF0YSBub3dpbmchY29tLnRybWxpbi50cnVlbHI="))
                     
                     return
                 }
                 self.topics = user.toCharacterCards()
                 self.topcsView.reloadData()
-                self.topcsView.mj_header?.endRefreshing()
+//                self.topcsView.mj_header?.endRefreshing()
             case .failure(let error):
-                self.topcsView.mj_header?.endRefreshing()
-                SVProgressHUD.showInfo(withStatus: error.localizedDescription)
+//                self.topcsView.mj_header?.endRefreshing()
+                HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
                 
-                SVProgressHUD.showInfo(withStatus: UIImageView.ambienceVaultDeu("WW91IGNhbiBwdWxsIGRvd24gcmVmcmVzaCByZXRyeSFjb20udHJtbGluLnRydWVscg=="))
-               
+                
             }
             
             
