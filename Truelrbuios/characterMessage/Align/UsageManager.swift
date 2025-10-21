@@ -24,7 +24,7 @@ class CoinUsageManager {
         if remainingFreeMatches > 0 {
             return true // Free matches available
         }
-        return ViewController.CurrentCoinggUserOwne >= matchCost
+        return Somiccon.CurrentCoinggUserOwne >= matchCost
     }
     
     func deductMatchCost() {
@@ -34,8 +34,8 @@ class CoinUsageManager {
             UserDefaults.standard.set(used, forKey: usedMatchesKey)
         } else {
             // Deduct coins
-            let newBalance = ViewController.CurrentCoinggUserOwne - matchCost
-            ViewController.CurrentCoinggUserOwne = newBalance
+            let newBalance = Somiccon.CurrentCoinggUserOwne - matchCost
+            Somiccon.CurrentCoinggUserOwne = newBalance
           
         }
     }
@@ -43,7 +43,7 @@ class CoinUsageManager {
     func showMatchConfirmation(in viewController: UIViewController) {
         if remainingFreeMatches > 0 {
             showFreeMatchAlert(in: viewController)
-        } else if ViewController.CurrentCoinggUserOwne >= matchCost {
+        } else if Somiccon.CurrentCoinggUserOwne >= matchCost {
             showPaidMatchAlert(in: viewController)
         } else {
             showInsufficientBalanceAlert(in: viewController)
@@ -73,7 +73,7 @@ class CoinUsageManager {
     private func showPaidMatchAlert(in viewController: UIViewController) {
         let alert = UIAlertController(
             title: UIImageView.ambienceVaultDeu("Q29uZmlybSBNYXRjaGNvbS50cm1saW4udHJ1ZWxy"),
-            message: "This match will cost 20 coins. Your current balance: \(ViewController.CurrentCoinggUserOwne) coins.",
+            message: "This match will cost 20 coins. Your current balance: \(Somiccon.CurrentCoinggUserOwne) coins.",
             preferredStyle: .alert
         )
         
@@ -93,7 +93,7 @@ class CoinUsageManager {
     func showInsufficientBalanceAlert(in viewController: UIViewController) {
         let alert = UIAlertController(
             title: UIImageView.ambienceVaultDeu("SW5zdWZmaWNpZW50IEJhbGFuY2Vjb20udHJtbGluLnRydWVscg=="),
-            message: "You need 20 coins to start a match. Your current balance: \(ViewController.CurrentCoinggUserOwne) coins.",
+            message: "You need 20 coins to start a match. Your current balance: \(Somiccon.CurrentCoinggUserOwne) coins.",
             preferredStyle: .alert
         )
         

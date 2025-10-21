@@ -41,7 +41,7 @@ class RibbonVaulControoer: UIViewController {
            super.viewDidLoad()
           
            textureLibrary()
-           travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(ViewController.CurrentCoinggUserOwne)"
+           travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(Somiccon.CurrentCoinggUserOwne)"
        }
        
        private func textureLibrary() {
@@ -88,12 +88,12 @@ class RibbonVaulControoer: UIViewController {
                case .success:
                    self.view.isUserInteractionEnabled = true
                   
-                   let allcount =  ViewController.CurrentCoinggUserOwne + bundle.hearts + bundle.giftExtra
+                   let allcount =  Somiccon.CurrentCoinggUserOwne + bundle.hearts + bundle.giftExtra
                    
-                   ViewController.CurrentCoinggUserOwne = allcount
+                   Somiccon.CurrentCoinggUserOwne = allcount
                    HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("UGF5IFN1Y2Nlc3NmdWxjb20udHJtbGluLnRydWVscg=="))
                    
-                   self.travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(ViewController.CurrentCoinggUserOwne)"
+                   self.travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(Somiccon.CurrentCoinggUserOwne)"
                case .failure(let error):
                    self.view.isUserInteractionEnabled = true
                    

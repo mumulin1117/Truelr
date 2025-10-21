@@ -141,13 +141,13 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
             chasloogVIew.show(in: self.view, cost: 20)
             chasloogVIew.onPostConfirmed = {
                 
-                if ViewController.CurrentCoinggUserOwne < self.videoCost {
+                if Somiccon.CurrentCoinggUserOwne < self.videoCost {
                    
                     let prensebla = RibbonVaulControoer.init()
                     self.navigationController?.pushViewController(prensebla, animated: true)
                            
                 } else {
-                    ViewController.CurrentCoinggUserOwne -= self.videoCost
+                    Somiccon.CurrentCoinggUserOwne -= self.videoCost
                     self.villageSquare()
                 }
                 

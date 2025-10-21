@@ -108,13 +108,13 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
             chasloogVIew.show(in: self.view, cost: 20)
             chasloogVIew.onPostConfirmed = {
                 
-                if ViewController.CurrentCoinggUserOwne < self.videoCost {
+                if Somiccon.CurrentCoinggUserOwne < self.videoCost {
                     //如果金币不足，谈出金币页面
                     let prensebla = RibbonVaulControoer.init()
                     self.navigationController?.pushViewController(prensebla, animated: true)
                            
                 } else {
-                    ViewController.CurrentCoinggUserOwne -= self.videoCost
+                    Somiccon.CurrentCoinggUserOwne -= self.videoCost
                     self.villageSquare()
                 }
                 

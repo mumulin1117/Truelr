@@ -29,7 +29,7 @@ class MatchingabelCell: UITableViewCell {
         travelDiary.maskedlabeVobor(enter: 34)
         
         
-        potionWorkshop.setTitle(" \(ViewController.CurrentCoinggUserOwne)", for: .normal)
+        potionWorkshop.setTitle(" \(Somiccon.CurrentCoinggUserOwne)", for: .normal)
        
     }
 

@@ -2,7 +2,7 @@
 //  HaloPulseIndicator.swift
 //  Truelrbuios
 //
-//  Created by mumu on 2025/10/21.
+//  Created by  on 2025/10/21.
 //
 
 import UIKit
@@ -131,15 +131,4 @@ class HaloPulseIndicator {
             self.messageLabel = nil
         }
     }
-    
-//    private func removePulse() {
-//        guard let pulseView = pulseView else { return }
-//        UIView.animate(withDuration: 0.25, animations: {
-//            pulseView.alpha = 0
-//        }) { _ in
-//            self.pulseWindow?.isHidden = true
-//            self.pulseWindow = nil
-//            self.pulseView = nil
-//        }
-//    }
-//}
+

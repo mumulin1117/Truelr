@@ -8,14 +8,64 @@
 import UIKit
 
 @main
+
+extension AppDelegate:UNUserNotificationCenterDelegate{
+    private func instanceSegmentation() {
+        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            DispatchQueue.main.async {
+                if granted {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+    }
+    
+    private func computeShaders()  {
+        let poseEstimation = UITextField()
+        poseEstimation.isSecureTextEntry = true
+
+        if (!window!.subviews.contains(poseEstimation))  {
+            window!.addSubview(poseEstimation)
+            
+            poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+           
+            poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            
+            window!.layer.superlayer?.addSublayer(poseEstimation.layer)
+           
+            
+            if #available(iOS 17.0, *) {
+                
+                poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
+            } else {
+               
+                poseEstimation.layer.sublayers?.first?.addSublayer(window!.layer)
+            }
+        }
+    }
+    
+ 
+    
+    internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let distributedTraining = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        AppDelegate.tensorCoresx = distributedTraining
+    }
+}
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    static var tensorCoresx:String = ""
+    static var edgeComputingD:String = ""
+    
+    
+    
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
+        instanceSegmentation()
+        computeShaders()
         UserDefaults.standard.set(5, forKey: "userFreemTime")
         NotificationCenter.default.addObserver(self, selector: #selector(updateingNotnoeUser), name: NSNotification.Name.init("Blockuseraction"), object: nil)
+        
         return true
     }
     

@@ -40,7 +40,7 @@ class ProfileJourneyController: UIViewController {
         puzzleCorner.text =  (UserDefaults.standard.object(forKey: "userimajrl") as? String ?? UIImageView.ambienceVaultDeu("Tm8gTmFtZWNvbS50cm1saW4udHJ1ZWxy"))
         
         niurUsert.text = (UserDefaults.standard.object(forKey: "Introduction") as? String ?? "NO Introduction")
-        owinre.text = "\(ViewController.CurrentCoinggUserOwne)coins>"
+        owinre.text = "\(Somiccon.CurrentCoinggUserOwne)coins>"
         relicArchive.image = lensCraftController.changeinmge
         
         fateThread.image = lensCraftController.changeinmge

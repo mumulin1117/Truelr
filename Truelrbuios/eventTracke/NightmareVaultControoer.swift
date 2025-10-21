@@ -56,7 +56,7 @@ class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UIColle
         super.viewDidLoad()
         mangaPanel()
         visionBoard()
-        fantasyAtlas.setTitle(" \(ViewController.CurrentCoinggUserOwne)", for: .normal)
+        fantasyAtlas.setTitle(" \(Somiccon.CurrentCoinggUserOwne)", for: .normal)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateingNotnoeUser), name: NSNotification.Name.init("Blockuseraction"), object: nil)
  

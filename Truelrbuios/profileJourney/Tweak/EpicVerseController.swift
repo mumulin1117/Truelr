@@ -109,7 +109,7 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
                 UserDefaults.standard.set(nil, forKey: "IntroAge")
                 TopicsCellModel.ExestedLogUserID = nil
                 lensCraftController.changeinmge = UIImage.init(named: "Hildojd")!
-                ViewController.CurrentCoinggUserOwne = 0
+                Somiccon.CurrentCoinggUserOwne = 0
                 UserDefaults.standard.set(nil, forKey: "valorStory")
                 
 
@@ -127,7 +127,7 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
             UserDefaults.standard.set(nil, forKey: "IntroAge")
             TopicsCellModel.ExestedLogUserID = nil
             lensCraftController.changeinmge = UIImage.init(named: "Hildojd")!
-            ViewController.CurrentCoinggUserOwne = 0
+            Somiccon.CurrentCoinggUserOwne = 0
             UserDefaults.standard.set(nil, forKey: "valorStory")
             
             AppDelegate.cosmicShift( controllerIdentifier: "loginNavi")
