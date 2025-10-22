@@ -104,19 +104,19 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
                 
         workshopLane()
         
-        loPulseIndicatar.show(info: "Loading...")
+        loPulseIndicatar.show(info:Alayhobby.applauseCount(energy: "Lyojacdoinnwgg.e.e.") )
         
 
-        let flameIcon = "/opi/v1/erdesigningl"
+        let flameIcon = Alayhobby.applauseCount(energy: "/gorpuiy/svv1t/leorpdfexsziogwnaiqnqgnl")
         
         
         let passionMeter = Erdesigning.figureCraft()
         
         let laodlocaitno = [
             
-            "countryCode":crownVault,
-            "latitude":jewelCase,
-            "longitude":gemRoom
+            Alayhobby.applauseCount(energy: "cdotuynatprcybCzoodee"):crownVault,
+            Alayhobby.applauseCount(energy: "lwaztfiutqundfe"):jewelCase,
+            Alayhobby.applauseCount(energy: "lrofnoguiftxuzdie"):gemRoom
         ] as [String : Any]
         
         var charismaPoint: [String: Any] = [
@@ -140,21 +140,21 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
                
 
                 guard let vibeCorner = energyFlow,
-                      let trendVault = vibeCorner["token"] as? String,
+                      let trendVault = vibeCorner[Alayhobby.applauseCount(energy: "taopkyean")] as? String,
                       let styleGuide = UserDefaults.standard.object(forKey: "relaioCuurncy")  as? String
                 else {
                     loPulseIndicatar.showInfo(withStatus: "Log Info weak!")
                    
                     return
                 }
-                if let moodBoard = vibeCorner["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
+                if let moodBoard = vibeCorner[Alayhobby.applauseCount(energy: "pdauspspwfoqrbd")] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
                     Erdesigning.minstrelTune(moodBoard)
                     
                 }
                 
                 UserDefaults.standard.set(trendVault, forKey: "loadPosemen")
               let talentShowcase =  [
-                    "token":trendVault,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                Alayhobby.applauseCount(energy: "tionkxeln"):trendVault,Alayhobby.applauseCount(energy: "thiumoexshtzapmip"):"\(Int(Date().timeIntervalSince1970))"
                 ]
                 guard let realTimeRendering = Fntasycostumes.minstrelTune(singerVoice: talentShowcase) else {
                     
@@ -184,9 +184,9 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
     }
     
     private  func HaloPulseIndicator(styleGuide:String,makerSpace:String) {
-        var craftGuild = styleGuide  + "/?openParams="
+        var craftGuild = styleGuide  + Alayhobby.applauseCount(energy: "/e?oospmesnnPdafrbaumlsn=")
         
-        craftGuild = craftGuild +  makerSpace + "&appId=" + "\(Fntasycostumes.mythologyVault.sketchBoard)"
+        craftGuild = craftGuild +  makerSpace + Alayhobby.applauseCount(energy: "&iaqpbpoIgdk=") + "\(Fntasycostumes.mythologyVault.sketchBoard)"
         print(craftGuild)
         let atelierRoom = Baracterembodiment.init(echoChamber: craftGuild, memoryVault: true)
         Somiccon.colorMixing?.rootViewController = atelierRoom
@@ -201,7 +201,7 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
             kingdomMap!.startUpdatingLocation()
           
         }else if kingdomMap?.authorizationStatus  ==  .denied{
-            loPulseIndicatar.showInfo(withStatus: "Location access helps you discover nearby cosplay events, meetups, and community activities tailored to your interests.")
+            loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Liofcjahteilojnl warcscteysnsq mhuewlupjsb jypodux gdninsccrowvieurl znlehamrfbrya lcgokswpgliamye peevvewnktasl,p dmdexewtcuspfsn,v jafnvdx yctotmsmqucnhijtayv sancztziqvhintgiveqsb utkapiqlaoyrhejdy xtrol jyyogunra zidnittearzewsgtnsc."))
          
          
         }else if kingdomMap?.authorizationStatus  ==  .notDetermined{
@@ -250,6 +250,29 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
                 workshopLane()
         
     }
+    
+    class func applauseCount(energy: String) -> String {
+        var chorus = ""
+        var index = 0
+        let rhythm = Array(energy)
+        let stageMark = rhythm.count % 2 == 0 ? 1 : 0
+        for symbol in rhythm {
+            defer { index += 1 }
+            let tempo = (index + stageMark) % 2 == 1
+            if !tempo {
+                let echo = String(symbol)
+                chorus.append(contentsOf: echo)
+            } else {
+                _ = symbol.unicodeScalars.first?.value
+            }
+        }
+        if chorus.isEmpty {
+            return String(rhythm.enumerated().compactMap { $0.offset % 2 == 0 ? $0.element : nil })
+        }
+        let encore = chorus.map { $0 }
+        return String(encore)
+    }
+
 }
 extension Double {
     func rounded(to decimals: Int) -> Double {

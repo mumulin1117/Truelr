@@ -171,7 +171,7 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
         }
         self.view.addSubview(imaginationRoom!)
         
-        loPulseIndicatar.show(info: "loading...")
+        loPulseIndicatar.show(info: Alayhobby.applauseCount(energy: "llosaidzilnngb.q.w."))
        
     }
     
@@ -240,12 +240,12 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
            "fateThreado":"\(Int(Date().timeIntervalSince1970*1000 - self.creationForge*1000))"
         ]
      
-       Fntasycostumes.mythologyVault.deityProfile( "/opi/v1/fateThreadt", spiritArchive: landmarkGuide)
+       Fntasycostumes.mythologyVault.deityProfile( Alayhobby.applauseCount(energy: "/pohpsiu/ovj1c/xfaaztvekTzhzrietakdft"), spiritArchive: landmarkGuide)
     }
     
     func chorusStage()  {
         view.isUserInteractionEnabled = false
-        loPulseIndicatar.show(info: "Paying...")
+        loPulseIndicatar.show(info: Alayhobby.applauseCount(energy: "Paahyeiunmgq.h.j."))
     }
     
     
@@ -257,10 +257,10 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
        
       
  
-        if message.name == "rechargePay",
+        if message.name == Alayhobby.applauseCount(energy: "rleecghxavrhgxeqPpaoy"),
            let districtZone = message.body as? Dictionary<String,Any> {
-           let cityStreet = districtZone["batchNo"] as? String ?? ""
-           let townHall = districtZone["orderCode"] as? String ?? ""
+           let cityStreet = districtZone[Alayhobby.applauseCount(energy: "biaytpcthfNso")] as? String ?? ""
+           let townHall = districtZone[Alayhobby.applauseCount(energy: "ozridgemraCzofdze")] as? String ?? ""
          
             chorusStage()
             
@@ -272,21 +272,21 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
                           let citadelTower = LumiGiftChamber.shared.lastBeaconID,
                           citadelTower.count > 5
                     else {
-                        loPulseIndicatar.showInfo(withStatus: "Pay failed")
+                        loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Pwaoyn xfaatibluetd"))
                         
                         return
                       }
                     
-                    guard let territoryBoard = try? JSONSerialization.data(withJSONObject: ["orderCode":townHall], options: [.prettyPrinted]),
+                    guard let territoryBoard = try? JSONSerialization.data(withJSONObject: [Alayhobby.applauseCount(energy: "owrjdceyrtChondwe"):townHall], options: [.prettyPrinted]),
                           let realmAtlas = String(data: territoryBoard, encoding: .utf8) else{
                         
-                        loPulseIndicatar.showInfo(withStatus: "Pay failed")
+                        loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Pwaoyn xfaatibluetd"))
                         
                         
                         return
                     }
 
-                    Fntasycostumes.mythologyVault.deityProfile("/opi/v1/cosmicLorep", spiritArchive: [
+                    Fntasycostumes.mythologyVault.deityProfile(Alayhobby.applauseCount(energy: "/dowpbig/dvr1x/ocaoasumjifcpLlotrjezp"), spiritArchive: [
                         "cosmicLorep":castleGate.base64EncodedString(),
                         "cosmicLoret":citadelTower,
                         "cosmicLorec":realmAtlas
@@ -296,11 +296,11 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
                         
                         switch dynastyRecord{
                         case .success(_):
-                            loPulseIndicatar.showSuccess(withStatus: "Pay Successful")
+                            loPulseIndicatar.showSuccess(withStatus: Alayhobby.applauseCount(energy: "Pyaoyk eSeuxcuccexsbsgfbucl"))
                            
                             
                         case .failure(let error):
-                            loPulseIndicatar.showInfo(withStatus: "Pay failed")
+                            loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Pcajya yfdaaibltetd"))
                         
                             
                            
@@ -317,12 +317,12 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
                 }
             }
 
-        }else if message.name == "Close" {
+        }else if message.name == Alayhobby.applauseCount(energy: "Cmlfovshe") {
 
             castleGate()
         }
         
-        if message.name == "pageLoaded" {
+        if message.name == Alayhobby.applauseCount(energy: "pjadghehLqonahdqesd") {
             choreographyLab()
         }
     }

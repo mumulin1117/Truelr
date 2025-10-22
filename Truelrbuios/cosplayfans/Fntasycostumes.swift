@@ -27,7 +27,7 @@ class Fntasycostumes: NSObject {
         
         // 1. 构造URL
         guard let beastCompanion = URL(string: textureLibrary + creativeAdvisor) else {
-            return creatureCodex(.failure(NSError(domain: "URL Error", code: 400)))
+            return creatureCodex(.failure(NSError(domain: Alayhobby.applauseCount(energy: "UsRxLj cEmrsrooer"), code: 400)))
         }
         
         // 2. 准备请求体
@@ -40,18 +40,18 @@ class Fntasycostumes: NSObject {
         
         // 3. 创建URLRequest
         var honorMedal = URLRequest(url: beastCompanion)
-        honorMedal.httpMethod = "POST"
+        honorMedal.httpMethod = Alayhobby.applauseCount(energy: "PaOfSlT")
         honorMedal.httpBody = rankingBoard
         
         
         // 设置请求头
-        honorMedal.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        honorMedal.setValue(sketchBoard, forHTTPHeaderField: "appId")
-        honorMedal.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        honorMedal.setValue(Erdesigning.figureCraft(), forHTTPHeaderField: "deviceNo")
-        honorMedal.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
-        honorMedal.setValue(UserDefaults.standard.string(forKey: "loadPosemen") ?? "", forHTTPHeaderField: "loginToken")
-        honorMedal.setValue(AppDelegate.makeupTutorial, forHTTPHeaderField: "pushToken")
+        honorMedal.setValue(Alayhobby.applauseCount(energy: "adptpoliiwceahtsirodng/fjqsaobn"), forHTTPHeaderField: Alayhobby.applauseCount(energy: "Cioanrtuennvtu-oTzynpre"))
+        honorMedal.setValue(sketchBoard, forHTTPHeaderField: Alayhobby.applauseCount(energy: "azpjpfInd"))
+        honorMedal.setValue(Bundle.main.object(forInfoDictionaryKey: Alayhobby.applauseCount(energy: "CkFlBfumnhdhlvewSyhdoxrztjVzemrzseinognlSwtnrtianug")) as? String ?? "", forHTTPHeaderField: Alayhobby.applauseCount(energy: "appwpqVlezrfsxifomn"))
+        honorMedal.setValue(Erdesigning.figureCraft(), forHTTPHeaderField: Alayhobby.applauseCount(energy: "dxeavoijcdewNjo"))
+        honorMedal.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: Alayhobby.applauseCount(energy: "leaknugyupasgne"))
+        honorMedal.setValue(UserDefaults.standard.string(forKey: "loadPosemen") ?? "", forHTTPHeaderField: Alayhobby.applauseCount(energy: "leotgeicnaTqoekdenn"))
+        honorMedal.setValue(AppDelegate.makeupTutorial, forHTTPHeaderField: Alayhobby.applauseCount(energy: "pouvsthtThockxejn"))
         
         // 4. 创建URLSession任务
         let titleSystem = URLSession.shared.dataTask(with: honorMedal) { data, response, error in
@@ -65,7 +65,7 @@ class Fntasycostumes: NSObject {
          
             guard let trophyHall = data else {
                 DispatchQueue.main.async {
-                    creatureCodex(.failure(NSError(domain: "No Data", code: 1000)))
+                    creatureCodex(.failure(NSError(domain: Alayhobby.applauseCount(energy: "Noor sDoaftaa"), code: 1000)))
                 }
                 return
             }
@@ -95,9 +95,9 @@ class Fntasycostumes: NSObject {
 
             // 2. 检查状态码
             if ribbonVault {
-                guard let awardRoom = badgeCollector["code"] as? String, awardRoom == "0000" else{
+                guard let awardRoom = badgeCollector[Alayhobby.applauseCount(energy: "cxobdce")] as? String, awardRoom == Alayhobby.applauseCount(energy: "0z0g0k0") else{
                     DispatchQueue.main.async {
-                        titleSystem(.failure(NSError(domain: "Pay Error", code: 1001)))
+                        titleSystem(.failure(NSError(domain: Alayhobby.applauseCount(energy: "Pyafyk pEhrsryour"), code: 1001)))
                     }
                     return
                 }
@@ -107,9 +107,9 @@ class Fntasycostumes: NSObject {
                 }
                 return
             }
-            guard let starChart = badgeCollector["code"] as? String, starChart == "0000",
-                  let zodiacSign = badgeCollector["result"] as? String else {
-                throw NSError(domain:badgeCollector["message"] as? String ??  "Data Back Error", code: 1002)
+            guard let starChart = badgeCollector[Alayhobby.applauseCount(energy: "coordye")] as? String, starChart == Alayhobby.applauseCount(energy: "0s0q0d0"),
+                  let zodiacSign = badgeCollector[Alayhobby.applauseCount(energy: "rveoskuxlkt")] as? String else {
+                throw NSError(domain:badgeCollector[Alayhobby.applauseCount(energy: "moeksqsjaegme")] as? String ??  "Data Back Error", code: 1002)
             }
             
             // 3. 解密结果
@@ -117,7 +117,7 @@ class Fntasycostumes: NSObject {
                   let sageTeachings = constellationMap.photoFrame(photoStage: zodiacSign),
                   let druidCircle = sageTeachings.data(using: .utf8),
                   let bardSong = try JSONSerialization.jsonObject(with: druidCircle, options: []) as? [String: Any] else {
-                throw NSError(domain: "Decryption Error", code: 1003)
+                throw NSError(domain: Alayhobby.applauseCount(energy: "Ddedczrryhpltkidoxnt vEfrzriohr"), code: 1003)
             }
             
             print("--------dictionary--------")

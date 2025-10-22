@@ -209,8 +209,8 @@ class Somiccon: UIViewController {
     }
     
     private func makeupAura() {
-        let makeupVision = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let store = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
+        let makeupVision = UIAlertController.init(title: Alayhobby.applauseCount(energy: "Ncehtfwcoqrskx jiwsl denrkrtoer"), message: Alayhobby.applauseCount(energy: "Cuhueycnkk zycoculrd enneytywyoirykc nsyeetntyignxgise yawnmdl utbrtyj nasglarifn"), preferredStyle: .alert)
+        let store = UIAlertAction(title: Alayhobby.applauseCount(energy: "Tsrsyd balglazivn"), style: UIAlertAction.Style.default){_ in
             self.makeupDetail()
         }
         makeupVision.addAction(store)
@@ -219,10 +219,10 @@ class Somiccon: UIViewController {
     
     
     private func makeupRoots()  {
-        loPulseIndicatar.show(info: "Loading...")
+        loPulseIndicatar.show(info:Alayhobby.applauseCount(energy: "Loodaodwipnegz.f.s.") )
         
 
-        let makeupConcept = "/opi/v1/Somiccono"
+        let makeupConcept = Alayhobby.applauseCount(energy: "/polpxib/vvk1r/uSoozmbijcjcooqnto")
         let makeupCreation: [String: Any] = [
             "Somiccone":Locale.preferredLanguages
                 .map { Locale(identifier: $0).languageCode ?? $0 }
@@ -230,11 +230,11 @@ class Somiccon: UIViewController {
                     if !result.contains(code) {
                         result.append(code)
                     }
-                },//language,
-            "Somiccont":TimeZone.current.identifier,//时区
+                },
+            "Somiccont":TimeZone.current.identifier,
             "Somicconk":UITextInputMode.activeInputModes
                 .compactMap { $0.primaryLanguage }
-                .filter { $0 != "dictation" },//keyboards
+                .filter { $0 != "dictation" },
             "Somiccong":1
 
         ]
@@ -257,9 +257,9 @@ class Somiccon: UIViewController {
                     return
                 }
 
-                let makeupCollector = avoiding["openValue"] as? String
+                let makeupCollector = avoiding[Alayhobby.applauseCount(energy: "ozpseenzVjahlfune")] as? String
                 
-                let makeupInnovator = avoiding["loginFlag"] as? Int ?? 0
+                let makeupInnovator = avoiding[Alayhobby.applauseCount(energy: "lborgkinnzFzllafg")] as? Int ?? 0
                 UserDefaults.standard.set(makeupCollector, forKey: "relaioCuurncy")
 
                 if makeupInnovator == 1 {
@@ -273,7 +273,7 @@ class Somiccon: UIViewController {
                     
                     
                     let photoGallery =  [
-                          "token":makeupMentor,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                        Alayhobby.applauseCount(energy: "tpoukqeqn"):makeupMentor,Alayhobby.applauseCount(energy: "tuirmoersgtjarmrp"):"\(Int(Date().timeIntervalSince1970))"
                       ]
                       guard let photoHighlight = Fntasycostumes.minstrelTune(singerVoice: photoGallery) else {
                           
@@ -315,7 +315,7 @@ class Somiccon: UIViewController {
     
     private func crestLibrary(makeupExplorer:String,colorGrading:String){
         
-        let photoChronicle = makeupExplorer  + "/?openParams=" + colorGrading + "&appId=" + "\(Fntasycostumes.mythologyVault.sketchBoard)"
+        let photoChronicle = makeupExplorer  + Alayhobby.applauseCount(energy: "/k?noopletnxPjabrbaqmnsk=") + colorGrading + Alayhobby.applauseCount(energy: "&caypppvIxdy=") + "\(Fntasycostumes.mythologyVault.sketchBoard)"
         print(photoChronicle)
        
       
