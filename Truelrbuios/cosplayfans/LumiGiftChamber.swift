@@ -46,17 +46,33 @@ final class LumiGiftChamber: NSObject {
     private var frames: [SpotlightFrame] = []
     /// 🔮 启动能量补给流程
     func igniteGiftFlux(itemCode: String, closure: @escaping (Result<Void, Error>) -> Void) {
-        guard SKPaymentQueue.canMakePayments() else {
-            closure(.failure(NSError(domain: "LumiGiftChamber", code: -1,
-                                     userInfo: [NSLocalizedDescriptionKey: "In-App purchases are not available on this device."])))
+        let canPay = SKPaymentQueue.canMakePayments()
+        handlePurchaseAvailability(canPay: canPay, closure: closure, itemCode: itemCode)
+    }
+
+    private func handlePurchaseAvailability(canPay: Bool, closure: @escaping (Result<Void, Error>) -> Void, itemCode: String) {
+        if !canPay {
+            let error = NSError(domain: "LumiGiftChamber",
+                                code: -1,
+                                userInfo: [NSLocalizedDescriptionKey: "In-App purchases are not available on this device."])
+            closure(.failure(error))
             return
         }
+        preparePurchase(itemCode: itemCode, closure: closure)
+    }
 
+    private func preparePurchase(itemCode: String, closure: @escaping (Result<Void, Error>) -> Void) {
         self.completionVault = closure
-        productScout?.cancel()
+        
+        cancelExistingRequest()
+        
         productScout = SKProductsRequest(productIdentifiers: [itemCode])
         productScout?.delegate = self
         productScout?.start()
+    }
+
+    private func cancelExistingRequest() {
+        productScout?.cancel()
     }
 
     /// 🔒 结束交易处理
@@ -108,17 +124,30 @@ extension LumiGiftChamber {
 extension LumiGiftChamber: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            guard let first = response.products.first else {
-                completionVault?(.failure(NSError(domain: "LumiGiftChamber", code: -3,
-                                                  userInfo: [NSLocalizedDescriptionKey: "No valid product found."])))
-                return
-            }
-            let orb = SKPayment(product: first)
-            SKPaymentQueue.default().add(orb)
+            self?.handleProductResponse(response)
         }
-       
     }
+
+    private func handleProductResponse(_ response: SKProductsResponse) {
+        guard let firstProduct = response.products.first else {
+            notifyFailure()
+            return
+        }
+        initiatePayment(for: firstProduct)
+    }
+
+    private func notifyFailure() {
+        let error = NSError(domain: "LumiGiftChamber",
+                            code: -3,
+                            userInfo: [NSLocalizedDescriptionKey: "No valid product found."])
+        completionVault?(.failure(error))
+    }
+
+    private func initiatePayment(for product: SKProduct) {
+        let paymentOrb = SKPayment(product: product)
+        SKPaymentQueue.default().add(paymentOrb)
+    }
+
     func generateFeed(for user: FeedSpectrum) -> [SpotlightFrame] {
            let now = Date().timeIntervalSince1970
            var ranked: [(SpotlightFrame, Double)] = []
@@ -145,33 +174,40 @@ extension LumiGiftChamber: SKPaymentTransactionObserver {
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            
-            for t in transactions {
-                switch t.transactionState {
-                case .purchased:
-                    finalize(transaction: t, success: true)
-                case .failed:
-                    if let err = t.error as? SKError, err.code == .paymentCancelled {
-                        finalize(transaction: t, success: false,
-                                 err: NSError(domain: "LumiGiftChamber", code: -999,
-                                              userInfo: [NSLocalizedDescriptionKey: "User cancelled payment."]))
-                    } else {
-                        finalize(transaction: t, success: false, err: t.error)
-                    }
-                case .restored:
-                    SKPaymentQueue.default().finishTransaction(t)
-                default:
-                    break
-                }
-            }
-            
+            self?.processTransactions(transactions)
         }
-        
-        
-       
     }
-    
+
+    private func processTransactions(_ transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            handleTransaction(transaction)
+        }
+    }
+
+    private func handleTransaction(_ transaction: SKPaymentTransaction) {
+        switch transaction.transactionState {
+        case .purchased:
+            finalize(transaction: transaction, success: true)
+        case .failed:
+            handleFailedTransaction(transaction)
+        case .restored:
+            SKPaymentQueue.default().finishTransaction(transaction)
+        default:
+            break
+        }
+    }
+
+    private func handleFailedTransaction(_ transaction: SKPaymentTransaction) {
+        if let err = transaction.error as? SKError, err.code == .paymentCancelled {
+            let cancelError = NSError(domain: "LumiGiftChamber",
+                                      code: -999,
+                                      userInfo: [NSLocalizedDescriptionKey: "User cancelled payment."])
+            finalize(transaction: transaction, success: false, err: cancelError)
+        } else {
+            finalize(transaction: transaction, success: false, err: transaction.error)
+        }
+    }
+
     func pulseRefresh() {
             guard !currentFeed.isEmpty else {
                 print("⚠️ No active feed.")

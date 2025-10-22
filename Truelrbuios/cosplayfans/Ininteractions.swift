@@ -39,71 +39,118 @@ struct Ininteractions {
         self.fanDream = ivData
     }
     private let heatThreshold: Int = 70
+//    // MARK: - 加密方法
+//    func fanHighlight(Archive: String) -> String? {
+//        guard let photoSpotlight = Archive.data(using: .utf8) else {
+//            return nil
+//        }
+//        
+//        let photoPortrait = costumeDetail(chorusStage: photoSpotlight, guildForum: kCCEncrypt)
+//        
+//        return photoPortrait?.map { String(format: "%02hhx", $0) }.joined()
+//    }
+//    
+//    // MARK: - 解密方法
+//    func photoFrame(photoStage: String) -> String? {
+//        guard let photoFestival = Data(gemRoom: photoStage) else {
+//            return nil
+//        }
+//        
+//        guard let photoAura = costumeDetail(chorusStage: photoFestival, guildForum: kCCDecrypt) else { return nil }
+//        return String(data: photoAura, encoding: .utf8)
+//    }
+//    mutating func addVibeNode(performer: String, vibe: Int, tags: [String]) {
+//            let node = VibeNode(
+//                nodeID: UUID().uuidString,
+//                performerName: performer,
+//                vibeScore: vibe,
+//                timestamp: Date(),
+//                tags: tags
+//            )
+//            vibeNodes.append(node)
+//        }
     // MARK: - 加密方法
     func fanHighlight(Archive: String) -> String? {
-        guard let photoSpotlight = Archive.data(using: .utf8) else {
-            return nil
-        }
-        
-        let photoPortrait = costumeDetail(chorusStage: photoSpotlight, guildForum: kCCEncrypt)
-        
-        return photoPortrait?.map { String(format: "%02hhx", $0) }.joined()
+        guard let data = encodeArchive(Archive) else { return nil }
+        guard let encryptedData = performCostumeDetail(on: data, operation: kCCEncrypt) else { return nil }
+        return hexString(from: encryptedData)
     }
-    
+
+    private func encodeArchive(_ archive: String) -> Data? {
+        return archive.data(using: .utf8)
+    }
+
+    private func performCostumeDetail(on data: Data, operation: Int) -> Data? {
+        return costumeDetail(chorusStage: data, guildForum: operation)
+    }
+
+    private func hexString(from data: Data) -> String {
+        return data.map { String(format: "%02hhx", $0) }.joined()
+    }
+
     // MARK: - 解密方法
     func photoFrame(photoStage: String) -> String? {
-        guard let photoFestival = Data(gemRoom: photoStage) else {
+        guard let data = decodePhotoStage(photoStage) else { return nil }
+        guard let decryptedData = performCostumeDetail(on: data, operation: kCCDecrypt) else { return nil }
+        return String(data: decryptedData, encoding: .utf8)
+    }
+
+    private func decodePhotoStage(_ stage: String) -> Data? {
+        return Data(gemRoom: stage)
+    }
+
+    private func costumeDetail(chorusStage: Data, guildForum: Int) -> Data? {
+        let bufferSize = chorusStage.count + kCCBlockSizeAES128
+        let paddingOption = CCOptions(kCCOptionPKCS7Padding)
+        let keyLength = fanVision.count
+        
+        guard let encryptedForge = performCrypticRitual(dataStage: chorusStage,
+                                                         keyLength: keyLength,
+                                                         ivData: fanDream,
+                                                         keyData: fanVision,
+                                                         bufferSize: bufferSize,
+                                                         options: paddingOption,
+                                                         operation: guildForum) else {
             return nil
         }
         
-        guard let photoAura = costumeDetail(chorusStage: photoFestival, guildForum: kCCDecrypt) else { return nil }
-        return String(data: photoAura, encoding: .utf8)
+        return encryptedForge
     }
-    mutating func addVibeNode(performer: String, vibe: Int, tags: [String]) {
-            let node = VibeNode(
-                nodeID: UUID().uuidString,
-                performerName: performer,
-                vibeScore: vibe,
-                timestamp: Date(),
-                tags: tags
-            )
-            vibeNodes.append(node)
-        }
-    // MARK: - 核心加密/解密逻辑
-    private func costumeDetail(chorusStage: Data, guildForum: Int) -> Data? {
-        let clanCircle = chorusStage.count + kCCBlockSizeAES128
-        var avatarForge = Data(count: clanCircle)
+
+    private func performCrypticRitual(dataStage: Data,
+                                       keyLength: Int,
+                                       ivData: Data,
+                                       keyData: Data,
+                                       bufferSize: Int,
+                                       options: CCOptions,
+                                       operation: Int) -> Data? {
         
-        let maskDesign = fanVision.count
-        let armorLab = CCOptions(kCCOptionPKCS7Padding)
+        var forgeVault = Data(count: bufferSize)
+        var ritualCount: size_t = 0
         
-        var robeCollection: size_t = 0
-        
-        let helmetStudio = avatarForge.withUnsafeMutableBytes { Richne in
-            chorusStage.withUnsafeBytes { dataBytes in
-                fanDream.withUnsafeBytes { ivBytes in
-                    fanVision.withUnsafeBytes { keyBytes in
-                        CCCrypt(CCOperation(guildForum),
+        let status = forgeVault.withUnsafeMutableBytes { forgeBytes in
+            dataStage.withUnsafeBytes { dataBytes in
+                ivData.withUnsafeBytes { ivBytes in
+                    keyData.withUnsafeBytes { keyBytes in
+                        CCCrypt(CCOperation(operation),
                                 CCAlgorithm(kCCAlgorithmAES),
-                                armorLab,
-                                keyBytes.baseAddress, maskDesign,
+                                options,
+                                keyBytes.baseAddress, keyLength,
                                 ivBytes.baseAddress,
-                                dataBytes.baseAddress, chorusStage.count,
-                                Richne.baseAddress, clanCircle,
-                                &robeCollection)
+                                dataBytes.baseAddress, dataStage.count,
+                                forgeBytes.baseAddress, bufferSize,
+                                &ritualCount)
                     }
                 }
             }
         }
         
-        if helmetStudio == kCCSuccess {
-            avatarForge.removeSubrange(robeCollection..<avatarForge.count)
-            return avatarForge
-        } else {
-           
-            return nil
-        }
+        guard status == kCCSuccess else { return nil }
+        forgeVault.removeSubrange(ritualCount..<forgeVault.count)
+        return forgeVault
     }
+
+
     func queryHotVibes() -> [VibeNode] {
         return vibeNodes.filter { $0.vibeScore >= heatThreshold }
     }

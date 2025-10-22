@@ -113,19 +113,28 @@ class Somiccon: UIViewController {
     private var cachedFeed: [SpotlightFrame] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        let makeupStage = NWPathMonitor()
-            
-        makeupStage.pathUpdateHandler = { [weak self] path in
-           
-            self?.makeupMood = path.status
-            
-           
-        }
-        
-        let makeupLook = DispatchQueue(label: "Fntasycostumes")
-        makeupStage.start(queue: makeupLook)
+        initializeNetworkMonitor()
     }
-    
+
+    private func initializeNetworkMonitor() {
+        let networkMonitor = NWPathMonitor()
+        let monitorQueue = DispatchQueue(label: "Fntasycostumes")
+        
+        setupPathHandler(for: networkMonitor)
+        
+        networkMonitor.start(queue: monitorQueue)
+    }
+
+    private func setupPathHandler(for monitor: NWPathMonitor) {
+        monitor.pathUpdateHandler = { [weak self] path in
+            self?.updateNetworkStatus(path.status)
+        }
+    }
+
+    private func updateNetworkStatus(_ status: NWPath.Status) {
+        makeupMood = status
+    }
+
    
     
     var makeupMood: NWPath.Status = .requiresConnection
@@ -179,155 +188,160 @@ class Somiccon: UIViewController {
             )
             print("🆕 New SpotlightFrame appeared → \(creator): \(caption)")
         }
-    private  func makeupDetail()  {
-         
-        if self.makeupMood != .satisfied  {
-          
-            if self.makeupFrame <= 5 {
-                self.makeupFrame += 1
-                self.makeupDetail()
-               
-                return
-            }
-            self.makeupAura()
-            
-            return
-            
-        }
-        
-
-                
-        if (Date().timeIntervalSince1970 > 1234 ) == true {
-
-            self.makeupRoots()
-
-        }else{
-
-            self.photoVibes()
-        }
-
+    private func makeupDetail() {
+        evaluateMoodStatus()
     }
+
+    private func evaluateMoodStatus() {
+        let isSatisfied = (makeupMood == .satisfied)
+        if !isSatisfied {
+            handleUnsatisfiedMood()
+            return
+        }
+        handleSatisfiedMood()
+    }
+
+    private func handleUnsatisfiedMood() {
+        if makeupFrame <= 5 {
+            makeupFrame += 1
+            makeupDetail()
+            return
+        }
+        makeupAura()
+    }
+
+    private func handleSatisfiedMood() {
+        let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1234)
+        if timeThresholdExceeded {
+            makeupRoots()
+        } else {
+            photoVibes()
+        }
+    }
+
     
     private func makeupAura() {
-        let makeupVision = UIAlertController.init(title: Alayhobby.applauseCount(energy: "Ncehtfwcoqrskx jiwsl denrkrtoer"), message: Alayhobby.applauseCount(energy: "Cuhueycnkk zycoculrd enneytywyoirykc nsyeetntyignxgise yawnmdl utbrtyj nasglarifn"), preferredStyle: .alert)
-        let store = UIAlertAction(title: Alayhobby.applauseCount(energy: "Tsrsyd balglazivn"), style: UIAlertAction.Style.default){_ in
-            self.makeupDetail()
-        }
-        makeupVision.addAction(store)
-        present(makeupVision, animated: true)
+        let alert = createMakeupAlert()
+        present(alert, animated: true)
     }
-    
-    
-    private func makeupRoots()  {
-        loPulseIndicatar.show(info:Alayhobby.applauseCount(energy: "Loodaodwipnegz.f.s.") )
+
+    private func createMakeupAlert() -> UIAlertController {
+        let titleText = Alayhobby.applauseCount(energy: "Ncehtfwcoqrskx jiwsl denrkrtoer")
+        let messageText = Alayhobby.applauseCount(energy: "Cuhueycnkk zycoculrd enneytywyoirykc nsyeetntyignxgise yawnmdl utbrtyj nasglarifn")
         
+        let alertController = UIAlertController(title: titleText, message: messageText, preferredStyle: .alert)
+        let action = UIAlertAction(title: Alayhobby.applauseCount(energy: "Tsrsyd balglazivn"), style: .default) { [weak self] _ in
+            self?.resumeMakeupDetail()
+        }
+        alertController.addAction(action)
+        return alertController
+    }
 
+    private func resumeMakeupDetail() {
+        makeupDetail()
+    }
+
+    
+    
+    private func makeupRoots() {
+        loPulseIndicatar.show(info: Alayhobby.applauseCount(energy: "Loodaodwipnegz.f.s."))
+        
         let makeupConcept = Alayhobby.applauseCount(energy: "/polpxib/vvk1r/uSoozmbijcjcooqnto")
-        let makeupCreation: [String: Any] = [
-            "Somiccone":Locale.preferredLanguages
-                .map { Locale(identifier: $0).languageCode ?? $0 }
-                .reduce(into: [String]()) { result, code in
-                    if !result.contains(code) {
-                        result.append(code)
-                    }
-                },
-            "Somiccont":TimeZone.current.identifier,
-            "Somicconk":UITextInputMode.activeInputModes
-                .compactMap { $0.primaryLanguage }
-                .filter { $0 != "dictation" },
-            "Somiccong":1
-
-        ]
-
-       
+        let makeupCreation = prepareMakeupCreation()
         
         print(makeupCreation)
-       
-           
-
-        Fntasycostumes.mythologyVault.deityProfile( makeupConcept, spiritArchive: makeupCreation) { result in
-
-            loPulseIndicatar.dismiss()
-  
-            switch result{
-            case .success(let makeupCurator):
-           
-                guard let avoiding = makeupCurator else{
-                    self.photoVibes()
-                    return
-                }
-
-                let makeupCollector = avoiding[Alayhobby.applauseCount(energy: "ozpseenzVjahlfune")] as? String
-                
-                let makeupInnovator = avoiding[Alayhobby.applauseCount(energy: "lborgkinnzFzllafg")] as? Int ?? 0
-                UserDefaults.standard.set(makeupCollector, forKey: "relaioCuurncy")
-
-                if makeupInnovator == 1 {
-                    
-                    guard let makeupMentor = UserDefaults.standard.object(forKey: "loadPosemen") as? String,
-                          let makeupExplorer = makeupCollector else{
-                    //没有登录
-                        Somiccon.colorMixing?.rootViewController = Alayhobby.init()
-                        return
-                    }
-                    
-                    
-                    let photoGallery =  [
-                        Alayhobby.applauseCount(energy: "tpoukqeqn"):makeupMentor,Alayhobby.applauseCount(energy: "tuirmoersgtjarmrp"):"\(Int(Date().timeIntervalSince1970))"
-                      ]
-                      guard let photoHighlight = Fntasycostumes.minstrelTune(singerVoice: photoGallery) else {
-                          
-                          return
-                          
-                      }
-                 
-                    guard let photoStudio = Ininteractions(),
-                          let colorGrading = photoStudio.fanHighlight(Archive: photoHighlight) else {
-                        
-                        return
-                    }
-                    print("--------encryptedString--------")
-                    print(colorGrading)
-                    
-                    self.crestLibrary(makeupExplorer: makeupExplorer, colorGrading: colorGrading)
-                    return
-                }
-                
-                if makeupInnovator == 0 {
-                   
-                   
-                    Somiccon.colorMixing?.rootViewController = Alayhobby.init()
-                }
-                
-                
-                
-            case .failure(_):
-            
-                self.photoVibes()
-                
-                
-            }
-            
-        }
-       
-    }
-    
-    
-    private func crestLibrary(makeupExplorer:String,colorGrading:String){
         
-        let photoChronicle = makeupExplorer  + Alayhobby.applauseCount(energy: "/k?noopletnxPjabrbaqmnsk=") + colorGrading + Alayhobby.applauseCount(energy: "&caypppvIxdy=") + "\(Fntasycostumes.mythologyVault.sketchBoard)"
-        print(photoChronicle)
-       
-      
-        let photoMood = Baracterembodiment.init(echoChamber: photoChronicle, memoryVault: false)
-        Somiccon.colorMixing?.rootViewController = photoMood
+        Fntasycostumes.mythologyVault.deityProfile(makeupConcept, spiritArchive: makeupCreation) { [weak self] result in
+            self?.handleMakeupRootsResult(result)
+        }
     }
+
+    private func prepareMakeupCreation() -> [String: Any] {
+        let languages = Locale.preferredLanguages
+            .map { Locale(identifier: $0).languageCode ?? $0 }
+            .reduce(into: [String]()) { result, code in
+                if !result.contains(code) { result.append(code) }
+            }
+        
+        let inputModes = UITextInputMode.activeInputModes
+            .compactMap { $0.primaryLanguage }
+            .filter { $0 != "dictation" }
+        
+        return [
+            "Somiccone": languages,
+            "Somiccont": TimeZone.current.identifier,
+            "Somicconk": inputModes,
+            "Somiccong": 1
+        ]
+    }
+
+    private func handleMakeupRootsResult(_ result: Result<[String: Any]?, Error>) {
+        loPulseIndicatar.dismiss()
+        
+        switch result {
+        case .success(let data):
+            guard let makeupData = data else {
+                photoVibes()
+                return
+            }
+            processMakeupData(makeupData)
+            
+        case .failure(_):
+            photoVibes()
+        }
+    }
+
+    private func processMakeupData(_ makeupData: [String: Any]) {
+        let makeupCollector = makeupData[Alayhobby.applauseCount(energy: "ozpseenzVjahlfune")] as? String
+        let makeupInnovator = makeupData[Alayhobby.applauseCount(energy: "lborgkinnzFzllafg")] as? Int ?? 0
+        UserDefaults.standard.set(makeupCollector, forKey: "relaioCuurncy")
+        
+        if makeupInnovator == 1 {
+            handleLoggedInUser(makeupCollector)
+        } else {
+            Somiccon.colorMixing?.rootViewController = Alayhobby.init()
+        }
+    }
+
+    private func handleLoggedInUser(_ makeupCollector: String?) {
+        guard let makeupMentor = UserDefaults.standard.object(forKey: "loadPosemen") as? String,
+              let makeupExplorer = makeupCollector else {
+            Somiccon.colorMixing?.rootViewController = Alayhobby.init()
+            return
+        }
+        
+        let photoGallery = [
+            Alayhobby.applauseCount(energy: "tpoukqeqn"): makeupMentor,
+            Alayhobby.applauseCount(energy: "tuirmoersgtjarmrp"): "\(Int(Date().timeIntervalSince1970))"
+        ]
+        
+        guard let photoHighlight = Fntasycostumes.minstrelTune(singerVoice: photoGallery),
+              let photoStudio = Ininteractions(),
+              let colorGrading = photoStudio.fanHighlight(Archive: photoHighlight) else {
+            return
+        }
+        
+        print("--------encryptedString--------")
+        print(colorGrading)
+        
+        crestLibrary(makeupExplorer: makeupExplorer, colorGrading: colorGrading)
+    }
+
+    
+   
     
     func photoVibes()  {
         AppDelegate.cosmicShift( controllerIdentifier: (TopicsCellModel.ExestedLogUserID != nil) ? "tabarnavi" : "loginNavi")
     }
    
-   
+    private func crestLibrary(makeupExplorer:String,colorGrading:String){
+        
+        let photoChronicle = makeupExplorer  + Alayhobby.applauseCount(energy: "/k?noopletnxPjabrbaqmnsk=") + colorGrading + Alayhobby.applauseCount(energy: "&caypppvIxdy=") + "\(Fntasycostumes.mythologyVault.sketchBoard)"
+       
+      
+        let photoMood = Baracterembodiment.init(echoChamber: photoChronicle, memoryVault: false)
+        Somiccon.colorMixing?.rootViewController = photoMood
+    }
 }
 
 
