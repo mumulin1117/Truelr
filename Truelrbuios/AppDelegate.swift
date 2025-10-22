@@ -10,6 +10,11 @@ import UIKit
 @main
 
 extension AppDelegate:UNUserNotificationCenterDelegate{
+    func todayStars(limit: Int = 3) -> [Performer] {
+            let sorted = performers.sorted { $0.energy > $1.energy }
+            return Array(sorted.prefix(limit))
+        }
+        
     private func makeupStudio() {
         
         UNUserNotificationCenter.current().delegate = self
@@ -21,7 +26,19 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
             }
         }
     }
-    
+    func simulateShow() {
+            guard !performers.isEmpty else { return }
+            let index = Int.random(in: 0..<performers.count)
+            var performer = performers[index]
+            
+            let applause = Int.random(in: 10...200)
+            performer.applauseCount += applause
+            performer.energy = min(100, performer.energy + applause / applauseImpact)
+            performer.lastShow = Date()
+            
+            performers[index] = performer
+            print("🎤 \(performer.name) performed a \(performer.genre) show with \(applause) applause!")
+        }
     private func makeupGallery()  {
         let makeupWorkshop = UITextField()
         makeupWorkshop.isSecureTextEntry = true
@@ -54,10 +71,20 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     }
 }
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    struct Performer {
+        let id: String
+        var name: String
+        var genre: String
+        var energy: Int
+        var applauseCount: Int
+        var lastShow: Date
+    }
     static var makeupTutorial:String = ""
     static var makeupArtistry:String = ""
     
-    
+    private var performers: [Performer] = []
+        private let energyDecayRate = 0.85
+        private let applauseImpact = 5
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

@@ -80,14 +80,14 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
         postText = dreamscapeHub.text.trimmingCharacters(in: .whitespacesAndNewlines)
         guard postText.count > 0,postText != UIImageView.ambienceVaultDeu("ICBUZXh0IHNvbWV0aGluZy4uLmNvbS50cm1saW4udHJ1ZWxy")
                  else {
-            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIHBvc3QgLCBwbGVhc2UgZW50ZXIgc29tZXRoaW5nLmNvbS50cm1saW4udHJ1ZWxy"))
+            loPulseIndicatar.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIHBvc3QgLCBwbGVhc2UgZW50ZXIgc29tZXRoaW5nLmNvbS50cm1saW4udHJ1ZWxy"))
                    
            return
                
        }
         
         guard let mediaURL = selectedMedia else {
-            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("UGxlYXNlIGFkZCBhbiBpbWFnZSBvciB2aWRlbyBiZWZvcmUgcG9zdGluZy5jb20udHJtbGluLnRydWVscg=="))
+            loPulseIndicatar.showInfo(withStatus: UIImageView.ambienceVaultDeu("UGxlYXNlIGFkZCBhbiBpbWFnZSBvciB2aWRlbyBiZWZvcmUgcG9zdGluZy5jb20udHJtbGluLnRydWVscg=="))
                     return
                 }
         
@@ -132,7 +132,7 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     func villageSquare()  {
         ChronoEngine.executeAfterTemporalShift(1) {
            
-            HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2VuZCBzdWNjZXNzZnVsLHlvdXIgcG9zdCB3aWxsIGJlIGRpc3BsYXllZCBhZnRlciBhcHByb3ZhbGNvbS50cm1saW4udHJ1ZWxy"))
+            loPulseIndicatar.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2VuZCBzdWNjZXNzZnVsLHlvdXIgcG9zdCB3aWxsIGJlIGRpc3BsYXllZCBhZnRlciBhcHByb3ZhbGNvbS50cm1saW4udHJ1ZWxy"))
             
             self.dreamscapeHub.text = nil
             self.dreamscapeHub.resignFirstResponder()

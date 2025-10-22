@@ -58,7 +58,7 @@ class AmorLabController: UIViewController {
     }
     @objc func improvStage(tapoi:UITapGestureRecognizer)  {//login
         if timelineArchive.isSelected == false {
-            HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIGxvZ2dpbmcgaW4sIHBsZWFzZSByZWFkIGFuZCBhZ3JlZSB0byBvdXIgVGVybXMgb2YgVXNlLCBQcml2YWN5IFBvbGljeSwgYW5kIEVuZCBVc2VyIExpY2Vuc2UgQWdyZWVtZW50LmNvbS50cm1saW4udHJ1ZWxy"))
+            loPulseIndicatar.showInfo(withStatus: UIImageView.ambienceVaultDeu("QmVmb3JlIGxvZ2dpbmcgaW4sIHBsZWFzZSByZWFkIGFuZCBhZ3JlZSB0byBvdXIgVGVybXMgb2YgVXNlLCBQcml2YWN5IFBvbGljeSwgYW5kIEVuZCBVc2VyIExpY2Vuc2UgQWdyZWVtZW50LmNvbS50cm1saW4udHJ1ZWxy"))
            
             return
         }

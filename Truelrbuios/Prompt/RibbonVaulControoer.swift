@@ -81,7 +81,7 @@ class RibbonVaulControoer: UIViewController {
            let bundle = charmBundles[indexPath.item]
          
            view.isUserInteractionEnabled = false
-           HaloPulseIndicator.show(info: "Paying...")
+           loPulseIndicatar.show(info: "Paying...")
            LumiGiftChamber.shared.igniteGiftFlux(itemCode: "com.yourapp.token100") { result in
 //               HaloPulseIndicator.dismiss()
                switch result {
@@ -91,13 +91,13 @@ class RibbonVaulControoer: UIViewController {
                    let allcount =  Somiccon.CurrentCoinggUserOwne + bundle.hearts + bundle.giftExtra
                    
                    Somiccon.CurrentCoinggUserOwne = allcount
-                   HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("UGF5IFN1Y2Nlc3NmdWxjb20udHJtbGluLnRydWVscg=="))
+                   loPulseIndicatar.showSuccess(withStatus: UIImageView.ambienceVaultDeu("UGF5IFN1Y2Nlc3NmdWxjb20udHJtbGluLnRydWVscg=="))
                    
                    self.travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(Somiccon.CurrentCoinggUserOwne)"
                case .failure(let error):
                    self.view.isUserInteractionEnabled = true
                    
-                   HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
+                   loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
                }
            }
 

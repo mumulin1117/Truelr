@@ -134,13 +134,13 @@ class NightmareVaultControoer: UIViewController,UICollectionViewDelegate,UIColle
     
     
     private func mangaPanel()  {
-        HaloPulseIndicator.show(info: "")
+        loPulseIndicatar.show(info: "")
         let safeCount = Swift.min(4, SharedTopicsController.getingallUser.count)   // 防止越界
                 
         self.nisertgeing = Array(SharedTopicsController.getingallUser.shuffled().prefix(safeCount))
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: DispatchWorkItem(block: {
-            HaloPulseIndicator.dismiss()
+            loPulseIndicatar.dismiss()
             
         }))
         

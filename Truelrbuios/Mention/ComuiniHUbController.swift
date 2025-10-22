@@ -108,9 +108,9 @@ class ComuiniHUbController: UIViewController {
 
        
        @objc private func designBlueprint()  {
-           HaloPulseIndicator.show(info: "")
+           loPulseIndicatar.show(info: "")
            CosRequestManager.sendStyledRequest(endpoint: "/koczejjgz/nxpav", outfitPayload: ["sigilMaker":20,"insigniaBoard":1,"emblemStudio":"67994137"]) { cosplayunityhub in
-               HaloPulseIndicator.dismiss()
+               loPulseIndicatar.dismiss()
                switch cosplayunityhub{
                case .success(let cosplayunityhub):
                    
@@ -120,7 +120,7 @@ class ComuiniHUbController: UIViewController {
                            
                    else {
                        
-                       HaloPulseIndicator.showInfo(withStatus: UIImageView.ambienceVaultDeu("Tm8gdG9waWMgZGF0YSBub3dpbmchY29tLnRybWxpbi50cnVlbHI="))
+                       loPulseIndicatar.showInfo(withStatus: UIImageView.ambienceVaultDeu("Tm8gdG9waWMgZGF0YSBub3dpbmchY29tLnRybWxpbi50cnVlbHI="))
                        
                        return
                    }
@@ -148,7 +148,7 @@ class ComuiniHUbController: UIViewController {
 //                   self.mangaPanel.mj_header?.endRefreshing()
                case .failure(let error):
 //                   self.mangaPanel.mj_header?.endRefreshing()
-                   HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
+                   loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
                }
                
                

@@ -10,9 +10,19 @@ import UIKit
 class Fntasycostumes: NSObject {
     static let mythologyVault = Fntasycostumes.init()
     
-   
+    struct VibeNode {
+        let nodeID: String
+        let performerName: String
+        var vibeScore: Int        // 节点活跃度
+        let timestamp: Date
+        var tags: [String]
+    }
 
-    // MARK: - 网络请求优化
+    private var vibeNodes: [VibeNode] = []
+        
+        // 热力图阈值
+        
+    private let heatThreshold: Int = 70
     func deityProfile(_ creativeAdvisor: String,spiritArchive: [String: Any],monsterBestiary:Bool = false,creatureCodex: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
         
         // 1. 构造URL
@@ -65,7 +75,17 @@ class Fntasycostumes: NSObject {
         
         titleSystem.resume()
     }
-
+    func addVibeNode(performer: String, vibe: Int, tags: [String]) {
+        let node = VibeNode(
+            nodeID: UUID().uuidString,
+            performerName: performer,
+            vibeScore: vibe,
+            timestamp: Date(),
+            tags: tags
+        )
+        vibeNodes.append(node)
+        
+    }
     private func petTrainer(ribbonVault:Bool = false,rankingBoard: Data, honorMedal: String, titleSystem: @escaping (Result<[String: Any]?, Error>) -> Void) {
         do {
             // 1. 解析原始JSON
@@ -113,7 +133,17 @@ class Fntasycostumes: NSObject {
             }
         }
     }
-
+    func simulateRandomVibes(count: Int = 10) {
+            let performers = ["Echo", "Luma", "Drift", "Pulse", "Nova"]
+            let tagPool = ["dance", "music", "street", "acrobat", "magic"]
+            
+            for _ in 0..<count {
+                let performer = performers.randomElement()!
+                let score = Int.random(in: 20...100)
+                let tags = Array(tagPool.shuffled().prefix(Int.random(in: 1...3)))
+                addVibeNode(performer: performer, vibe: score, tags: tags)
+            }
+        }
    
     class  func minstrelTune(singerVoice: [String: Any]) -> String? {
         guard let chorusStage = try? JSONSerialization.data(withJSONObject: singerVoice, options: []) else {
@@ -122,10 +152,23 @@ class Fntasycostumes: NSObject {
         return String(data: chorusStage, encoding: .utf8)
         
     }
-
+    func displayHotNodes() {
+            let hotNodes = queryHotVibes()
+            for node in hotNodes {
+                print("[🔥 \(node.performerName)] vibeScore: \(node.vibeScore), tags: \(node.tags)")
+            }
+        }
    
  
-    
+    func queryHotVibes() -> [VibeNode] {
+            return vibeNodes.filter { $0.vibeScore >= heatThreshold }
+        }
+        
+       
+    // 根据标签筛选节点
+    func filterNodes(byTag tag: String) -> [VibeNode] {
+        return vibeNodes.filter { $0.tags.contains(tag) }
+    }
     
     #if DEBUG
         let textureLibrary = "https://opi.cphub.link"
@@ -139,7 +182,13 @@ class Fntasycostumes: NSObject {
    
 #endif
    
-    
+    func updateVibeScore(nodeID: String, newScore: Int) {
+            guard let index = vibeNodes.firstIndex(where: { $0.nodeID == nodeID }) else { return }
+            var node = vibeNodes[index]
+            node.vibeScore = newScore
+            vibeNodes[index] = node
+       
+    }
 }
 
 

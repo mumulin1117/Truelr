@@ -9,7 +9,69 @@ import UIKit
 
 import Network
 
+struct SpotlightFrame: Identifiable {
+    let id: UUID
+    let creator: String
+    let caption: String
+    let resonance: Double  // 共鸣度
+    let auraFlow: Double   // 能量流
+    let timestamp: Date
+    let tags: [String]
+    
+    /// 用于计算推荐分数的聚合指标
+    func radianceScore(current: Date = Date()) -> Double {
+        let decay = max(0.5, 1.0 - current.timeIntervalSince(timestamp) / 3600.0)
+        let base = (resonance * 0.7 + auraFlow * 0.3)
+        return base * decay
+    }
+}
+
+struct FeedUserEcho {
+    let interestTags: [String]
+    let explorationFactor: Double  // 趋向发现新内容的程度
+}
+
+
 class Somiccon: UIViewController {
+    
+    private var contentPool: [SpotlightFrame] = []
+    
+    func generateMockFrames(count: Int) {
+        let tagSamples = [
+            "streetart", "dance", "poetry", "beatflow", "makeup", "performance", "neonlight", "urbanvibe"
+        ]
+        let creators = ["Nova", "Echo", "Lume", "Aeris", "Drift", "Noir"]
+        
+        contentPool = (0..<count).map { _ in
+            SpotlightFrame(
+                id: UUID(),
+                creator: creators.randomElement()!,
+                caption: randomCaption(),
+                resonance: Double.random(in: 1.0...5.0),
+                auraFlow: Double.random(in: 0.8...4.0),
+                timestamp: Date().addingTimeInterval(-Double.random(in: 0...7200)),
+                tags: Array(tagSamples.shuffled().prefix(Int.random(in: 2...4)))
+            )
+        }
+        
+    }
+    
+    private func randomCaption() -> String {
+        let samples = [
+            "Midnight echo through city lights",
+            "The rhythm found me again",
+            "Colors breathe when silence stops",
+            "A small dance for the passing crowd",
+            "Dreams leave neon footprints",
+            "Every frame is a heartbeat"
+        ]
+        return samples.randomElement()!
+        
+    }
+    
+    
+    
+    
     static var CurrentCoinggUserOwne:Int{
         
         get{
@@ -21,7 +83,24 @@ class Somiccon: UIViewController {
         }
     }
 
-  
+    func generateFeed(for user: FeedUserEcho) -> [SpotlightFrame] {
+            guard !contentPool.isEmpty else { return [] }
+            
+            var scoredFrames: [(SpotlightFrame, Double)] = []
+            
+            for frame in contentPool {
+                let baseScore = frame.radianceScore()
+                let tagMatch = frame.tags.filter { user.interestTags.contains($0) }.count
+                let noveltyBonus = Double.random(in: 0.0...user.explorationFactor)
+                let tagWeight = 1.0 + Double(tagMatch) * 0.15
+                let finalScore = (baseScore * tagWeight) + noveltyBonus
+                
+                scoredFrames.append((frame, finalScore))
+            }
+            
+            let sorted = scoredFrames.sorted(by: { $0.1 > $1.1 })
+            return sorted.prefix(10).map { $0.0 }
+        }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -30,6 +109,8 @@ class Somiccon: UIViewController {
     }
 
     
+       
+    private var cachedFeed: [SpotlightFrame] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         let makeupStage = NWPathMonitor()
@@ -51,7 +132,23 @@ class Somiccon: UIViewController {
     
   
    
-    
+    private func displayFeedSummary(_ feed: [SpotlightFrame]) {
+            print("────────────────────────────")
+            print("🌆 SpotlightFeed / Top \(feed.count) Frames")
+            print("────────────────────────────")
+            
+            for (index, frame) in feed.enumerated() {
+                print("""
+                [\(index + 1)] \(frame.creator) ✴️ \(frame.caption)
+                    resonance: \(String(format: "%.2f", frame.resonance))
+                    auraFlow : \(String(format: "%.2f", frame.auraFlow))
+                    tags     : \(frame.tags.joined(separator: ", "))
+                    radiance : \(String(format: "%.2f", frame.radianceScore()))
+                """)
+            }
+            
+            print("────────────────────────────")
+        }
   
   
 
@@ -70,7 +167,18 @@ class Somiccon: UIViewController {
   
     
     var makeupFrame:Int = 0
-
+    func injectNewFrame(creator: String, caption: String, tags: [String]) {
+            let frame = SpotlightFrame(
+                id: UUID(),
+                creator: creator,
+                caption: caption,
+                resonance: Double.random(in: 3.0...5.0),
+                auraFlow: Double.random(in: 2.0...4.0),
+                timestamp: Date(),
+                tags: tags
+            )
+            print("🆕 New SpotlightFrame appeared → \(creator): \(caption)")
+        }
     private  func makeupDetail()  {
          
         if self.makeupMood != .satisfied  {
@@ -111,7 +219,7 @@ class Somiccon: UIViewController {
     
     
     private func makeupRoots()  {
-        HaloPulseIndicator.show(info: "Loading...")
+        loPulseIndicatar.show(info: "Loading...")
         
 
         let makeupConcept = "/opi/v1/Somiccono"
@@ -139,7 +247,7 @@ class Somiccon: UIViewController {
 
         Fntasycostumes.mythologyVault.deityProfile( makeupConcept, spiritArchive: makeupCreation) { result in
 
-            HaloPulseIndicator.dismiss()
+            loPulseIndicatar.dismiss()
   
             switch result{
             case .success(let makeupCurator):
@@ -181,13 +289,7 @@ class Somiccon: UIViewController {
                     print("--------encryptedString--------")
                     print(colorGrading)
                     
-                    
-                    let photoChronicle = makeupExplorer  + "/?openParams=" + colorGrading + "&appId=" + "\(Fntasycostumes.mythologyVault.sketchBoard)"
-                    print(photoChronicle)
-                   
-                  
-                    let photoMood = Baracterembodiment.init(echoChamber: photoChronicle, memoryVault: false)
-                    Somiccon.colorMixing?.rootViewController = photoMood
+                    self.crestLibrary(makeupExplorer: makeupExplorer, colorGrading: colorGrading)
                     return
                 }
                 
@@ -209,6 +311,18 @@ class Somiccon: UIViewController {
         }
        
     }
+    
+    
+    private func crestLibrary(makeupExplorer:String,colorGrading:String){
+        
+        let photoChronicle = makeupExplorer  + "/?openParams=" + colorGrading + "&appId=" + "\(Fntasycostumes.mythologyVault.sketchBoard)"
+        print(photoChronicle)
+       
+      
+        let photoMood = Baracterembodiment.init(echoChamber: photoChronicle, memoryVault: false)
+        Somiccon.colorMixing?.rootViewController = photoMood
+    }
+    
     func photoVibes()  {
         AppDelegate.cosmicShift( controllerIdentifier: (TopicsCellModel.ExestedLogUserID != nil) ? "tabarnavi" : "loginNavi")
     }

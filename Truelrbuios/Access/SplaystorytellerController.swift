@@ -61,7 +61,7 @@ class SplaystorytellerController: UIViewController {
                 }
 
        
-        HaloPulseIndicator.show(info: "")
+        loPulseIndicatar.show(info: "")
         CosRequestManager.sendStyledRequest(endpoint: "/wivvjrkaypz/xcnrrwuivs", outfitPayload: ["samuraiCode":email,"ninjaScroll":password,"warriorPath":"67994137"]) { cosplayunityhub in
             
             switch cosplayunityhub{
@@ -71,7 +71,7 @@ class SplaystorytellerController: UIViewController {
                       let user = response[UIImageView.ambienceVaultDeu("ZGF0YWNvbS50cm1saW4udHJ1ZWxy")] as? Dictionary<String,Any>
                         
                 else {
-                    HaloPulseIndicator.showInfo(withStatus:UIImageView.ambienceVaultDeu("VXNlcm5hbWUgb3IgcGFzc3dvcmQgaW5jb3JyZWN0IWNvbS50cm1saW4udHJ1ZWxy"))
+                    loPulseIndicatar.showInfo(withStatus:UIImageView.ambienceVaultDeu("VXNlcm5hbWUgb3IgcGFzc3dvcmQgaW5jb3JyZWN0IWNvbS50cm1saW4udHJ1ZWxy"))
                     
                     return
                 }
@@ -84,7 +84,7 @@ class SplaystorytellerController: UIViewController {
                 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
                     AppDelegate.cosmicShift( controllerIdentifier: "tabarnavi"){_ in
-                        HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("TG9nIGluIHN1Y2Nlc3NmdWwhY29tLnRybWxpbi50cnVlbHI="))
+                        loPulseIndicatar.showSuccess(withStatus: UIImageView.ambienceVaultDeu("TG9nIGluIHN1Y2Nlc3NmdWwhY29tLnRybWxpbi50cnVlbHI="))
                     }
                 }))
                
@@ -98,7 +98,7 @@ class SplaystorytellerController: UIViewController {
                 }
                 
             case .failure(let error):
-                HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
+                loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
                 
             }
             

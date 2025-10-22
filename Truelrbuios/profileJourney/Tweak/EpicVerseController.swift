@@ -92,7 +92,7 @@ extension EpicVerseController: UITableViewDelegate, UITableViewDataSource {
             }
         case 2:
             ChronoEngine.executeAfterTemporalShift(2) {
-                HaloPulseIndicator.showSuccess(withStatus:UIImageView.ambienceVaultDeu("Q2xlYXIgY29tcGxldGVkIWNvbS50cm1saW4udHJ1ZWxy") )
+                loPulseIndicatar.showSuccess(withStatus:UIImageView.ambienceVaultDeu("Q2xlYXIgY29tcGxldGVkIWNvbS50cm1saW4udHJ1ZWxy") )
             }
         case 3:
             let alert = UIAlertController(

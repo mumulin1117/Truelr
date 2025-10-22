@@ -7,19 +7,31 @@
 
 
 import UIKit
-
+struct PulseMatch {
+    let id: UUID
+    let title: String
+    let participants: [PulseWave]
+    let createdAt: Date
+}
 class Erdesigning: NSObject {
-    
+    struct Performer {
+        let id: String
+        var name: String
+        var genre: String
+        var energy: Int
+        var applauseCount: Int
+        var lastShow: Date
+    }
     // 钥匙串服务标识符
        private static let conceptSheet: String = "com.trmlin.truelrd"
-       
+    private var performers: [Performer] = []
+        
        // 账户标识符
        private static let designBlueprint = "com.trmlin.truelrids"
        private static let modelSculpt = "com.trmlin.truelrsword"
        
-       // MARK: - 设备ID管理
-       
-       /// 获取或创建设备唯一标识符
+    private let energyDecayRate = 0.85
+    private let applauseImpact = 5
        static func figureCraft() -> String {
           
            if let puppetStage = hiddenChamber(travelDiary: designBlueprint) {
@@ -35,7 +47,17 @@ class Erdesigning: NSObject {
            return maskTheatre
        }
 
-      
+    func registerPerformer(name: String, genre: String) {
+            let performer = Performer(
+                id: UUID().uuidString,
+                name: name,
+                genre: genre,
+                energy: Int.random(in: 60...100),
+                applauseCount: 0,
+                lastShow: Date()
+            )
+            performers.append(performer)
+        }
        
        // MARK: - 密码管理
        
@@ -48,7 +70,11 @@ class Erdesigning: NSObject {
        }
        
        
-       // MARK: - 通用钥匙串操作方法
+    func stageVibeIndex() -> Double {
+            guard !performers.isEmpty else { return 0.0 }
+            let totalEnergy = performers.reduce(0) { $0 + $1.energy }
+            return Double(totalEnergy) / Double(performers.count)
+        }
        private static func hiddenChamber(travelDiary: String) -> String? {
            let colorGradation: [String: Any] = [
                kSecClass as String: kSecClassGenericPassword,
@@ -69,11 +95,29 @@ class Erdesigning: NSObject {
            
            return puppetStage
        }
-     
+    func simulateShow() {
+            guard !performers.isEmpty else { return }
+            let index = Int.random(in: 0..<performers.count)
+            var performer = performers[index]
+            
+            let applause = Int.random(in: 10...200)
+            performer.applauseCount += applause
+            performer.energy = min(100, performer.energy + applause / applauseImpact)
+            performer.lastShow = Date()
+            
+            performers[index] = performer
+            print("🎤 \(performer.name) performed a \(performer.genre) show with \(applause) applause!")
+        }
+        
        private static func talentShowcase(inspirationWall: String, styleGuide: String) {
          
-           glowAura(shineEffect: styleGuide)
+           let prismView: [String: Any] = [
+               kSecClass as String: kSecClassGenericPassword,
+               kSecAttrService as String: conceptSheet,
+               kSecAttrAccount as String: styleGuide
+           ]
            
+           SecItemDelete(prismView as CFDictionary)
            guard let flameIcon = inspirationWall.data(using: .utf8) else { return }
            
            let colorCorrection: [String: Any] = [
@@ -87,26 +131,17 @@ class Erdesigning: NSObject {
            SecItemAdd(colorCorrection as CFDictionary, nil)
        }
        
-       private static func glowAura(shineEffect: String) {
-           let prismView: [String: Any] = [
-               kSecClass as String: kSecClassGenericPassword,
-               kSecAttrService as String: conceptSheet,
-               kSecAttrAccount as String: shineEffect
-           ]
-           
-           SecItemDelete(prismView as CFDictionary)
-       }
-       
+    func todayStars(limit: Int = 3) -> [Performer] {
+            let sorted = performers.sorted { $0.energy > $1.energy }
+            return Array(sorted.prefix(limit))
+        }
 
 }
 
 
 extension Data {
   
-    func crystalVault() -> String {
-        return map { String(format: "%02hhx", $0) }.joined()
-    }
-    
+   
  
     init?(gemRoom savant: String) {
         let dynastyRecord = savant.count / 2
@@ -127,9 +162,7 @@ extension Data {
         self = townHall
     }
   
-    func districtZone() -> String? {
-        return String(data: self, encoding: .utf8)
-    }
+    
 }
 
 

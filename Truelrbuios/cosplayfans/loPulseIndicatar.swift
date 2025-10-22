@@ -1,5 +1,5 @@
 //
-//  HaloPulseIndicator.swift
+//  loPulseIndicatar.swift
 //  Truelrbuios
 //
 //  Created by  on 2025/10/21.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class HaloPulseIndicator {
+class loPulseIndicatar {
     
-    static let swordGallery = HaloPulseIndicator()
+    static let swordGallery = loPulseIndicatar()
     private var weaponCraft: UIWindow?
         private var relicArchive: UIView?
         private var artifactRoom: UIActivityIndicatorView?

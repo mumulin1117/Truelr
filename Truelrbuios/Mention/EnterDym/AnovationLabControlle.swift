@@ -49,7 +49,7 @@ class AnovationLabControlle: UIViewController, UIScrollViewDelegate  {
     init(cellModelFot: TopicsCellModel,dymTyoe:Int) {
         self.cellModelFot = cellModelFot
         self.dymTyoe = dymTyoe
-        HaloPulseIndicator.show(info: "")
+        loPulseIndicatar.show(info: "")
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -85,7 +85,7 @@ class AnovationLabControlle: UIViewController, UIScrollViewDelegate  {
         conceptSheet.text = "\(cellModelFot.poseTrainer ?? 0)"
         
         questBoard.text = "\(cellModelFot.gestureGuide ?? 0)"
-        HaloPulseIndicator.dismiss()
+        loPulseIndicatar.dismiss()
     }
     
     @IBOutlet weak var conceptSheet: UILabel!
@@ -173,9 +173,9 @@ class AnovationLabControlle: UIViewController, UIScrollViewDelegate  {
 
  
     @IBAction func makeingCstauchang(_ sender: UIButton) {
-        HaloPulseIndicator.show(info: "")
+        loPulseIndicatar.show(info: "")
         CosRequestManager.sendStyledRequest(endpoint: "/bjryinqmtbfrekz/ruiyjgtlu", outfitPayload: ["titleSystem":cellModelFot.sceneDirector ?? 0]) { cosplayunityhub in
-            HaloPulseIndicator.dismiss()
+            loPulseIndicatar.dismiss()
             switch cosplayunityhub{
             case .success(_):
                 
@@ -184,7 +184,7 @@ class AnovationLabControlle: UIViewController, UIScrollViewDelegate  {
                 
             case .failure(let error):
                
-                HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
+                loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
             }
             
             

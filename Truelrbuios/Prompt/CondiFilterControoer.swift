@@ -90,7 +90,7 @@ class CondiFilterControoer: UIViewController {
         
         CondiFilterControoer.pickingAge.0 = Int(self.nightmareVault.minimumValue)
         CondiFilterControoer.pickingAge.1 = Int(self.nightmareVault.value)
-        HaloPulseIndicator.showSuccess(withStatus:UIImageView.ambienceVaultDeu("U2F2ZSBzdWNjZXNzZnVsIWNvbS50cm1saW4udHJ1ZWxy") )
+        loPulseIndicatar.showSuccess(withStatus:UIImageView.ambienceVaultDeu("U2F2ZSBzdWNjZXNzZnVsIWNvbS50cm1saW4udHJ1ZWxy") )
         self.navigationController?.popViewController(animated: true)
     }
 }

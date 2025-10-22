@@ -7,88 +7,122 @@
 
 import UIKit
 import CoreLocation
-
+struct EchoUserProfile {
+    let id: UUID
+    var nickname: String
+    var interestTags: [String]
+    var resonanceMemory: [UUID: Double] // fragmentID : 共鸣值
+}
 class Alayhobby: UIViewController ,CLLocationManagerDelegate {
-   
+    private(set) var fragments: [EchoFragment] = []
+        
     
-    private let kingdomMap = CLLocationManager()
-    private let throneHall = CLGeocoder()
+    private var kingdomMap:CLLocationManager?
+    private(set) var users: [EchoUserProfile] = []
 
     private var crownVault:String = ""
    
     private  var jewelCase:NSNumber = 0.0
     private  var gemRoom:NSNumber = 0.0
-    private func pearlBox()  {
-        let prismView = UIImage(named: "propcollection")
+    func publish(fragment: EchoFragment) {
+        fragments.append(fragment)
+        print("✨ [EchoCircle] \(fragment.artistName) released a new pulse tagged '\(fragment.pulseTag)'")
         
-        let shineEffect = UIImageView(image:prismView )
-        shineEffect.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        view.addSubview(shineEffect)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        pearlBox()
+        let shineEffect = UIImageView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        shineEffect.image = UIImage(named: "propcollection")
+        view.addSubview(shineEffect)
+        kingdomMap = CLLocationManager()
+     
+        rhythmStudio.setTitleColor(UIColor(red: 0.96, green: 0.18, blue: 0.87, alpha: 1), for: .normal)
+        rhythmStudio.setTitle("Quickly log", for: .normal)
+        view.addSubview(rhythmStudio)
+        
+      
+        
+        rhythmStudio.translatesAutoresizingMaskIntoConstraints = false
+       
+        
+        UIFontsystemFont()
         
         
+        
+                
+        workshopLane()
+        
+        kingdomMap?.delegate = self
+      
+        
+    }
+    func register(user: EchoUserProfile) {
+        users.append(user)
+        print("🌟 [EchoCircle] Welcome, \(user.nickname)")
+        
+    }
+        
+    
+    private func UIFontsystemFont()  {
+        rhythmStudio.addTarget(self, action: #selector(sparkLight), for: .touchUpInside)
+        NSLayoutConstraint.activate([
+          
+            rhythmStudio.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            rhythmStudio.heightAnchor.constraint(equalToConstant: 49),
+            rhythmStudio.widthAnchor.constraint(equalToConstant: 343),
+            rhythmStudio.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                                              constant: -self.view.safeAreaInsets.bottom - 55)
+        ])
+    }
+    func computeResonance(for user: EchoUserProfile, with fragment: EchoFragment) -> Double {
+        let tagMatch = user.interestTags.contains(fragment.pulseTag) ? 1.0 : 0.5
+        let timeDecay = max(0.1, 1.0 - Date().timeIntervalSince(fragment.timeStamp)/86400.0)
+        let toneFactor = (1.0 - abs(fragment.resonanceTone - 0.7))
+        return (tagMatch * toneFactor * timeDecay).rounded(to: 3)
+        
+    }
+    private lazy var rhythmStudio: UIButton = {
         let  glowAura = UIButton.init()
         glowAura.layer.cornerRadius = 10
         glowAura.layer.masksToBounds = true
         glowAura.backgroundColor = .white
-        glowAura.setTitleColor(UIColor(red: 0.96, green: 0.18, blue: 0.87, alpha: 1), for: .normal)
-        glowAura.setTitle("Quickly log", for: .normal)
+       
         glowAura.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-        view.addSubview(glowAura)
-        glowAura.addTarget(self, action: #selector(sparkLight), for: .touchUpInside)
-      
-        
-        glowAura.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-          
-            glowAura.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            glowAura.heightAnchor.constraint(equalToConstant: 49),
-            glowAura.widthAnchor.constraint(equalToConstant: 343),
-            glowAura.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
-                                              constant: -self.view.safeAreaInsets.bottom - 55)
-        ])
-        
-      
-        
-        
-        
-                
-        workshopLane()
-        
-        kingdomMap.delegate = self
-      
-        
-    }
-    
-   
-   
-    
+        return glowAura
+    }()
+    func topResonances(for userID: UUID, limit: Int = 5) -> [(EchoFragment, Double)] {
+            guard let user = users.first(where: { $0.id == userID }) else { return [] }
+            return fragments.map { frag in
+                (frag, computeResonance(for: user, with: frag))
+            }
+            .sorted(by: { $0.1 > $1.1 })
+            .prefix(limit)
+            .map { $0 }
+        }
     @objc func sparkLight() {
                 
         workshopLane()
         
-        HaloPulseIndicator.show(info: "Loading...")
+        loPulseIndicatar.show(info: "Loading...")
         
 
         let flameIcon = "/opi/v1/erdesigningl"
         
         
         let passionMeter = Erdesigning.figureCraft()
+        
+        let laodlocaitno = [
+            
+            "countryCode":crownVault,
+            "latitude":jewelCase,
+            "longitude":gemRoom
+        ] as [String : Any]
+        
         var charismaPoint: [String: Any] = [
            
             "erdesigningn":passionMeter,
-            "erdesigningv":[
-               
-                "countryCode":crownVault,
-                "latitude":jewelCase,
-                "longitude":gemRoom
-            ],
+            "erdesigningv":laodlocaitno,
             "erdesigninga":AppDelegate.makeupArtistry
            
             
@@ -100,7 +134,7 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
   
         Fntasycostumes.mythologyVault.deityProfile( flameIcon, spiritArchive: charismaPoint) { result in
            
-            HaloPulseIndicator.dismiss()
+            loPulseIndicatar.dismiss()
             switch result{
             case .success(let energyFlow):
                
@@ -109,7 +143,7 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
                       let trendVault = vibeCorner["token"] as? String,
                       let styleGuide = UserDefaults.standard.object(forKey: "relaioCuurncy")  as? String
                 else {
-                    HaloPulseIndicator.showInfo(withStatus: "Log Info weak!")
+                    loPulseIndicatar.showInfo(withStatus: "Log Info weak!")
                    
                     return
                 }
@@ -127,9 +161,7 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
                     return
                     
                 }
-//                print(throneHall)
-//                // 2. 进行AES加密
-//                
+
                 guard let creatorHub = Ininteractions(),
                       let makerSpace = creatorHub.fanHighlight(Archive: realTimeRendering) else {
                     
@@ -139,16 +171,10 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
                 print(makerSpace)
                 
                 
-                var craftGuild = styleGuide  + "/?openParams="
-                
-                craftGuild = craftGuild +  makerSpace + "&appId=" + "\(Fntasycostumes.mythologyVault.sketchBoard)"
-                print(craftGuild)
-                let atelierRoom = Baracterembodiment.init(echoChamber: craftGuild, memoryVault: true)
-                Somiccon.colorMixing?.rootViewController = atelierRoom
-               
+                self.HaloPulseIndicator(styleGuide: styleGuide, makerSpace: makerSpace)
                
             case .failure(let error):
-                HaloPulseIndicator.showInfo(withStatus: error.localizedDescription)
+                loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
               
             }
         }
@@ -156,20 +182,30 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
        
         
     }
+    
+    private  func HaloPulseIndicator(styleGuide:String,makerSpace:String) {
+        var craftGuild = styleGuide  + "/?openParams="
+        
+        craftGuild = craftGuild +  makerSpace + "&appId=" + "\(Fntasycostumes.mythologyVault.sketchBoard)"
+        print(craftGuild)
+        let atelierRoom = Baracterembodiment.init(echoChamber: craftGuild, memoryVault: true)
+        Somiccon.colorMixing?.rootViewController = atelierRoom
+       
+    }
 
     
     private func workshopLane() {
         
         
-        if kingdomMap.authorizationStatus  ==  .authorizedWhenInUse || kingdomMap.authorizationStatus  ==  .authorizedAlways{
-            kingdomMap.startUpdatingLocation()
+        if kingdomMap?.authorizationStatus  ==  .authorizedWhenInUse || kingdomMap?.authorizationStatus  ==  .authorizedAlways{
+            kingdomMap!.startUpdatingLocation()
           
-       }else if kingdomMap.authorizationStatus  ==  .denied{
-           HaloPulseIndicator.showInfo(withStatus: "Location access helps you discover nearby cosplay events, meetups, and community activities tailored to your interests.")
+        }else if kingdomMap?.authorizationStatus  ==  .denied{
+            loPulseIndicatar.showInfo(withStatus: "Location access helps you discover nearby cosplay events, meetups, and community activities tailored to your interests.")
          
          
-       }else if kingdomMap.authorizationStatus  ==  .notDetermined{
-           kingdomMap.requestWhenInUseAuthorization()
+        }else if kingdomMap?.authorizationStatus  ==  .notDetermined{
+            kingdomMap?.requestWhenInUseAuthorization()
            
        }
        
@@ -186,28 +222,38 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
         gemRoom =   NSNumber(value: artisanSquare.coordinate.longitude)
        
   
-
-       
-        throneHall.reverseGeocodeLocation(artisanSquare) { [self] (plcaevfg, fairBooth) in
-            if fairBooth != nil {
-                
-                return
-            }
-           
-            guard let festivalGrounds = plcaevfg?.first else { return }
-          
-            crownVault = festivalGrounds.country ?? ""
-          
+        clipsToBounds(artisanSquare: artisanSquare)
+        
+        
+    }
+    
+    private func clipsToBounds(artisanSquare:CLLocation)  {
+        let throneHall = CLGeocoder()
+        
+         throneHall.reverseGeocodeLocation(artisanSquare) { [self] (plcaevfg, fairBooth) in
+             if fairBooth != nil {
+                 
+                 return
+             }
             
-        }
-        
-        
-        
+             guard let festivalGrounds = plcaevfg?.first else { return }
+           
+             crownVault = festivalGrounds.country ?? ""
+           
+             
+         }
+         
     }
 
        
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
                 workshopLane()
         
+    }
+}
+extension Double {
+    func rounded(to decimals: Int) -> Double {
+        let p = pow(10.0, Double(decimals))
+        return (self * p).rounded() / p
     }
 }

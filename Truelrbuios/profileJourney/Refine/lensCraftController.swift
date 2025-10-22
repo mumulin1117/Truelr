@@ -52,7 +52,7 @@ class lensCraftController: UIViewController {
         
       
         
-        HaloPulseIndicator.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2F2ZSBzdWNjZXNzZnVsIWNvbS50cm1saW4udHJ1ZWxy"))
+        loPulseIndicatar.showSuccess(withStatus: UIImageView.ambienceVaultDeu("U2F2ZSBzdWNjZXNzZnVsIWNvbS50cm1saW4udHJ1ZWxy"))
         self.navigationController?.popViewController(animated: true)
     }
     private func hiddenChamber(valorStory: String, epicVerse: String) {
