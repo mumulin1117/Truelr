@@ -25,29 +25,29 @@ class Somiccon: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        digitalArtwork()
+        makeupDetail()
       
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let artisticFilter = NWPathMonitor()
+        let makeupStage = NWPathMonitor()
             
-        artisticFilter.pathUpdateHandler = { [weak self] path in
+        makeupStage.pathUpdateHandler = { [weak self] path in
            
-            self?.visualEffectsd = path.status
+            self?.makeupMood = path.status
             
            
         }
         
-        let edition = DispatchQueue(label: "Fntasycostumes")
-        artisticFilter.start(queue: edition)
+        let makeupLook = DispatchQueue(label: "Fntasycostumes")
+        makeupStage.start(queue: makeupLook)
     }
     
    
     
-    var visualEffectsd: NWPath.Status = .requiresConnection
+    var makeupMood: NWPath.Status = .requiresConnection
     
   
    
@@ -69,55 +69,53 @@ class Somiccon: UIViewController {
     
   
     
-    var artisticCreation:Int = 0
-   
-    
-    
-   
-    private  func digitalArtwork()  {
+    var makeupFrame:Int = 0
+
+    private  func makeupDetail()  {
          
-        if self.visualEffectsd != .satisfied  {
+        if self.makeupMood != .satisfied  {
           
-            if self.artisticCreation <= 5 {
-                self.artisticCreation += 1
-                self.digitalArtwork()
+            if self.makeupFrame <= 5 {
+                self.makeupFrame += 1
+                self.makeupDetail()
                
                 return
             }
-            self.visualInspiration()
+            self.makeupAura()
             
             return
             
         }
         
 
-                if (Date().timeIntervalSince1970 > 1234 ) == true {
+                
+        if (Date().timeIntervalSince1970 > 1234 ) == true {
 
-                    self.artisticVision()
+            self.makeupRoots()
 
-                }else{
+        }else{
 
-                    self.creativeCraftsman()
-                }
-
-    }
-    
-    private func visualInspiration() {
-        let batch = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let store = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
-            self.digitalArtwork()
+            self.photoVibes()
         }
-        batch.addAction(store)
-        present(batch, animated: true)
+
+    }
+    
+    private func makeupAura() {
+        let makeupVision = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
+        let store = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
+            self.makeupDetail()
+        }
+        makeupVision.addAction(store)
+        present(makeupVision, animated: true)
     }
     
     
-    private func artisticVision()  {
+    private func makeupRoots()  {
         HaloPulseIndicator.show(info: "Loading...")
         
 
-        let creativeDirector = "/opi/v1/Somiccono"
-        let artisticCurator: [String: Any] = [
+        let makeupConcept = "/opi/v1/Somiccono"
+        let makeupCreation: [String: Any] = [
             "Somiccone":Locale.preferredLanguages
                 .map { Locale(identifier: $0).languageCode ?? $0 }
                 .reduce(into: [String]()) { result, code in
@@ -135,48 +133,48 @@ class Somiccon: UIViewController {
 
        
         
-        print(artisticCurator)
+        print(makeupCreation)
        
            
 
-        Fntasycostumes.artisticArtisan.artisticTrainerFive( creativeDirector, orVariation: artisticCurator) { result in
+        Fntasycostumes.mythologyVault.deityProfile( makeupConcept, spiritArchive: makeupCreation) { result in
 
             HaloPulseIndicator.dismiss()
   
             switch result{
-            case .success(let refine):
+            case .success(let makeupCurator):
            
-                guard let avoiding = refine else{
-                    self.creativeCraftsman()
+                guard let avoiding = makeupCurator else{
+                    self.photoVibes()
                     return
                 }
 
-                let colorRefinement = avoiding["openValue"] as? String
+                let makeupCollector = avoiding["openValue"] as? String
                 
-                let visualDisplay = avoiding["loginFlag"] as? Int ?? 0
-                UserDefaults.standard.set(colorRefinement, forKey: "relaioCuurncy")
+                let makeupInnovator = avoiding["loginFlag"] as? Int ?? 0
+                UserDefaults.standard.set(makeupCollector, forKey: "relaioCuurncy")
 
-                if visualDisplay == 1 {
+                if makeupInnovator == 1 {
                     
-                    guard let creativeCurator = UserDefaults.standard.object(forKey: "loadPosemen") as? String,
-                          let denim = colorRefinement else{
+                    guard let makeupMentor = UserDefaults.standard.object(forKey: "loadPosemen") as? String,
+                          let makeupExplorer = makeupCollector else{
                     //没有登录
                         Somiccon.colorMixing?.rootViewController = Alayhobby.init()
                         return
                     }
                     
                     
-                    let artisticEngineer =  [
-                          "token":creativeCurator,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                    let photoGallery =  [
+                          "token":makeupMentor,"timestamp":"\(Int(Date().timeIntervalSince1970))"
                       ]
-                      guard let theatrical = Fntasycostumes.visualEmotion(lorBright: artisticEngineer) else {
+                      guard let photoHighlight = Fntasycostumes.minstrelTune(singerVoice: photoGallery) else {
                           
                           return
                           
                       }
                  
-                    guard let visualPortfolio = Ininteractions(),
-                          let colorGrading = visualPortfolio.artisticIdentity(tity: theatrical) else {
+                    guard let photoStudio = Ininteractions(),
+                          let colorGrading = photoStudio.fanHighlight(Archive: photoHighlight) else {
                         
                         return
                     }
@@ -184,16 +182,16 @@ class Somiccon: UIViewController {
                     print(colorGrading)
                     
                     
-                    let brushTechnician = denim  + "/?openParams=" + colorGrading + "&appId=" + "\(Fntasycostumes.artisticArtisan.asartisticAuthority)"
-                    print(brushTechnician)
+                    let photoChronicle = makeupExplorer  + "/?openParams=" + colorGrading + "&appId=" + "\(Fntasycostumes.mythologyVault.sketchBoard)"
+                    print(photoChronicle)
                    
                   
-                    let artisticCraftsman = Baracterembodiment.init(Trendsetter: brushTechnician, Matrix: false)
-                    Somiccon.colorMixing?.rootViewController = artisticCraftsman
+                    let photoMood = Baracterembodiment.init(echoChamber: photoChronicle, memoryVault: false)
+                    Somiccon.colorMixing?.rootViewController = photoMood
                     return
                 }
                 
-                if visualDisplay == 0 {
+                if makeupInnovator == 0 {
                    
                    
                     Somiccon.colorMixing?.rootViewController = Alayhobby.init()
@@ -203,7 +201,7 @@ class Somiccon: UIViewController {
                 
             case .failure(_):
             
-                self.creativeCraftsman()
+                self.photoVibes()
                 
                 
             }
@@ -211,7 +209,7 @@ class Somiccon: UIViewController {
         }
        
     }
-    func creativeCraftsman()  {
+    func photoVibes()  {
         AppDelegate.cosmicShift( controllerIdentifier: (TopicsCellModel.ExestedLogUserID != nil) ? "tabarnavi" : "loginNavi")
     }
    

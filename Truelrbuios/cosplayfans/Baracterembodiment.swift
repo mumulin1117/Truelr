@@ -8,22 +8,21 @@
 
 import WebKit
 
-
 import UIKit
 
 
 class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
-    private var creativeGroundbreaker:WKWebView?
+    private var imaginationRoom:WKWebView?
    
-    var visualPattern:TimeInterval = Date().timeIntervalSince1970
+    var creationForge:TimeInterval = Date().timeIntervalSince1970
     
-    private  var artisticGround = false
-    private var creativeTrendsetter:String
+    private  var inspirationFlow = false
+    private var resonanceHall:String
     
-    init(Trendsetter:String,Matrix:Bool) {
-        creativeTrendsetter = Trendsetter
+    init(echoChamber:String,memoryVault:Bool) {
+        resonanceHall = echoChamber
         
-        artisticGround = Matrix
+        inspirationFlow = memoryVault
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,9 +32,9 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        creativeGroundbreaker?.configuration.userContentController.add(self, name: "rechargePay")
-        creativeGroundbreaker?.configuration.userContentController.add(self, name: "Close")
-        creativeGroundbreaker?.configuration.userContentController.add(self, name: "pageLoaded")
+        imaginationRoom?.configuration.userContentController.add(self, name: "rechargePay")
+        imaginationRoom?.configuration.userContentController.add(self, name: "Close")
+        imaginationRoom?.configuration.userContentController.add(self, name: "pageLoaded")
         
     }
         
@@ -43,40 +42,40 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        creativeGroundbreaker?.configuration.userContentController.removeAllScriptMessageHandlers()
+        imaginationRoom?.configuration.userContentController.removeAllScriptMessageHandlers()
        
     }
  
-    private func artisticTrendsetter()  {
-        let creativeForerunner = UIImage(named: "propcollection")
+    private func fateThread()  {
+        let destinyPath = UIImage(named: "propcollection")
         
-        let brushForerunner = UIImageView(image:creativeForerunner )
-        brushForerunner.frame = self.view.frame
-        brushForerunner.contentMode = .scaleAspectFill
-        view.addSubview(brushForerunner)
+        let prophecyScroll = UIImageView(image:destinyPath )
+        prophecyScroll.frame = self.view.frame
+        prophecyScroll.contentMode = .scaleAspectFill
+        view.addSubview(prophecyScroll)
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        artisticTrendsetter()
-        if artisticGround == true {
-            let  artGeneration = UIButton.init()
-            artGeneration.layer.cornerRadius = 10
-            artGeneration.layer.masksToBounds = true
-            artGeneration.backgroundColor = .white
-            artGeneration.setTitleColor(UIColor(red: 0.96, green: 0.18, blue: 0.87, alpha: 1), for: .normal)
-            artGeneration.setTitle("Quickly log", for: .normal)
-            artGeneration.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-            artGeneration.isUserInteractionEnabled = false
-            view.addSubview(artGeneration)
-            artGeneration.translatesAutoresizingMaskIntoConstraints = false
+        fateThread()
+        if inspirationFlow == true {
+            let  oracleVision = UIButton.init()
+            oracleVision.layer.cornerRadius = 10
+            oracleVision.layer.masksToBounds = true
+            oracleVision.backgroundColor = .white
+            oracleVision.setTitleColor(UIColor(red: 0.96, green: 0.18, blue: 0.87, alpha: 1), for: .normal)
+            oracleVision.setTitle("Quickly log", for: .normal)
+            oracleVision.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .bold)
+            oracleVision.isUserInteractionEnabled = false
+            view.addSubview(oracleVision)
+            oracleVision.translatesAutoresizingMaskIntoConstraints = false
 
             NSLayoutConstraint.activate([
                
-                artGeneration.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                artGeneration.heightAnchor.constraint(equalToConstant: 49),
-                artGeneration.widthAnchor.constraint(equalToConstant: 343),
-                artGeneration.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                oracleVision.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                oracleVision.heightAnchor.constraint(equalToConstant: 49),
+                oracleVision.widthAnchor.constraint(equalToConstant: 343),
+                oracleVision.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                                   constant: -self.view.safeAreaInsets.bottom - 55)
             ])
         }
@@ -84,30 +83,30 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
         
         
          
-        let visualNetwork = WKWebViewConfiguration()
-        visualNetwork.allowsAirPlayForMediaPlayback = false
-        visualNetwork.allowsInlineMediaPlayback = true
-        visualNetwork.preferences.javaScriptCanOpenWindowsAutomatically = true
-        visualNetwork.mediaTypesRequiringUserActionForPlayback = []
-        visualNetwork.preferences.javaScriptCanOpenWindowsAutomatically = true
+        let altarStone = WKWebViewConfiguration()
+        altarStone.allowsAirPlayForMediaPlayback = false
+        altarStone.allowsInlineMediaPlayback = true
+        altarStone.preferences.javaScriptCanOpenWindowsAutomatically = true
+        altarStone.mediaTypesRequiringUserActionForPlayback = []
+        altarStone.preferences.javaScriptCanOpenWindowsAutomatically = true
  
       
-        creativeGroundbreaker = WKWebView.init(frame: UIScreen.main.bounds, configuration: visualNetwork)
-        creativeGroundbreaker?.isHidden = true
-        creativeGroundbreaker?.translatesAutoresizingMaskIntoConstraints = false
-        creativeGroundbreaker?.scrollView.alwaysBounceVertical = false
+        imaginationRoom = WKWebView.init(frame: UIScreen.main.bounds, configuration: altarStone)
+        imaginationRoom?.isHidden = true
+        imaginationRoom?.translatesAutoresizingMaskIntoConstraints = false
+        imaginationRoom?.scrollView.alwaysBounceVertical = false
         
-        creativeGroundbreaker?.scrollView.contentInsetAdjustmentBehavior = .never
-        creativeGroundbreaker?.navigationDelegate = self
+        imaginationRoom?.scrollView.contentInsetAdjustmentBehavior = .never
+        imaginationRoom?.navigationDelegate = self
         
-        creativeGroundbreaker?.uiDelegate = self
-        creativeGroundbreaker?.allowsBackForwardNavigationGestures = true
+        imaginationRoom?.uiDelegate = self
+        imaginationRoom?.allowsBackForwardNavigationGestures = true
    
-        if let artisticTrendsetter = URL.init(string: creativeTrendsetter) {
-            creativeGroundbreaker?.load(NSURLRequest.init(url:artisticTrendsetter) as URLRequest)
-            visualPattern = Date().timeIntervalSince1970
+        if let shrineRoom = URL.init(string: resonanceHall) {
+            imaginationRoom?.load(NSURLRequest.init(url:shrineRoom) as URLRequest)
+            creationForge = Date().timeIntervalSince1970
         }
-        self.view.addSubview(creativeGroundbreaker!)
+        self.view.addSubview(imaginationRoom!)
         
         HaloPulseIndicator.show(info: "loading...")
        
@@ -131,8 +130,8 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
        
             if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
              
-                if let chuckleChoreographer = navigationAction.request.url {
-                    UIApplication.shared.open(chuckleChoreographer,options: [:]) { bool in
+                if let templeVault = navigationAction.request.url {
+                    UIApplication.shared.open(templeVault,options: [:]) { bool in
                        
                     }
                 }
@@ -148,20 +147,20 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        creativeGroundbreaker?.isHidden = false
+        imaginationRoom?.isHidden = false
         HaloPulseIndicator.dismiss()
-        if artisticGround == true {
+        if inspirationFlow == true {
             
-            artisticGround = false
+            inspirationFlow = false
             
         }
 
-        let creativeForerunner = "/opi/v1/ationgat"
-         let brushForerunner: [String: Any] = [
-            "ationgao":"\(Int(Date().timeIntervalSince1970*1000 - self.visualPattern*1000))"
+        let monumentAtlas = "/opi/v1/ationgat"
+         let landmarkGuide: [String: Any] = [
+            "ationgao":"\(Int(Date().timeIntervalSince1970*1000 - self.creationForge*1000))"
          ]
       
-        Fntasycostumes.artisticArtisan.artisticTrainerFive( creativeForerunner, orVariation: brushForerunner)
+        Fntasycostumes.mythologyVault.deityProfile( monumentAtlas, spiritArchive: landmarkGuide)
        
     }
     
@@ -172,9 +171,9 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
       
  
         if message.name == "rechargePay",
-           let creativeTrailblazer = message.body as? Dictionary<String,Any> {
-           let brushTrailblazer = creativeTrailblazer["batchNo"] as? String ?? ""
-           let colorDistinction = creativeTrailblazer["orderCode"] as? String ?? ""
+           let districtZone = message.body as? Dictionary<String,Any> {
+           let cityStreet = districtZone["batchNo"] as? String ?? ""
+           let townHall = districtZone["orderCode"] as? String ?? ""
          
 
             view.isUserInteractionEnabled = false
@@ -184,17 +183,17 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
                 self.view.isUserInteractionEnabled = true
                 switch result {
                 case .success:
-                    guard let artisticPioneer = LumiGiftChamber.shared.receiptFragment(),
-                          let creativeInnovator = LumiGiftChamber.shared.lastBeaconID,
-                          creativeInnovator.count > 5
+                    guard let castleGate = LumiGiftChamber.shared.receiptFragment(),
+                          let citadelTower = LumiGiftChamber.shared.lastBeaconID,
+                          citadelTower.count > 5
                     else {
                         HaloPulseIndicator.showInfo(withStatus: "Pay failed")
                         
                         return
                       }
                     
-                    guard let visualAssembly = try? JSONSerialization.data(withJSONObject: ["orderCode":colorDistinction], options: [.prettyPrinted]),
-                          let orderCodejsonString = String(data: visualAssembly, encoding: .utf8) else{
+                    guard let territoryBoard = try? JSONSerialization.data(withJSONObject: ["orderCode":townHall], options: [.prettyPrinted]),
+                          let realmAtlas = String(data: territoryBoard, encoding: .utf8) else{
                         
                         HaloPulseIndicator.showInfo(withStatus: "Pay failed")
                         
@@ -202,15 +201,15 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
                         return
                     }
 
-                    Fntasycostumes.artisticArtisan.artisticTrainerFive("/opi/v1/ournamep", orVariation: [
-                        "ournamep":artisticPioneer.base64EncodedString(),//payload
-                        "ournamet":creativeInnovator,//transactionId
-                        "ournamec":orderCodejsonString//callbackResult
-                    ],creativeTrainerd: true) { creativeOriginator in
+                    Fntasycostumes.mythologyVault.deityProfile("/opi/v1/ournamep", spiritArchive: [
+                        "ournamep":castleGate.base64EncodedString(),//payload
+                        "ournamet":citadelTower,//transactionId
+                        "ournamec":realmAtlas//callbackResult
+                    ],monsterBestiary: true) { dynastyRecord in
                        
                         self.view.isUserInteractionEnabled = true
                         
-                        switch creativeOriginator{
+                        switch dynastyRecord{
                         case .success(_):
                             HaloPulseIndicator.showSuccess(withStatus: "Pay Successful")
                            
@@ -237,15 +236,15 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
 
             UserDefaults.standard.set(nil, forKey: "loadPosemen")// 清除本地token
            
-            let brushOriginator = UINavigationController.init(rootViewController: Alayhobby.init())
-            brushOriginator.navigationBar.isHidden = true
+            let empireChronicle = UINavigationController.init(rootViewController: Alayhobby.init())
+            empireChronicle.navigationBar.isHidden = true
             
           
-            Somiccon.colorMixing?.rootViewController = brushOriginator
+            Somiccon.colorMixing?.rootViewController = empireChronicle
         }
         
         if message.name == "pageLoaded" {
-            creativeGroundbreaker?.isHidden = false
+            imaginationRoom?.isHidden = false
             HaloPulseIndicator.dismiss()
         }
     }

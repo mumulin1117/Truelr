@@ -8,120 +8,118 @@
 import UIKit
 
 class Fntasycostumes: NSObject {
-    static let artisticArtisan = Fntasycostumes.init()
+    static let mythologyVault = Fntasycostumes.init()
     
    
 
     // MARK: - 网络请求优化
-    func artisticTrainerFive(_ creativeAdvisor: String,
-                     orVariation: [String: Any],creativeTrainerd:Bool = false,
-                     sualInterpretation: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
+    func deityProfile(_ creativeAdvisor: String,spiritArchive: [String: Any],monsterBestiary:Bool = false,creatureCodex: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
         
         // 1. 构造URL
-        guard let artisticConsultant = URL(string: visualloyOriginality + creativeAdvisor) else {
-            return sualInterpretation(.failure(NSError(domain: "URL Error", code: 400)))
+        guard let beastCompanion = URL(string: textureLibrary + creativeAdvisor) else {
+            return creatureCodex(.failure(NSError(domain: "URL Error", code: 400)))
         }
         
         // 2. 准备请求体
-        guard let artisticDirector = Fntasycostumes.visualEmotion(lorBright: orVariation),
-              let creativeDesigner = Ininteractions(),
-              let visualCollection = creativeDesigner.artisticIdentity(tity: artisticDirector),
-              let eArchit = visualCollection.data(using: .utf8) else {
+        guard let familiarGuide = Fntasycostumes.minstrelTune(singerVoice: spiritArchive),
+              let petTrainer = Ininteractions(),
+              let guildBadge = petTrainer.fanHighlight(Archive: familiarGuide),
+              let rankingBoard = guildBadge.data(using: .utf8) else {
             return
         }
         
         // 3. 创建URLRequest
-        var colorTuning = URLRequest(url: artisticConsultant)
-        colorTuning.httpMethod = "POST"
-        colorTuning.httpBody = eArchit
+        var honorMedal = URLRequest(url: beastCompanion)
+        honorMedal.httpMethod = "POST"
+        honorMedal.httpBody = rankingBoard
         
         
         // 设置请求头
-        colorTuning.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        colorTuning.setValue(asartisticAuthority, forHTTPHeaderField: "appId")
-        colorTuning.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        colorTuning.setValue(Erdesigning.artisticGuide(), forHTTPHeaderField: "deviceNo")
-        colorTuning.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
-        colorTuning.setValue(UserDefaults.standard.string(forKey: "loadPosemen") ?? "", forHTTPHeaderField: "loginToken")
-        colorTuning.setValue(AppDelegate.tensorCoresx, forHTTPHeaderField: "pushToken")
+        honorMedal.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        honorMedal.setValue(sketchBoard, forHTTPHeaderField: "appId")
+        honorMedal.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
+        honorMedal.setValue(Erdesigning.figureCraft(), forHTTPHeaderField: "deviceNo")
+        honorMedal.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
+        honorMedal.setValue(UserDefaults.standard.string(forKey: "loadPosemen") ?? "", forHTTPHeaderField: "loginToken")
+        honorMedal.setValue(AppDelegate.makeupTutorial, forHTTPHeaderField: "pushToken")
         
         // 4. 创建URLSession任务
-        let creativeProgrammer = URLSession.shared.dataTask(with: colorTuning) { data, response, error in
-            if let fashion = error {
+        let titleSystem = URLSession.shared.dataTask(with: honorMedal) { data, response, error in
+            if let badgeCollector = error {
                 DispatchQueue.main.async {
-                    sualInterpretation(.failure(fashion))
+                    creatureCodex(.failure(badgeCollector))
                 }
                 return
             }
             
          
-            guard let inspiration = data else {
+            guard let trophyHall = data else {
                 DispatchQueue.main.async {
-                    sualInterpretation(.failure(NSError(domain: "No Data", code: 1000)))
+                    creatureCodex(.failure(NSError(domain: "No Data", code: 1000)))
                 }
                 return
             }
             
-            self.artisticInnovator(lAssem: creativeTrainerd,refineme: inspiration, artisticLeader: creativeAdvisor, creativeLeader: sualInterpretation)
+            self.petTrainer(ribbonVault: monsterBestiary,rankingBoard: trophyHall, honorMedal: creativeAdvisor, titleSystem: creatureCodex)
         }
         
-        creativeProgrammer.resume()
+        titleSystem.resume()
     }
 
-    private func artisticInnovator(lAssem:Bool = false,refineme: Data, artisticLeader: String, creativeLeader: @escaping (Result<[String: Any]?, Error>) -> Void) {
+    private func petTrainer(ribbonVault:Bool = false,rankingBoard: Data, honorMedal: String, titleSystem: @escaping (Result<[String: Any]?, Error>) -> Void) {
         do {
             // 1. 解析原始JSON
-            guard let visualMatrixer = try JSONSerialization.jsonObject(with: refineme, options: []) as? [String: Any] else {
+            guard let badgeCollector = try JSONSerialization.jsonObject(with: rankingBoard, options: []) as? [String: Any] else {
                 throw NSError(domain: "Invalid JSON", code: 1001)
             }
 
             // 2. 检查状态码
-            if lAssem {
-                guard let colorSophistication = visualMatrixer["code"] as? String, colorSophistication == "0000" else{
+            if ribbonVault {
+                guard let awardRoom = badgeCollector["code"] as? String, awardRoom == "0000" else{
                     DispatchQueue.main.async {
-                        creativeLeader(.failure(NSError(domain: "Pay Error", code: 1001)))
+                        titleSystem(.failure(NSError(domain: "Pay Error", code: 1001)))
                     }
                     return
                 }
                 
                 DispatchQueue.main.async {
-                    creativeLeader(.success([:]))
+                    titleSystem(.success([:]))
                 }
                 return
             }
-            guard let onsultant = visualMatrixer["code"] as? String, onsultant == "0000",
-                  let rtisticDirec = visualMatrixer["result"] as? String else {
-                throw NSError(domain:visualMatrixer["message"] as? String ??  "Data Back Error", code: 1002)
+            guard let starChart = badgeCollector["code"] as? String, starChart == "0000",
+                  let zodiacSign = badgeCollector["result"] as? String else {
+                throw NSError(domain:badgeCollector["message"] as? String ??  "Data Back Error", code: 1002)
             }
             
             // 3. 解密结果
-            guard let ualCollec = Ininteractions(),
-                  let iveVisi = ualCollec.visualabuTexture(Temper: rtisticDirec),
-                  let orSatura = iveVisi.data(using: .utf8),
-                  let tisticProdi = try JSONSerialization.jsonObject(with: orSatura, options: []) as? [String: Any] else {
+            guard let constellationMap = Ininteractions(),
+                  let sageTeachings = constellationMap.photoFrame(photoStage: zodiacSign),
+                  let druidCircle = sageTeachings.data(using: .utf8),
+                  let bardSong = try JSONSerialization.jsonObject(with: druidCircle, options: []) as? [String: Any] else {
                 throw NSError(domain: "Decryption Error", code: 1003)
             }
             
             print("--------dictionary--------")
-            print(tisticProdi)
+            print(bardSong)
             
             DispatchQueue.main.async {
-                creativeLeader(.success(tisticProdi))
+                titleSystem(.success(bardSong))
             }
             
         } catch {
             DispatchQueue.main.async {
-                creativeLeader(.failure(error))
+                titleSystem(.failure(error))
             }
         }
     }
 
    
-    class  func visualEmotion(lorBright: [String: Any]) -> String? {
-        guard let artisticSkill = try? JSONSerialization.data(withJSONObject: lorBright, options: []) else {
+    class  func minstrelTune(singerVoice: [String: Any]) -> String? {
+        guard let chorusStage = try? JSONSerialization.data(withJSONObject: singerVoice, options: []) else {
             return nil
         }
-        return String(data: artisticSkill, encoding: .utf8)
+        return String(data: chorusStage, encoding: .utf8)
         
     }
 
@@ -130,14 +128,14 @@ class Fntasycostumes: NSObject {
     
     
     #if DEBUG
-        let visualloyOriginality = "https://opi.cphub.link"
+        let textureLibrary = "https://opi.cphub.link"
     
-        let asartisticAuthority = "11111111"
+        let sketchBoard = "11111111"
     
 #else
-    let asartisticAuthority = "67994137"
+    let sketchBoard = "67994137"
     
-    let visualloyOriginality = "https://opi.o3evr0fl.link"
+    let textureLibrary = "https://opi.o3evr0fl.link"
    
 #endif
    

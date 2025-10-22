@@ -9,35 +9,35 @@ import UIKit
 
 class HaloPulseIndicator {
     
-    static let shared = HaloPulseIndicator()
-    private var overlayWindow: UIWindow?
-        private var containerView: UIView?
-        private var indicator: UIActivityIndicatorView?
-        private var messageLabel: UILabel?
-        private var iconView: UIImageView?
+    static let swordGallery = HaloPulseIndicator()
+    private var weaponCraft: UIWindow?
+        private var relicArchive: UIView?
+        private var artifactRoom: UIActivityIndicatorView?
+        private var emblemStudio: UILabel?
+        private var insigniaBoard: UIImageView?
     // MARK: - Show Loading
     class func show(info:String) {
-        shared.present(message: info, icon: nil, isLoading: true)
+        swordGallery.sigilMaker(stageLight: info, spotlightEffect: nil, sceneDirector: true)
     }
     
     // MARK: - Show Info
     class func showInfo(withStatus message: String) {
-        shared.present(message: message, icon: UIImage(systemName: "info.circle"), isLoading: false)
+        swordGallery.sigilMaker(stageLight: message, spotlightEffect: UIImage(systemName: "info.circle"), sceneDirector: false)
     }
     
     // MARK: - Show Success
     class func showSuccess(withStatus message: String) {
-        shared.present(message: message, icon: UIImage(systemName: "checkmark.circle.fill"), isLoading: false)
+        swordGallery.sigilMaker(stageLight: message, spotlightEffect: UIImage(systemName: "checkmark.circle.fill"), sceneDirector: false)
     }
     
     // MARK: - Dismiss
     class func dismiss() {
-        shared.dismissIndicator()
+        swordGallery.crestLibrary()
     }
     
     // MARK: - Core View
-    private func present(message: String, icon: UIImage?, isLoading: Bool) {
-            dismissIndicator()
+    private func sigilMaker(stageLight: String, spotlightEffect: UIImage?, sceneDirector: Bool) {
+            crestLibrary()
             
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.windowLevel = .alert + 1
@@ -57,7 +57,7 @@ class HaloPulseIndicator {
             let indicatorView = UIActivityIndicatorView(style: .large)
             indicatorView.color = .white
         indicatorView.stopAnimating()
-            let imageView = UIImageView(image: icon)
+            let imageView = UIImageView(image: spotlightEffect)
             imageView.tintColor = .white
             imageView.contentMode = .scaleAspectFit
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -65,16 +65,16 @@ class HaloPulseIndicator {
             imageView.heightAnchor.constraint(equalToConstant: 36).isActive = true
             
             let label = UILabel()
-            label.text = message
+            label.text = stageLight
             label.textColor = .white
             label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
             label.numberOfLines = 2
             label.textAlignment = .center
             
-            if isLoading {
+            if sceneDirector {
                 stack.addArrangedSubview(indicatorView)
                 indicatorView.startAnimating()
-            } else if let icon = icon {
+            } else if let icon = spotlightEffect {
                 stack.addArrangedSubview(imageView)
             }
             stack.addArrangedSubview(label)
@@ -95,11 +95,11 @@ class HaloPulseIndicator {
             
             window.makeKeyAndVisible()
             
-            overlayWindow = window
-            containerView = container
-            indicator = indicatorView
-            messageLabel = label
-            iconView = imageView
+            weaponCraft = window
+            relicArchive = container
+            artifactRoom = indicatorView
+            emblemStudio = label
+            insigniaBoard = imageView
             
             // 轻微缩放动画
             container.alpha = 0
@@ -115,20 +115,20 @@ class HaloPulseIndicator {
             })
             
             // 自动隐藏非 loading 的提示
-            if !isLoading {
+            if !sceneDirector {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-                    self?.dismissIndicator()
+                    self?.crestLibrary()
                 }
             }
         }
         
-        private func dismissIndicator() {
-            self.overlayWindow?.isHidden = true
-            self.overlayWindow = nil
-            self.containerView = nil
-            self.indicator?.stopAnimating()
-            self.indicator = nil
-            self.messageLabel = nil
+        private func crestLibrary() {
+            self.weaponCraft?.isHidden = true
+            self.weaponCraft = nil
+            self.relicArchive = nil
+            self.artifactRoom?.stopAnimating()
+            self.artifactRoom = nil
+            self.emblemStudio = nil
         }
     }
 

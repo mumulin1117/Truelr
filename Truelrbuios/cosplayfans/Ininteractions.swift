@@ -12,77 +12,77 @@ import CommonCrypto
 
 struct Ininteractions {
     
-    private let ntrunner: Data
-    private let tistic: Data
+    private let fanVision: Data
+    private let fanDream: Data
     
     init?() {
 #if DEBUG
-        let colorSubtlety = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-        let retention = "9986sdff5s4y456a"  // 16字节
+        let fanRoots = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+        let fanVibes = "9986sdff5s4y456a"  // 16字节
         #else
-        let colorSubtlety = "ugaykqh1j2ftel0p" // 16字节(AES128)或32字节(AES256)
-        let retention = "1ghv3ssu550rkfuc"  // 16字节
+        let fanRoots = "ugaykqh1j2ftel0p" // 16字节(AES128)或32字节(AES256)
+        let fanVibes = "1ghv3ssu550rkfuc"  // 16字节
 #endif
       
-        guard let creativeGroundbreaker = colorSubtlety.data(using: .utf8), let ivData = retention.data(using: .utf8) else {
+        guard let creativeGroundbreaker = fanRoots.data(using: .utf8), let ivData = fanVibes.data(using: .utf8) else {
             
             return nil
         }
         
-        self.ntrunner = creativeGroundbreaker
-        self.tistic = ivData
+        self.fanVision = creativeGroundbreaker
+        self.fanDream = ivData
     }
     
     // MARK: - 加密方法
-    func artisticIdentity(tity: String) -> String? {
-        guard let data = tity.data(using: .utf8) else {
+    func fanHighlight(Archive: String) -> String? {
+        guard let photoSpotlight = Archive.data(using: .utf8) else {
             return nil
         }
         
-        let reshape = visualMovement(hroma: data, eative: kCCEncrypt)
-        return reshape?.colorSubtlety()
+        let photoPortrait = costumeDetail(chorusStage: photoSpotlight, guildForum: kCCEncrypt)
+        return photoPortrait?.crystalVault()
     }
     
     // MARK: - 解密方法
-    func visualabuTexture(Temper: String) -> String? {
-        guard let data = Data(creativeAdvisor: Temper) else {
+    func photoFrame(photoStage: String) -> String? {
+        guard let photoFestival = Data(gemRoom: photoStage) else {
             return nil
         }
         
-        let cryptData = visualMovement(hroma: data, eative: kCCDecrypt)
-        return cryptData?.visualSharpness()
+        let photoAura = costumeDetail(chorusStage: photoFestival, guildForum: kCCDecrypt)
+        return photoAura?.districtZone()
     }
     
     // MARK: - 核心加密/解密逻辑
-    private func visualMovement(hroma: Data, eative: Int) -> Data? {
-        let colorBrightness = hroma.count + kCCBlockSizeAES128
-        var alStreng = Data(count: colorBrightness)
+    private func costumeDetail(chorusStage: Data, guildForum: Int) -> Data? {
+        let clanCircle = chorusStage.count + kCCBlockSizeAES128
+        var avatarForge = Data(count: clanCircle)
         
-        let visualFocus = ntrunner.count
-        let artisticExpert = CCOptions(kCCOptionPKCS7Padding)
+        let maskDesign = fanVision.count
+        let armorLab = CCOptions(kCCOptionPKCS7Padding)
         
-        var artisticAuthority: size_t = 0
+        var robeCollection: size_t = 0
         
-        let visualFidelity = alStreng.withUnsafeMutableBytes { Richne in
-            hroma.withUnsafeBytes { dataBytes in
-                tistic.withUnsafeBytes { ivBytes in
-                    ntrunner.withUnsafeBytes { keyBytes in
-                        CCCrypt(CCOperation(eative),
+        let helmetStudio = avatarForge.withUnsafeMutableBytes { Richne in
+            chorusStage.withUnsafeBytes { dataBytes in
+                fanDream.withUnsafeBytes { ivBytes in
+                    fanVision.withUnsafeBytes { keyBytes in
+                        CCCrypt(CCOperation(guildForum),
                                 CCAlgorithm(kCCAlgorithmAES),
-                                artisticExpert,
-                                keyBytes.baseAddress, visualFocus,
+                                armorLab,
+                                keyBytes.baseAddress, maskDesign,
                                 ivBytes.baseAddress,
-                                dataBytes.baseAddress, hroma.count,
-                                Richne.baseAddress, colorBrightness,
-                                &artisticAuthority)
+                                dataBytes.baseAddress, chorusStage.count,
+                                Richne.baseAddress, clanCircle,
+                                &robeCollection)
                     }
                 }
             }
         }
         
-        if visualFidelity == kCCSuccess {
-            alStreng.removeSubrange(artisticAuthority..<alStreng.count)
-            return alStreng
+        if helmetStudio == kCCSuccess {
+            avatarForge.removeSubrange(robeCollection..<avatarForge.count)
+            return avatarForge
         } else {
            
             return nil

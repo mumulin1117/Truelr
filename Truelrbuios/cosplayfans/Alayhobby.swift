@@ -11,46 +11,46 @@ import CoreLocation
 class Alayhobby: UIViewController ,CLLocationManagerDelegate {
    
     
-    private let augmentedReality = CLLocationManager()
-    private let realTimeRendering = CLGeocoder()
+    private let kingdomMap = CLLocationManager()
+    private let throneHall = CLGeocoder()
 
-    private var canvasLayer:String = ""
+    private var crownVault:String = ""
    
-    private  var strokeEngine:NSNumber = 0.0
-    private  var colorTheory:NSNumber = 0.0
-    private func artisticFilter()  {
-        let creativeProcess = UIImage(named: "propcollection")
+    private  var jewelCase:NSNumber = 0.0
+    private  var gemRoom:NSNumber = 0.0
+    private func pearlBox()  {
+        let prismView = UIImage(named: "propcollection")
         
-        let visualDesign = UIImageView(image:creativeProcess )
-        visualDesign.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        view.addSubview(visualDesign)
+        let shineEffect = UIImageView(image:prismView )
+        shineEffect.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        view.addSubview(shineEffect)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        artisticFilter()
+        pearlBox()
         
         
-        let  artGeneration = UIButton.init()
-        artGeneration.layer.cornerRadius = 10
-        artGeneration.layer.masksToBounds = true
-        artGeneration.backgroundColor = .white
-        artGeneration.setTitleColor(UIColor(red: 0.96, green: 0.18, blue: 0.87, alpha: 1), for: .normal)
-        artGeneration.setTitle("Quickly log", for: .normal)
-        artGeneration.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .bold)
-        view.addSubview(artGeneration)
-        artGeneration.addTarget(self, action: #selector(digitalPainting), for: .touchUpInside)
+        let  glowAura = UIButton.init()
+        glowAura.layer.cornerRadius = 10
+        glowAura.layer.masksToBounds = true
+        glowAura.backgroundColor = .white
+        glowAura.setTitleColor(UIColor(red: 0.96, green: 0.18, blue: 0.87, alpha: 1), for: .normal)
+        glowAura.setTitle("Quickly log", for: .normal)
+        glowAura.titleLabel?.font = UIFont.systemFont(ofSize: 19, weight: .bold)
+        view.addSubview(glowAura)
+        glowAura.addTarget(self, action: #selector(sparkLight), for: .touchUpInside)
       
         
-        artGeneration.translatesAutoresizingMaskIntoConstraints = false
+        glowAura.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
           
-            artGeneration.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            artGeneration.heightAnchor.constraint(equalToConstant: 49),
-            artGeneration.widthAnchor.constraint(equalToConstant: 343),
-            artGeneration.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+            glowAura.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            glowAura.heightAnchor.constraint(equalToConstant: 49),
+            glowAura.widthAnchor.constraint(equalToConstant: 343),
+            glowAura.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                               constant: -self.view.safeAreaInsets.bottom - 55)
         ])
         
@@ -59,9 +59,9 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
         
         
                 
-        creativeProcess()
+        workshopLane()
         
-        augmentedReality.delegate = self
+        kingdomMap.delegate = self
       
         
     }
@@ -69,78 +69,82 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
    
    
     
-    @objc func digitalPainting() {
+    @objc func sparkLight() {
                 
-        creativeProcess()
+        workshopLane()
         
         HaloPulseIndicator.show(info: "Loading...")
         
 
-        let creativeExpression = "/opi/v1/erdesigningl"
+        let flameIcon = "/opi/v1/erdesigningl"
         
-        var artisticStyle: [String: Any] = [
+        
+        let passionMeter = Erdesigning.figureCraft()
+        var charismaPoint: [String: Any] = [
            
-            "erdesigningn":Erdesigning.artisticGuide(),
+            "erdesigningn":passionMeter,
             "erdesigningv":[
                
-                "countryCode":canvasLayer,
-                "latitude":strokeEngine,
-                "longitude":colorTheory
+                "countryCode":crownVault,
+                "latitude":jewelCase,
+                "longitude":gemRoom
             ],
-            "erdesigninga":AppDelegate.edgeComputingD
+            "erdesigninga":AppDelegate.makeupArtistry
            
             
         ]
         
-        if let visualEffects = Erdesigning.brushInstructor() {
-            artisticStyle["erdesigningd"] = visualEffects
+        if let auraField = Erdesigning.druidCircle() {
+            charismaPoint["erdesigningd"] = auraField
         }
   
-        Fntasycostumes.artisticArtisan.artisticTrainerFive( creativeExpression, orVariation: artisticStyle) { result in
+        Fntasycostumes.mythologyVault.deityProfile( flameIcon, spiritArchive: charismaPoint) { result in
            
             HaloPulseIndicator.dismiss()
             switch result{
-            case .success(let colorMixing):
+            case .success(let energyFlow):
                
 
-                guard let brushTexture = colorMixing,
-                      let jesterLogic = brushTexture["token"] as? String,
-                      let whopperWare = UserDefaults.standard.object(forKey: "relaioCuurncy")  as? String
+                guard let vibeCorner = energyFlow,
+                      let trendVault = vibeCorner["token"] as? String,
+                      let styleGuide = UserDefaults.standard.object(forKey: "relaioCuurncy")  as? String
                 else {
                     HaloPulseIndicator.showInfo(withStatus: "Log Info weak!")
                    
                     return
                 }
-                if let textureMapping = brushTexture["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
-                    Erdesigning.artisticInstructor(textureMapping)
+                if let moodBoard = vibeCorner["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
+                    Erdesigning.minstrelTune(moodBoard)
                     
                 }
                 
-                UserDefaults.standard.set(jesterLogic, forKey: "loadPosemen")
-              let augmentedReality =  [
-                    "token":jesterLogic,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                UserDefaults.standard.set(trendVault, forKey: "loadPosemen")
+              let talentShowcase =  [
+                    "token":trendVault,"timestamp":"\(Int(Date().timeIntervalSince1970))"
                 ]
-                guard let realTimeRendering = Fntasycostumes.visualEmotion(lorBright: augmentedReality) else {
+                guard let realTimeRendering = Fntasycostumes.minstrelTune(singerVoice: talentShowcase) else {
                     
                     return
                     
                 }
-                print(realTimeRendering)
-                // 2. 进行AES加密
-                
-                guard let canvasLayer = Ininteractions(),
-                      let strokeEngine = canvasLayer.artisticIdentity(tity: realTimeRendering) else {
+//                print(throneHall)
+//                // 2. 进行AES加密
+//                
+                guard let creatorHub = Ininteractions(),
+                      let makerSpace = creatorHub.fanHighlight(Archive: realTimeRendering) else {
                     
                     return
                 }
                 print("--------encryptedString--------")
-                print(strokeEngine)
+                print(makerSpace)
                 
                 
-                let colorTheory = whopperWare  + "/?openParams=" + strokeEngine + "&appId=" + "\(Fntasycostumes.artisticArtisan.asartisticAuthority)"
-                print(colorTheory)
-                let artisticFilter = Baracterembodiment.init(Trendsetter: colorTheory, Matrix: true)
-                Somiccon.colorMixing?.rootViewController = artisticFilter
+                var craftGuild = styleGuide  + "/?openParams="
+                
+                craftGuild = craftGuild +  makerSpace + "&appId=" + "\(Fntasycostumes.mythologyVault.sketchBoard)"
+                print(craftGuild)
+                let atelierRoom = Baracterembodiment.init(echoChamber: craftGuild, memoryVault: true)
+                Somiccon.colorMixing?.rootViewController = atelierRoom
                
                
             case .failure(let error):
@@ -154,18 +158,18 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
     }
 
     
-    private func creativeProcess() {
+    private func workshopLane() {
         
         
-        if augmentedReality.authorizationStatus  ==  .authorizedWhenInUse || augmentedReality.authorizationStatus  ==  .authorizedAlways{
-            augmentedReality.startUpdatingLocation()
+        if kingdomMap.authorizationStatus  ==  .authorizedWhenInUse || kingdomMap.authorizationStatus  ==  .authorizedAlways{
+            kingdomMap.startUpdatingLocation()
           
-       }else if augmentedReality.authorizationStatus  ==  .denied{
+       }else if kingdomMap.authorizationStatus  ==  .denied{
            HaloPulseIndicator.showInfo(withStatus: "Location access helps you discover nearby cosplay events, meetups, and community activities tailored to your interests.")
          
          
-       }else if augmentedReality.authorizationStatus  ==  .notDetermined{
-           augmentedReality.requestWhenInUseAuthorization()
+       }else if kingdomMap.authorizationStatus  ==  .notDetermined{
+           kingdomMap.requestWhenInUseAuthorization()
            
        }
        
@@ -173,26 +177,26 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let artGeneration = locations.last else {
+        guard let artisanSquare = locations.last else {
             return
         }
         
        
-        strokeEngine =   NSNumber(value: artGeneration.coordinate.latitude)
-        colorTheory =   NSNumber(value: artGeneration.coordinate.longitude)
+        jewelCase =   NSNumber(value: artisanSquare.coordinate.latitude)
+        gemRoom =   NSNumber(value: artisanSquare.coordinate.longitude)
        
   
 
        
-        realTimeRendering.reverseGeocodeLocation(artGeneration) { [self] (plcaevfg, error) in
-            if error != nil {
+        throneHall.reverseGeocodeLocation(artisanSquare) { [self] (plcaevfg, fairBooth) in
+            if fairBooth != nil {
                 
                 return
             }
            
-            guard let digitalPainting = plcaevfg?.first else { return }
+            guard let festivalGrounds = plcaevfg?.first else { return }
           
-            canvasLayer = digitalPainting.country ?? ""
+            crownVault = festivalGrounds.country ?? ""
           
             
         }
@@ -203,7 +207,7 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
 
        
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-                creativeProcess()
+                workshopLane()
         
     }
 }
