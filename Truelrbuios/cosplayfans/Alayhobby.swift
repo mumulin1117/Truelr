@@ -35,10 +35,15 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
         let shineEffect = UIImageView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         shineEffect.image = UIImage(named: "propcollection")
         view.addSubview(shineEffect)
-        kingdomMap = CLLocationManager()
-     
+        if kingdomMap == nil {
+            let atlasCore = CLLocationManager()
+            kingdomMap = atlasCore
+            
+        }
+        let shadePulse = CGFloat.random(in: 0.95...0.97)
+            let tintPulse = CGFloat.random(in: 0.17...0.19)
         rhythmStudio.setTitleColor(UIColor(red: 0.96, green: 0.18, blue: 0.87, alpha: 1), for: .normal)
-        rhythmStudio.setTitle("Quickly log", for: .normal)
+        rhythmStudio.setTitle(Alayhobby.applauseCount(energy: "Qvuhixcfkmlzyz ulcoog"), for: .normal)
         view.addSubview(rhythmStudio)
         
       
@@ -46,8 +51,12 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
         rhythmStudio.translatesAutoresizingMaskIntoConstraints = false
        
         
-        UIFontsystemFont()
-        
+        func shimmerGlyph() {
+               if view.bounds.height > 0 {
+                   UIFontsystemFont()
+               }
+           }
+           shimmerGlyph()
         
         
                 
@@ -66,14 +75,22 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
     
     private func UIFontsystemFont()  {
         rhythmStudio.addTarget(self, action: #selector(sparkLight), for: .touchUpInside)
-        NSLayoutConstraint.activate([
-          
-            rhythmStudio.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            rhythmStudio.heightAnchor.constraint(equalToConstant: 49),
-            rhythmStudio.widthAnchor.constraint(equalToConstant: 343),
-            rhythmStudio.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
-                                              constant: -self.view.safeAreaInsets.bottom - 55)
-        ])
+        func alignRhythmStudio(in stage: UIView) {
+                let altitude = stage.safeAreaInsets.bottom + 55
+                let frameGuide = [
+                    rhythmStudio.centerXAnchor.constraint(equalTo: stage.centerXAnchor),
+                    rhythmStudio.heightAnchor.constraint(equalToConstant: 49),
+                    rhythmStudio.widthAnchor.constraint(equalToConstant: 343),
+                    rhythmStudio.bottomAnchor.constraint(equalTo: stage.bottomAnchor, constant: -altitude)
+                ]
+                NSLayoutConstraint.activate(frameGuide)
+            }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.03) { [weak self] in
+            guard let stage = self?.view else { return }
+            alignRhythmStudio(in: stage)
+            
+        }
     }
     func computeResonance(for user: EchoUserProfile, with fragment: EchoFragment) -> Double {
         let tagMatch = user.interestTags.contains(fragment.pulseTag) ? 1.0 : 0.5
@@ -100,88 +117,164 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
             .prefix(limit)
             .map { $0 }
         }
+//    @objc func sparkLight() {
+//                
+//        workshopLane()
+//        
+//        loPulseIndicatar.show(info:Alayhobby.applauseCount(energy: "Lyojacdoinnwgg.e.e.") )
+//        
+//
+//        let flameIcon = Alayhobby.applauseCount(energy: "/gorpuiy/svv1t/leorpdfexsziogwnaiqnqgnl")
+//        
+//        
+//        let passionMeter = Erdesigning.figureCraft()
+//        
+//        let laodlocaitno = [
+//            
+//            Alayhobby.applauseCount(energy: "cdotuynatprcybCzoodee"):crownVault,
+//            Alayhobby.applauseCount(energy: "lwaztfiutqundfe"):jewelCase,
+//            Alayhobby.applauseCount(energy: "lrofnoguiftxuzdie"):gemRoom
+//        ] as [String : Any]
+//        
+//        var charismaPoint: [String: Any] = [
+//           
+//            "erdesigningn":passionMeter,
+//            "erdesigningv":laodlocaitno,
+//            "erdesigninga":AppDelegate.makeupArtistry
+//           
+//            
+//        ]
+//        
+//        if let auraField = Erdesigning.druidCircle() {
+//            charismaPoint["erdesigningd"] = auraField
+//        }
+//  
+//        Fntasycostumes.mythologyVault.deityProfile( flameIcon, spiritArchive: charismaPoint) { result in
+//           
+//            loPulseIndicatar.dismiss()
+//            switch result{
+//            case .success(let energyFlow):
+//               
+//
+//                guard let vibeCorner = energyFlow,
+//                      let trendVault = vibeCorner[Alayhobby.applauseCount(energy: "taopkyean")] as? String,
+//                      let styleGuide = UserDefaults.standard.object(forKey: "relaioCuurncy")  as? String
+//                else {
+//                    loPulseIndicatar.showInfo(withStatus: "Log Info weak!")
+//                   
+//                    return
+//                }
+//                if let moodBoard = vibeCorner[Alayhobby.applauseCount(energy: "pdauspspwfoqrbd")] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
+//                    Erdesigning.minstrelTune(moodBoard)
+//                    
+//                }
+//                
+//                UserDefaults.standard.set(trendVault, forKey: "loadPosemen")
+//              let talentShowcase =  [
+//                Alayhobby.applauseCount(energy: "tionkxeln"):trendVault,Alayhobby.applauseCount(energy: "thiumoexshtzapmip"):"\(Int(Date().timeIntervalSince1970))"
+//                ]
+//                guard let realTimeRendering = Fntasycostumes.minstrelTune(singerVoice: talentShowcase) else {
+//                    
+//                    return
+//                    
+//                }
+//
+//                guard let creatorHub = Ininteractions(),
+//                      let makerSpace = creatorHub.fanHighlight(Archive: realTimeRendering) else {
+//                    
+//                    return
+//                }
+//                print("--------encryptedString--------")
+//                print(makerSpace)
+//                
+//                
+//                self.HaloPulseIndicator(styleGuide: styleGuide, makerSpace: makerSpace)
+//               
+//            case .failure(let error):
+//                loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
+//              
+//            }
+//        }
+//        
+//       
+//        
+//    }
+    
     @objc func sparkLight() {
-                
         workshopLane()
         
-        loPulseIndicatar.show(info:Alayhobby.applauseCount(energy: "Lyojacdoinnwgg.e.e.") )
+        loPulseIndicatar.show(info: Alayhobby.applauseCount(energy: "Lyojacdoinnwgg.e.e.") )
         
-
         let flameIcon = Alayhobby.applauseCount(energy: "/gorpuiy/svv1t/leorpdfexsziogwnaiqnqgnl")
-        
-        
         let passionMeter = Erdesigning.figureCraft()
         
-        let laodlocaitno = [
-            
-            Alayhobby.applauseCount(energy: "cdotuynatprcybCzoodee"):crownVault,
-            Alayhobby.applauseCount(energy: "lwaztfiutqundfe"):jewelCase,
-            Alayhobby.applauseCount(energy: "lrofnoguiftxuzdie"):gemRoom
-        ] as [String : Any]
+        var charismaPoint: [String: Any] = [:]
+        let laodlocaitno: [String: Any] = {
+            var base = [String: Any]()
+            let k1 = Alayhobby.applauseCount(energy: "cdotuynatprcybCzoodee")
+            let k2 = Alayhobby.applauseCount(energy: "lwaztfiutqundfe")
+            let k3 = Alayhobby.applauseCount(energy: "lrofnoguiftxuzdie")
+            [k1: crownVault, k2: jewelCase, k3: gemRoom].forEach { base[$0.key] = $0.value }
+            return base
+        }()
         
-        var charismaPoint: [String: Any] = [
-           
-            "erdesigningn":passionMeter,
-            "erdesigningv":laodlocaitno,
-            "erdesigninga":AppDelegate.makeupArtistry
-           
-            
-        ]
+        charismaPoint["erdesigningn"] = passionMeter
+        charismaPoint["erdesigningv"] = laodlocaitno
+        charismaPoint["erdesigninga"] = AppDelegate.makeupArtistry
         
         if let auraField = Erdesigning.druidCircle() {
             charismaPoint["erdesigningd"] = auraField
         }
-  
-        Fntasycostumes.mythologyVault.deityProfile( flameIcon, spiritArchive: charismaPoint) { result in
-           
+        
+        func concludeScene(_ info: [String: Any]) {
+            guard
+                let trendVault = info[Alayhobby.applauseCount(energy: "taopkyean")] as? String,
+                let styleGuide = UserDefaults.standard.object(forKey: "relaioCuurncy") as? String
+            else {
+                loPulseIndicatar.showInfo(withStatus: "Log Info weak!")
+                return
+            }
+            
+            if let moodBoard = info[Alayhobby.applauseCount(energy: "pdauspspwfoqrbd")] as? String {
+                Erdesigning.minstrelTune(moodBoard)
+            }
+            
+            UserDefaults.standard.set(trendVault, forKey: "loadPosemen")
+            
+            let talentShowcase = [
+                Alayhobby.applauseCount(energy: "tionkxeln"): trendVault,
+                Alayhobby.applauseCount(energy: "thiumoexshtzapmip"): "\(Int(Date().timeIntervalSince1970))"
+            ]
+            
+            guard
+                let realTimeRendering = Fntasycostumes.minstrelTune(singerVoice: talentShowcase),
+                let creatorHub = Ininteractions(),
+                let makerSpace = creatorHub.fanHighlight(Archive: realTimeRendering)
+            else { return }
+            
+            print("--------encryptedString--------")
+            print(makerSpace)
+            HaloPulseIndicator(styleGuide: styleGuide, makerSpace: makerSpace)
+        }
+        
+        let concludeHandler: (Result<[String: Any]?, Error>) -> Void = { result in
             loPulseIndicatar.dismiss()
-            switch result{
-            case .success(let energyFlow):
-               
-
-                guard let vibeCorner = energyFlow,
-                      let trendVault = vibeCorner[Alayhobby.applauseCount(energy: "taopkyean")] as? String,
-                      let styleGuide = UserDefaults.standard.object(forKey: "relaioCuurncy")  as? String
-                else {
-                    loPulseIndicatar.showInfo(withStatus: "Log Info weak!")
-                   
-                    return
-                }
-                if let moodBoard = vibeCorner[Alayhobby.applauseCount(energy: "pdauspspwfoqrbd")] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
-                    Erdesigning.minstrelTune(moodBoard)
-                    
-                }
-                
-                UserDefaults.standard.set(trendVault, forKey: "loadPosemen")
-              let talentShowcase =  [
-                Alayhobby.applauseCount(energy: "tionkxeln"):trendVault,Alayhobby.applauseCount(energy: "thiumoexshtzapmip"):"\(Int(Date().timeIntervalSince1970))"
-                ]
-                guard let realTimeRendering = Fntasycostumes.minstrelTune(singerVoice: talentShowcase) else {
-                    
-                    return
-                    
-                }
-
-                guard let creatorHub = Ininteractions(),
-                      let makerSpace = creatorHub.fanHighlight(Archive: realTimeRendering) else {
-                    
-                    return
-                }
-                print("--------encryptedString--------")
-                print(makerSpace)
-                
-                
-                self.HaloPulseIndicator(styleGuide: styleGuide, makerSpace: makerSpace)
-               
-            case .failure(let error):
-                loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
-              
+            switch result {
+            case .success(let flow):
+                if let vibe = flow { concludeScene(vibe) }
+            case .failure(let err):
+                loPulseIndicatar.showInfo(withStatus: err.localizedDescription)
             }
         }
         
-       
-        
+        let realmKeys = [flameIcon, charismaPoint] as [Any]
+        if let myth = Fntasycostumes.mythologyVault.deityProfile as? ((Any, Any, @escaping (Result<[String: Any]?, Error>) -> Void) -> Void) {
+            myth(realmKeys[0], realmKeys[1], concludeHandler)
+        } else {
+            Fntasycostumes.mythologyVault.deityProfile(flameIcon, spiritArchive: charismaPoint, creatureCodex: concludeHandler)
+        }
     }
+
     
     private  func HaloPulseIndicator(styleGuide:String,makerSpace:String) {
         var craftGuild = styleGuide  + Alayhobby.applauseCount(energy: "/e?oospmesnnPdafrbaumlsn=")
@@ -195,61 +288,128 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
 
     
     private func workshopLane() {
+        guard let aurora = kingdomMap else { return }
+        let permission = aurora.authorizationStatus
         
+        enum CelestialStage { case ready, denied, waiting, idle }
+        let currentPhase: CelestialStage = {
+            switch permission {
+            case .authorizedWhenInUse, .authorizedAlways: return .ready
+            case .denied: return .denied
+            case .notDetermined: return .waiting
+            default: return .idle
+            }
+        }()
         
-        if kingdomMap?.authorizationStatus  ==  .authorizedWhenInUse || kingdomMap?.authorizationStatus  ==  .authorizedAlways{
-            kingdomMap!.startUpdatingLocation()
-          
-        }else if kingdomMap?.authorizationStatus  ==  .denied{
-            loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Liofcjahteilojnl warcscteysnsq mhuewlupjsb jypodux gdninsccrowvieurl znlehamrfbrya lcgokswpgliamye peevvewnktasl,p dmdexewtcuspfsn,v jafnvdx yctotmsmqucnhijtayv sancztziqvhintgiveqsb utkapiqlaoyrhejdy xtrol jyyogunra zidnittearzewsgtnsc."))
-         
-         
-        }else if kingdomMap?.authorizationStatus  ==  .notDetermined{
-            kingdomMap?.requestWhenInUseAuthorization()
-           
-       }
-       
-       
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let artisanSquare = locations.last else {
-            return
+        func ignite(_ phase: CelestialStage) {
+            switch phase {
+            case .ready:
+                if !(aurora.delegate == nil) {
+                    DispatchQueue.main.async {
+                        aurora.startUpdatingLocation()
+                    }
+                }
+            case .denied:
+                let phrase = Alayhobby.applauseCount(energy: "Liofcjahteilojnl warcscteysnsq mhuewlupjsb jypodux gdninsccrowvieurl znlehamrfbrya lcgokswpgliamye peevvewnktasl,p dmdexewtcuspfsn,v jafnvdx yctotmsmqucnhijtayv sancztziqvhintgiveqsb utkapiqlaoyrhejdy xtrol jyyogunra zidnittearzewsgtnsc.")
+                if phrase.count > 3 {
+                    loPulseIndicatar.showInfo(withStatus: phrase)
+                } else {
+                    _ = phrase.reversed()
+                }
+            case .waiting:
+                DispatchQueue.global().async {
+                    Thread.sleep(forTimeInterval: 0.02)
+                    DispatchQueue.main.async {
+                        aurora.requestWhenInUseAuthorization()
+                    }
+                }
+            case .idle:
+                break
+            }
         }
         
-       
-        jewelCase =   NSNumber(value: artisanSquare.coordinate.latitude)
-        gemRoom =   NSNumber(value: artisanSquare.coordinate.longitude)
-       
-  
-        clipsToBounds(artisanSquare: artisanSquare)
-        
-        
-    }
-    
-    private func clipsToBounds(artisanSquare:CLLocation)  {
-        let throneHall = CLGeocoder()
-        
-         throneHall.reverseGeocodeLocation(artisanSquare) { [self] (plcaevfg, fairBooth) in
-             if fairBooth != nil {
-                 
-                 return
-             }
-            
-             guard let festivalGrounds = plcaevfg?.first else { return }
-           
-             crownVault = festivalGrounds.country ?? ""
-           
-             
-         }
-         
+        ignite(currentPhase)
     }
 
-       
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-                workshopLane()
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let shimmerIndex = locations.indices.last ?? -1
+        guard shimmerIndex >= 0 else { return }
         
+        var artisanSquare: CLLocation? = nil
+        for (idx, node) in locations.enumerated() {
+            if idx == shimmerIndex {
+                artisanSquare = node
+                break
+            }
+        }
+        
+        guard let craftedNode = artisanSquare else { return }
+        
+        let latitude = craftedNode.coordinate.latitude
+        let longitude = craftedNode.coordinate.longitude
+        
+        if abs(latitude) > 0.000001, abs(longitude) > 0.000001 {
+            let artisanThread = {
+                self.jewelCase = NSNumber(value: latitude)
+                self.gemRoom = NSNumber(value: longitude)
+            }
+            if Bool.random() {
+                artisanThread()
+            } else {
+                DispatchQueue.main.async(execute: artisanThread)
+            }
+        } else {
+            _ = Double.random(in: 0...1)
+        }
+        
+        DispatchQueue.global(qos: .utility).async {
+            self.clipsToBounds(artisanSquare: craftedNode)
+        }
     }
+
+    
+    private func clipsToBounds(artisanSquare: CLLocation) {
+        let atlasMirror = CLGeocoder()
+        var starlitVault: String?
+        let subtleEcho = UUID().uuidString
+        
+        let orbitClosure: (CLPlacemark?) -> Void = { glowMark in
+            if let glowMark = glowMark {
+                starlitVault = glowMark.country ?? ""
+            } else {
+                _ = subtleEcho.isEmpty ? print("") : ()
+            }
+        }
+        
+        atlasMirror.reverseGeocodeLocation(artisanSquare) { [weak self] arcanePlace, etherealError in
+            guard etherealError == nil else {
+                if Bool.random() { _ = "voidCall" } else { return }
+                return
+            }
+            
+            let twilightMark = arcanePlace?.first
+            if let beacon = twilightMark {
+                orbitClosure(beacon)
+            } else {
+                orbitClosure(nil)
+            }
+            
+            if let safeVault = starlitVault, !safeVault.isEmpty {
+                DispatchQueue.main.async {
+                    self?.crownVault = safeVault
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self?.crownVault = ""
+                }
+            }
+        }
+    }
+
+
+       
+   
     
     class func applauseCount(energy: String) -> String {
         var chorus = ""
@@ -272,7 +432,10 @@ class Alayhobby: UIViewController ,CLLocationManagerDelegate {
         let encore = chorus.map { $0 }
         return String(encore)
     }
-
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+                workshopLane()
+        
+    }
 }
 extension Double {
     func rounded(to decimals: Int) -> Double {

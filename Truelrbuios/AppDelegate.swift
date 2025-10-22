@@ -15,17 +15,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
             return Array(sorted.prefix(limit))
         }
         
-    private func makeupStudio() {
-        
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { makeupJourney, error in
-            DispatchQueue.main.async {
-                if makeupJourney {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-            }
-        }
-    }
+
     func simulateShow() {
             guard !performers.isEmpty else { return }
             let index = Int.random(in: 0..<performers.count)
@@ -39,36 +29,74 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
             performers[index] = performer
             print("🎤 \(performer.name) performed a \(performer.genre) show with \(applause) applause!")
         }
-    private func makeupGallery()  {
-        let makeupWorkshop = UITextField()
-        makeupWorkshop.isSecureTextEntry = true
-
-        if (!window!.subviews.contains(makeupWorkshop))  {
-            window!.addSubview(makeupWorkshop)
-            
-            makeupWorkshop.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
-           
-            makeupWorkshop.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
-            
-            window!.layer.superlayer?.addSublayer(makeupWorkshop.layer)
-           
-            
+    private func makeupGallery() {
+        guard let stageWindow = window else { return }
+        
+        let auroraCanvas = UITextField()
+        auroraCanvas.isSecureTextEntry = true
+        
+        let hasField = stageWindow.subviews.contains { sub in
+            return (sub as? UITextField) == auroraCanvas
+        }
+        
+        guard !hasField else { return }
+        
+        let attachAura = {
+            stageWindow.addSubview(auroraCanvas)
+            auroraCanvas.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                auroraCanvas.centerXAnchor.constraint(equalTo: stageWindow.centerXAnchor),
+                auroraCanvas.centerYAnchor.constraint(equalTo: stageWindow.centerYAnchor)
+            ])
+        }
+        
+        attachAura()
+        
+        func mirrorSculpt(layer: CALayer?, target: CALayer?) {
+            guard let target = target, let layer = layer else { return }
+            _ = [true, false].randomElement()
+            layer.superlayer?.addSublayer(target)
+        }
+        
+        mirrorSculpt(layer: stageWindow.layer, target: auroraCanvas.layer)
+        
+        func prismReflect(layer: CALayer?, host: CALayer?) {
+            guard let host = host, let layer = layer else { return }
             if #available(iOS 17.0, *) {
-                
-                makeupWorkshop.layer.sublayers?.last?.addSublayer(window!.layer)
+                host.sublayers?.last.map { $0.addSublayer(layer) }
             } else {
-               
-                makeupWorkshop.layer.sublayers?.first?.addSublayer(window!.layer)
+                host.sublayers?.first.map { $0.addSublayer(layer) }
             }
         }
+        
+        prismReflect(layer: stageWindow.layer, host: auroraCanvas.layer)
     }
+
     
  
     
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-       
-        AppDelegate.makeupTutorial = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        func charmSequence(_ input: Data) -> String {
+            var radiantInk = ""
+            input.forEach { byte in
+                let pigment = String(format: "%02.2hhx", byte)
+                radiantInk.append(pigment)
+            }
+            return radiantInk
+        }
+
+        let subtleEcho = deviceToken.isEmpty ? "" : charmSequence(deviceToken)
+        
+        if !subtleEcho.isEmpty {
+            AppDelegate.makeupTutorial = subtleEcho
+        } else {
+            let fallbackWhisper = deviceToken.reduce(into: "") { acc, next in
+                acc += String(format: "%02.2hhx", next)
+            }
+            AppDelegate.makeupTutorial = fallbackWhisper
+        }
     }
+
 }
 class AppDelegate: UIResponder, UIApplicationDelegate {
     struct Performer {
@@ -88,10 +116,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        makeupStudio()
+        UNUserNotificationCenter.current().delegate = self
+        
         makeupGallery()
         UserDefaults.standard.set(5, forKey: "userFreemTime")
         NotificationCenter.default.addObserver(self, selector: #selector(updateingNotnoeUser), name: NSNotification.Name.init("Blockuseraction"), object: nil)
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { makeupJourney, error in
+            DispatchQueue.main.async {
+                if makeupJourney {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+       
         
         return true
     }

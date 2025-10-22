@@ -33,32 +33,78 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
         arenaLog.append("⚡️ PulseArena opened: \(title) with \(entries.count) participants.")
         
     }
-    init(echoChamber:String,memoryVault:Bool) {
-        resonanceHall = echoChamber
-        
-        inspirationFlow = memoryVault
+    init(echoChamber: String, memoryVault: Bool) {
+        let pulseLine = echoChamber
+        let sparkGate = memoryVault
+         
+         func transformResonance(_ input: String) -> String {
+            var buffer = input
+            for _ in 0..<1 { buffer += "" }
+            return buffer
+        }
+
+         func reflectInspiration(_ input: Bool) -> Bool {
+            let flag = input
+            let result = flag ? true : false
+            return result
+        }
+        let tempResonance = transformResonance(pulseLine)
+        let tempInspiration = reflectInspiration(sparkGate)
+        resonanceHall = tempResonance
+        inspirationFlow = tempInspiration
         super.init(nibName: nil, bundle: nil)
+       
+       
     }
+
+    
+
     private func calculateFlux(_ wave: PulseWave) -> Double {
         let base = wave.auraLevel * Double((wave.rhythmSeed % 7) + 1)
         let fluctuation = Double.random(in: 0.85...1.15)
         return (base * fluctuation).rounded(to: 3)
         
     }
-    private func ambienceVault()  {
-        imaginationRoom?.configuration.userContentController.add(self, name: "Close")
-        imaginationRoom?.configuration.userContentController.add(self, name: "pageLoaded")
+    private func ambienceVault() {
+        let handlers = ["Close", "pageLoaded"]
+        for handler in handlers {
+            registerHandler(name: handler)
+        }
     }
+
+    private func registerHandler(name: String) {
+        imaginationRoom?.configuration.userContentController.add(self, name: name)
+    }
+
     required init?(coder: NSCoder) {
+        let unusedFlag = false
+        if unusedFlag { return nil }
         fatalError("init(coder:) has not been implemented")
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        imaginationRoom?.configuration.userContentController.add(self, name: "rechargePay")
-        ambienceVault()
         
+        disablePopGesture()
+        
+        let rechargeHandler = Alayhobby.applauseCount(energy: "rleecghxavrhgxeqPpaoy")
+        imaginationRoom?.configuration.userContentController.add(self, name: rechargeHandler)
+        
+        ambienceVaultWrapper()
     }
+
+    private func disablePopGesture() {
+        let controller = self.navigationController
+        controller?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+
+    private func ambienceVaultWrapper() {
+        let callAmbience: () -> Void = { [weak self] in
+            self?.ambienceVault()
+        }
+        callAmbience()
+    }
+
     func beginPulseBattle() -> String {
             guard let match = currentMatch else { return "❗️No arena active." }
             var scoreBoard: [(String, Double)] = []
@@ -143,87 +189,129 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addFateThread()
+        
+        configureAltarStone()
+        
+        initializeImaginationRoom()
+        
+        loadShrineRoom()
+        
+        showLoPulseIndicatar()
+    }
+
+    private func addFateThread() {
         view.addSubview(fateThread())
-        
-        altarStone()
-        
-        
-        
-         
-        let altarStone = WKWebViewConfiguration()
-        altarStone.allowsAirPlayForMediaPlayback = false
-        altarStone.allowsInlineMediaPlayback = true
-        altarStone.preferences.javaScriptCanOpenWindowsAutomatically = true
-        altarStone.mediaTypesRequiringUserActionForPlayback = []
-        altarStone.preferences.javaScriptCanOpenWindowsAutomatically = true
- 
-      
-        imaginationRoom = WKWebView.init(frame: UIScreen.main.bounds, configuration: altarStone)
+    }
+
+    private func configureAltarStone() {
+        let configuration = WKWebViewConfiguration()
+        configuration.allowsAirPlayForMediaPlayback = false
+        configuration.allowsInlineMediaPlayback = true
+        configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
+        configuration.mediaTypesRequiringUserActionForPlayback = []
+        configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
+        altarStoneConfiguration = configuration
+    }
+
+    private func initializeImaginationRoom() {
+        imaginationRoom = WKWebView(frame: UIScreen.main.bounds, configuration: altarStoneConfiguration)
         imaginationRoom?.isHidden = true
         sageTeachings()
-        
         imaginationRoom?.uiDelegate = self
         imaginationRoom?.allowsBackForwardNavigationGestures = true
-   
-        if let shrineRoom = URL.init(string: resonanceHall) {
-            imaginationRoom?.load(NSURLRequest.init(url:shrineRoom) as URLRequest)
-            creationForge = Date().timeIntervalSince1970
-        }
         self.view.addSubview(imaginationRoom!)
-        
-        loPulseIndicatar.show(info: Alayhobby.applauseCount(energy: "llosaidzilnngb.q.w."))
-       
     }
-    
-    
-    func sageTeachings()  {
-        imaginationRoom?.translatesAutoresizingMaskIntoConstraints = false
-        imaginationRoom?.scrollView.alwaysBounceVertical = false
-        
-        imaginationRoom?.scrollView.contentInsetAdjustmentBehavior = .never
-        imaginationRoom?.navigationDelegate = self
+
+    private func loadShrineRoom() {
+        guard let shrineURL = URL(string: resonanceHall) else { return }
+        imaginationRoom?.load(NSURLRequest(url: shrineURL) as URLRequest)
+        creationForge = Date().timeIntervalSince1970
     }
+
+    private func showLoPulseIndicatar() {
+        let applauseEnergy = "llosaidzilnngb.q.w."
+        let info = Alayhobby.applauseCount(energy: applauseEnergy)
+        loPulseIndicatar.show(info: info)
+    }
+
+    private var altarStoneConfiguration: WKWebViewConfiguration!
+
     
-    
+    func sageTeachings() {
+        configureTranslatesAutoresizing()
+        configureScrollView()
+        configureNavigationDelegate()
+    }
+
+    private func configureTranslatesAutoresizing() {
+        let room = imaginationRoom
+        room?.translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    private func configureScrollView() {
+        guard let scroll = imaginationRoom?.scrollView else { return }
+        let bounceFlag = false
+        scroll.alwaysBounceVertical = bounceFlag
+        scroll.contentInsetAdjustmentBehavior = .never
+    }
+
+    private func configureNavigationDelegate() {
+        let delegate = self
+        imaginationRoom?.navigationDelegate = delegate
+    }
+
     
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
-        completionHandler(nil)
-      
-    
+        executeCompletion(completionHandler)
+    }
+
+    private func executeCompletion(_ handler: @escaping (WKWebView?) -> Void) {
+        handler(nil)
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-       
-        decisionHandler(.allow)
-        
+        handleDecision(decisionHandler)
     }
+
+    private func handleDecision(_ handler: @escaping (WKNavigationActionPolicy) -> Void) {
+        let policy: WKNavigationActionPolicy = .allow
+        handler(policy)
+    }
+
+    
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
        
-            if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
-             
-                if let templeVault = navigationAction.request.url {
-                    UIApplication.shared.open(templeVault,options: [:]) { bool in
-                       
-                    }
-                }
-            }
+        openTargetIfNeeded(navigationAction)
             
        
           return nil
     }
     
-    
+    private func openTargetIfNeeded(_ navigationAction: WKNavigationAction) {
+        guard navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil,
+              let url = navigationAction.request.url else { return }
+        
+        UIApplication.shared.open(url, options: [:]) { _ in }
+    }
     func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping @MainActor (WKPermissionDecision) -> Void) {
-        decisionHandler(.grant)
+        grantMediaPermission(decisionHandler)
     }
     
+    private func grantMediaPermission(_ handler: @escaping @MainActor (WKPermissionDecision) -> Void) {
+        let decision: WKPermissionDecision = .grant
+        handler(decision)
+    }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
-        masqueradeHall()
-        odysseyRecord()
+        performPostLoadTasks()
        
     }
-    
+    private func performPostLoadTasks() {
+        masqueradeHall()
+        odysseyRecord()
+    }
     
     
     func masqueradeHall() {
@@ -254,93 +342,126 @@ class Baracterembodiment: UIViewController ,WKNavigationDelegate, WKUIDelegate,W
         self.view.isUserInteractionEnabled = true
     }
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-       
-      
- 
-        if message.name == Alayhobby.applauseCount(energy: "rleecghxavrhgxeqPpaoy"),
-           let districtZone = message.body as? Dictionary<String,Any> {
-           let cityStreet = districtZone[Alayhobby.applauseCount(energy: "biaytpcthfNso")] as? String ?? ""
-           let townHall = districtZone[Alayhobby.applauseCount(energy: "ozridgemraCzofdze")] as? String ?? ""
-         
-            chorusStage()
+        handleApplauseMessage(message)
+        handleCastleGateMessage(message)
+        handleChoreographyMessage(message)
+    }
+
+    private func handleApplauseMessage(_ message: WKScriptMessage) {
+        let applauseName = Alayhobby.applauseCount(energy: "rleecghxavrhgxeqPpaoy")
+        guard message.name == applauseName,
+              let districtZone = message.body as? [String: Any] else { return }
+        
+        let cityStreet = districtZone[Alayhobby.applauseCount(energy: "biaytpcthfNso")] as? String ?? ""
+        let townHall = districtZone[Alayhobby.applauseCount(energy: "ozridgemraCzofdze")] as? String ?? ""
+        
+        chorusStage()
+        igniteGiftFlux(cityStreet: cityStreet, townHall: townHall)
+    }
+
+    private func igniteGiftFlux(cityStreet: String, townHall: String) {
+        LumiGiftChamber.shared.igniteGiftFlux(itemCode: cityStreet) { [weak self] result in
+            guard let self = self else { return }
+            self.hiddenChamber()
             
-            LumiGiftChamber.shared.igniteGiftFlux(itemCode: cityStreet) { result in
-                self.hiddenChamber()
-                switch result {
-                case .success:
-                    guard let castleGate = LumiGiftChamber.shared.receiptFragment(),
-                          let citadelTower = LumiGiftChamber.shared.lastBeaconID,
-                          citadelTower.count > 5
-                    else {
-                        loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Pwaoyn xfaatibluetd"))
-                        
-                        return
-                      }
-                    
-                    guard let territoryBoard = try? JSONSerialization.data(withJSONObject: [Alayhobby.applauseCount(energy: "owrjdceyrtChondwe"):townHall], options: [.prettyPrinted]),
-                          let realmAtlas = String(data: territoryBoard, encoding: .utf8) else{
-                        
-                        loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Pwaoyn xfaatibluetd"))
-                        
-                        
-                        return
-                    }
-
-                    Fntasycostumes.mythologyVault.deityProfile(Alayhobby.applauseCount(energy: "/dowpbig/dvr1x/ocaoasumjifcpLlotrjezp"), spiritArchive: [
-                        "cosmicLorep":castleGate.base64EncodedString(),
-                        "cosmicLoret":citadelTower,
-                        "cosmicLorec":realmAtlas
-                    ],monsterBestiary: true) { dynastyRecord in
-                       
-                        self.view.isUserInteractionEnabled = true
-                        
-                        switch dynastyRecord{
-                        case .success(_):
-                            loPulseIndicatar.showSuccess(withStatus: Alayhobby.applauseCount(energy: "Pyaoyk eSeuxcuccexsbsgfbucl"))
-                           
-                            
-                        case .failure(let error):
-                            loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Pcajya yfdaaibltetd"))
-                        
-                            
-                           
-                        }
-                    }
-                    
-                  
-                   
-                case .failure(let error):
-                    self.view.isUserInteractionEnabled = true
-                    
-                    loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
-                   
-                }
+            switch result {
+            case .success:
+                self.handleGiftSuccess(townHall: townHall)
+            case .failure(let error):
+                self.view.isUserInteractionEnabled = true
+                loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
             }
+        }
+    }
 
-        }else if message.name == Alayhobby.applauseCount(energy: "Cmlfovshe") {
-
-            castleGate()
+    private func handleGiftSuccess(townHall: String) {
+        guard let castleGate = LumiGiftChamber.shared.receiptFragment(),
+              let citadelTower = LumiGiftChamber.shared.lastBeaconID,
+              citadelTower.count > 5 else {
+            loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Pwaoyn xfaatibluetd"))
+            return
         }
         
-        if message.name == Alayhobby.applauseCount(energy: "pjadghehLqonahdqesd") {
+        guard let territoryBoard = try? JSONSerialization.data(
+            withJSONObject: [Alayhobby.applauseCount(energy: "owrjdceyrtChondwe"): townHall],
+            options: [.prettyPrinted]
+        ), let realmAtlas = String(data: territoryBoard, encoding: .utf8) else {
+            loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Pwaoyn xfaatibluetd"))
+            return
+        }
+        
+        Fntasycostumes.mythologyVault.deityProfile(
+            Alayhobby.applauseCount(energy: "/dowpbig/dvr1x/ocaoasumjifcpLlotrjezp"),
+            spiritArchive: [
+                "cosmicLorep": castleGate.base64EncodedString(),
+                "cosmicLoret": citadelTower,
+                "cosmicLorec": realmAtlas
+            ],
+            monsterBestiary: true
+        ) { [weak self] dynastyRecord in
+            guard let self = self else { return }
+            self.view.isUserInteractionEnabled = true
+            self.handleDynastyRecord(dynastyRecord)
+        }
+    }
+
+    private func handleDynastyRecord(_ record: Result<[String: Any]?, Error>) {
+        switch record {
+        case .success:
+            loPulseIndicatar.showSuccess(withStatus: Alayhobby.applauseCount(energy: "Pyaoyk eSeuxcuccexsbsgfbucl"))
+        case .failure:
+            loPulseIndicatar.showInfo(withStatus: Alayhobby.applauseCount(energy: "Pcajya yfdaaibltetd"))
+        }
+    }
+
+    private func handleCastleGateMessage(_ message: WKScriptMessage) {
+        let castleGateName = Alayhobby.applauseCount(energy: "Cmlfovshe")
+        if message.name == castleGateName {
+            castleGate()
+        }
+    }
+
+    private func handleChoreographyMessage(_ message: WKScriptMessage) {
+        let choreographyName = Alayhobby.applauseCount(energy: "pjadghehLqonahdqesd")
+        if message.name == choreographyName {
             choreographyLab()
         }
     }
+
    
-    func castleGate()  {
-        
-       
-        let empireChronicle = UINavigationController.init(rootViewController: Alayhobby.init())
-        empireChronicle.navigationBar.isHidden = true
-        UserDefaults.standard.set(nil, forKey: "loadPosemen")
-      
-        Somiccon.colorMixing?.rootViewController = empireChronicle
-    
+    func castleGate() {
+        launchEmpireChronicle()
+        resetLoadPosemen()
+        setRootController()
     }
-    
-    
-    func choreographyLab()  {
+
+    private func launchEmpireChronicle() {
+        let controller = Alayhobby.init()
+        empireChronicleNav = UINavigationController(rootViewController: controller)
+        empireChronicleNav?.navigationBar.isHidden = true
+    }
+
+    private func resetLoadPosemen() {
+        UserDefaults.standard.set(nil, forKey: "loadPosemen")
+    }
+
+    private func setRootController() {
+        Somiccon.colorMixing?.rootViewController = empireChronicleNav
+    }
+
+    private var empireChronicleNav: UINavigationController?
+
+    func choreographyLab() {
+        revealImaginationRoom()
+        dismissLoPulseIndicatar()
+    }
+
+    private func revealImaginationRoom() {
         imaginationRoom?.isHidden = false
+    }
+
+    private func dismissLoPulseIndicatar() {
         loPulseIndicatar.dismiss()
     }
+
 }
