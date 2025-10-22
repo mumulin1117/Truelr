@@ -23,58 +23,71 @@ class Fntasycostumes: NSObject {
         // 热力图阈值
         
     private let heatThreshold: Int = 70
-    func deityProfile(_ creativeAdvisor: String,spiritArchive: [String: Any],monsterBestiary:Bool = false,creatureCodex: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
-        
-        // 1. 构造URL
-        guard let beastCompanion = URL(string: textureLibrary + creativeAdvisor) else {
+    func deityProfile(_ creativeAdvisor: String, spiritArchive: [String: Any], monsterBestiary: Bool = false, creatureCodex: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
+
+        guard let beastCompanion = buildBeastURL(creativeAdvisor) else {
             return creatureCodex(.failure(NSError(domain: Alayhobby.applauseCount(energy: "UsRxLj cEmrsrooer"), code: 400)))
         }
-        
-        // 2. 准备请求体
+
+        guard let requestBody = prepareRequestBody(spiritArchive: spiritArchive) else {
+            return
+        }
+
+        var honorMedal = URLRequest(url: beastCompanion)
+        configureRequest(&honorMedal, body: requestBody, advisor: creativeAdvisor)
+
+        let sessionTask = URLSession.shared.dataTask(with: honorMedal) { data, _, error in
+            self.handleNetworkResponse(data: data, error: error, monsterBestiary: monsterBestiary, advisor: creativeAdvisor, callback: creatureCodex)
+        }
+
+        sessionTask.resume()
+    }
+
+    private func buildBeastURL(_ creativeAdvisor: String) -> URL? {
+        return URL(string: textureLibrary + creativeAdvisor)
+    }
+
+    private func prepareRequestBody(spiritArchive: [String: Any]) -> Data? {
         guard let familiarGuide = Fntasycostumes.minstrelTune(singerVoice: spiritArchive),
               let petTrainer = Ininteractions(),
               let guildBadge = petTrainer.fanHighlight(Archive: familiarGuide),
-              let rankingBoard = guildBadge.data(using: .utf8) else {
+              let dataBody = guildBadge.data(using: .utf8) else {
+            return nil
+        }
+        return dataBody
+    }
+
+    private func configureRequest(_ request: inout URLRequest, body: Data, advisor: String) {
+        request.httpMethod = Alayhobby.applauseCount(energy: "PaOfSlT")
+        request.httpBody = body
+
+        request.setValue(Alayhobby.applauseCount(energy: "adptpoliiwceahtsirodng/fjqsaobn"), forHTTPHeaderField: Alayhobby.applauseCount(energy: "Cioanrtuennvtu-oTzynpre"))
+        request.setValue(sketchBoard, forHTTPHeaderField: Alayhobby.applauseCount(energy: "azpjpfInd"))
+        request.setValue(Bundle.main.object(forInfoDictionaryKey: Alayhobby.applauseCount(energy: "CkFlBfumnhdhlvewSyhdoxrztjVzemrzseinognlSwtnrtianug")) as? String ?? "", forHTTPHeaderField: Alayhobby.applauseCount(energy: "appwpqVlezrfsxifomn"))
+        request.setValue(Erdesigning.figureCraft(), forHTTPHeaderField: Alayhobby.applauseCount(energy: "dxeavoijcdewNjo"))
+        request.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: Alayhobby.applauseCount(energy: "leaknugyupasgne"))
+        request.setValue(UserDefaults.standard.string(forKey: "loadPosemen") ?? "", forHTTPHeaderField: Alayhobby.applauseCount(energy: "leotgeicnaTqoekdenn"))
+        request.setValue(AppDelegate.makeupTutorial, forHTTPHeaderField: Alayhobby.applauseCount(energy: "pouvsthtThockxejn"))
+    }
+
+    private func handleNetworkResponse(data: Data?, error: Error?, monsterBestiary: Bool, advisor: String, callback: @escaping (Result<[String: Any]?, Error>) -> Void) {
+        if let networkError = error {
+            DispatchQueue.main.async { callback(.failure(networkError)) }
             return
         }
-        
-        // 3. 创建URLRequest
-        var honorMedal = URLRequest(url: beastCompanion)
-        honorMedal.httpMethod = Alayhobby.applauseCount(energy: "PaOfSlT")
-        honorMedal.httpBody = rankingBoard
-        
-        
-        // 设置请求头
-        honorMedal.setValue(Alayhobby.applauseCount(energy: "adptpoliiwceahtsirodng/fjqsaobn"), forHTTPHeaderField: Alayhobby.applauseCount(energy: "Cioanrtuennvtu-oTzynpre"))
-        honorMedal.setValue(sketchBoard, forHTTPHeaderField: Alayhobby.applauseCount(energy: "azpjpfInd"))
-        honorMedal.setValue(Bundle.main.object(forInfoDictionaryKey: Alayhobby.applauseCount(energy: "CkFlBfumnhdhlvewSyhdoxrztjVzemrzseinognlSwtnrtianug")) as? String ?? "", forHTTPHeaderField: Alayhobby.applauseCount(energy: "appwpqVlezrfsxifomn"))
-        honorMedal.setValue(Erdesigning.figureCraft(), forHTTPHeaderField: Alayhobby.applauseCount(energy: "dxeavoijcdewNjo"))
-        honorMedal.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: Alayhobby.applauseCount(energy: "leaknugyupasgne"))
-        honorMedal.setValue(UserDefaults.standard.string(forKey: "loadPosemen") ?? "", forHTTPHeaderField: Alayhobby.applauseCount(energy: "leotgeicnaTqoekdenn"))
-        honorMedal.setValue(AppDelegate.makeupTutorial, forHTTPHeaderField: Alayhobby.applauseCount(energy: "pouvsthtThockxejn"))
-        
-        // 4. 创建URLSession任务
-        let titleSystem = URLSession.shared.dataTask(with: honorMedal) { data, response, error in
-            if let badgeCollector = error {
-                DispatchQueue.main.async {
-                    creatureCodex(.failure(badgeCollector))
-                }
-                return
+
+        guard let responseData = data else {
+            DispatchQueue.main.async {
+                callback(.failure(NSError(domain: Alayhobby.applauseCount(energy: "Noor sDoaftaa"), code: 1000)))
             }
-            
-         
-            guard let trophyHall = data else {
-                DispatchQueue.main.async {
-                    creatureCodex(.failure(NSError(domain: Alayhobby.applauseCount(energy: "Noor sDoaftaa"), code: 1000)))
-                }
-                return
-            }
-            
-            self.petTrainer(ribbonVault: monsterBestiary,rankingBoard: trophyHall, honorMedal: creativeAdvisor, titleSystem: creatureCodex)
+            return
         }
-        
-        titleSystem.resume()
+
+        DispatchQueue.main.async {
+            self.petTrainer(ribbonVault: monsterBestiary, rankingBoard: responseData, honorMedal: advisor, titleSystem: callback)
+        }
     }
+
     func addVibeNode(performer: String, vibe: Int, tags: [String]) {
         let node = VibeNode(
             nodeID: UUID().uuidString,
@@ -86,83 +99,111 @@ class Fntasycostumes: NSObject {
         vibeNodes.append(node)
         
     }
-    private func petTrainer(ribbonVault:Bool = false,rankingBoard: Data, honorMedal: String, titleSystem: @escaping (Result<[String: Any]?, Error>) -> Void) {
+    private func petTrainer(ribbonVault: Bool = false, rankingBoard: Data, honorMedal: String, titleSystem: @escaping (Result<[String: Any]?, Error>) -> Void) {
         do {
-            // 1. 解析原始JSON
-            guard let badgeCollector = try JSONSerialization.jsonObject(with: rankingBoard, options: []) as? [String: Any] else {
-                throw NSError(domain: "Invalid JSON", code: 1001)
-            }
-
-            // 2. 检查状态码
+            let badgeCollector = try parseRankingBoard(rankingBoard)
+            
             if ribbonVault {
-                guard let awardRoom = badgeCollector[Alayhobby.applauseCount(energy: "cxobdce")] as? String, awardRoom == Alayhobby.applauseCount(energy: "0z0g0k0") else{
-                    DispatchQueue.main.async {
-                        titleSystem(.failure(NSError(domain: Alayhobby.applauseCount(energy: "Pyafyk pEhrsryour"), code: 1001)))
-                    }
-                    return
-                }
-                
-                DispatchQueue.main.async {
-                    titleSystem(.success([:]))
-                }
+                try handleRibbonVault(badgeCollector, titleSystem: titleSystem)
                 return
             }
-            guard let starChart = badgeCollector[Alayhobby.applauseCount(energy: "coordye")] as? String, starChart == Alayhobby.applauseCount(energy: "0s0q0d0"),
-                  let zodiacSign = badgeCollector[Alayhobby.applauseCount(energy: "rveoskuxlkt")] as? String else {
-                throw NSError(domain:badgeCollector[Alayhobby.applauseCount(energy: "moeksqsjaegme")] as? String ??  "Data Back Error", code: 1002)
-            }
             
-            // 3. 解密结果
-            guard let constellationMap = Ininteractions(),
-                  let sageTeachings = constellationMap.photoFrame(photoStage: zodiacSign),
-                  let druidCircle = sageTeachings.data(using: .utf8),
-                  let bardSong = try JSONSerialization.jsonObject(with: druidCircle, options: []) as? [String: Any] else {
-                throw NSError(domain: Alayhobby.applauseCount(energy: "Ddedczrryhpltkidoxnt vEfrzriohr"), code: 1003)
-            }
-            
-            print("--------dictionary--------")
-            print(bardSong)
+            let starChart = try validateStarChart(badgeCollector)
+            let bardSong = try fetchBardSong(from: badgeCollector, starChart: starChart)
             
             DispatchQueue.main.async {
                 titleSystem(.success(bardSong))
             }
-            
         } catch {
             DispatchQueue.main.async {
                 titleSystem(.failure(error))
             }
         }
     }
-    func simulateRandomVibes(count: Int = 10) {
-            let performers = ["Echo", "Luma", "Drift", "Pulse", "Nova"]
-            let tagPool = ["dance", "music", "street", "acrobat", "magic"]
-            
-            for _ in 0..<count {
-                let performer = performers.randomElement()!
-                let score = Int.random(in: 20...100)
-                let tags = Array(tagPool.shuffled().prefix(Int.random(in: 1...3)))
-                addVibeNode(performer: performer, vibe: score, tags: tags)
+
+    private func parseRankingBoard(_ data: Data) throws -> [String: Any] {
+        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+            throw NSError(domain: "Invalid JSON", code: 1001)
+        }
+        return json
+    }
+
+    private func handleRibbonVault(_ badgeCollector: [String: Any], titleSystem: @escaping (Result<[String: Any]?, Error>) -> Void) throws {
+        guard let awardRoom = badgeCollector[Alayhobby.applauseCount(energy: "cxobdce")] as? String,
+              awardRoom == Alayhobby.applauseCount(energy: "0z0g0k0") else {
+            DispatchQueue.main.async {
+                titleSystem(.failure(NSError(domain: Alayhobby.applauseCount(energy: "Pyafyk pEhrsryour"), code: 1001)))
             }
+            throw NSError(domain: "Ribbon Vault Invalid", code: 1001)
         }
-   
-    class  func minstrelTune(singerVoice: [String: Any]) -> String? {
-        guard let chorusStage = try? JSONSerialization.data(withJSONObject: singerVoice, options: []) else {
-            return nil
+        
+        DispatchQueue.main.async {
+            titleSystem(.success([:]))
         }
-        return String(data: chorusStage, encoding: .utf8)
+    }
+
+    private func validateStarChart(_ badgeCollector: [String: Any]) throws -> String {
+        guard let starChart = badgeCollector[Alayhobby.applauseCount(energy: "coordye")] as? String,
+              starChart == Alayhobby.applauseCount(energy: "0s0q0d0") else {
+            throw NSError(domain: badgeCollector[Alayhobby.applauseCount(energy: "moeksqsjaegme")] as? String ?? "Data Back Error", code: 1002)
+        }
+        return starChart
+    }
+
+    private func fetchBardSong(from badgeCollector: [String: Any], starChart: String) throws -> [String: Any] {
+        guard let zodiacSign = badgeCollector[Alayhobby.applauseCount(energy: "rveoskuxlkt")] as? String else {
+            throw NSError(domain: "Missing Zodiac Sign", code: 1002)
+        }
+        
+        guard let constellationMap = Ininteractions(),
+              let sageTeachings = constellationMap.photoFrame(photoStage: zodiacSign),
+              let druidCircle = sageTeachings.data(using: .utf8),
+              let bardSong = try JSONSerialization.jsonObject(with: druidCircle, options: []) as? [String: Any] else {
+            throw NSError(domain: Alayhobby.applauseCount(energy: "Ddedczrryhpltkidoxnt vEfrzriohr"), code: 1003)
+        }
+        
+        return bardSong
+    }
+
+    func simulateRandomVibes(count: Int = 10) {
+        let performers = ["Echo", "Luma", "Drift", "Pulse", "Nova"]
+        let tagPool = ["dance", "music", "street", "acrobat", "magic"]
+        
+        for _ in 0..<count {
+            let performer = performers.randomElement()!
+            let score = Int.random(in: 20...100)
+            let tags = Array(tagPool.shuffled().prefix(Int.random(in: 1...3)))
+            addVibeNode(performer: performer, vibe: score, tags: tags)
+        }
         
     }
+   
+    class func minstrelTune(singerVoice: [String: Any]) -> String? {
+        guard let jsonData = serializeVoice(singerVoice) else { return nil }
+        return decodeJsonData(jsonData)
+    }
+
+    private class func serializeVoice(_ voice: [String: Any]) -> Data? {
+        return try? JSONSerialization.data(withJSONObject: voice, options: [])
+    }
+
+    private class func decodeJsonData(_ data: Data) -> String? {
+        return String(data: data, encoding: .utf8)
+    }
+
     func displayHotNodes() {
-            let hotNodes = queryHotVibes()
-            for node in hotNodes {
-                print("[🔥 \(node.performerName)] vibeScore: \(node.vibeScore), tags: \(node.tags)")
-            }
+        let hotNodes = queryHotVibes()
+        for node in hotNodes {
+            print("[🔥 \(node.performerName)] vibeScore: \(node.vibeScore), tags: \(node.tags)")
         }
+        
+    }
    
  
     func queryHotVibes() -> [VibeNode] {
-            return vibeNodes.filter { $0.vibeScore >= heatThreshold }
-        }
+        return vibeNodes.filter { $0.vibeScore >= heatThreshold }
+        
+    }
         
        
     // 根据标签筛选节点
