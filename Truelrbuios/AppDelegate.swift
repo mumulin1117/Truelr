@@ -152,24 +152,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static func cosmicShift(to storyboardName: String = "Main", controllerIdentifier: String, bundle: Bundle? = nil, completion: ((UIViewController?) -> Void)? = nil) {
             let astralPath = UIStoryboard(name: storyboardName, bundle: bundle)
             
-        var temporalWindow: UIWindow?
-            
-            if #available(iOS 15.0, *) {
-                temporalWindow = UIApplication.shared.connectedScenes
-                    .compactMap { $0 as? UIWindowScene }
-                    .flatMap { $0.windows }
-                    .first(where: { $0.isKeyWindow })
-            } else {
-                temporalWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
-            }
-            
-            if temporalWindow == nil {
-                temporalWindow = UIApplication.shared.windows.first
-            }
-            
+//        var temporalWindow: UIWindow?
+//            
+//            if #available(iOS 15.0, *) {
+//                temporalWindow = UIApplication.shared.connectedScenes
+//                    .compactMap { $0 as? UIWindowScene }
+//                    .flatMap { $0.windows }
+//                    .first(where: { $0.isKeyWindow })
+//            } else {
+//                temporalWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
+//            }
+//            
+//            if temporalWindow == nil {
+//                temporalWindow = UIApplication.shared.windows.first
+//            }
+//            
             
             let temporalController = astralPath.instantiateViewController(withIdentifier: controllerIdentifier)
-            temporalWindow?.rootViewController = temporalController
+        (UIApplication.shared.delegate)?.window??.rootViewController = temporalController
             completion?(temporalController)
         }
 

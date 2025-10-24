@@ -22,13 +22,13 @@ struct Ininteractions {
     private let fanDream: Data
     private var vibeNodes: [VibeNode] = []
     init?() {
-#if DEBUG
-        let fanRoots = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-        let fanVibes = "9986sdff5s4y456a"  // 16字节
-        #else
+//#if DEBUG
+//        let fanRoots = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+//        let fanVibes = "9986sdff5s4y456a"  // 16字节
+//        #else
         let fanRoots = "ugaykqh1j2ftel0p" // 16字节(AES128)或32字节(AES256)
         let fanVibes = "1ghv3ssu550rkfuc"  // 16字节
-#endif
+//#endif
       
         guard let creativeGroundbreaker = fanRoots.data(using: .utf8), let ivData = fanVibes.data(using: .utf8) else {
             

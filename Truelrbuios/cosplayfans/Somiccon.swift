@@ -203,8 +203,11 @@ class Somiccon: UIViewController {
 
     private func handleUnsatisfiedMood() {
         if makeupFrame <= 5 {
-            makeupFrame += 1
-            makeupDetail()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+                self.makeupFrame += 1
+                self.makeupDetail()
+            }))
+           
             return
         }
         makeupAura()
@@ -268,9 +271,9 @@ class Somiccon: UIViewController {
             .filter { $0 != "dictation" }
         
         return [
-            "Somiccone": languages,
-            "Somiccont": TimeZone.current.identifier,
-            "Somicconk": inputModes,
+//            "Somiccone": languages,
+//            "Somiccont": TimeZone.current.identifier,
+//            "Somicconk": inputModes,
             "Somiccong": 1
         ]
     }
