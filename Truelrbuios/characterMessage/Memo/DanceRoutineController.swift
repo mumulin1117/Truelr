@@ -87,7 +87,7 @@ class DanceRoutineController: UIViewController ,UITableViewDelegate,UITableViewD
             }
         }
         NotificationCenter.default.addObserver(self, selector: #selector(suteiback), name: NSNotification.Name.init("Blockuseraction"), object: nil)
-        
+        shadowRealm.addTruleBoalsrToButton()
         comentVaire.delegate = self
         comentVaire.dataSource = self
         comentVaire.estimatedRowHeight = 100

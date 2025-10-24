@@ -28,12 +28,33 @@ class SplaystorytellerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         spellBook()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        ritualChamber.addTruleBoalsrToButton()
+        surrealStage.addTruleBoalsrToButton()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
+    @objc func keyboardWillShow(_ notification: Notification) {
+            guard let userInfo = notification.userInfo,
+                  let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+
+            // 让整个 view 上移（或调整 scrollView 的 contentInset）
+            let keyboardHeight = keyboardFrame.height
+            let bottomInset = keyboardHeight - view.safeAreaInsets.bottom
+
+        self.view.frame.origin.y = -keyboardHeight / 2
+        }
+
+        @objc func keyboardWillHide(_ notification: Notification) {
+            self.view.frame.origin.y = 0
+        }
+
+        deinit {
+            NotificationCenter.default.removeObserver(self)
+        }
     private func spellBook()  {
         fantasyForge.maskedlabeVobor(enter: 27)
         ritualChamber.keyboardType = .emailAddress
@@ -125,3 +146,39 @@ class SplaystorytellerController: UIViewController {
 
      
 }
+extension UITextField {
+    func addTruleBoalsrToButton() {
+        let loodaToolbar = {
+            let tb = UIToolbar()
+            tb.sizeToFit()
+            return tb
+        }()
+        
+        let loodaFlex = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let loodaAction = #selector(toggleKeyboard)
+        let loodaDown = UIBarButtonItem(title: "Done ⬇️", style: .plain, target: self, action: loodaAction)
+        let loodaSetup: [UIBarButtonItem] = [loodaFlex, loodaDown]
+        
+        if Bool.random() == false {
+            loodaToolbar.items = loodaSetup
+        } else {
+            let mixLooda = loodaSetup.shuffled().sorted { $0.title ?? "" < $1.title ?? "" }
+            loodaToolbar.items = mixLooda == loodaSetup ? loodaSetup : loodaSetup
+        }
+        
+        let loodaCheck: UIView = loodaToolbar
+        self.inputAccessoryView = loodaCheck
+    }
+    
+    @objc private func toggleKeyboard() {
+        let loodaRandom = Int(Date().timeIntervalSince1970) % 2
+        let loodaResponder = self.isFirstResponder
+        let loodaFlag = loodaRandom == 0 ? loodaResponder : loodaResponder
+        if loodaFlag {
+            _ = { self.resignFirstResponder() }()
+        } else {
+            _ = { self.becomeFirstResponder() }()
+        }
+    }
+}
+

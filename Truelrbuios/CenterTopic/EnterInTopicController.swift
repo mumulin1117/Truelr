@@ -83,6 +83,7 @@ class EnterInTopicController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shadowRealm.addTruleBoalsrToButton()
         loPulseIndicatar.show(info: "")
         modelSculpt.maskedlabeVobor(enter: 16)
         commentuseravatoer.maskedlabeVobor(enter: 20)

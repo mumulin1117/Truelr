@@ -29,9 +29,10 @@ class lensCraftController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ritualChamber.addTruleBoalsrToButton()
+        surrealStage.addTruleBoalsrToButton()
         Seriuh.maskedlabeVobor(enter: 60)
-        
+        introducntion.addTruleBoalsrToButton()
         ritualChamber.text =  UserDefaults.standard.object(forKey: "userimajrl") as? String
         surrealStage.text =  UserDefaults.standard.object(forKey: "IntroAge") as? String
         introducntion.text =  UserDefaults.standard.object(forKey: "Introduction") as? String

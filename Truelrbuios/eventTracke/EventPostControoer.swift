@@ -34,7 +34,10 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        themcapeHub.addTruleBoalsrToButton()
+        locationpeHub.addTruleBoalsrToButton()
+        timestart.addTruleBoalsrToButton()
+        timeend.addTruleBoalsrToButton()
         Seriuh.layer.cornerRadius = 15
         Seriuh.layer.masksToBounds = true
     }

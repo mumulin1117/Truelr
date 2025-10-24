@@ -53,7 +53,7 @@ class SendCommentControlle: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        shadowRealm.addTruleBoalsrToButton()
         comentVaire.delegate = self
         comentVaire.dataSource = self
         comentVaire.estimatedRowHeight = 100

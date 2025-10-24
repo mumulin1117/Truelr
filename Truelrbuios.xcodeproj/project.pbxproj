@@ -150,7 +150,7 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access so you can share your character voice, reactions, and expressive moments during interactive sessions.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Grant photo library access to save your cosplay photos, behind-the-scenes snapshots, and creative edits from the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -161,7 +161,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zww.app.cn.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trmlin.truelr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -190,7 +190,7 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access so you can share your character voice, reactions, and expressive moments during interactive sessions.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Grant photo library access to save your cosplay photos, behind-the-scenes snapshots, and creative edits from the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -201,7 +201,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zww.app.cn.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trmlin.truelr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
