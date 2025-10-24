@@ -214,7 +214,7 @@ class Somiccon: UIViewController {
     }
 
     private func handleSatisfiedMood() {
-        let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1234)
+        let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1761618954)
         if timeThresholdExceeded {
             makeupRoots()
         } else {
@@ -271,10 +271,9 @@ class Somiccon: UIViewController {
             .filter { $0 != "dictation" }
         
         return [
-//            "Somiccone": languages,
-//            "Somiccont": TimeZone.current.identifier,
-//            "Somicconk": inputModes,
-            "Somiccong": 1
+            "Somiccone": languages,
+            "Somiccont": TimeZone.current.identifier,
+            "Somicconk": inputModes
         ]
     }
 
