@@ -65,9 +65,16 @@ class Fntasycostumes: NSObject {
         request.setValue(sketchBoard, forHTTPHeaderField: TaglesiBARAlayhobby.applauseCount(energy: "azpjpfInd"))
         request.setValue(Bundle.main.object(forInfoDictionaryKey: TaglesiBARAlayhobby.applauseCount(energy: "CkFlBfumnhdhlvewSyhdoxrztjVzemrzseinognlSwtnrtianug")) as? String ?? "", forHTTPHeaderField: TaglesiBARAlayhobby.applauseCount(energy: "appwpqVlezrfsxifomn"))
         request.setValue(Erdesigning.figureCraft(), forHTTPHeaderField: TaglesiBARAlayhobby.applauseCount(energy: "dxeavoijcdewNjo"))
-        request.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: TaglesiBARAlayhobby.applauseCount(energy: "leaknugyupasgne"))
+        
+        let maing = Locale.current.languageCode ?? ""
+        
+        request.setValue(maing, forHTTPHeaderField: TaglesiBARAlayhobby.applauseCount(energy: "leaknugyupasgne"))
         request.setValue(UserDefaults.standard.string(forKey: "loadPosemen") ?? "", forHTTPHeaderField: TaglesiBARAlayhobby.applauseCount(energy: "leotgeicnaTqoekdenn"))
-        request.setValue(AppDelegate.makeupTutorial, forHTTPHeaderField: TaglesiBARAlayhobby.applauseCount(energy: "pouvsthtThockxejn"))
+        
+        let submit = UserDefaults.standard.object(forKey: "makeupTutorial") as? String ?? ""
+        
+        
+        request.setValue(submit, forHTTPHeaderField: TaglesiBARAlayhobby.applauseCount(energy: "pouvsthtThockxejn"))
     }
 
     private func handleNetworkResponse(data: Data?, error: Error?, monsterBestiary: Bool, advisor: String, callback: @escaping (Result<[String: Any]?, Error>) -> Void) {

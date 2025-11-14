@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="lensCraftController" customModule="Truelrbuios" customModuleProvider="target">
             <connections>
                 <outlet property="Seriuh" destination="Fmk-ly-C6E" id="xoq-6O-OxM"/>
+                <outlet property="TaglesiBARTitle" destination="3XB-z7-IvV" id="17r-F9-nF4"/>
                 <outlet property="introducntion" destination="njd-DQ-egz" id="mlo-Py-zWb"/>
                 <outlet property="ritualChamber" destination="fS3-C5-ood" id="0Gs-sS-yaS"/>
                 <outlet property="surrealStage" destination="u6x-Tp-1CC" id="rzn-ji-GRm"/>
@@ -27,13 +28,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="posinNtro" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-Ve-5Cp">
-                    <rect key="frame" x="0.0" y="462" width="393" height="24"/>
+                    <rect key="frame" x="0.0" y="450" width="393" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="ZXy-qL-fD1"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your brief" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="njd-DQ-egz">
-                    <rect key="frame" x="24" y="502" width="345" height="40"/>
+                    <rect key="frame" x="24" y="490" width="345" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="hFL-Hp-xGa"/>
                     </constraints>
@@ -41,13 +42,13 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Agedd" translatesAutoresizingMaskIntoConstraints="NO" id="zDJ-Nc-17T">
-                    <rect key="frame" x="0.0" y="370" width="393" height="24"/>
+                    <rect key="frame" x="0.0" y="358" width="393" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="Tyj-A8-YcV"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6x-Tp-1CC">
-                    <rect key="frame" x="24" y="410" width="345" height="40"/>
+                    <rect key="frame" x="24" y="398" width="345" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="bK7-nZ-FqL"/>
                     </constraints>
@@ -66,14 +67,14 @@
                         <action selector="yuqihang:" destination="-1" eventType="touchUpInside" id="DTo-BC-XJ6"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="edit profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XB-z7-IvV">
-                    <rect key="frame" x="145.66666666666666" y="79" width="101.66666666666666" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XB-z7-IvV">
+                    <rect key="frame" x="196.66666666666666" y="91" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmk-ly-C6E">
-                    <rect key="frame" x="136.66666666666666" y="135" width="119.99999999999997" height="120"/>
+                    <rect key="frame" x="136.66666666666666" y="123" width="119.99999999999997" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="bvu-A4-paQ"/>
                         <constraint firstAttribute="width" constant="120" id="ifQ-u9-Bcz"/>
@@ -86,13 +87,13 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="charmEffectnick" translatesAutoresizingMaskIntoConstraints="NO" id="gGI-ep-MEb">
-                    <rect key="frame" x="0.0" y="274" width="393" height="24"/>
+                    <rect key="frame" x="0.0" y="262" width="393" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="b6x-nP-Go9"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fS3-C5-ood">
-                    <rect key="frame" x="24" y="314" width="345" height="40"/>
+                    <rect key="frame" x="24" y="302" width="345" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="lFt-Wf-fIa"/>
                     </constraints>

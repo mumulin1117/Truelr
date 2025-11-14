@@ -26,6 +26,10 @@ class RibbonVaulControoer: UIViewController {
     @IBAction func bahingop(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBOutlet weak var TaglesiBARLabel: UILabel!
+    
+    
     private let charmBundles: [CharmBundle] = [
         CharmBundle(hearts: 300, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("MC45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "ufnclhqnidqznfch"),
         CharmBundle(hearts: 700, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("MS45OWNvbS50cm1saW4udHJ1ZWxy"), hasPromo: true, CpriductID: "adzmxihoombungys"),
@@ -37,9 +41,13 @@ class RibbonVaulControoer: UIViewController {
         CharmBundle(hearts: 63600, giftExtra: 100, unlockValue: UIImageView.ambienceVaultDeu("OTkuOTljb20udHJtbGluLnRydWVscg=="), hasPromo: true, CpriductID: "jhydnytpzboswmfl"),
        ]
        
+    @IBOutlet weak var TaglesiBARWallener: UILabel!
+    
+    
        override func viewDidLoad() {
            super.viewDidLoad()
-          
+           TaglesiBARWallener.text = "_ASt_My wallet_ASt_".replacingOccurrences(of: "_ASt_", with: "")
+           TaglesiBARLabel.text = "_ASt_Blance:_ASt_".replacingOccurrences(of: "_ASt_", with: "")
            textureLibrary()
            travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(TaglesiBARSomiccon.CurrentCoinggUserOwne)"
        }

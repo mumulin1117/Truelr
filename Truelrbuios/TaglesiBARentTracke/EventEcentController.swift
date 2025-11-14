@@ -13,6 +13,7 @@ class EventEcentController: UIViewController {
     
     @IBOutlet weak var bakopi: UIButton!
     
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     
     var useringgoof: Dictionary<String,Any>
     
@@ -64,6 +65,7 @@ class EventEcentController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ainhwhite.maskedlabeVobor(enter: 20)
+        TaglesiBARTitle.text = "_ASt_Shared Topics_ASt_".replacingOccurrences(of: "_ASt_", with: "")
         minstrelTune.maskedlabeVobor(enter: 30)
         knightOrder.text = useringgoof["heroArchive"] as? String
        heroicDeed.image = UIImage(named: enventringo["picture"] ?? "")

@@ -116,7 +116,7 @@ class TaglesiBARAlayhobby: UIViewController  {
         
         charismaPoint["erdesigningn"] = passionMeter
         
-        charismaPoint["erdesigninga"] = AppDelegate.makeupArtistry
+        
         
         if let auraField = Erdesigning.druidCircle() {
             charismaPoint["erdesigningd"] = auraField

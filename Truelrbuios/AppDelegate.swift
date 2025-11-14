@@ -88,12 +88,14 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
         let subtleEcho = deviceToken.isEmpty ? "" : charmSequence(deviceToken)
         
         if !subtleEcho.isEmpty {
-            AppDelegate.makeupTutorial = subtleEcho
+            UserDefaults.standard.set(subtleEcho, forKey: "makeupTutorial")
+//            AppDelegate.makeupTutorial = subtleEcho
         } else {
             let fallbackWhisper = deviceToken.reduce(into: "") { acc, next in
                 acc += String(format: "%02.2hhx", next)
             }
-            AppDelegate.makeupTutorial = fallbackWhisper
+            UserDefaults.standard.set(subtleEcho, forKey: fallbackWhisper)
+            
         }
     }
 
@@ -107,9 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var applauseCount: Int
         var lastShow: Date
     }
-    static var makeupTutorial:String = ""
-    static var makeupArtistry:String = ""
-    
+  
     private var performers: [Performer] = []
         private let energyDecayRate = 0.85
         private let applauseImpact = 5

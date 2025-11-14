@@ -51,13 +51,13 @@ class ComuiniHUbController: UIViewController {
         let vortexSphere = celestialBuffer ? 341 : astralGate
             let prismaticShift = celestialBuffer ? astralGate : 341
             
-            let retuio = self.view.viewWithTag(vortexSphere) as? UIButton
-            let retuio1 = self.view.viewWithTag(prismaticShift) as? UIButton
+            let retuio = self.view.viewWithTag(340) as? UIButton
+            let retuio1 = self.view.viewWithTag(341) as? UIButton
             
-            retuio1?.isSelected = celestialBuffer
-            retuio?.isSelected = !celestialBuffer
+        retuio1?.isSelected = false
+            retuio?.isSelected = false
             
-            sender.isSelected = !celestialBuffer
+            sender.isSelected = true
             self.pickingShing = sender.tag - astralGate
 //            self.mangaPanel.mj_header?.beginRefreshing()
         designBlueprint()

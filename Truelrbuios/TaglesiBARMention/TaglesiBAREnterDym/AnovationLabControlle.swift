@@ -13,7 +13,8 @@ class AnovationLabControlle: UIViewController, UIScrollViewDelegate  {
        private var pageDots: UIPageControl?
        private var autoTimer: Timer?
     
-
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.PlayingView.sparkOff()
@@ -39,7 +40,7 @@ class AnovationLabControlle: UIViewController, UIScrollViewDelegate  {
         
         spellBook.maskedlabeVobor(enter: 16)
      
-           
+        TaglesiBARTitle.text = "_ASt_Shared Topics_ASt_".replacingOccurrences(of: "_ASt_", with: "")
            maskTheatre()
            createrBootpnVir()
        }

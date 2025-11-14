@@ -46,7 +46,7 @@
                                         <action selector="dreamscapeHub:" destination="-1" eventType="touchUpInside" id="gvK-Ha-0YJ"/>
                                     </connections>
                                 </button>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Say something..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yjk-T2-wSm">
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yjk-T2-wSm">
                                     <rect key="frame" x="16" y="16" width="289" height="40"/>
                                     <color key="backgroundColor" red="0.99607843159999998" green="0.92549020049999997" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
