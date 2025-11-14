@@ -41,7 +41,7 @@ class RibbonVaulControoer: UIViewController {
            super.viewDidLoad()
           
            textureLibrary()
-           travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(Somiccon.CurrentCoinggUserOwne)"
+           travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(TaglesiBARSomiccon.CurrentCoinggUserOwne)"
        }
        
        private func textureLibrary() {
@@ -81,23 +81,23 @@ class RibbonVaulControoer: UIViewController {
            let bundle = charmBundles[indexPath.item]
          
            view.isUserInteractionEnabled = false
-           loPulseIndicatar.show(info: "Paying...")
-           LumiGiftChamber.shared.igniteGiftFlux(itemCode: "com.yourapp.token100") { result in
+           TaglesiBARloPulseIndicatar.show(info: "Paying...")
+           TaglesiBARLumiGiftChamber.TaglesiBARshared.igniteGiftFlux(itemCode: "com.yourapp.token100") { result in
 //               HaloPulseIndicator.dismiss()
                switch result {
                case .success:
                    self.view.isUserInteractionEnabled = true
                   
-                   let allcount =  Somiccon.CurrentCoinggUserOwne + bundle.hearts + bundle.giftExtra
+                   let allcount =  TaglesiBARSomiccon.CurrentCoinggUserOwne + bundle.hearts + bundle.giftExtra
                    
-                   Somiccon.CurrentCoinggUserOwne = allcount
-                   loPulseIndicatar.showSuccess(withStatus: UIImageView.ambienceVaultDeu("UGF5IFN1Y2Nlc3NmdWxjb20udHJtbGluLnRydWVscg=="))
+                   TaglesiBARSomiccon.CurrentCoinggUserOwne = allcount
+                   TaglesiBARloPulseIndicatar.showSuccess(withStatus: UIImageView.ambienceVaultDeu("UGF5IFN1Y2Nlc3NmdWxjb20udHJtbGluLnRydWVscg=="))
                    
-                   self.travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(Somiccon.CurrentCoinggUserOwne)"
+                   self.travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(TaglesiBARSomiccon.CurrentCoinggUserOwne)"
                case .failure(let error):
                    self.view.isUserInteractionEnabled = true
                    
-                   loPulseIndicatar.showInfo(withStatus: error.localizedDescription)
+                   TaglesiBARloPulseIndicatar.showInfo(withStatus: error.localizedDescription)
                }
            }
 

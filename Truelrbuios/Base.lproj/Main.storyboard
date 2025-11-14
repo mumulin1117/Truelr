@@ -443,10 +443,10 @@ Contact: Truelr1234@gmail.com</string>
             </objects>
             <point key="canvasLocation" x="-2312.8000000000002" y="730.88455772113946"/>
         </scene>
-        <!--Somiccon-->
+        <!--TaglesiBAR Somiccon-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="Somiccon" customModule="Truelrbuios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TaglesiBARSomiccon" customModule="Truelrbuios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -583,7 +583,7 @@ Contact: Truelr1234@gmail.com</string>
                             <constraint firstItem="Qw0-fa-AMV" firstAttribute="leading" secondItem="xVx-RW-qGl" secondAttribute="leading" constant="16" id="z2z-c6-zqF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="beiwkei0" selectedImage="beiwkeiZER0" id="lbi-Ed-rqI"/>
+                    <tabBarItem key="tabBarItem" title="" image="TaglesiBARbeiwkei0" selectedImage="beiwkeiZER0" id="lbi-Ed-rqI"/>
                     <navigationItem key="navigationItem" id="5Gs-CT-ehh"/>
                     <connections>
                         <outlet property="AnimeStudioCell" destination="Qw0-fa-AMV" id="h1u-9C-qNf"/>
@@ -801,7 +801,7 @@ Contact: Truelr1234@gmail.com</string>
                             <constraint firstAttribute="bottom" secondItem="cV6-pQ-iPI" secondAttribute="bottom" id="tu2-Cc-Acd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="beiwkei1" selectedImage="beiwkeiZER1" id="7CC-iy-xEC"/>
+                    <tabBarItem key="tabBarItem" title="" image="TaglesiBARbeiwkei1" selectedImage="beiwkeiZER1" id="7CC-iy-xEC"/>
                     <connections>
                         <outlet property="enenuLani" destination="Fzb-FR-0Zr" id="cEP-MH-zPS"/>
                         <outlet property="mangaPanel" destination="1gP-5Q-uog" id="WYh-eP-nB5"/>
@@ -1407,7 +1407,7 @@ Contact: Truelr1234@gmail.com</string>
                             <constraint firstAttribute="bottom" secondItem="JMS-lg-BT9" secondAttribute="bottom" id="fg6-Gy-vY9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="beiwkei2" selectedImage="beiwkeiZER2" id="bwW-nR-Tqq"/>
+                    <tabBarItem key="tabBarItem" title="" image="TaglesiBARbeiwkei2" selectedImage="beiwkeiZER2" id="bwW-nR-Tqq"/>
                     <connections>
                         <outlet property="topcsView" destination="sAL-Ex-dgQ" id="LQN-FD-rsI"/>
                     </connections>
@@ -2111,7 +2111,7 @@ Contact: Truelr1234@gmail.com</string>
                             <constraint firstItem="mER-tZ-fbA" firstAttribute="leading" secondItem="rpR-r6-4VO" secondAttribute="leading" id="yEe-hA-6Sy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="beiwkei4" selectedImage="beiwkeiZER4" id="Mdh-ZB-ff1"/>
+                    <tabBarItem key="tabBarItem" title="" image="TaglesiBARbeiwkei4" selectedImage="beiwkeiZER4" id="Mdh-ZB-ff1"/>
                     <connections>
                         <outlet property="fateThread" destination="cZc-1K-ENh" id="tz7-kW-j8V"/>
                         <outlet property="infoCake" destination="7Fy-r6-czc" id="VcR-Gc-AbH"/>
@@ -2210,7 +2210,7 @@ Contact: Truelr1234@gmail.com</string>
                             <constraint firstItem="rIx-SD-Jwi" firstAttribute="trailing" secondItem="4YR-2W-JQ6" secondAttribute="trailing" constant="16" id="yAL-8A-UPL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="beiwkei3" selectedImage="beiwkeiZER3" id="WDa-u5-2xP"/>
+                    <tabBarItem key="tabBarItem" title="" image="TaglesiBARbeiwkei3" selectedImage="beiwkeiZER3" id="WDa-u5-2xP"/>
                     <connections>
                         <outlet property="enchantmentLab" destination="qdg-Eg-AAB" id="2kB-RH-1Wp"/>
                         <outlet property="enchantmentLab1" destination="IRQ-Np-JnH" id="3qc-0M-DxK"/>
@@ -2270,14 +2270,14 @@ Contact: Truelr1234@gmail.com</string>
         <image name="ProAlert17=2" width="160" height="50"/>
         <image name="ProAlert4=1" width="160" height="50"/>
         <image name="ProAlert4=2" width="160" height="50"/>
+        <image name="TaglesiBARbeiwkei0" width="24.5" height="24.5"/>
+        <image name="TaglesiBARbeiwkei1" width="24.5" height="24.5"/>
+        <image name="TaglesiBARbeiwkei2" width="56" height="56.5"/>
+        <image name="TaglesiBARbeiwkei3" width="24.5" height="24.5"/>
+        <image name="TaglesiBARbeiwkei4" width="24.5" height="24.5"/>
         <image name="activTito" width="99" height="24"/>
         <image name="bannerHall" width="30.5" height="30.5"/>
         <image name="bannerHall0" width="30.5" height="30.5"/>
-        <image name="beiwkei0" width="24.5" height="24.5"/>
-        <image name="beiwkei1" width="24.5" height="24.5"/>
-        <image name="beiwkei2" width="56" height="56.5"/>
-        <image name="beiwkei3" width="24.5" height="24.5"/>
-        <image name="beiwkei4" width="24.5" height="24.5"/>
         <image name="beiwkeiZER0" width="24.5" height="24.5"/>
         <image name="beiwkeiZER1" width="24.5" height="24.5"/>
         <image name="beiwkeiZER2" width="56" height="56.5"/>
