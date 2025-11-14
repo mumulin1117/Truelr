@@ -9,9 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpicVerseController" customModule="Truelrbuios" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DesignBlueprintController" customModule="Truelrbuios" customModuleProvider="target">
             <connections>
-                <outlet property="TaglesiBARTitle" destination="j8n-Nv-i4v" id="eCI-gp-jQQ"/>
+                <outlet property="TaglesiBARTitle" destination="DQd-8F-4QI" id="dtn-6g-AhW"/>
+                <outlet property="noiebrrTitle" destination="DQd-8F-4QI" id="KBf-UW-riF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,22 +21,22 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transformation" translatesAutoresizingMaskIntoConstraints="NO" id="tpF-Ag-FEX">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transformation" translatesAutoresizingMaskIntoConstraints="NO" id="V4r-uI-0EF">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxa-Q3-Xbk">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqd-3L-GWF">
                     <rect key="frame" x="16" y="65" width="52" height="52"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="52" id="bOe-f8-V2V"/>
-                        <constraint firstAttribute="height" constant="52" id="sIf-Ar-Klj"/>
+                        <constraint firstAttribute="height" constant="52" id="6yU-bW-DXG"/>
+                        <constraint firstAttribute="width" constant="52" id="BrO-JC-OJz"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="fanart"/>
                     <connections>
-                        <action selector="yuqihang:" destination="-1" eventType="touchUpInside" id="hBP-F8-5kr"/>
+                        <action selector="yuqihang:" destination="-1" eventType="touchUpInside" id="qZe-Ka-r8X"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8n-Nv-i4v">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQd-8F-4QI">
                     <rect key="frame" x="196.66666666666666" y="91" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,16 +46,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="tpF-Ag-FEX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="09f-xX-eqn"/>
-                <constraint firstItem="tpF-Ag-FEX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ct3-UN-vQn"/>
-                <constraint firstItem="tpF-Ag-FEX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="M01-PZ-ciQ"/>
-                <constraint firstItem="nxa-Q3-Xbk" firstAttribute="centerY" secondItem="j8n-Nv-i4v" secondAttribute="centerY" id="OJQ-Ai-N0h"/>
-                <constraint firstItem="nxa-Q3-Xbk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="f5q-2M-6rX"/>
-                <constraint firstItem="nxa-Q3-Xbk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="mAf-yI-cJN"/>
-                <constraint firstItem="j8n-Nv-i4v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pUb-Mr-pTA"/>
-                <constraint firstAttribute="bottom" secondItem="tpF-Ag-FEX" secondAttribute="bottom" id="yKJ-Id-Mwh"/>
+                <constraint firstItem="V4r-uI-0EF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0cV-BY-zkr"/>
+                <constraint firstItem="mqd-3L-GWF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="7rt-FL-use"/>
+                <constraint firstItem="V4r-uI-0EF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="NYg-1Z-4cZ"/>
+                <constraint firstItem="DQd-8F-4QI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ymg-bi-fE6"/>
+                <constraint firstItem="V4r-uI-0EF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZMu-if-ISV"/>
+                <constraint firstAttribute="bottom" secondItem="V4r-uI-0EF" secondAttribute="bottom" id="ajl-kw-O9Z"/>
+                <constraint firstItem="mqd-3L-GWF" firstAttribute="centerY" secondItem="DQd-8F-4QI" secondAttribute="centerY" id="oX2-to-uFu"/>
+                <constraint firstItem="mqd-3L-GWF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="wRN-NM-sof"/>
             </constraints>
-            <point key="canvasLocation" x="67.938931297709928" y="20.422535211267608"/>
+            <point key="canvasLocation" x="60" y="21"/>
         </view>
     </objects>
     <resources>

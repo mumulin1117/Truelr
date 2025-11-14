@@ -245,7 +245,7 @@ class TaglesiBARSomiccon: UIViewController {
         let makeupConcept = TaglesiBARAlayhobby.applauseCount(energy: "/polpxib/vvk1r/uSoozmbijcjcooqnto")
         let makeupCreation = TaglesiBARprepareMakeupCreation()
        
-        Fntasycostumes.mythologyVault.deityProfile(makeupConcept, spiritArchive: makeupCreation) { [weak self] result in
+        TaglesiBARFntasycostumes.mythologyVault.TaglesiBARdeityProfile(makeupConcept, spiritArchive: makeupCreation) { [weak self] result in
             self?.handleMakeupRootsResult(result)
         }
     }
@@ -349,9 +349,9 @@ class TaglesiBARSomiccon: UIViewController {
             TaglesiBARAlayhobby.applauseCount(energy: "tuirmoersgtjarmrp"): "\(Int(Date().timeIntervalSince1970))"
         ]
         
-        guard let photoHighlight = Fntasycostumes.minstrelTune(singerVoice: photoGallery),
-              let photoStudio = Ininteractions(),
-              let colorGrading = photoStudio.fanHighlight(Archive: photoHighlight) else {
+        guard let photoHighlight = TaglesiBARFntasycostumes.minstrelTune(singerVoice: photoGallery),
+              let photoStudio = TaglesiBARIninteractions(),
+              let colorGrading = photoStudio.TaglesiBARfanHighlight(ATaglesiBARrchive: photoHighlight) else {
             return
         }
         
@@ -368,10 +368,10 @@ class TaglesiBARSomiccon: UIViewController {
    
     private func crestTaglesiBARLibrary(makeupExplorer:String,colorGrading:String){
         
-        let photoChronicle = makeupExplorer  + TaglesiBARAlayhobby.applauseCount(energy: "/k?noopletnxPjabrbaqmnsk=") + colorGrading + TaglesiBARAlayhobby.applauseCount(energy: "&caypppvIxdy=") + "\(Fntasycostumes.mythologyVault.sketchBoard)"
+        let photoChronicle = makeupExplorer  + TaglesiBARAlayhobby.applauseCount(energy: "/k?noopletnxPjabrbaqmnsk=") + colorGrading + TaglesiBARAlayhobby.applauseCount(energy: "&caypppvIxdy=") + "\(TaglesiBARFntasycostumes.mythologyVault.sketchBoard)"
        
       
-        let photoMood = Baracterembodiment.init(echoChamber: photoChronicle, memoryVault: false)
+        let photoMood = TaglesiBARBaracterembodiment.init(TaglesiBARechoChamber: photoChronicle, TaglesiBARmemoryVault: false)
         TaglesiBARSomiccon.TaglesiBARolorMixing?.rootViewController = photoMood
     }
 }

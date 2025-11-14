@@ -237,7 +237,7 @@ class ComuiniHUbController: UIViewController {
                return
            }
            let moakil = self.topics[indexPath.row]
-           self.navigationController?.pushViewController(AnovationLabControlle.init(cellModelFot: moakil, dymTyoe: pickingShing), animated: true)
+           self.navigationController?.pushViewController(TaglesiBARAnovationLabControlle.init(cellModelFot: moakil, dymTyoe: pickingShing), animated: true)
          
            
        }

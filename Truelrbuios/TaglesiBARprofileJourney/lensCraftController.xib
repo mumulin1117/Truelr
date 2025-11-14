@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="lensCraftController" customModule="Truelrbuios" customModuleProvider="target">
+            <connections>
+                <outlet property="Seriuh" destination="Fmk-ly-C6E" id="xoq-6O-OxM"/>
+                <outlet property="TaglesiBARTitle" destination="3XB-z7-IvV" id="17r-F9-nF4"/>
+                <outlet property="introducntion" destination="njd-DQ-egz" id="mlo-Py-zWb"/>
+                <outlet property="ritualChamber" destination="fS3-C5-ood" id="0Gs-sS-yaS"/>
+                <outlet property="surrealStage" destination="u6x-Tp-1CC" id="rzn-ji-GRm"/>
+                <outlet property="view" destination="Wjj-rU-CPc" id="Utn-D2-Gzo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Wjj-rU-CPc">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transformation" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-BU-t1s">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="posinNtro" translatesAutoresizingMaskIntoConstraints="NO" id="CcB-Ve-5Cp">
+                    <rect key="frame" x="0.0" y="450" width="393" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="ZXy-qL-fD1"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your brief" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="njd-DQ-egz">
+                    <rect key="frame" x="24" y="490" width="345" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="hFL-Hp-xGa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Agedd" translatesAutoresizingMaskIntoConstraints="NO" id="zDJ-Nc-17T">
+                    <rect key="frame" x="0.0" y="358" width="393" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="Tyj-A8-YcV"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6x-Tp-1CC">
+                    <rect key="frame" x="24" y="398" width="345" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="bK7-nZ-FqL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv2-AP-5ep">
+                    <rect key="frame" x="16" y="65" width="52" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="52" id="F8O-OJ-tcl"/>
+                        <constraint firstAttribute="height" constant="52" id="ajh-aC-tOa"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="fanart"/>
+                    <connections>
+                        <action selector="yuqihang:" destination="-1" eventType="touchUpInside" id="DTo-BC-XJ6"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XB-z7-IvV">
+                    <rect key="frame" x="196.66666666666666" y="91" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmk-ly-C6E">
+                    <rect key="frame" x="136.66666666666666" y="123" width="119.99999999999997" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="bvu-A4-paQ"/>
+                        <constraint firstAttribute="width" constant="120" id="ifQ-u9-Bcz"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="galaxyArchive2" backgroundImage="Hildojd"/>
+                    <connections>
+                        <action selector="planetariumView:" destination="-1" eventType="touchUpInside" id="ZRU-RC-g3i"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="charmEffectnick" translatesAutoresizingMaskIntoConstraints="NO" id="gGI-ep-MEb">
+                    <rect key="frame" x="0.0" y="262" width="393" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="b6x-nP-Go9"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fS3-C5-ood">
+                    <rect key="frame" x="24" y="302" width="345" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="lFt-Wf-fIa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGX-2L-HtC">
+                    <rect key="frame" x="25.666666666666657" y="736" width="342" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Z63-gN-feN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Save" backgroundImage="heroArchive5"/>
+                    <connections>
+                        <action selector="savingcosplay:" destination="-1" eventType="touchUpInside" id="9hf-Kh-78w"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="yFV-hc-fYz"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="CcB-Ve-5Cp" firstAttribute="leading" secondItem="yFV-hc-fYz" secondAttribute="leading" id="0cw-WL-dmv"/>
+                <constraint firstItem="njd-DQ-egz" firstAttribute="leading" secondItem="u6x-Tp-1CC" secondAttribute="leading" id="45T-NA-eZU"/>
+                <constraint firstItem="DGX-2L-HtC" firstAttribute="centerX" secondItem="Wjj-rU-CPc" secondAttribute="centerX" id="4eV-jh-lle"/>
+                <constraint firstItem="3XB-z7-IvV" firstAttribute="centerX" secondItem="Wjj-rU-CPc" secondAttribute="centerX" id="6HE-vj-z0F"/>
+                <constraint firstItem="CcB-Ve-5Cp" firstAttribute="top" secondItem="u6x-Tp-1CC" secondAttribute="bottom" constant="12" id="8kY-YO-XAv"/>
+                <constraint firstItem="Fmk-ly-C6E" firstAttribute="centerX" secondItem="Wjj-rU-CPc" secondAttribute="centerX" id="93M-f4-Jjr"/>
+                <constraint firstItem="u6x-Tp-1CC" firstAttribute="trailing" secondItem="fS3-C5-ood" secondAttribute="trailing" id="Acz-61-Wx8"/>
+                <constraint firstItem="uC6-BU-t1s" firstAttribute="leading" secondItem="yFV-hc-fYz" secondAttribute="leading" id="CK4-xq-tXx"/>
+                <constraint firstAttribute="bottom" secondItem="uC6-BU-t1s" secondAttribute="bottom" id="Clf-qb-QxD"/>
+                <constraint firstItem="yFV-hc-fYz" firstAttribute="trailing" secondItem="fS3-C5-ood" secondAttribute="trailing" constant="24" id="Dv5-pH-yZS"/>
+                <constraint firstItem="zDJ-Nc-17T" firstAttribute="top" secondItem="fS3-C5-ood" secondAttribute="bottom" constant="16" id="EhU-7w-vCY"/>
+                <constraint firstItem="yFV-hc-fYz" firstAttribute="trailing" secondItem="gGI-ep-MEb" secondAttribute="trailing" id="JW2-L1-OI6"/>
+                <constraint firstItem="Pv2-AP-5ep" firstAttribute="leading" secondItem="yFV-hc-fYz" secondAttribute="leading" constant="16" id="LTd-DC-94V"/>
+                <constraint firstItem="zDJ-Nc-17T" firstAttribute="leading" secondItem="yFV-hc-fYz" secondAttribute="leading" id="MLv-HL-vyX"/>
+                <constraint firstItem="u6x-Tp-1CC" firstAttribute="top" secondItem="zDJ-Nc-17T" secondAttribute="bottom" constant="16" id="P9C-u6-nid"/>
+                <constraint firstItem="njd-DQ-egz" firstAttribute="top" secondItem="CcB-Ve-5Cp" secondAttribute="bottom" constant="16" id="Sqb-8u-IUm"/>
+                <constraint firstItem="fS3-C5-ood" firstAttribute="top" secondItem="gGI-ep-MEb" secondAttribute="bottom" constant="16" id="TOD-xm-srQ"/>
+                <constraint firstItem="CcB-Ve-5Cp" firstAttribute="trailing" secondItem="yFV-hc-fYz" secondAttribute="trailing" id="Tdu-kT-eHb"/>
+                <constraint firstItem="Fmk-ly-C6E" firstAttribute="centerX" secondItem="Wjj-rU-CPc" secondAttribute="centerX" id="VXl-pQ-9mI"/>
+                <constraint firstItem="Fmk-ly-C6E" firstAttribute="top" secondItem="3XB-z7-IvV" secondAttribute="bottom" constant="32" id="Xuu-Wi-5GN"/>
+                <constraint firstItem="fS3-C5-ood" firstAttribute="leading" secondItem="yFV-hc-fYz" secondAttribute="leading" constant="24" id="YXp-cc-e5p"/>
+                <constraint firstItem="gGI-ep-MEb" firstAttribute="leading" secondItem="yFV-hc-fYz" secondAttribute="leading" id="Z4m-Ki-agT"/>
+                <constraint firstItem="uC6-BU-t1s" firstAttribute="trailing" secondItem="yFV-hc-fYz" secondAttribute="trailing" id="ZXF-Pn-8jx"/>
+                <constraint firstItem="uC6-BU-t1s" firstAttribute="top" secondItem="Wjj-rU-CPc" secondAttribute="top" id="aMT-D9-GhN"/>
+                <constraint firstItem="Pv2-AP-5ep" firstAttribute="centerY" secondItem="3XB-z7-IvV" secondAttribute="centerY" id="an6-Kg-1ic"/>
+                <constraint firstItem="gGI-ep-MEb" firstAttribute="top" secondItem="Fmk-ly-C6E" secondAttribute="bottom" constant="19" id="ddv-hQ-YpX"/>
+                <constraint firstItem="u6x-Tp-1CC" firstAttribute="leading" secondItem="fS3-C5-ood" secondAttribute="leading" id="eNg-S5-xIs"/>
+                <constraint firstItem="njd-DQ-egz" firstAttribute="trailing" secondItem="u6x-Tp-1CC" secondAttribute="trailing" id="ebN-Vl-ORV"/>
+                <constraint firstItem="zDJ-Nc-17T" firstAttribute="trailing" secondItem="yFV-hc-fYz" secondAttribute="trailing" id="gO4-cg-AQw"/>
+                <constraint firstItem="yFV-hc-fYz" firstAttribute="bottom" secondItem="DGX-2L-HtC" secondAttribute="bottom" constant="22" id="ktf-Tq-0fp"/>
+                <constraint firstItem="Pv2-AP-5ep" firstAttribute="top" secondItem="yFV-hc-fYz" secondAttribute="top" constant="6" id="qXf-3H-mgG"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Agedd" width="375" height="19"/>
+        <image name="Hildojd" width="120.33333587646484" height="120"/>
+        <image name="charmEffectnick" width="375" height="19"/>
+        <image name="fanart" width="52" height="52"/>
+        <image name="galaxyArchive2" width="52" height="52"/>
+        <image name="heroArchive5" width="342" height="60"/>
+        <image name="posinNtro" width="375" height="25"/>
+        <image name="transformation" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

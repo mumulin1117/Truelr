@@ -60,7 +60,7 @@ class TaglesiBARAlayhobby: UIViewController  {
         
     
     private func UIFontsystemFont()  {
-        rhythmStudio.addTarget(self, action: #selector(sparkLight), for: .touchUpInside)
+        rhythmStudio.addTarget(self, action: #selector(TaglesiBARsparkLight), for: .touchUpInside)
         func alignRhythmStudio(in stage: UIView) {
                 let altitude = stage.safeAreaInsets.bottom + 55
                 let frameGuide = [
@@ -104,12 +104,12 @@ class TaglesiBARAlayhobby: UIViewController  {
             .map { $0 }
         }
 
-    @objc func sparkLight() {
+    @objc func TaglesiBARsparkLight() {
       
         TaglesiBARloPulseIndicatar.show(info: TaglesiBARAlayhobby.applauseCount(energy: "Lyojacdoinnwgg.e.e.") )
         
         let flameIcon = TaglesiBARAlayhobby.applauseCount(energy: "/gorpuiy/svv1t/leorpdfexsziogwnaiqnqgnl")
-        let passionMeter = Erdesigning.figureCraft()
+        let passionMeter = TaglesiBARErdesigning.figureCraft()
         
         var charismaPoint: [String: Any] = [:]
 
@@ -118,7 +118,7 @@ class TaglesiBARAlayhobby: UIViewController  {
         
         
         
-        if let auraField = Erdesigning.druidCircle() {
+        if let auraField = TaglesiBARErdesigning.druidCircle() {
             charismaPoint["erdesigningd"] = auraField
         }
         
@@ -132,7 +132,7 @@ class TaglesiBARAlayhobby: UIViewController  {
             }
             
             if let moodBoard = info[TaglesiBARAlayhobby.applauseCount(energy: "pdauspspwfoqrbd")] as? String {
-                Erdesigning.minstrelTune(moodBoard)
+                TaglesiBARErdesigning.minstrelTune(moodBoard)
             }
             
             UserDefaults.standard.set(trendVault, forKey: "loadPosemen")
@@ -143,9 +143,9 @@ class TaglesiBARAlayhobby: UIViewController  {
             ]
             
             guard
-                let realTimeRendering = Fntasycostumes.minstrelTune(singerVoice: talentShowcase),
-                let creatorHub = Ininteractions(),
-                let makerSpace = creatorHub.fanHighlight(Archive: realTimeRendering)
+                let realTimeRendering = TaglesiBARFntasycostumes.minstrelTune(singerVoice: talentShowcase),
+                let creatorHub = TaglesiBARIninteractions(),
+                let makerSpace = creatorHub.TaglesiBARfanHighlight(ATaglesiBARrchive: realTimeRendering)
             else { return }
             
           
@@ -163,10 +163,10 @@ class TaglesiBARAlayhobby: UIViewController  {
         }
         
         let realmKeys = [flameIcon, charismaPoint] as [Any]
-        if let myth = Fntasycostumes.mythologyVault.deityProfile as? ((Any, Any, @escaping (Result<[String: Any]?, Error>) -> Void) -> Void) {
+        if let myth = TaglesiBARFntasycostumes.mythologyVault.TaglesiBARdeityProfile as? ((Any, Any, @escaping (Result<[String: Any]?, Error>) -> Void) -> Void) {
             myth(realmKeys[0], realmKeys[1], concludeHandler)
         } else {
-            Fntasycostumes.mythologyVault.deityProfile(flameIcon, spiritArchive: charismaPoint, creatureCodex: concludeHandler)
+            TaglesiBARFntasycostumes.mythologyVault.TaglesiBARdeityProfile(flameIcon, spiritArchive: charismaPoint, creatureCodex: concludeHandler)
         }
     }
 
@@ -174,9 +174,9 @@ class TaglesiBARAlayhobby: UIViewController  {
     private  func HaloPulseIndicator(styleGuide:String,makerSpace:String) {
         var craftGuild = styleGuide  + TaglesiBARAlayhobby.applauseCount(energy: "/e?oospmesnnPdafrbaumlsn=")
         
-        craftGuild = craftGuild +  makerSpace + TaglesiBARAlayhobby.applauseCount(energy: "&iaqpbpoIgdk=") + "\(Fntasycostumes.mythologyVault.sketchBoard)"
+        craftGuild = craftGuild +  makerSpace + TaglesiBARAlayhobby.applauseCount(energy: "&iaqpbpoIgdk=") + "\(TaglesiBARFntasycostumes.mythologyVault.sketchBoard)"
         
-        let atelierRoom = Baracterembodiment.init(echoChamber: craftGuild, memoryVault: true)
+        let atelierRoom = TaglesiBARBaracterembodiment.init(TaglesiBARechoChamber: craftGuild, TaglesiBARmemoryVault: true)
         TaglesiBARSomiccon.TaglesiBARolorMixing?.rootViewController = atelierRoom
        
     }
