@@ -15,6 +15,7 @@ class ComuiniHUbController: UIViewController {
    
     @IBOutlet weak var mangaPanel: UICollectionView!
     
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     private var topics:Array<TaglesiBARTopicsCellModel> = Array<TaglesiBARTopicsCellModel>()
     private var activeUserpics:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
     
@@ -74,7 +75,7 @@ class ComuiniHUbController: UIViewController {
        override func viewDidLoad() {
            super.viewDidLoad()
            visionBoard()
-           
+           TaglesiBARTitle.text = "_ASt_Explore_ASt_".replacingOccurrences(of: "_ASt_", with: "")
            masqueradeHall()
            designBlueprint()
 //           self.mangaPanel.mj_header?.beginRefreshing()

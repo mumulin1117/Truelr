@@ -15,6 +15,7 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
    
     private let videoCost: Int = 20   // 发布视频所需金币
     
+    @IBOutlet weak var TaglesiBAR: UILabel!
     
     private  var pickingShing:Int = 0
     
@@ -48,10 +49,15 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     
     @IBOutlet weak var indicaterNned: UIImageView!
     
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     
     @IBOutlet weak var Seriuh: UIButton!
     
     @IBOutlet weak var dreamscapeHub: UITextView!
+    
+   
+    @IBOutlet weak var TaglesiBARTitlepost: UIButton!
+    
     
     @IBAction func planetariumView(_ sender: UIButton) {
         
@@ -71,6 +77,8 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        TaglesiBARTitlepost.setTitle("_ASt_Post_ASt_".replacingOccurrences(of: "_ASt_", with: ""), for: .normal)
+        TaglesiBARTitle.text = "_ASt_Post_ASt_".replacingOccurrences(of: "_ASt_", with: "")
         dreamscapeHub.delegate = self
         Seriuh.layer.cornerRadius = 15
         Seriuh.layer.masksToBounds = true
