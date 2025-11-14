@@ -146,7 +146,6 @@
 				INFOPLIST_FILE = Truelrbuios/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Truelr;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow access to your camera to capture your cosplay looks, costume details, and creative moments directly within the app.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location access helps you discover nearby cosplay events, meetups, and community activities tailored to your interests.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access so you can share your character voice, reactions, and expressive moments during interactive sessions.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Grant photo library access to save your cosplay photos, behind-the-scenes snapshots, and creative edits from the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -160,7 +159,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.trmlin.truelr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -186,7 +185,6 @@
 				INFOPLIST_FILE = Truelrbuios/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Truelr;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow access to your camera to capture your cosplay looks, costume details, and creative moments directly within the app.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location access helps you discover nearby cosplay events, meetups, and community activities tailored to your interests.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Enable microphone access so you can share your character voice, reactions, and expressive moments during interactive sessions.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Grant photo library access to save your cosplay photos, behind-the-scenes snapshots, and creative edits from the app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -200,7 +198,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.trmlin.truelr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

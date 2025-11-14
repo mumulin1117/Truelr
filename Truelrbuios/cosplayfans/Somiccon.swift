@@ -214,7 +214,7 @@ class Somiccon: UIViewController {
     }
 
     private func handleSatisfiedMood() {
-        let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1761618954)
+        let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1763358478)
         if timeThresholdExceeded {
             makeupRoots()
         } else {

@@ -46,6 +46,7 @@ class TreasuretController: UIViewController {
     
     @IBOutlet weak var rhythmStudio: UIImageView!
     
+    @IBOutlet weak var TaglessConnetlabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TreasuretController" customModule="Truelrbuios" customModuleProvider="target">
             <connections>
+                <outlet property="TaglessConnetlabel" destination="aN8-cL-8ZF" id="rG6-mt-bZj"/>
                 <outlet property="druidCircle" destination="5VI-eU-hiK" id="yR3-A6-dNB"/>
                 <outlet property="melodyVault" destination="mkT-hP-RfJ" id="Goj-DE-Jai"/>
                 <outlet property="rhythmStudio" destination="IJ7-ob-7ok" id="BuP-om-Pm7"/>
