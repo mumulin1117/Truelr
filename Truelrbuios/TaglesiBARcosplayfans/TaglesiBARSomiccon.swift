@@ -195,10 +195,10 @@ class TaglesiBARSomiccon: UIViewController {
     }
 
     private func handleSatisfiedMood() {
-        let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1763293678)
+        let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1763380078)
         if timeThresholdExceeded {
             TaglesiBARmakeupRoots()
-        } else {//2025-11-16 19:47:58
+        } else {//2025-11-17 19:47:58
             photoVibes()
         }
     }

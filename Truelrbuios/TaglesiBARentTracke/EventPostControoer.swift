@@ -26,8 +26,8 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
     
     private  var pickingShing:Int = 0
     
-    private lazy var chasloogVIew: PostChargeDialog = {
-        let view = PostChargeDialog.init(frame: UIScreen.main.bounds)
+    private lazy var chasloogVIew: TaglesiBARPostChargeDialog = {
+        let view = TaglesiBARPostChargeDialog.init(frame: UIScreen.main.bounds)
        
         return view
     }()

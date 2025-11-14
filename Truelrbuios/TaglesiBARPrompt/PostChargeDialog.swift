@@ -1,5 +1,5 @@
 //
-//  PostChargeDialog.swift
+//  TaglesiBARPostChargeDialog.swift
 //  Truelrbuios
 //
 //  Created by  on 2025/9/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostChargeDialog: UIView {
+class TaglesiBARPostChargeDialog: UIView {
     
     var onPostConfirmed: (() -> Void)?
     var onPostCancelled: (() -> Void)?
