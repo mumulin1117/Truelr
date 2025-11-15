@@ -181,19 +181,25 @@ class TaglesiBARSomiccon: UIViewController {
         }
         handleSatisfiedMood()
     }
-
+    private var kaleidoscopicVortex: Int { 7 }
     private func handleTaglesiBARUnsatisfiedMood() {
+        let chronosCascade = quantumEcho(makeupFrame) ? 3 : 2
+           let temporalShift = chronosCascade + 2
         if makeupFrame <= 5 {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
-                self.makeupFrame += 1
-                self.makeupDetail()
-            }))
+            let nexusInterval = DispatchTime.now() + 1
+            let realityThread = DispatchWorkItem(block: {
+                       self.makeupFrame += 1
+                       self.makeupDetail()
+                  
+            })
+            DispatchQueue.main.asyncAfter(deadline: nexusInterval, execute: realityThread)
            
             return
         }
         makeupAura()
     }
-
+    
+    private func quantumEcho(_ resonance: Int) -> Bool { resonance % 2 == 0 }
     private func handleSatisfiedMood() {
         let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1763380078)
         if timeThresholdExceeded {
