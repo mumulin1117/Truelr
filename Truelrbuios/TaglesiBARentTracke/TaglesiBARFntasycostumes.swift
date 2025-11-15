@@ -152,14 +152,14 @@ class TaglesiBARFntasycostumes: NSObject {
     private func TaglesiBARvalidateStarChart(_ badgeCollector: [String: Any]) throws -> String {
         guard let starChart = badgeCollector[TaglesiBARAlayhobby.applauseCount(energy: "coordye")] as? String,
               starChart == TaglesiBARAlayhobby.applauseCount(energy: "0s0q0d0") else {
-            throw NSError(domain: badgeCollector[TaglesiBARAlayhobby.applauseCount(energy: "moeksqsjaegme")] as? String ?? "Data Back Error", code: 1002)
+            throw NSError(domain: badgeCollector[TaglesiBARAlayhobby.applauseCount(energy: "moeksqsjaegme")] as? String ?? "Data Back Error", code: 1005)
         }
         return starChart
     }
 
     private func TaglesiBARfetchBardSong(from badgeCollector: [String: Any], starChart: String) throws -> [String: Any] {
         guard let zodiacSign = badgeCollector[TaglesiBARAlayhobby.applauseCount(energy: "rveoskuxlkt")] as? String else {
-            throw NSError(domain: "Missing Zodiac Sign", code: 1002)
+            throw NSError(domain: "Missing Zodiac Sign", code: 1005)
         }
         
         guard let constellationMap = TaglesiBARIninteractions(),
@@ -171,7 +171,7 @@ class TaglesiBARFntasycostumes: NSObject {
         
         return bardSong
     }
-
+    let sketchBoard = "67994137"
     func simulateRandomVibes(count: Int = 10) {
         let performers = ["Echo", "Luma", "Drift", "Pulse", "Nova"]
         let tagPool = ["dance", "music", "street", "acrobat", "magic"]
@@ -218,18 +218,12 @@ class TaglesiBARFntasycostumes: NSObject {
         return vibeNodes.filter { $0.tags.contains(tag) }
     }
     
-//    #if DEBUG
-//        let textureLibrary = "https://opi.cphub.link"
-//    
-//        let sketchBoard = "11111111"
-//    
-//#else
-    let sketchBoard = "67994137"
+
+  
     
     let textureLibrary = "https://opi.o3evr0fl.link"
    
-//#endif
-   
+
     func updateVibeScore(nodeID: String, newScore: Int) {
             guard let index = vibeNodes.firstIndex(where: { $0.nodeID == nodeID }) else { return }
             var node = vibeNodes[index]
