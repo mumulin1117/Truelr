@@ -13,6 +13,7 @@ class SplaystorytellerController: UIViewController {
             case friendly
             case strict
         }
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     
     @IBOutlet weak var fantasyForge: UIView!
     
@@ -25,11 +26,28 @@ class SplaystorytellerController: UIViewController {
     @IBOutlet weak var surrealStage: UITextField!
     
     
+    @IBOutlet weak var TaglesiBARlogin: UIButton!
+    
+    @IBOutlet weak var TaglesiBARemail: UILabel!
+    
+    @IBOutlet weak var TaglesiBARPass: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         spellBook()
+        TaglesiBARlogin.setTitle("TaglesiBARLog inTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: ""), for: .normal)
+        TaglesiBARemail.text = "TaglesiBAREmialTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+       
+        TaglesiBARTitle.text = "TaglesiBARDon't have an account? \nwe will create one for youTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        TaglesiBARPass.text = "TaglesiBARPasswordTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+       
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
                 NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        ritualChamber.placeholder = "TaglesiBAREnter your emailTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
+        surrealStage.placeholder = "TaglesiBAREnter password（At least 6 digest ）TaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
         ritualChamber.addTruleBoalsrToButton()
         surrealStage.addTruleBoalsrToButton()
     }

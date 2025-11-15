@@ -14,6 +14,7 @@ class EnterInTopicController: UIViewController {
     weak var delegate: TopicUpdateDelegate?
     @IBOutlet weak var commentuseravatoer: UIImageView!
     
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     
     @IBOutlet weak var commentnamealbel: UILabel!
     
@@ -84,6 +85,7 @@ class EnterInTopicController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         shadowRealm.addTruleBoalsrToButton()
+        TaglesiBARTitle.text = "TaglesiBARShared TopicsTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
         TaglesiBARloPulseIndicatar.show(info: "")
         modelSculpt.maskedlabeVobor(enter: 16)
         commentuseravatoer.maskedlabeVobor(enter: 20)

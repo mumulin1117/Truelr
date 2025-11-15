@@ -15,6 +15,7 @@ class SharedTopicsController: UIViewController {
     
     @IBOutlet weak var topcsView: UICollectionView!
     
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     
     private let gridLayout: UICollectionViewFlowLayout = {
             let layout = UICollectionViewFlowLayout()
@@ -34,6 +35,8 @@ class SharedTopicsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         visionBoard()
+        TaglesiBARTitle.text = "TaglesiBARShared TopicsTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
         masqueradeHall()
         designBlueprint()
 //        self.topcsView.mj_header?.beginRefreshing()

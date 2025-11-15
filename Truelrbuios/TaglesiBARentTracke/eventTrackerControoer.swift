@@ -12,6 +12,7 @@ class eventTrackerControoer: UIViewController, UICollectionViewDataSource, UICol
     
     @IBOutlet weak var enenuLani: UIImageView!
     
+    @IBOutlet weak var tiactioveLbl: UIImageView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if SharedTopicsController.getingallUser.count >= 4 {

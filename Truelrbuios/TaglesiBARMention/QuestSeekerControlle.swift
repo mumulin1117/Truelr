@@ -9,11 +9,11 @@ import UIKit
 
 import PhotosUI
 class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
-    private var selectedMedia: URL?   // 本地选中的图片或视频
+    private var selectedMedia: URL?
       
     private var postText: String = ""
    
-    private let videoCost: Int = 20   // 发布视频所需金币
+    private let videoCost: Int = 20
     
     @IBOutlet weak var TaglesiBAR: UILabel!
     
@@ -77,8 +77,9 @@ class QuestSeekerControlle: UIViewController ,UITextViewDelegate{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        TaglesiBARTitlepost.setTitle("_ASt_Post_ASt_".replacingOccurrences(of: "_ASt_", with: ""), for: .normal)
-        TaglesiBARTitle.text = "_ASt_Post_ASt_".replacingOccurrences(of: "_ASt_", with: "")
+        TaglesiBARTitlepost.setTitle("TaglesiBARPostTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: ""), for: .normal)
+        TaglesiBARTitle.text = "TaglesiBARPostTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        dreamscapeHub.text = "TaglesiBAR  Text something...TaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
         dreamscapeHub.delegate = self
         Seriuh.layer.cornerRadius = 15
         Seriuh.layer.masksToBounds = true

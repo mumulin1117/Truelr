@@ -22,6 +22,7 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
         improvStage.reloadData()
     }
     
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if ifpickedCondition == false {
@@ -130,6 +131,7 @@ class CharaMeaasController: UIViewController,UITableViewDelegate,UITableViewData
         improvStage.separatorStyle = .none
         improvStage.delegate = self
         improvStage.dataSource = self
+        TaglesiBARTitle.text = "TaglesiBARNotificationsTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
         improvStage.estimatedRowHeight = 100
         improvStage.register(REallListchiwCell.self, forCellReuseIdentifier: "REallListchiwCell")
         improvStage.backgroundColor = .clear

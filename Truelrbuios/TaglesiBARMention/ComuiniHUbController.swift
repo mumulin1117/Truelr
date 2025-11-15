@@ -75,7 +75,7 @@ class ComuiniHUbController: UIViewController {
        override func viewDidLoad() {
            super.viewDidLoad()
            visionBoard()
-           TaglesiBARTitle.text = "_ASt_Explore_ASt_".replacingOccurrences(of: "_ASt_", with: "")
+           TaglesiBARTitle.text = "TaglesiBARExploreTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
            masqueradeHall()
            designBlueprint()
 //           self.mangaPanel.mj_header?.beginRefreshing()

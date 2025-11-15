@@ -29,7 +29,7 @@ class DesignBlueprintController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TaglesiBARTitle.text = "_ASt_Following_ASt_".replacingOccurrences(of: "_ASt_", with: "")
+        TaglesiBARTitle.text = "TaglesiBARFollowingTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
         // 根据模式设置标题
              
         switch orbitMode {

@@ -46,8 +46,8 @@ class RibbonVaulControoer: UIViewController {
     
        override func viewDidLoad() {
            super.viewDidLoad()
-           TaglesiBARWallener.text = "_ASt_My wallet_ASt_".replacingOccurrences(of: "_ASt_", with: "")
-           TaglesiBARLabel.text = "_ASt_Blance:_ASt_".replacingOccurrences(of: "_ASt_", with: "")
+           TaglesiBARWallener.text = "TaglesiBARMy walletTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+           TaglesiBARLabel.text = "TaglesiBARBlance:TaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
            textureLibrary()
            travelDiary.text = UIImageView.ambienceVaultDeu("TXkgQmxhbmNlOmNvbS50cm1saW4udHJ1ZWxy") + "\(TaglesiBARSomiccon.CurrentCoinggUserOwne)"
        }

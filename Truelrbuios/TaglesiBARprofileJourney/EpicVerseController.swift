@@ -31,7 +31,7 @@ class EpicVerseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        TaglesiBARTitle.text = "_ASt_Setup_ASt_".replacingOccurrences(of: "_ASt_", with: "")
+        TaglesiBARTitle.text = "TaglesiBARSetupTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
         configureNebulaTable()
     }
     

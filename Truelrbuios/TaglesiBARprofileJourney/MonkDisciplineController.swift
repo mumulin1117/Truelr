@@ -27,6 +27,7 @@ class MonkDisciplineController: UIViewController {
     
     
     
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     
     private var ifChiocedReason:Bool = false
     
@@ -53,14 +54,25 @@ class MonkDisciplineController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TaglesiBARTitle.text = "TaglesiBARReportTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
         
+        taglesibarHarmless.text = "TaglesiBARHarassmentTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
+        haigntag.text = "TaglesiBARInappropriate ContentTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
+        shanfert.setTitle("TaglesiBARReportTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: ""), for: .normal)
+        onluying.setTitle("TaglesiBARReportTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: ""), for: .normal)
+        
+        blaockinh.setTitle("TaglesiBARReport&BlockTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: ""), for: .normal)
         blaockinh.maskedlabeVobor(enter: 30)
         onluying.maskedlabeVobor(enter: 30)
         shanfert.maskedlabeVobor(enter: 30)
         
     }
     
+    @IBOutlet weak var taglesibarHarmless: UILabel!
     
+    @IBOutlet weak var haigntag: UILabel!
     
     @IBAction func ambienceVault(_ sender: UIButton) {
        

@@ -13,6 +13,7 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
     
     @IBOutlet weak var peopleconstne: NSLayoutConstraint!
     
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     
     @IBOutlet weak var morepeopleconstent: NSLayoutConstraint!
     
@@ -32,8 +33,11 @@ class EventPostControoer:  UIViewController ,UITextViewDelegate{
         return view
     }()
     
+    @IBOutlet weak var TaglesiBARConfirm: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        TaglesiBARTitle.text = "TaglesiBARRelease EventTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        TaglesiBARConfirm.setTitle("TaglesiBARConfirmTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: ""), for: .normal)
         themcapeHub.addTruleBoalsrToButton()
         locationpeHub.addTruleBoalsrToButton()
         timestart.addTruleBoalsrToButton()

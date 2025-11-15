@@ -40,7 +40,7 @@ class TaglesiBARAnovationLabControlle: UIViewController, UIScrollViewDelegate  {
         
         spellBook.maskedlabeVobor(enter: 16)
      
-        TaglesiBARTitle.text = "_ASt_Shared Topics_ASt_".replacingOccurrences(of: "_ASt_", with: "")
+        TaglesiBARTitle.text = "TaglesiBARShared TopicsTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
            maskTheatre()
            createrBootpnVir()
        }

@@ -20,24 +20,24 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cosplayshoot" translatesAutoresizingMaskIntoConstraints="NO" id="9a9-Dq-Rdf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Terms of Service&gt; " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhF-xg-Jej">
-                                <rect key="frame" x="224" y="611.5" width="117" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhF-xg-Jej">
+                                <rect key="frame" x="60" y="612" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0K-A2-Ipe">
-                                <rect key="frame" x="16" y="443" width="343" height="60"/>
+                                <rect key="frame" x="16" y="443.5" width="343" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cosplayfashion" translatesAutoresizingMaskIntoConstraints="NO" id="rvt-wt-qbB">
-                                        <rect key="frame" x="59" y="14" width="32" height="32"/>
+                                        <rect key="frame" x="135.5" y="14" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="3fI-2T-NhE"/>
                                             <constraint firstAttribute="height" constant="32" id="oF1-WO-uQL"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Sign Up with Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKI-gs-Cao">
-                                        <rect key="frame" x="95" y="19.5" width="153" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKI-gs-Cao">
+                                        <rect key="frame" x="171.5" y="30" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -64,8 +64,8 @@
                                     <segue destination="8qE-Ye-wsO" kind="presentation" id="KCm-hx-Zif"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Let sign it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uZ-5G-asT">
-                                <rect key="frame" x="32" y="85" width="311.5" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uZ-5G-asT">
+                                <rect key="frame" x="187.5" y="85" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -83,14 +83,14 @@
                                     <action selector="savingcosplay:" destination="rpn-Ad-7LX" eventType="touchUpInside" id="EIJ-MU-XC3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing you agree to our " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-E9-RKX">
-                                <rect key="frame" x="52" y="612" width="164" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-E9-RKX">
+                                <rect key="frame" x="52" y="612" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Privacy Policy&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucc-eZ-yIh">
-                                <rect key="frame" x="139" y="630.5" width="97" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucc-eZ-yIh">
+                                <rect key="frame" x="187.5" y="616" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -126,6 +126,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="nuH-Si-nPh"/>
                     <connections>
+                        <outlet property="TaglesiBARContinue" destination="bVE-E9-RKX" id="BWM-KG-yLv"/>
+                        <outlet property="TaglesiBARELAU" destination="EQ1-VC-EUR" id="WXe-2Q-hYO"/>
+                        <outlet property="TaglesiBARPri" destination="ucc-eZ-yIh" id="i23-R7-2Ce"/>
+                        <outlet property="TaglesiBARSign" destination="YKI-gs-Cao" id="YsD-c2-fvN"/>
+                        <outlet property="TaglesiBARTitle" destination="4uZ-5G-asT" id="CI1-Bv-S5O"/>
+                        <outlet property="TaglesiBARterm" destination="hhF-xg-Jej" id="dcz-tu-2TY"/>
                         <outlet property="helmetStudio" destination="hhF-xg-Jej" id="0mK-MM-jWS"/>
                         <outlet property="robeCollection" destination="F0K-A2-Ipe" id="KhR-6m-AG6"/>
                         <outlet property="shieldVault" destination="ucc-eZ-yIh" id="IFb-ig-NcW"/>
@@ -294,20 +300,20 @@ Contact: Truelr1234@gmail.com</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fandom" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-mf-Kql">
                                 <rect key="frame" x="0.0" y="227" width="375" height="42"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? we will create one for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zq5-GK-bwO">
-                                <rect key="frame" x="20" y="283" width="335" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zq5-GK-bwO">
+                                <rect key="frame" x="20" y="283" width="335" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.65098041296005249" green="0.65098041296005249" blue="0.65098041296005249" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcP-BF-okx">
-                                <rect key="frame" x="16" y="323" width="41" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcP-BF-okx">
+                                <rect key="frame" x="16" y="307" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnD-Rf-RMe">
-                                <rect key="frame" x="16" y="351" width="343" height="60"/>
+                                <rect key="frame" x="16" y="315" width="343" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roleplay" translatesAutoresizingMaskIntoConstraints="NO" id="w2J-IL-lTj">
                                         <rect key="frame" x="16" y="18" width="24" height="24"/>
@@ -316,7 +322,7 @@ Contact: Truelr1234@gmail.com</string>
                                             <constraint firstAttribute="height" constant="24" id="hCR-6A-BSh"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-Zy-MWP">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-Zy-MWP">
                                         <rect key="frame" x="48" y="3" width="287" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="ksr-eU-8Qo"/>
@@ -336,14 +342,14 @@ Contact: Truelr1234@gmail.com</string>
                                     <constraint firstAttribute="height" constant="60" id="sa3-Qi-0oN"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-rd-glp">
-                                <rect key="frame" x="16" y="435" width="73.5" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSE-rd-glp">
+                                <rect key="frame" x="16" y="399" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atz-RB-El0">
-                                <rect key="frame" x="16" y="463" width="343" height="60"/>
+                                <rect key="frame" x="16" y="407" width="343" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cosplaypaphy" translatesAutoresizingMaskIntoConstraints="NO" id="WQp-IF-1f3">
                                         <rect key="frame" x="16" y="18" width="24" height="24"/>
@@ -352,7 +358,7 @@ Contact: Truelr1234@gmail.com</string>
                                             <constraint firstAttribute="width" constant="24" id="baT-bh-fFM"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password（At least 6 digest ）" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIS-UT-qJE">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIS-UT-qJE">
                                         <rect key="frame" x="48" y="3" width="287" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="zc1-Yq-lZc"/>
@@ -380,7 +386,7 @@ Contact: Truelr1234@gmail.com</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Log in" backgroundImage="heroArchive5"/>
+                                <state key="normal" backgroundImage="heroArchive5"/>
                                 <connections>
                                     <action selector="savingcosplay:" destination="AOp-lq-xi0" eventType="touchUpInside" id="EYd-y7-bWU"/>
                                 </connections>
@@ -432,6 +438,10 @@ Contact: Truelr1234@gmail.com</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="TaglesiBARPass" destination="YSE-rd-glp" id="Hzd-Mx-wNJ"/>
+                        <outlet property="TaglesiBARTitle" destination="zq5-GK-bwO" id="jzO-by-Wp0"/>
+                        <outlet property="TaglesiBARemail" destination="ZcP-BF-okx" id="TlU-9t-K8a"/>
+                        <outlet property="TaglesiBARlogin" destination="5HO-lr-ZGS" id="OXJ-GK-hKk"/>
                         <outlet property="arcaneLibrary" destination="atz-RB-El0" id="J9K-8P-1Dl"/>
                         <outlet property="fantasyForge" destination="fnD-Rf-RMe" id="6FB-bO-261"/>
                         <outlet property="ritualChamber" destination="2ra-Zy-MWP" id="fOv-26-A7U"/>
@@ -658,7 +668,7 @@ Contact: Truelr1234@gmail.com</string>
                                     <action selector="planetariumView:" destination="pHI-3n-bfL" eventType="touchUpInside" id="crY-uZ-fgK"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="  Text something..." translatesAutoresizingMaskIntoConstraints="NO" id="eT9-OS-0b6">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-OS-0b6">
                                 <rect key="frame" x="16" y="170" width="343" height="181"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -810,6 +820,7 @@ Contact: Truelr1234@gmail.com</string>
                         <outlet property="enenuLani" destination="Fzb-FR-0Zr" id="cEP-MH-zPS"/>
                         <outlet property="mangaPanel" destination="1gP-5Q-uog" id="WYh-eP-nB5"/>
                         <outlet property="planetariumView" destination="1gP-5Q-uog" id="aia-6K-X0f"/>
+                        <outlet property="tiactioveLbl" destination="Fzb-FR-0Zr" id="kU3-eR-CSw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fza-Bf-6Ve" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -972,8 +983,8 @@ Contact: Truelr1234@gmail.com</string>
                                     <segue destination="qNf-20-DNq" kind="unwind" unwindAction="unwindToB:" id="UnU-HU-nug"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFk-xo-S72">
-                                <rect key="frame" x="121.5" y="23" width="132" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFk-xo-S72">
+                                <rect key="frame" x="187.5" y="23" width="0.0" height="52"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1010,7 +1021,7 @@ Contact: Truelr1234@gmail.com</string>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Confirm" backgroundImage="heroArchive5"/>
+                                        <state key="normal" backgroundImage="heroArchive5"/>
                                         <connections>
                                             <action selector="themcapeHub:" destination="uPf-JM-aHI" eventType="touchUpInside" id="vTo-2C-ehU"/>
                                         </connections>
@@ -1143,6 +1154,8 @@ Contact: Truelr1234@gmail.com</string>
                     <navigationItem key="navigationItem" id="GUp-TA-AAD"/>
                     <connections>
                         <outlet property="Seriuh" destination="psQ-81-OEO" id="bP3-OD-W6Q"/>
+                        <outlet property="TaglesiBARConfirm" destination="pFc-tx-WfL" id="ZtZ-Pg-RI3"/>
+                        <outlet property="TaglesiBARTitle" destination="SFk-xo-S72" id="64s-VH-Agb"/>
                         <outlet property="locationpeHub" destination="j7k-Xm-MuT" id="tgq-lh-y2s"/>
                         <outlet property="morepeopleconstent" destination="0ZF-Dw-E7c" id="cmg-Q6-uUg"/>
                         <outlet property="nnneding" destination="oJa-Hg-Nnr" id="TPL-kt-QJ4"/>
@@ -1378,14 +1391,14 @@ Contact: Truelr1234@gmail.com</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="transformation" translatesAutoresizingMaskIntoConstraints="NO" id="JMS-lg-BT9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shared Topics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGp-uE-Dal">
-                                <rect key="frame" x="16" y="34" width="185" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGp-uE-Dal">
+                                <rect key="frame" x="16" y="34" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.55294120311737061" green="0.13333332538604736" blue="0.25882354378700256" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sAL-Ex-dgQ">
-                                <rect key="frame" x="16" y="84" width="343" height="583"/>
+                                <rect key="frame" x="16" y="50" width="343" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a5h-Cr-wqs">
                                     <size key="itemSize" width="128" height="128"/>
@@ -1413,6 +1426,7 @@ Contact: Truelr1234@gmail.com</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="TaglesiBARbeiwkei2" selectedImage="beiwkeiZER2" id="bwW-nR-Tqq"/>
                     <connections>
+                        <outlet property="TaglesiBARTitle" destination="hGp-uE-Dal" id="E5i-FM-8YK"/>
                         <outlet property="topcsView" destination="sAL-Ex-dgQ" id="LQN-FD-rsI"/>
                     </connections>
                 </viewController>
@@ -1443,8 +1457,8 @@ Contact: Truelr1234@gmail.com</string>
                                     <action selector="suteiback:" destination="Ac3-kL-ldg" eventType="touchUpInside" id="vTa-vD-D2t"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shared Topics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1h-pj-gHd">
-                                <rect key="frame" x="121" y="37" width="133" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1h-pj-gHd">
+                                <rect key="frame" x="187.5" y="49" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1620,6 +1634,7 @@ Contact: Truelr1234@gmail.com</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="TaglesiBARTitle" destination="O1h-pj-gHd" id="izS-bl-3Lu"/>
                         <outlet property="commentnamealbel" destination="Xg5-mQ-ggb" id="NCZ-ty-jD3"/>
                         <outlet property="commentuseravatoer" destination="p6D-qb-oaB" id="SMt-Di-Wg6"/>
                         <outlet property="commnetcontent" destination="fRj-A0-bH4" id="JQc-G8-Rv9"/>
@@ -1681,8 +1696,8 @@ Contact: Truelr1234@gmail.com</string>
                                     <action selector="savingcosplay:" destination="rpn-Ad-7LX" eventType="touchUpInside" id="sfu-kU-bNA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inappropriate Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86P-R7-R1S">
-                                <rect key="frame" x="62" y="143" width="164" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86P-R7-R1S">
+                                <rect key="frame" x="62" y="143" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1701,8 +1716,8 @@ Contact: Truelr1234@gmail.com</string>
                                     <action selector="savingcosplay:" destination="rpn-Ad-7LX" eventType="touchUpInside" id="PeL-3o-g2I"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harassment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-4G-vSI">
-                                <rect key="frame" x="62" y="92" width="90" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-4G-vSI">
+                                <rect key="frame" x="62" y="92" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1719,8 +1734,8 @@ Contact: Truelr1234@gmail.com</string>
                                     <action selector="suteiback:" destination="v8b-cl-Mmd" eventType="touchUpInside" id="zkU-rh-ylq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPU-0E-YQD">
-                                <rect key="frame" x="155.5" y="17" width="64" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPU-0E-YQD">
+                                <rect key="frame" x="187.5" y="29" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1753,7 +1768,7 @@ Contact: Truelr1234@gmail.com</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Report">
+                                <state key="normal">
                                     <color key="titleColor" red="0.97647058963775635" green="0.37254902720451355" blue="0.54901963472366333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -1768,7 +1783,6 @@ Contact: Truelr1234@gmail.com</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Report&amp;Block"/>
                                 <connections>
                                     <action selector="labyrinthPath:" destination="G5r-Ba-471" eventType="touchUpInside" id="gTy-go-Fef"/>
                                     <action selector="legendHall:" destination="v8b-cl-Mmd" eventType="touchUpInside" id="VPX-8B-5jK"/>
@@ -1783,7 +1797,6 @@ Contact: Truelr1234@gmail.com</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Report"/>
                                 <connections>
                                     <action selector="druidCircle:" destination="v8b-cl-Mmd" eventType="touchUpInside" id="IBo-Oo-tTD"/>
                                 </connections>
@@ -1833,13 +1846,16 @@ Contact: Truelr1234@gmail.com</string>
                     </view>
                     <navigationItem key="navigationItem" id="Ddo-DT-YJB"/>
                     <connections>
+                        <outlet property="TaglesiBARTitle" destination="oPU-0E-YQD" id="1k2-PW-0nS"/>
                         <outlet property="blaockinh" destination="FtM-av-z2t" id="JQn-0q-eOc"/>
+                        <outlet property="haigntag" destination="86P-R7-R1S" id="I3c-t3-YlW"/>
                         <outlet property="onluying" destination="F1c-fs-PLw" id="c92-K5-i8y"/>
                         <outlet property="sageTeachings" destination="cHh-WA-cuD" id="vDA-7h-wCj"/>
                         <outlet property="sageTeachings1" destination="ST2-Z5-8gl" id="YI9-ff-XBx"/>
                         <outlet property="sageTeachings2" destination="gUS-Xp-4tH" id="osK-v4-Tlb"/>
                         <outlet property="sageTeachings3" destination="N5B-bg-Mau" id="8JF-tK-bUy"/>
                         <outlet property="shanfert" destination="lBO-vD-l3Y" id="5sX-iQ-T2x"/>
+                        <outlet property="taglesibarHarmless" destination="a2d-4G-vSI" id="PWo-gu-Ebf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yc-qp-Bsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1873,7 +1889,7 @@ Contact: Truelr1234@gmail.com</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y2F-ES-P9M">
-                                <rect key="frame" x="20" y="369.5" width="335" height="30"/>
+                                <rect key="frame" x="20" y="336" width="335" height="30"/>
                                 <subviews>
                                     <button opaque="NO" tag="340" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV9-Ap-NPm">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
@@ -1913,20 +1929,20 @@ Contact: Truelr1234@gmail.com</string>
                                     <constraint firstAttribute="height" constant="30" id="NMR-bP-KFN"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-8u-BOT">
-                                <rect key="frame" x="16" y="32" width="130" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-8u-BOT">
+                                <rect key="frame" x="16" y="32" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.55294120311737061" green="0.13333332538604736" blue="0.25882354378700256" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mER-tZ-fbA">
-                                <rect key="frame" x="0.0" y="77.5" width="375" height="280"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="280"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="tPe-m9-UmI"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvK-US-066">
-                                <rect key="frame" x="327" y="33" width="32" height="32"/>
+                                <rect key="frame" x="327" y="16" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="FCB-f5-8Kc"/>
                                     <constraint firstAttribute="width" constant="32" id="ojt-tc-duM"/>
@@ -1938,7 +1954,7 @@ Contact: Truelr1234@gmail.com</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Fy-r6-czc">
-                                <rect key="frame" x="20" y="103.5" width="335" height="156"/>
+                                <rect key="frame" x="20" y="70" width="335" height="156"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hildojd" translatesAutoresizingMaskIntoConstraints="NO" id="cZc-1K-ENh">
                                         <rect key="frame" x="8" y="16" width="55" height="55"/>
@@ -1960,7 +1976,7 @@ Contact: Truelr1234@gmail.com</string>
                                             <action selector="odysseyRecord:" destination="bxs-YH-4ga" eventType="touchUpInside" id="kOc-Ea-wDU"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aj3-o6-bDB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aj3-o6-bDB">
                                         <rect key="frame" x="75" y="16" width="145" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="IjO-Dh-C2B"/>
@@ -1969,8 +1985,8 @@ Contact: Truelr1234@gmail.com</string>
                                         <color key="textColor" red="0.18823529779911041" green="0.18823529779911041" blue="0.18823529779911041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGc-fO-5To">
-                                        <rect key="frame" x="75" y="48" width="145" height="14.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGc-fO-5To">
+                                        <rect key="frame" x="75" y="48" width="145" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.18823529779911041" green="0.18823529779911041" blue="0.18823529779911041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1982,7 +1998,7 @@ Contact: Truelr1234@gmail.com</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="111.5" height="84"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Friends">
+                                                <state key="normal">
                                                     <color key="titleColor" red="0.18823529779911041" green="0.18823529779911041" blue="0.18823529779911041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -1993,7 +2009,7 @@ Contact: Truelr1234@gmail.com</string>
                                                 <rect key="frame" x="111.5" y="0.0" width="112" height="84"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title=" Fans">
+                                                <state key="normal">
                                                     <color key="titleColor" red="0.18823529779911041" green="0.18823529779911041" blue="0.18823529779911041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -2004,7 +2020,7 @@ Contact: Truelr1234@gmail.com</string>
                                                 <rect key="frame" x="223.5" y="0.0" width="111.5" height="84"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Blacklist">
+                                                <state key="normal">
                                                     <color key="titleColor" red="0.18823529779911041" green="0.18823529779911041" blue="0.18823529779911041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -2036,7 +2052,7 @@ Contact: Truelr1234@gmail.com</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRx-l1-u1k">
-                                <rect key="frame" x="20" y="271.5" width="335" height="62"/>
+                                <rect key="frame" x="20" y="238" width="335" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="EtO-HS-LpG"/>
                                 </constraints>
@@ -2046,27 +2062,27 @@ Contact: Truelr1234@gmail.com</string>
                                     <action selector="modelSculpt:" destination="bxs-YH-4ga" eventType="touchUpInside" id="PQg-md-Wwu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 coins &gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-Q2-K0x">
-                                <rect key="frame" x="258.5" y="292" width="76.5" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-Q2-K0x">
+                                <rect key="frame" x="335" y="269" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wallet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8s-zE-XH8">
-                                <rect key="frame" x="44" y="292" width="82" height="21.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8s-zE-XH8">
+                                <rect key="frame" x="44" y="269" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Componentddd" translatesAutoresizingMaskIntoConstraints="NO" id="cns-02-T9r">
-                                <rect key="frame" x="214.5" y="286.5" width="32" height="32"/>
+                                <rect key="frame" x="291" y="253" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Dn6-pK-xb6"/>
                                     <constraint firstAttribute="width" constant="32" id="wr2-bY-ncJ"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysj-lU-akG">
-                                <rect key="frame" x="39.5" y="407" width="66" height="4"/>
+                                <rect key="frame" x="39.5" y="373.5" width="66" height="4"/>
                                 <color key="backgroundColor" red="0.97647058963775635" green="0.37254902720451355" blue="0.54901963472366333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="Pgk-cx-m9V"/>
@@ -2074,7 +2090,7 @@ Contact: Truelr1234@gmail.com</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Nothing ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGK-cW-F24">
-                                <rect key="frame" x="141.5" y="490" width="92.5" height="16"/>
+                                <rect key="frame" x="141.5" y="456.5" width="92.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.18823529779911041" green="0.18823529779911041" blue="0.18823529779911041" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2117,7 +2133,12 @@ Contact: Truelr1234@gmail.com</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="TaglesiBARbeiwkei4" selectedImage="beiwkeiZER4" id="Mdh-ZB-ff1"/>
                     <connections>
+                        <outlet property="TaglesiBARBlance" destination="G8s-zE-XH8" id="X4m-3x-baK"/>
+                        <outlet property="TaglesiBARFans" destination="3uh-Vd-FzN" id="biZ-HD-R5t"/>
+                        <outlet property="TaglesiBARFreind" destination="0ex-Qw-T38" id="Y0D-8y-YdR"/>
+                        <outlet property="TaglesiBARTitle" destination="Bgv-8u-BOT" id="AVb-F8-zmV"/>
                         <outlet property="fateThread" destination="cZc-1K-ENh" id="tz7-kW-j8V"/>
+                        <outlet property="hisjdTaglesiBAR" destination="BEz-tR-vLh" id="51u-06-Tmg"/>
                         <outlet property="infoCake" destination="7Fy-r6-czc" id="VcR-Gc-AbH"/>
                         <outlet property="niurUsert" destination="SGc-fO-5To" id="tTc-dM-tzP"/>
                         <outlet property="owinre" destination="8KF-Q2-K0x" id="6pq-gc-06x"/>
@@ -2152,8 +2173,8 @@ Contact: Truelr1234@gmail.com</string>
                                 <color key="textColor" red="0.18823529780000001" green="0.18823529780000001" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ras-aN-4yy">
-                                <rect key="frame" x="16" y="32" width="168.5" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ras-aN-4yy">
+                                <rect key="frame" x="16" y="32" width="0.0" height="33.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.55294120311737061" green="0.13333332538604736" blue="0.25882354378700256" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2216,6 +2237,7 @@ Contact: Truelr1234@gmail.com</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="TaglesiBARbeiwkei3" selectedImage="beiwkeiZER3" id="WDa-u5-2xP"/>
                     <connections>
+                        <outlet property="TaglesiBARTitle" destination="Ras-aN-4yy" id="Yn7-1S-Vqc"/>
                         <outlet property="enchantmentLab" destination="qdg-Eg-AAB" id="2kB-RH-1Wp"/>
                         <outlet property="enchantmentLab1" destination="IRQ-Np-JnH" id="3qc-0M-DxK"/>
                         <outlet property="enchantmentLab2" destination="Ug3-re-kzn" id="J7n-lb-Znm"/>

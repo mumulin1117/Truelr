@@ -16,6 +16,7 @@ class AmorLabController: UIViewController {
     
     @IBOutlet weak var helmetStudio: UILabel!
     
+    @IBOutlet weak var TaglesiBARELAU: UIButton!
     
     @IBOutlet weak var shieldVault: UILabel!
     
@@ -39,7 +40,8 @@ class AmorLabController: UIViewController {
         
     }
     
-   @objc func changobsertStatyi()  {
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
+    @objc func changobsertStatyi()  {
         timelineArchive.isSelected = (UserDefaults.standard.object(forKey: "scriptRoom") as? String == "true")
     }
     func storyboardPanel(presntype:presentType)  {
@@ -50,9 +52,27 @@ class AmorLabController: UIViewController {
         }
     }
     
+    @IBOutlet weak var TaglesiBARSign: UILabel!
+    
+    @IBOutlet weak var TaglesiBARContinue: UILabel!
+    
+    @IBOutlet weak var TaglesiBARterm: UILabel!
+    
+    @IBOutlet weak var TaglesiBARPri: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         capeWorkshop()
+        TaglesiBARPri.text = "TaglesiBAR<Privacy Policy>TaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        TaglesiBARterm.text = "TaglesiBAR<Terms of Service>TaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
+        
+        TaglesiBARContinue.text = "TaglesiBARBy continuing you agree to our TaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
+        TaglesiBARTitle.text = "TaglesiBARWelcome! Let sign it.TaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
+        TaglesiBARSign.text = "TaglesiBAR  Sign Up with EmailTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
         robeCollection.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(improvStage(tapoi:))))
         swordGallery()
     }

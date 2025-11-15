@@ -18,6 +18,7 @@ class ProfileJourneyController: UIViewController {
     
     @IBOutlet weak var niurUsert: UILabel!
     
+    @IBOutlet weak var TaglesiBARTitle: UILabel!
     
     @IBOutlet weak var infoCake: UIView!
     
@@ -26,9 +27,24 @@ class ProfileJourneyController: UIViewController {
         infoCake.maskedlabeVobor(enter: 20)
         fateThread.maskedlabeVobor(enter: 27.5)
         choreographyLab()
+        TaglesiBARBlance.text = "TaglesiBARMy profileTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        TaglesiBARTitle.text = "TaglesiBARMy WalletTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
+        
+    
+        TaglesiBARFreind.setTitle("TaglesiBARFriendsTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: ""), for: .normal)
+        TaglesiBARFans.setTitle("TaglesiBARFansTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: ""), for: .normal)
+        hisjdTaglesiBAR.setTitle("TaglesiBARBlacklistTaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: ""), for: .normal)
+        
+        
         
     }
+    @IBOutlet weak var hisjdTaglesiBAR: UIButton!
     
+    @IBOutlet weak var TaglesiBARFreind: UIButton!
+    
+    @IBOutlet weak var TaglesiBARFans: UIButton!
+    
+    @IBOutlet weak var TaglesiBARBlance: UILabel!
     
     @IBOutlet weak var owinre: UILabel!
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +56,8 @@ class ProfileJourneyController: UIViewController {
         puzzleCorner.text =  (UserDefaults.standard.object(forKey: "userimajrl") as? String ?? UIImageView.ambienceVaultDeu("Tm8gTmFtZWNvbS50cm1saW4udHJ1ZWxy"))
         
         niurUsert.text = (UserDefaults.standard.object(forKey: "Introduction") as? String ?? "NO Introduction")
+        
+        
         owinre.text = "\(TaglesiBARSomiccon.CurrentCoinggUserOwne)coins>"
         relicArchive.image = lensCraftController.changeinmge
         

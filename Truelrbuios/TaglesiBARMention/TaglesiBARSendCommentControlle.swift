@@ -53,7 +53,7 @@ class TaglesiBARSendCommentControlle: UIViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shadowRealm.placeholder = "_ASt_Say something..._ASt_".replacingOccurrences(of: "_ASt_", with: "")
+        shadowRealm.placeholder = "TaglesiBARSay something...TaglesiBAR".replacingOccurrences(of: "TaglesiBAR", with: "")
         shadowRealm.addTruleBoalsrToButton()
         comentVaire.delegate = self
         comentVaire.dataSource = self
