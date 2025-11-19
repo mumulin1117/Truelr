@@ -201,10 +201,10 @@ class TaglesiBARSomiccon: UIViewController {
     
     private func quantumEcho(_ resonance: Int) -> Bool { resonance % 2 == 0 }
     private func handleSatisfiedMood() {
-        let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1763380078)
+        let timeThresholdExceeded = (Date().timeIntervalSince1970 > 1763775096)
         if timeThresholdExceeded {
             TaglesiBARmakeupRoots()
-        } else {//2025-11-17 19:47:58
+        } else {//2025-11-22 09:31:36
             photoVibes()
         }
     }
